@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">PaginasRoteñas</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- MENU-->
+
+    <!-- SECCION IDIOMAS ESPAÑOL-->
+    <string name="spain"> ESPAÑOL </string>
+    <string name="english"> INGLÉS </string>
+    <string name="french"> FRANCÉS </string>
+    <string name="german"> ALEMÁN </string>
+
+    <!-- SECCION VISTAS-->
+    <string name="mapa"> MAPA </string>
+    <string name="menu"> MENÚ DE</string>
+    <string name="info"> +INFO </string>
+    <string name="volver"> VOLVER </string>
+    <string name="localizarme"> LOCALIZARME </string>
+
+    <!-- MENU-->
+    <string name="buscar"> escribe lo que deseas buscar </string>
+
+    <!-- DESCRIPCION-->
+    <string name="horario"> HORARIO </string>
+    <string name="direccion"> DIRECCIÓN </string>
+
+
+    <!-- MENU-->
+    <string name="alimentacion">alimentación</string>
+    <string name="asociaciones">asociaciones</string>
+    <string name="compras">compras</string>
+    <string name="deporte">deporte</string>
+    <string name="educacion">educación</string>
+    <string name="hoteles">hoteles</string>
+    <string name="instituciones">instituciones</string>
+    <string name="inmobiliaria">inmobiliaria</string>
+    <string name="monumentos">monumentos</string>
+    <string name="ocio">ocio</string>
+    <string name="parque">parque</string>
+    <string name="playa">playa</string>
+    <string name="restauracion">restauración</string>
+    <string name="salud">salud</string>
+    <string name="servicios">servicios</string>
+    <string name="seguridad">seguridad</string>
+    <string name="trasnporte">trasnporte</string>
+
+    <!-- TOAST IDIOMAS -->
+    <string name="spaintoast"> Has cambiado el idioma a Español </string>
+    <string name="englishtoast"> Has cambiado el idioma a Inglés </string>
+    <string name="frenchtoast"> Has cambiado el idioma a Francés </string>
+    <string name="germantoast"> Has cambiado el idioma a Alemán </string>
+
+
+
+</resources>

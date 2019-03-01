@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fulgen.paginasroteas">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/z_ico_fav_cuadrado"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/z_ico_fav_circular"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".BBMapaActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".DAEmpresaActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".CACategoriaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AASplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BAMenuActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

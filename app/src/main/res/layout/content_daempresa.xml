@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DAEmpresaActivity"
+    tools:showIn="@layout/content_daempresa">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/paddingFooter"
+                android:layout_marginBottom="@dimen/marginFooter"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blanco"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imagempresaDA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/paddinginteriorlayout"
+                        app:srcCompat="@drawable/col_merced" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/espaciogrande" />
+
+                <TextView
+                    android:id="@+id/tvempresaDA"
+                    style="@style/txtcabeceraempresa"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BAR LA MERCED" />
+
+                <TextView
+                    android:id="@+id/tvdescripempresaDA"
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/paddingHorizontalfooter"
+                    android:text="Catering Indicado para grupos Ideal para niños Terraza Acepta reservas Para llevar Servicio de camareros No se requiere reserva" />
+
+                <TextView
+                    android:id="@+id/tvinformacionadicionalDA"
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/espaciogrande"
+                    android:text="DESCUENTO DE UN 10% PARA SOCIOS DE O3" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/espaciogrande" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/tamanoFooter"
+                    android:paddingVertical="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                   app:srcCompat="@drawable/ic_menu_horario" />
+
+                <TextView
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/paddingHorizontalfooter"
+                    android:text="HORARIO" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvhorarioDA"
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes - Viernes: 8h - 15h / 18h - 21h
+  Sábados y Domingos: 8h - 17h" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/espaciogrande" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/tamanoFooter"
+                    android:paddingVertical="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        app:srcCompat="@drawable/ic_menu_mapa" />
+
+                    <TextView
+                        style="@style/txtdescripcionempresa"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="@dimen/paddingHorizontalfooter"
+                        android:text="DIRECCIÓN" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvdireccionDA"
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Calle Compás del Convento nº 12
+(Mercado de la Merced)" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:background="@color/negro"
+            android:paddingVertical="@dimen/paddingVerticalfooter"
+            android:paddingHorizontal="@dimen/paddingHorizontalfooter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tamanoFooter"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnimagfacebookDA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_facebook"
+                android:onClick="clickEmpresaFaceboookDA"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvimagfacebookDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/btnimagtwitterDA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_twitter"
+                android:onClick="clickEmpresaTwitterDA"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvimagtwitterDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/btnimagtlfDA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_telefono"
+                android:onClick="clickEmpresaTelefonoDA"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvimagtlfDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+
+            <ImageView
+                android:id="@+id/btnimagmailDA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_correo"
+                android:onClick="clickEmpresaMailDA"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvimagmailDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/btnimagmapDA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_localizacion"
+                android:onClick="clickEmpresaMapsDA"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvimagmapDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/btnimagextraDA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_extra1"
+                android:onClick="clickEmpresaExtraDA"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvimagextraDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/btnimaginvisible1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_extra1"
+                android:visibility="invisible"/>
+            <ImageView
+                android:id="@+id/btnimaginvisible2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/redes_extra1"
+                android:visibility="invisible"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

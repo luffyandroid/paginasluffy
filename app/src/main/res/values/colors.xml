@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <!-- SECCION IDIOMAS ESPAÑOL-->
+
+    <color name="negro">#FF000000</color>
+
+    <color name="amarilloTXTCABECERA">#FFEC39</color>
+    <color name="amarilloINTENSO">#FFF800</color>
+    <color name="verdeTXTFOOTER">#C7E500</color>
+    <color name="verdeINTENSO">#3D9A00</color>
+
+    <color name="blanco">#ffffff</color>
+
+
+
+
+
+
+
+</resources>

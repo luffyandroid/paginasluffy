@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CACategoriaActivity"
+    tools:showIn="@layout/content_cacategoria_">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listCA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/espacio" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/negro"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/paddingHorizontalfooter"
+            android:paddingVertical="@dimen/paddingVerticalfooter">
+
+            <ImageView
+                android:id="@+id/btnimagfootbuscarCA"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0"
+                android:onClick="clickBuscarCA"
+                app:srcCompat="@drawable/selector_btn_buscar"
+                tools:ignore="VectorDrawableCompat" />
+
+            <EditText
+                android:id="@+id/etfootbuscarCA"
+                style="@style/txtfooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/paddingHorizontalfooter"
+                android:focusableInTouchMode="true"
+                android:hint="@string/buscar" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

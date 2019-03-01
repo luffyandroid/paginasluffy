@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/z_background"
+    tools:context=".DAEmpresaActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgCabeceramenuDA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/paddinginteriorlayout"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:tint="@color/amarilloTXTCABECERA"
+                    app:srcCompat="@drawable/ic_sub_c_moviles" />
+
+                <TextView
+                    android:id="@+id/tvcabeceraDA"
+                    style="@style/txtcabecera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" MENÚ"
+                    android:textSize="@dimen/txtcabecera" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_daempresa" />
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/menu_fabDA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:fab_addButtonColorPressed="@color/verdeTXTFOOTER"
+        fab:fab_addButtonColorNormal="@color/verdeINTENSO"
+        fab:fab_addButtonSize="normal"
+        fab:fab_labelStyle="@style/Etiquetas"
+        fab:fab_labelsPosition="left">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/amarilloTXTCABECERA"
+            app:fab_colorPressed="@color/amarilloINTENSO"
+            fab:fab_icon="@drawable/menu_circular_spain"
+            fab:fab_size="mini"
+            android:onClick="clickSpainDA"
+            fab:fab_title="@string/spain" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/amarilloTXTCABECERA"
+            app:fab_colorPressed="@color/amarilloINTENSO"
+            fab:fab_icon="@drawable/menu_circular_uk"
+            fab:fab_size="mini"
+            android:onClick="clickUkDA"
+            fab:fab_title="@string/english" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/amarilloTXTCABECERA"
+            app:fab_colorPressed="@color/amarilloINTENSO"
+            fab:fab_icon="@drawable/menu_circular_france"
+            fab:fab_size="mini"
+            android:onClick="clickFranceDA"
+            fab:fab_title="@string/french" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/amarilloTXTCABECERA"
+            app:fab_colorPressed="@color/amarilloINTENSO"
+            fab:fab_icon="@drawable/menu_circular_german"
+            fab:fab_size="mini"
+            android:onClick="clickGermanDA"
+            fab:fab_title="@string/german" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/verdeINTENSO"
+            app:fab_colorPressed="@color/verdeTXTFOOTER"
+            fab:fab_icon="@drawable/menu_circular_mapa"
+            fab:fab_size="mini"
+            android:onClick="clickMapaDA"
+            fab:fab_title="@string/mapa" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/verdeINTENSO"
+            app:fab_colorPressed="@color/verdeTXTFOOTER"
+            fab:fab_icon="@drawable/menu_circular_menu"
+            fab:fab_size="mini"
+            android:onClick="clickMenuDA"
+            fab:fab_title="@string/menu" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/verdeTXTFOOTER"
+            app:fab_colorPressed="@color/verdeINTENSO"
+            fab:fab_icon="@drawable/menu_circular_atras"
+            fab:fab_size="mini"
+            android:onClick="clickAtrasDA"
+            fab:fab_title="@string/volver" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</android.support.design.widget.CoordinatorLayout>
