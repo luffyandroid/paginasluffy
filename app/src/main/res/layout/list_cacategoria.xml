@@ -29,6 +29,13 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tvimagempresalistCA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
+
+        <TextView
             android:id="@+id/tvtitulolistCA"
             style="@style/txtcabeceraempresa"
             android:layout_width="match_parent"
@@ -48,7 +55,7 @@
 
 
         <TextView
-            android:id="@+id/tvlugarlistCA"
+            android:id="@+id/tvdescuentolistCA"
             style="@style/txtdescripcionempresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

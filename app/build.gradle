@@ -33,4 +33,10 @@ dependencies {
 
     //LOTTIE
     implementation 'com.airbnb.android:lottie:2.7.0'
+
+    //FIREBASE
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+
 }
+apply plugin: 'com.google.gms.google-services'

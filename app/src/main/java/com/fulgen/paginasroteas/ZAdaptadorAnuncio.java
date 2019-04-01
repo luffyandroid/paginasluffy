@@ -39,18 +39,9 @@ public class ZAdaptadorAnuncio extends ArrayAdapter<ZAnuncio> {
 
 
         //ImageView
-        ImageView imagen_categoria = (ImageView)convertView.findViewById(R.id.imagCategoria);
+       /* ImageView imagen_categoria = (ImageView)convertView.findViewById(R.id.imagCategoria);
         String url = anuncios.get(position).getImagen();
-
-        /*
-        GlideApp
-                .with(c)
-                .load(url)
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imagen_socio);
-                */
-
-
+        */
 
         return convertView;
 

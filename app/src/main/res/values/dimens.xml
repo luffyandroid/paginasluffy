@@ -16,8 +16,10 @@
 
 
     <!-- GRID LAYOUT -->
-    <dimen name="paddinginteriorlayout">7dp</dimen>
+    <dimen name="paddinginteriorlayout">10dp</dimen>
     <dimen name="txtgridsize">17dp</dimen>
+    <dimen name="padingverticalobligatiorio">60dp</dimen>
+    <dimen name="padinghorizontal">10dp</dimen>
 
     <!-- FOOTER -->
     <dimen name="txtMarginFooter">11dp</dimen>

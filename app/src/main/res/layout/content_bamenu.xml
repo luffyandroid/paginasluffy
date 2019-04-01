@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BAMenuActivity"
-    tools:showIn="@layout/content_bamenu">
+    tools:showIn="@layout/activity_bamenu">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,13 +13,18 @@
 
         <GridView
             android:id="@+id/listBA"
+            android:paddingVertical="@dimen/padingverticalobligatiorio"
+            android:paddingHorizontal="@dimen/padinghorizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:numColumns="3"
+            android:horizontalSpacing="@dimen/paddinginteriorlayout"
+            android:verticalSpacing="@dimen/paddinginteriorlayout"
             android:drawSelectorOnTop="true"
             android:focusable="true"
             android:clickable="true">
         </GridView>
+
 
         <LinearLayout
             android:background="@color/negro"
