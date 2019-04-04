@@ -54,6 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickalientacion"
                         android:orientation="vertical">
 
                         <ImageView
@@ -70,6 +71,15 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/alimentacion" />
+
+                        <TextView
+                            android:id="@+id/tvAlimentacionocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="alimentacion" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -77,6 +87,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickasociaciones"
                         android:orientation="vertical">
 
                         <ImageView
@@ -93,6 +104,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/asociaciones" />
+
+                        <TextView
+                            android:id="@+id/tvAsociacionesocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="asociaciones" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -100,6 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickcompras"
                         android:orientation="vertical">
 
                         <ImageView
@@ -116,6 +138,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/compras" />
+
+                        <TextView
+                            android:id="@+id/tvComprasocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="compras" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -130,6 +162,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickdeportes"
                         android:orientation="vertical">
 
                         <ImageView
@@ -146,6 +179,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/deporte" />
+
+                        <TextView
+                            android:id="@+id/tvDeporteocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="deporte" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -153,6 +196,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickeducacion"
                         android:orientation="vertical">
 
                         <ImageView
@@ -169,6 +213,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/educacion" />
+
+                        <TextView
+                            android:id="@+id/tvEducacionocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="educacion" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -176,6 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickhoteles"
                         android:orientation="vertical">
 
                         <ImageView
@@ -192,6 +247,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/hoteles" />
+
+                        <TextView
+                            android:id="@+id/tvHotelesocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="hoteles" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -202,33 +267,11 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/lyInstitucionesBA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ivInstitucionesBA"
-                            style="@style/imagengrid"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_i_instituciones" />
-
-                        <TextView
-                            android:id="@+id/tvInstitucionesBA"
-                            style="@style/txtgrid"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/instituciones" />
-                    </LinearLayout>
-
-                    <LinearLayout
                         android:id="@+id/lyInmobiliariaBA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickinmoviliaria"
                         android:orientation="vertical">
 
                         <ImageView
@@ -245,6 +288,50 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/inmobiliaria" />
+
+                        <TextView
+                            android:id="@+id/tvInmobiliariaocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="inmobiliaria" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyInstitucionesBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="clickinstituciones"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivInstitucionesBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_i_instituciones" />
+
+                        <TextView
+                            android:id="@+id/tvInstitucionesBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/instituciones" />
+
+                        <TextView
+                            android:id="@+id/tvInstitucionesocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="instituciones" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -252,6 +339,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickmonumentos"
                         android:orientation="vertical">
 
                         <ImageView
@@ -268,6 +356,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/monumentos" />
+
+                        <TextView
+                            android:id="@+id/tvMonumentosocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="monumentos" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -282,6 +380,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickocio"
                         android:orientation="vertical">
 
                         <ImageView
@@ -298,6 +397,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/ocio" />
+
+                        <TextView
+                            android:id="@+id/tvOcioocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="ocio" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -305,6 +414,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickparque"
                         android:orientation="vertical">
 
                         <ImageView
@@ -321,6 +431,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/parque" />
+
+                        <TextView
+                            android:id="@+id/tvParqueocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="parque" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -328,6 +448,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickplaya"
                         android:orientation="vertical">
 
                         <ImageView
@@ -344,6 +465,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/playa" />
+
+                        <TextView
+                            android:id="@+id/tvPlayacultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="playa" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -358,6 +489,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickrestauracion"
                         android:orientation="vertical">
 
                         <ImageView
@@ -374,6 +506,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/restauracion" />
+
+                        <TextView
+                            android:id="@+id/tvRestauracionocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="restauracion" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -381,6 +523,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clicksalud"
                         android:orientation="vertical">
 
                         <ImageView
@@ -397,43 +540,24 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/salud" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lyServiciosBA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ivServiciosBA"
-                            style="@style/imagengrid"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_se_servicios" />
 
                         <TextView
-                            android:id="@+id/tvServiciosBA"
+                            android:id="@+id/tvSaludocultoBA"
                             style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="@string/servicios" />
-                    </LinearLayout>
-                </LinearLayout>
+                            android:visibility="gone"
+                            android:text="salud" />
 
-                <LinearLayout
-                    android:id="@+id/fila6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/lySeguridadBA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clickseguridad"
                         android:orientation="vertical">
 
                         <ImageView
@@ -450,6 +574,57 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/seguridad" />
+
+                        <TextView
+                            android:id="@+id/tvSeguridadocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="seguridad" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fila6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lyServiciosBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="clickservicios"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivServiciosBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_se_servicios" />
+
+                        <TextView
+                            android:id="@+id/tvServiciosBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/servicios" />
+
+                        <TextView
+                            android:id="@+id/tvServiciosocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="servicios" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -457,6 +632,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clicktransporte"
                         android:orientation="vertical">
 
                         <ImageView
@@ -473,6 +649,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/transporte" />
+
+                        <TextView
+                            android:id="@+id/tvTransporteocultoBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            android:text="transporte" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -495,6 +681,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:visibility="gone"
                             android:text="" />
                     </LinearLayout>
                 </LinearLayout>
