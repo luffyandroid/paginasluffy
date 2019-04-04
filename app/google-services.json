@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "773887073506",
+    "firebase_url": "https://paginasrotenas.firebaseio.com",
+    "project_id": "paginasrotenas",
+    "storage_bucket": "paginasrotenas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773887073506:android:c96d7be193bbb239",
+        "android_client_info": {
+          "package_name": "com.fulgen.paginasroteas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773887073506-qabjucrkhv18f9suh3tkruim4tbo1lmd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fulgen.paginasroteas",
+            "certificate_hash": "f041922e247a085e3770ab0e33670c459276adb7"
+          }
+        },
+        {
+          "client_id": "773887073506-ol9ol1q8pn52j5j2hb1p36ek6cet5bn0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8VGTnma4GJfUZBzFjaAU6iEmRJ8AghGw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773887073506-ol9ol1q8pn52j5j2hb1p36ek6cet5bn0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

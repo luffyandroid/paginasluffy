@@ -35,11 +35,18 @@ public class ZAdaptadorAnuncio extends ArrayAdapter<ZAnuncio> {
 
         //TextView Numero de Socio
         TextView tv_categoria = (TextView) convertView.findViewById(R.id.tvCategoria);
+        TextView tv_titulo = (TextView) convertView.findViewById(R.id.tvtitulolistCA);
+        TextView tv_descripcion = (TextView) convertView.findViewById(R.id.tvdescripcionlistCA);
+        TextView tv_descuento = (TextView) convertView.findViewById(R.id.tvdescuentolistCA);
+        TextView tv_imagempresa = (TextView) convertView.findViewById(R.id.tvimagempresalistCA);
         tv_categoria.setText(anuncios.get(position).getCategoria());
-
+        tv_titulo.setText(anuncios.get(position).getCategoria());
+        tv_descripcion.setText(anuncios.get(position).getCategoria());
+        tv_descuento.setText(anuncios.get(position).getCategoria());
+        tv_imagempresa.setText(anuncios.get(position).getCategoria());
 
         //ImageView
-       /* ImageView imagen_categoria = (ImageView)convertView.findViewById(R.id.imagCategoria);
+       /* ImageView imagempresa = (ImageView) convertView.findViewById(R.id.imagempresalistCA);
         String url = anuncios.get(position).getImagen();
         */
 

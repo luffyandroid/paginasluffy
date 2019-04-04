@@ -47,7 +47,7 @@
     <string name="salud">salud</string>
     <string name="servicios">servicios</string>
     <string name="seguridad">seguridad</string>
-    <string name="trasnporte">trasnporte</string>
+    <string name="transporte">transporte</string>
 
     <!-- TOAST IDIOMAS -->
     <string name="spaintoast"> Has cambiado el idioma a Español </string>

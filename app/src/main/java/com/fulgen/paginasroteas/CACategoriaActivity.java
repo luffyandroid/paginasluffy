@@ -1,6 +1,7 @@
 package com.fulgen.paginasroteas;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +32,7 @@ public class CACategoriaActivity extends AppCompatActivity {
     private FloatingActionsMenu menu_fabCA;
     ListView listCA;
     EditText etfootbuscarCA;
-    TextView tvcabeceraCA, tvtitulolistCA, tvdescripcionlistCA, tvdescuentolistCA, tvimagempresalistCA;
+    TextView tvcabeceraCA, tvcategorialistCA, tvtitulolistCA, tvdescripcionlistCA, tvdescuentolistCA, tvimagempresalistCA;
     ImageView imagempresalistCA;
 
     //ADAPTADOR
@@ -48,6 +49,7 @@ public class CACategoriaActivity extends AppCompatActivity {
         tvcabeceraCA = (TextView) findViewById(R.id.tvcabeceraCA);
         menu_fabCA  = (FloatingActionsMenu) findViewById(R.id.menu_fabCA);
 
+        tvcategorialistCA = (TextView) findViewById(R.id.tvcategorialistaCA);
         tvtitulolistCA = (TextView) findViewById(R.id.tvtitulolistCA);
         tvdescripcionlistCA = (TextView) findViewById(R.id.tvdescripcionlistCA);
         tvdescuentolistCA = (TextView) findViewById(R.id.tvdescuentolistCA);
@@ -55,15 +57,45 @@ public class CACategoriaActivity extends AppCompatActivity {
         imagempresalistCA = (ImageView) findViewById(R.id.imagempresalistCA);
 
 
+        String catcatanuncio = getIntent().getStringExtra("EXTRA_CATEGORIA");
 
-        //ADAPTADOR
+        tvcategorialistCA.setText(catcatanuncio);
+
+        Toast.makeText(this, "La categoria es: "+catcatanuncio, Toast.LENGTH_SHORT).show();
+
+        /*//ADAPTADOR
         ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anuncios);
-        listCA.setAdapter(adaptador);
+        listCA.setAdapter(adaptador);*/
 
 
+
+        cargardatos();
     }//FIN ONCREATE
 
     //BASE DE LIST VIEW
+
+    private void cargardatos(){
+
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child(tvcategorialistCA.getText().toString());
+
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()){
+                    cargarListView(anuncioDataSnapShot);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+
+    }
+
     private void cargarListView(DataSnapshot dataSnapshot) {
 
         //TOAST DE CARGA
@@ -83,34 +115,14 @@ public class CACategoriaActivity extends AppCompatActivity {
                      @Override
                      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                         //DESCARGAR ELEMENTOS QUE NECESITO DE FIREBASE
-
-                         dbAnuncio = FirebaseDatabase.getInstance().getReference()
-                                 .child("alimentacion").child("aquiserianombre");
-
-                         eventListener = new ValueEventListener() {
-                             @Override
-                             public void onDataChange(DataSnapshot dataSnapshot) {
-
-                                 tvimagempresalistCA.setText(dataSnapshot.child("categoria").getValue().toString());
-                                 tvdescripcionlistCA.setText(dataSnapshot.child("descripcioncortaes").getValue().toString());
-                                 tvdescuentolistCA.setText(dataSnapshot.child("descuentoes").getValue().toString());
-                                 tvtitulolistCA.setText(dataSnapshot.child("nombre").getValue().toString());
-                             }
-
-                             @Override
-                             public void onCancelled(DatabaseError databaseError) {
-                                 Log.e("CACategoriaActivity", "Error!", databaseError.toException());
-                             }
-                         };
-                         dbAnuncio.addValueEventListener(eventListener);
+                         Toast.makeText(CACategoriaActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
 
 
-                         //ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
+                         /*//ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
                          Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
 
                          //INICIAR ACTIVITY
-                         startActivity(i);
+                         startActivity(i);*/
                      }
                  });
     }

@@ -10,8 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <GridView
+        //TODO GRIDVIEW COMENTADO POR POSIBLE CAMBIO
+        <!--<GridView
             android:id="@+id/listBA"
             android:paddingVertical="@dimen/padingverticalobligatiorio"
             android:paddingHorizontal="@dimen/padinghorizontal"
@@ -23,8 +23,484 @@
             android:drawSelectorOnTop="true"
             android:focusable="true"
             android:clickable="true">
-        </GridView>
+        </GridView>-->
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/padingverticalobligatiorio"
+                android:paddingHorizontal="@dimen/padinghorizontal"
+                android:horizontalSpacing="@dimen/paddinginteriorlayout"
+                android:verticalSpacing="@dimen/paddinginteriorlayout"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/fila1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lyAlimentacionBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivAlimentacionBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_a_alimentacion" />
+
+                        <TextView
+                            android:id="@+id/tvAlimentacionBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/alimentacion" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyAsociacionesBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivAsociacionesBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_asociaciones" />
+
+                        <TextView
+                            android:id="@+id/tvAsociacionesBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/asociaciones" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyComprasBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivComprasBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_c_compras" />
+
+                        <TextView
+                            android:id="@+id/tvComprasBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/compras" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fila2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lyDeporteBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivDeporteBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_d_deporte" />
+
+                        <TextView
+                            android:id="@+id/tvDeporteBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/deporte" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyEducacionBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivEducacionBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_e_educacion" />
+
+                        <TextView
+                            android:id="@+id/tvEducacionBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/educacion" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyHotelesBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivHotelesBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_h_hoteles" />
+
+                        <TextView
+                            android:id="@+id/tvHotelesBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/hoteles" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fila3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lyInstitucionesBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivInstitucionesBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_i_instituciones" />
+
+                        <TextView
+                            android:id="@+id/tvInstitucionesBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/instituciones" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyInmobiliariaBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivInmobiliariaBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_inmobiliaria" />
+
+                        <TextView
+                            android:id="@+id/tvInmobiliariaBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/inmobiliaria" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyMonumentosBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivMonumentosBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_m_monumentos" />
+
+                        <TextView
+                            android:id="@+id/tvMonumentosBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/monumentos" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fila4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lyOcioBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivOcioBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_o_ocio" />
+
+                        <TextView
+                            android:id="@+id/tvOcioBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/ocio" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyParqueBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivParqueBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_pa_parque" />
+
+                        <TextView
+                            android:id="@+id/tvParqueBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/parque" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyPlayaBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivPlayaBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_pl_playa" />
+
+                        <TextView
+                            android:id="@+id/tvPlayaBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/playa" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fila5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lyRestauracionBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivRestauracionBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_r_restauracion" />
+
+                        <TextView
+                            android:id="@+id/tvRestauracionBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/restauracion" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lySaludBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivSaludBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_sa_salud" />
+
+                        <TextView
+                            android:id="@+id/tvSaludBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/salud" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyServiciosBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivServiciosBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_se_servicios" />
+
+                        <TextView
+                            android:id="@+id/tvServiciosBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/servicios" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fila6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lySeguridadBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivSeguridadBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_seg_seguridad" />
+
+                        <TextView
+                            android:id="@+id/tvSeguridadBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seguridad" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyTransporteBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivTransporteBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_t_transporte" />
+
+                        <TextView
+                            android:id="@+id/tvTransporteBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/transporte" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyVacioBA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivVacioBA"
+                            style="@style/imagengrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_cat_aa_vacio" />
+
+                        <TextView
+                            android:id="@+id/tvVacioBA"
+                            style="@style/txtgrid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
             android:background="@color/negro"

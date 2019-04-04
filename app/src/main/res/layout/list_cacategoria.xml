@@ -28,6 +28,8 @@
         android:layout_margin="@dimen/marginImagenes"
         android:orientation="vertical">
 
+
+
         <TextView
             android:id="@+id/tvimagempresalistCA"
             android:layout_width="match_parent"

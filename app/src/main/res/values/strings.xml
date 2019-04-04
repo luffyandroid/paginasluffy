@@ -47,11 +47,11 @@
     <string name="salud">salud</string>
     <string name="servicios">servicios</string>
     <string name="seguridad">seguridad</string>
-    <string name="trasnporte">trasnporte</string>
+    <string name="transporte">transporte</string>
 
     <!-- TOAST IDIOMAS -->
     <string name="spaintoast"> Has cambiado el idioma a Español </string>
-    <string name="englishtoast"> Has cambiado el idioma a Inglés </string>
+    <string name="englishtoast"> Has cambiado el idioma a Ingles </string>
     <string name="frenchtoast"> Has cambiado el idioma a Francés </string>
     <string name="germantoast"> Has cambiado el idioma a Alemán </string>
 
