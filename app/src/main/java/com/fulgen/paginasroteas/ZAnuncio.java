@@ -32,6 +32,7 @@ public class ZAnuncio implements Parcelable {
     String horariofr;
     String direccion;
     String categoria;
+    String subcategoria;
 
 
     public static final Parcelable.Creator<ZAnuncio> CREATOR = new
@@ -51,7 +52,7 @@ public class ZAnuncio implements Parcelable {
     //CONTRUCTOR PONIENDO A LAS VARIANTES (ALT + INS)
 
 
-    public ZAnuncio(String imagen, String nombre, String descripcionlargaes, String descripcionlargade, String descripcionlargaen, String descripcionlargafr, String descuentoes, String descuentode, String descuentoen, String descuentofr, String facebook, String twitter, String telefono, String mail, String maps, String extra, String descripcioncortaes, String descripcioncortade, String descripcioncortaen, String descripcioncortafr, String horarioes, String horariode, String horarioen, String horariofr, String direccion, String categoria) {
+    public ZAnuncio(String imagen, String nombre, String descripcionlargaes, String descripcionlargade, String descripcionlargaen, String descripcionlargafr, String descuentoes, String descuentode, String descuentoen, String descuentofr, String facebook, String twitter, String telefono, String mail, String maps, String extra, String descripcioncortaes, String descripcioncortade, String descripcioncortaen, String descripcioncortafr, String horarioes, String horariode, String horarioen, String horariofr, String direccion, String categoria, String subcategoria) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.descripcionlargaes = descripcionlargaes;
@@ -78,6 +79,7 @@ public class ZAnuncio implements Parcelable {
         this.horariofr = horariofr;
         this.direccion = direccion;
         this.categoria = categoria;
+        this.subcategoria = subcategoria;
     }
 
     public ZAnuncio (Parcel p){
@@ -302,6 +304,13 @@ public class ZAnuncio implements Parcelable {
         this.categoria = categoria;
     }
 
+    public String getSubcategoria() {
+        return subcategoria;
+    }
+
+    public void setSubcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
+    }
 
     @Override
     public int describeContents(){
@@ -336,6 +345,7 @@ public class ZAnuncio implements Parcelable {
         parcel.writeString(this.horariofr);
         parcel.writeString(this.direccion);
         parcel.writeString(this.categoria);
+        parcel.writeString(this.subcategoria);
     }
 
     private void readFromParcel (Parcel p){
@@ -365,6 +375,7 @@ public class ZAnuncio implements Parcelable {
         this.horariofr = p.readString();
         this.direccion = p.readString();
         this.categoria = p.readString();
+        this.subcategoria = p.readString();
     }
     
     

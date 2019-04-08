@@ -88,7 +88,7 @@ public class CACategoriaActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
             }
         };
 

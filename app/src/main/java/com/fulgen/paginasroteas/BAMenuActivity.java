@@ -80,6 +80,25 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //ENLAZO VARIANTES DECLARADAS
 
+        //TEXTVIEWS QUE BORRO FULL
+        tvAlimentacionocultoBA = (TextView)findViewById(R.id.tvAlimentacionocultoBA);
+        tvAsocioacionesocultoBA = (TextView)findViewById(R.id.tvAsociacionesocultoBA);
+        tvComprasocultoBA = (TextView)findViewById(R.id.tvComprasocultoBA);
+        tvDeporteocultoBA = (TextView)findViewById(R.id.tvDeporteocultoBA);
+        tvEducacionocultoBA = (TextView)findViewById(R.id.tvEducacionocultoBA);
+        tvHotelesocultoBA = (TextView)findViewById(R.id.tvHotelesocultoBA);
+        tvInmobiliariaocultaBA = (TextView)findViewById(R.id.tvInmobiliariaocultoBA);
+        tvInstitucionesocultoBA = (TextView)findViewById(R.id.tvInstitucionesocultoBA);
+        tvMonumentosocultoBA = (TextView)findViewById(R.id.tvMonumentosocultoBA);
+        tvOcioocultoBA = (TextView)findViewById(R.id.tvOcioocultoBA);
+        tvParqueocultoBA = (TextView)findViewById(R.id.tvParqueocultoBA);
+        tvPlayaocultoBA = (TextView)findViewById(R.id.tvPlayacultoBA);
+        tvRestauracionocultoBA = (TextView)findViewById(R.id.tvRestauracionocultoBA);
+        tvSaludocultoBA = (TextView)findViewById(R.id.tvSaludocultoBA);
+        tvSeguridadocultoBA = (TextView)findViewById(R.id.tvSeguridadocultoBA);
+        tvServiciosocultoBA = (TextView)findViewById(R.id.tvServiciosocultoBA);
+        tvTransporteocultoBA = (TextView)findViewById(R.id.tvTransporteocultoBA);
+
         //ESTILO BOTON ANIMADO ▼
 
         //ALIMENTACION

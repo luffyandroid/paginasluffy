@@ -10,6 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
         <TextView
             android:id="@+id/tvcategorialistaCA"
             android:layout_width="match_parent"
@@ -21,6 +23,7 @@
             android:id="@+id/listCA"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="@dimen/espacio"
             android:paddingBottom="@dimen/espacio" />
 
 

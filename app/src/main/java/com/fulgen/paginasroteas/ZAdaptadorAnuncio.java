@@ -28,29 +28,37 @@ public class ZAdaptadorAnuncio extends ArrayAdapter<ZAnuncio> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if (null == convertView) {
-
-            convertView = inflater.inflate(R.layout.list_bamenu, parent, false);
+        if (convertView == null){
+            convertView = inflater.inflate(R.layout.list_cacategoria, parent, false);
         }
 
+        /*LayoutInflater inflater = LayoutInflater.from(getContext());
+        final View item = inflater.inflate(R.layout.list_cacategoria, null);*/
+
         //TextView Numero de Socio
-        TextView tv_categoria = (TextView) convertView.findViewById(R.id.tvCategoria);
         TextView tv_titulo = (TextView) convertView.findViewById(R.id.tvtitulolistCA);
+        tv_titulo.setText(anuncios.get(position).getNombre());
         TextView tv_descripcion = (TextView) convertView.findViewById(R.id.tvdescripcionlistCA);
+        tv_descripcion.setText(anuncios.get(position).getDescripcioncortaes());
         TextView tv_descuento = (TextView) convertView.findViewById(R.id.tvdescuentolistCA);
+        tv_descuento.setText(anuncios.get(position).getDescuentoes());
         TextView tv_imagempresa = (TextView) convertView.findViewById(R.id.tvimagempresalistCA);
-        tv_categoria.setText(anuncios.get(position).getCategoria());
-        tv_titulo.setText(anuncios.get(position).getCategoria());
-        tv_descripcion.setText(anuncios.get(position).getCategoria());
-        tv_descuento.setText(anuncios.get(position).getCategoria());
-        tv_imagempresa.setText(anuncios.get(position).getCategoria());
+        tv_imagempresa.setText(anuncios.get(position).getSubcategoria());
+
+        String imagen = anuncios.get(position).getSubcategoria();
+        int idImagen = c.getResources().getIdentifier(imagen, "drawable",c.getPackageName());
+        ImageView iv_imagen = (ImageView)convertView.findViewById(R.id.imagempresalistCA);
+        iv_imagen.setImageResource(idImagen);
+
+
+
 
         //ImageView
        /* ImageView imagempresa = (ImageView) convertView.findViewById(R.id.imagempresalistCA);
         String url = anuncios.get(position).getImagen();
         */
-
         return convertView;
+
 
     }
 
