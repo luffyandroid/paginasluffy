@@ -35,6 +35,7 @@
             android:layout_height="match_parent">
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="@dimen/padingverticalobligatiorio"
@@ -57,12 +58,18 @@
                         android:onClick="clickalientacion"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivAlimentacionBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_a_alimentacion" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_a_alimentacion.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
+
 
                         <TextView
                             android:id="@+id/tvAlimentacionBA"
@@ -74,10 +81,8 @@
 
                         <TextView
                             android:id="@+id/tvAlimentacionocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="alimentacion" />
                     </LinearLayout>
@@ -90,12 +95,17 @@
                         android:onClick="clickasociaciones"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivAsociacionesBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_asociaciones" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_asociaciones.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvAsociacionesBA"
@@ -107,10 +117,8 @@
 
                         <TextView
                             android:id="@+id/tvAsociacionesocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="asociaciones" />
 
@@ -124,12 +132,17 @@
                         android:onClick="clickcompras"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivComprasBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_c_compras" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_c_compras.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvComprasBA"
@@ -141,10 +154,8 @@
 
                         <TextView
                             android:id="@+id/tvComprasocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="compras" />
 
@@ -165,12 +176,17 @@
                         android:onClick="clickdeportes"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivDeporteBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_d_deporte" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_d_deporte.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvDeporteBA"
@@ -182,10 +198,8 @@
 
                         <TextView
                             android:id="@+id/tvDeporteocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="deporte" />
 
@@ -199,12 +213,17 @@
                         android:onClick="clickeducacion"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivEducacionBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_e_educacion" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_e_educacion.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvEducacionBA"
@@ -216,10 +235,8 @@
 
                         <TextView
                             android:id="@+id/tvEducacionocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="educacion" />
 
@@ -233,12 +250,17 @@
                         android:onClick="clickhoteles"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivHotelesBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_h_hoteles" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_h_hoteles.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvHotelesBA"
@@ -250,10 +272,8 @@
 
                         <TextView
                             android:id="@+id/tvHotelesocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="hoteles" />
 
@@ -274,12 +294,17 @@
                         android:onClick="clickinmoviliaria"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivInmobiliariaBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_inmobiliaria" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_inmobiliaria.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvInmobiliariaBA"
@@ -291,10 +316,8 @@
 
                         <TextView
                             android:id="@+id/tvInmobiliariaocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="inmobiliaria" />
 
@@ -308,12 +331,17 @@
                         android:onClick="clickinstituciones"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivInstitucionesBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_i_instituciones" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_i_instituciones.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvInstitucionesBA"
@@ -325,10 +353,8 @@
 
                         <TextView
                             android:id="@+id/tvInstitucionesocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="instituciones" />
 
@@ -342,12 +368,17 @@
                         android:onClick="clickmonumentos"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivMonumentosBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_m_monumentos" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_m_monumentos.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvMonumentosBA"
@@ -359,10 +390,8 @@
 
                         <TextView
                             android:id="@+id/tvMonumentosocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="monumentos" />
 
@@ -383,12 +412,17 @@
                         android:onClick="clickocio"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivOcioBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_o_ocio" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_o_ocio.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvOcioBA"
@@ -400,10 +434,8 @@
 
                         <TextView
                             android:id="@+id/tvOcioocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="ocio" />
 
@@ -417,12 +449,17 @@
                         android:onClick="clickparque"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivParqueBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_pa_parque" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_pa_parque.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvParqueBA"
@@ -434,10 +471,8 @@
 
                         <TextView
                             android:id="@+id/tvParqueocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="parque" />
 
@@ -451,12 +486,17 @@
                         android:onClick="clickplaya"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivPlayaBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_pl_playa" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_pl_playa.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvPlayaBA"
@@ -468,10 +508,8 @@
 
                         <TextView
                             android:id="@+id/tvPlayacultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="playa" />
 
@@ -492,12 +530,17 @@
                         android:onClick="clickrestauracion"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivRestauracionBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_r_restauracion" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_r_restauracion.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvRestauracionBA"
@@ -509,10 +552,8 @@
 
                         <TextView
                             android:id="@+id/tvRestauracionocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="restauracion" />
 
@@ -526,12 +567,17 @@
                         android:onClick="clicksalud"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivSaludBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_sa_salud" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_sa_salud.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvSaludBA"
@@ -543,10 +589,8 @@
 
                         <TextView
                             android:id="@+id/tvSaludocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="salud" />
 
@@ -560,12 +604,17 @@
                         android:onClick="clickseguridad"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivSeguridadBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_seg_seguridad" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_seg_seguridad.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvSeguridadBA"
@@ -577,10 +626,8 @@
 
                         <TextView
                             android:id="@+id/tvSeguridadocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="seguridad" />
 
@@ -601,12 +648,17 @@
                         android:onClick="clickservicios"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivServiciosBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_se_servicios" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_se_servicios.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvServiciosBA"
@@ -618,10 +670,8 @@
 
                         <TextView
                             android:id="@+id/tvServiciosocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="servicios" />
 
@@ -635,12 +685,17 @@
                         android:onClick="clicktransporte"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/ivTransporteBA"
-                            style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_t_transporte" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_t_transporte.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
                             android:id="@+id/tvTransporteBA"
@@ -652,10 +707,8 @@
 
                         <TextView
                             android:id="@+id/tvTransporteocultoBA"
-                            style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:visibility="gone"
                             android:text="transporte" />
 

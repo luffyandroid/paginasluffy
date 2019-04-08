@@ -39,4 +39,11 @@
     <dimen name="tamanoFooter">55dp</dimen>
     <dimen name="espaciogrande">14dp</dimen>
 
+    <!-- MENU LOTTIE -->
+    <dimen name="paddinmenucat">15dp</dimen>
+
+
+
+
+
 </resources>

@@ -27,6 +27,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,12 +60,14 @@ public class BAMenuActivity extends AppCompatActivity {
     TextView tvAlimentacionocultoBA, tvAsocioacionesocultoBA, tvComprasocultoBA, tvDeporteocultoBA, tvEducacionocultoBA, tvHotelesocultoBA, tvInmobiliariaocultaBA, tvInstitucionesocultoBA,
             tvMonumentosocultoBA, tvOcioocultoBA, tvParqueocultoBA, tvPlayaocultoBA, tvRestauracionocultoBA, tvSaludocultoBA, tvServiciosocultoBA, tvSeguridadocultoBA, tvTransporteocultoBA, tvVacioBA;
 
+    LottieAnimationView ivAlimentacionBA, ivAsociacionesBA, ivComprasBA, ivDeporteBA, ivEducacionBA, ivHotelesBA,
+                    ivInmobiliariaBA, ivInstitucionesBA, ivMonumentosBA, ivOcioBA, ivParqueBA, ivPlayaBA, ivRestauracionBA,
+                    ivSaludBA, ivSeguridadBA, ivServiciosBA, ivTransporteBA;
+
     //ADAPTADOR
     //ArrayList<ZCategoria> lista_anuncios = new ArrayList<ZCategoria>();
 
     //VARIANTES DE DECLARADAS
-    LinearLayout lyAlimentacionBA, lyAsociacionesBA, lyComprasBA, lyDeporteBA, lyEducacionBA, lyHotelesBA, lyInmobiliariaBA, lyInstitucionesBA, lyMonumentosBA, lyOcioBA,
-    lyParqueBA, lyPlayaBA, lyRestauracionBA, lySaludBA, lySeguridadBA, lyServiciosBA, lyTransportesBA;
     private FloatingActionsMenu menu_fabBA;
     EditText etfootbuscarBA;
     final Context context = this;
@@ -77,43 +80,228 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //ENLAZO VARIANTES DECLARADAS
 
-        lyAlimentacionBA = (LinearLayout)findViewById(R.id.lyAlimentacionBA);
-        lyAsociacionesBA = (LinearLayout)findViewById(R.id.lyAsociacionesBA);
-        lyComprasBA = (LinearLayout)findViewById(R.id.lyComprasBA);
-        lyDeporteBA = (LinearLayout)findViewById(R.id.lyDeporteBA);
-        lyEducacionBA = (LinearLayout)findViewById(R.id.lyEducacionBA);
-        lyHotelesBA = (LinearLayout)findViewById(R.id.lyHotelesBA);
-        lyInstitucionesBA = (LinearLayout)findViewById(R.id.lyInstitucionesBA);
-        lyInmobiliariaBA = (LinearLayout)findViewById(R.id.lyInmobiliariaBA);
-        lyMonumentosBA = (LinearLayout)findViewById(R.id.lyMonumentosBA);
-        lyOcioBA = (LinearLayout)findViewById(R.id.lyOcioBA);
-        lyParqueBA = (LinearLayout)findViewById(R.id.lyParqueBA);
-        lyPlayaBA = (LinearLayout)findViewById(R.id.lyPlayaBA);
-        lyRestauracionBA = (LinearLayout)findViewById(R.id.lyRestauracionBA);
-        lySaludBA = (LinearLayout)findViewById(R.id.lySaludBA);
-        lySeguridadBA = (LinearLayout)findViewById(R.id.lySeguridadBA);
-        lyServiciosBA = (LinearLayout)findViewById(R.id.lyServiciosBA);
-        lyTransportesBA = (LinearLayout)findViewById(R.id.lyTransporteBA);
-        tvAlimentacionocultoBA = (TextView)findViewById(R.id.tvAlimentacionocultoBA);
-        tvAsocioacionesocultoBA = (TextView)findViewById(R.id.tvAsociacionesocultoBA);
-        tvComprasocultoBA = (TextView)findViewById(R.id.tvComprasocultoBA);
-        tvDeporteocultoBA = (TextView)findViewById(R.id.tvDeporteocultoBA);
-        tvEducacionocultoBA = (TextView)findViewById(R.id.tvEducacionocultoBA);
-        tvHotelesocultoBA = (TextView)findViewById(R.id.tvHotelesocultoBA);
-        tvInmobiliariaocultaBA = (TextView)findViewById(R.id.tvInmobiliariaocultoBA);
-        tvInstitucionesocultoBA = (TextView)findViewById(R.id.tvInstitucionesocultoBA);
-        tvMonumentosocultoBA = (TextView)findViewById(R.id.tvMonumentosocultoBA);
-        tvOcioocultoBA = (TextView)findViewById(R.id.tvOcioocultoBA);
-        tvParqueocultoBA = (TextView)findViewById(R.id.tvParqueocultoBA);
-        tvPlayaocultoBA = (TextView)findViewById(R.id.tvPlayacultoBA);
-        tvRestauracionocultoBA = (TextView)findViewById(R.id.tvRestauracionocultoBA);
-        tvSaludocultoBA = (TextView)findViewById(R.id.tvSaludocultoBA);
-        tvSeguridadocultoBA = (TextView)findViewById(R.id.tvSeguridadocultoBA);
-        tvServiciosocultoBA = (TextView)findViewById(R.id.tvServiciosocultoBA);
-        tvTransporteocultoBA = (TextView)findViewById(R.id.tvTransporteocultoBA);
-        tvVacioBA = (TextView)findViewById(R.id.tvVacioBA);
-        etfootbuscarBA = (EditText) findViewById(R.id.etfootbuscarBA);
-        menu_fabBA = (FloatingActionsMenu) findViewById(R.id.menu_fabBA);
+        //ESTILO BOTON ANIMADO ▼
+
+        //ALIMENTACION
+        ivAlimentacionBA = (LottieAnimationView) findViewById(R.id.ivAlimentacionBA);
+        ivAlimentacionBA.setAnimation("cat_a_alimentacion.json");
+        ivAlimentacionBA.loop(false);
+        ivAlimentacionBA.pauseAnimation();
+        ivAlimentacionBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickalientacion(view);
+                ivAlimentacionBA.playAnimation();
+            }
+        });
+
+        //ASOCIACIONES
+        ivAsociacionesBA = (LottieAnimationView) findViewById(R.id.ivAsociacionesBA);
+        ivAsociacionesBA.setAnimation("cat_asociaciones.json");
+        ivAsociacionesBA.loop(false);
+        ivAsociacionesBA.pauseAnimation();
+        ivAsociacionesBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickasociaciones(view);
+                ivAsociacionesBA.playAnimation();
+            }
+        });
+
+        //COMPRAS
+        ivComprasBA = (LottieAnimationView) findViewById(R.id.ivComprasBA);
+        ivComprasBA.setAnimation("cat_c_compras.json");
+        ivComprasBA.loop(false);
+        ivComprasBA.pauseAnimation();
+        ivComprasBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickcompras(view);
+                ivComprasBA.playAnimation();
+            }
+        });
+
+        //DEPORTE
+        ivDeporteBA = (LottieAnimationView) findViewById(R.id.ivDeporteBA);
+        ivDeporteBA.setAnimation("cat_d_deporte.json");
+        ivDeporteBA.loop(false);
+        ivDeporteBA.pauseAnimation();
+        ivDeporteBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickdeportes(view);
+                ivDeporteBA.playAnimation();
+            }
+        });
+
+        //EDUCACIÓN
+        ivEducacionBA = (LottieAnimationView) findViewById(R.id.ivEducacionBA);
+        ivEducacionBA.setAnimation("cat_e_educacion.json");
+        ivEducacionBA.loop(false);
+        ivEducacionBA.pauseAnimation();
+        ivEducacionBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickeducacion(view);
+                ivEducacionBA.playAnimation();
+            }
+        });
+
+        //HOTELES
+        ivHotelesBA = (LottieAnimationView) findViewById(R.id.ivHotelesBA);
+        ivHotelesBA.setAnimation("cat_h_hoteles.json");
+        ivHotelesBA.loop(false);
+        ivHotelesBA.pauseAnimation();
+        ivHotelesBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickhoteles(view);
+                ivHotelesBA.playAnimation();
+            }
+        });
+
+        //INMOBILIARIA
+        ivInmobiliariaBA = (LottieAnimationView) findViewById(R.id.ivInmobiliariaBA);
+        ivInmobiliariaBA.setAnimation("cat_inmobiliaria.json");
+        ivInmobiliariaBA.loop(false);
+        ivInmobiliariaBA.pauseAnimation();
+        ivInmobiliariaBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickinmoviliaria(view);
+                ivInmobiliariaBA.playAnimation();
+            }
+        });
+
+        //INSTITUCIONES
+        ivInstitucionesBA = (LottieAnimationView) findViewById(R.id.ivInstitucionesBA);
+        ivInstitucionesBA.setAnimation("cat_i_instituciones.json");
+        ivInstitucionesBA.loop(false);
+        ivInstitucionesBA.pauseAnimation();
+        ivInstitucionesBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickinstituciones(view);
+                ivInstitucionesBA.playAnimation();
+            }
+        });
+
+        //MONUMENTOS
+        ivMonumentosBA = (LottieAnimationView) findViewById(R.id.ivMonumentosBA);
+        ivMonumentosBA.setAnimation("cat_m_monumentos.json");
+        ivMonumentosBA.loop(false);
+        ivMonumentosBA.pauseAnimation();
+        ivMonumentosBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickmonumentos(view);
+                ivMonumentosBA.playAnimation();
+            }
+        });
+
+        //OCIO
+        ivOcioBA = (LottieAnimationView) findViewById(R.id.ivOcioBA);
+        ivOcioBA.setAnimation("cat_o_ocio.json");
+        ivOcioBA.loop(false);
+        ivOcioBA.pauseAnimation();
+        ivOcioBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickocio(view);
+                ivOcioBA.playAnimation();
+            }
+        });
+
+        //PARQUE
+        ivParqueBA = (LottieAnimationView) findViewById(R.id.ivParqueBA);
+        ivParqueBA.setAnimation("cat_pa_parque.json");
+        ivParqueBA.loop(false);
+        ivParqueBA.pauseAnimation();
+        ivParqueBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickparque(view);
+                ivParqueBA.playAnimation();
+            }
+        });
+
+        //PLAYA
+        ivPlayaBA = (LottieAnimationView) findViewById(R.id.ivPlayaBA);
+        ivPlayaBA.setAnimation("cat_pl_playa.json");
+        ivPlayaBA.loop(false);
+        ivPlayaBA.pauseAnimation();
+        ivPlayaBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickplaya(view);
+                ivPlayaBA.playAnimation();
+            }
+        });
+
+        //RESTAURACIÓN
+        ivRestauracionBA = (LottieAnimationView) findViewById(R.id.ivRestauracionBA);
+        ivRestauracionBA.setAnimation("cat_r_restauracion.json");
+        ivRestauracionBA.loop(false);
+        ivRestauracionBA.pauseAnimation();
+        ivRestauracionBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickrestauracion(view);
+                ivRestauracionBA.playAnimation();
+            }
+        });
+
+        //SALUD
+        ivSaludBA = (LottieAnimationView) findViewById(R.id.ivSaludBA);
+        ivSaludBA.setAnimation("cat_sa_salud.json");
+        ivSaludBA.loop(false);
+        ivSaludBA.pauseAnimation();
+        ivSaludBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clicksalud(view);
+                ivSaludBA.playAnimation();
+            }
+        });
+
+        //SEGURIDAD
+        ivSeguridadBA = (LottieAnimationView) findViewById(R.id.ivSeguridadBA);
+        ivSeguridadBA.setAnimation("cat_seg_seguridad.json");
+        ivSeguridadBA.loop(false);
+        ivSeguridadBA.pauseAnimation();
+        ivSeguridadBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickseguridad(view);
+                ivSeguridadBA.playAnimation();
+            }
+        });
+
+        //SERVICIO
+        ivServiciosBA = (LottieAnimationView) findViewById(R.id.ivServiciosBA);
+        ivServiciosBA.setAnimation("cat_se_servicios.json");
+        ivServiciosBA.loop(false);
+        ivServiciosBA.pauseAnimation();
+        ivServiciosBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickservicios(view);
+                ivServiciosBA.playAnimation();
+            }
+        });
+
+        //TRANSPORTE
+        ivTransporteBA = (LottieAnimationView) findViewById(R.id.ivTransporteBA);
+        ivTransporteBA.setAnimation("cat_t_transporte.json");
+        ivTransporteBA.loop(false);
+        ivTransporteBA.pauseAnimation();
+        ivTransporteBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clicktransporte(view);
+                ivTransporteBA.playAnimation();
+            }
+        });
 
         //TODO GRID VIEW COMENTADO POR POSIBLE CAMBIO
         //CATEGORIA MENU
