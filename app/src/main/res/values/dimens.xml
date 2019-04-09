@@ -14,7 +14,6 @@
     <dimen name="txtcabeceradialogomarker">21dp</dimen>
 
 
-
     <!-- GRID LAYOUT -->
     <dimen name="paddinginteriorlayout">10dp</dimen>
     <dimen name="txtgridsize">17dp</dimen>
@@ -27,6 +26,7 @@
     <dimen name="paddingHorizontalfooter">15dp</dimen>
     <dimen name="paddingVerticalfooter">7dp</dimen>
     <dimen name="espacio">50dp</dimen>
+    <dimen name="paddingbotones">1dp</dimen>
 
     <!-- LISTVIEW -->
     <dimen name="marginImagenes">7dp</dimen>

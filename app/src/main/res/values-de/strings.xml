@@ -23,7 +23,7 @@
     <string name="localizarme"> LOCALIZARME </string>
 
     <!-- MENU-->
-    <string name="buscar"> escribe lo que deseas buscar </string>
+    <string name="buscar"> buscar </string>
 
     <!-- DESCRIPCION-->
     <string name="horario"> HORARIO </string>
