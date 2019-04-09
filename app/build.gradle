@@ -31,6 +31,9 @@ dependencies {
     //HACER MENU CON FLOAT BUTTON
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
+    //GLIDE
+    implementation 'com.github.bumptech.glide:glide:4.1.1'
+
     //LOTTIE
     implementation 'com.airbnb.android:lottie:2.7.0'
 

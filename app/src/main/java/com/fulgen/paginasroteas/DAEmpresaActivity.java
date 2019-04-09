@@ -11,11 +11,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 public class DAEmpresaActivity extends AppCompatActivity {
 
     //VARIANTES DE DECLARADAS
+    ZAnuncio anuncio=null;
+    DatabaseReference dbRef;
+    ValueEventListener valueEventListener;
+
     private FloatingActionsMenu menu_fabDA;
     ImageView imagempresaDA;
     TextView tvcabeceraDA, tvempresaDA, tvdescripempresaDA, tvinformacionadicionalDA, tvhorarioDA, tvdireccionDA,
@@ -36,10 +43,28 @@ public class DAEmpresaActivity extends AppCompatActivity {
         tvinformacionadicionalDA = (TextView) findViewById(R.id.tvinformacionadicionalDA);
         tvhorarioDA = (TextView) findViewById(R.id.tvhorarioDA);
         tvdireccionDA = (TextView) findViewById(R.id.tvdireccionDA);
+        imagempresaDA = (ImageView) findViewById(R.id.imagempresaDA);
 
 
         //001 HAY QUE ENLAZAR REDES CON SETTEXT Y CONSTRUCTOR
 
+
+        Bundle c = getIntent().getExtras();
+
+        if(c!=null){
+
+            anuncio = c.getParcelable(CACategoriaActivity.EXTRA_ANUNCIO);
+
+            tvempresaDA.setText(anuncio.getNombre());
+            tvdescripempresaDA.setText(anuncio.getDescripcionlargaes());
+            tvinformacionadicionalDA.setText(anuncio.getDescuentoes());
+            tvhorarioDA.setText(anuncio.getHorarioes());
+            tvdireccionDA.setText(anuncio.getDireccion());
+
+            String imagentienda = anuncio.getImagen();
+            Glide.with(getApplicationContext()).load(imagentienda).into(imagempresaDA);
+
+        }
 
     }//FIN ONCREATE
     

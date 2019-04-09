@@ -20,6 +20,7 @@
                 android:layout_height="match_parent"
                 android:paddingBottom="@dimen/paddingFooter"
                 android:layout_marginBottom="@dimen/marginFooter"
+                android:paddingTop="@dimen/espacio"
                 android:orientation="vertical">
 
                 <LinearLayout

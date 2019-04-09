@@ -27,6 +27,7 @@ public class CACategoriaActivity extends AppCompatActivity {
     //ETIQUETAS SUBIDA DE BASE DE DATOS
     private DatabaseReference dbAnuncio;
     private ValueEventListener eventListener;
+    static final String EXTRA_ANUNCIO="ANUNCIO";
 
     //VARIANTES DE DECLARADAS
     private FloatingActionsMenu menu_fabCA;
@@ -117,6 +118,19 @@ public class CACategoriaActivity extends AppCompatActivity {
 
                          Toast.makeText(CACategoriaActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
 
+                         //REFERENCIA A LA CLASE
+                         ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                         ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                 a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                 a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                 a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                 a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                 a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+
+                         Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+
+                         i.putExtra(EXTRA_ANUNCIO, anuncioenviado);
+                         startActivity(i);
 
                          /*//ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
                          Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
@@ -128,6 +142,7 @@ public class CACategoriaActivity extends AppCompatActivity {
     }
 
     //BOTONES FLOATMENU
+
 
     public void clickSpainCA(View v) {
 
