@@ -6,6 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
 
+
+
     <ImageView
         android:id="@+id/imagempresalistCA"
         android:layout_width="match_parent"
@@ -28,7 +30,14 @@
         android:layout_margin="@dimen/marginImagenes"
         android:orientation="vertical">
 
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/txtcabeceraempresa"
+            android:id="@+id/tvidiomaadap"
+            android:text="@string/idioma"
+            android:layout_weight="1"
+            android:visibility="visible"/>
 
         <TextView
             android:id="@+id/tvimagempresalistCA"

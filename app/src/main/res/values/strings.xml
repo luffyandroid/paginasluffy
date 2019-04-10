@@ -10,6 +10,7 @@
     <!-- MENU-->
 
     <!-- SECCION IDIOMAS ESPAÑOL-->
+    <string name="idioma">es</string>
     <string name="spain"> ESPAÑOL </string>
     <string name="english"> INGLÉS </string>
     <string name="french"> FRANCÉS </string>

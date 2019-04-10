@@ -1,6 +1,7 @@
 package com.fulgen.paginasroteas;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import com.bumptech.glide.Glide;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Locale;
 
 public class DAEmpresaActivity extends AppCompatActivity {
 
@@ -43,6 +46,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
         tvinformacionadicionalDA = (TextView) findViewById(R.id.tvinformacionadicionalDA);
         tvhorarioDA = (TextView) findViewById(R.id.tvhorarioDA);
         tvdireccionDA = (TextView) findViewById(R.id.tvdireccionDA);
+        tvimagfacebookDA = (TextView) findViewById(R.id.tvimagfacebookDA);
+        tvimagtwitterDA = (TextView) findViewById(R.id.tvimagtwitterDA);
+        tvimagtlfDA = (TextView) findViewById(R.id.tvimagtlfDA);
+        tvimagmailDA = (TextView) findViewById(R.id.tvimagmailDA);
+        tvimagmapDA = (TextView) findViewById(R.id.tvimagmapDA);
+        tvimagextraDA = (TextView) findViewById(R.id.tvimagextraDA);
         imagempresaDA = (ImageView) findViewById(R.id.imagempresaDA);
 
 
@@ -60,6 +69,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
             tvinformacionadicionalDA.setText(anuncio.getDescuentoes());
             tvhorarioDA.setText(anuncio.getHorarioes());
             tvdireccionDA.setText(anuncio.getDireccion());
+            tvimagfacebookDA.setText(anuncio.getFacebook());
+            tvimagtwitterDA.setText(anuncio.getTwitter());
+            tvimagtlfDA.setText(anuncio.getTelefono());
+            tvimagmailDA.setText(anuncio.getMail());
+            tvimagmapDA.setText(anuncio.getMaps());
+            tvimagextraDA.setText(anuncio.getExtra());
 
             String imagentienda = anuncio.getImagen();
             Glide.with(getApplicationContext()).load(imagentienda).into(imagempresaDA);
@@ -70,31 +85,59 @@ public class DAEmpresaActivity extends AppCompatActivity {
     
 //BOTONES FLOATMENU
 
-    public void clickSpainCA(View v) {
+    public void clickSpainDA(View v) {
+
+        Locale locale = new Locale("es");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.spaintoast), Toast.LENGTH_SHORT).show();
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
     }
 
-    public void clickUkCA(View v) {
+    public void clickUkDA(View v) {
+
+        Locale locale = new Locale("en");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.englishtoast), Toast.LENGTH_SHORT).show();
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
     }
 
-    public void clickFranceCA(View v) {
+    public void clickFranceDA(View v) {
+
+        Locale locale = new Locale("fr");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.frenchtoast), Toast.LENGTH_SHORT).show();
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
     }
 
-    public void clickGermanCA(View v) {
+    public void clickGermanDA(View v) {
+
+        Locale locale = new Locale("de");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.germantoast), Toast.LENGTH_SHORT).show();
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
     }
 
-    public void clickMapaCA(View v) {
+    public void clickMapaDA(View v) {
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, BBMapaActivity.class);
         startActivity(mainIntent);
@@ -110,7 +153,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         menu_fabDA.collapse();
     }
 
-    public void clickAtrasCA(View v) {
+    public void clickAtrasDA(View v) {
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, CACategoriaActivity.class);
         startActivity(mainIntent);

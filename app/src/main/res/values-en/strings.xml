@@ -10,6 +10,7 @@
     <!-- MENU-->
 
     <!-- SECCION IDIOMAS ESPAÑOL-->
+    <string name="idioma">en</string>
     <string name="spain"> SPANISH </string>
     <string name="english"> ENGLISH </string>
     <string name="french"> FRENCH </string>
@@ -51,7 +52,7 @@
 
     <!-- TOAST IDIOMAS -->
     <string name="spaintoast"> Has cambiado el idioma a Español </string>
-    <string name="englishtoast"> You´ve change the language to Spanish </string>
+    <string name="englishtoast"> You´ve change the language to English </string>
     <string name="frenchtoast"> You´ve change the language to French </string>
     <string name="germantoast"> You´ve change the language to German </string>
 
