@@ -55,6 +55,15 @@
     <string name="frenchtoast"> Has cambiado el idioma a Francés </string>
     <string name="germantoast"> Has cambiado el idioma a Alemán </string>
 
+    <!-- TEXTO INFO -->
+    <string name="infomensaje" translatable="false">
+        <![CDATA[
+        Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste.
+<br><b>No recogemos datos de los usuarios</b>, solo empresas o particulares que deseen anunciarse que publicarán los datos necesarios.
+Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</br>
+]]>
+    </string>
+    <string name="title_activity_bbmapa_m">Map</string>
 
 
 </resources>

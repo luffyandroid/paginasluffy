@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.text.Html;
 import android.text.Layout;
 import android.util.Log;
 import android.view.View;
@@ -79,6 +80,9 @@ public class BAMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bamenu);
 
         //ENLAZO VARIANTES DECLARADAS
+
+        //FLOATING BUTTON
+        menu_fabBA  = (FloatingActionsMenu) findViewById(R.id.menu_fabBA);
 
         //TEXTVIEWS QUE BORRO FULL
         tvAlimentacionocultoBA = (TextView)findViewById(R.id.tvAlimentacionocultoBA);
@@ -642,7 +646,7 @@ public class BAMenuActivity extends AppCompatActivity {
         Toast.makeText(this, getResources().getString(R.string.spaintoast), Toast.LENGTH_SHORT).show();
 
             //PARA QUE SE CIERRE AL PULSAR
-        menu_fabBA.collapse();
+            menu_fabBA.collapse();
     }
 
     public void clickUkBA(View v) {
@@ -673,6 +677,13 @@ public class BAMenuActivity extends AppCompatActivity {
 
     public void clickGermanBA(View v) {
 
+        Intent mainIntent = new Intent().setClass(
+                BAMenuActivity.this, BBMapaMActivity.class);
+        startActivity(mainIntent);
+        //PARA QUE SE CIERRE AL PULSAR
+        menu_fabBA.collapse();
+
+        /*
         Locale locale = new Locale("de");
         Locale.setDefault(locale);
         Configuration config = new Configuration();
@@ -682,6 +693,8 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+
+        */
     }
 
     public void clickMapaBA(View v) {
@@ -696,8 +709,12 @@ public class BAMenuActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_info);
 
+        TextView tvInfoApp = (TextView) dialog.findViewById(R.id.tvInfoApp);
         //TextView volvermenu = (TextView) dialog.findViewById(R.id.tvFooterDialogBA);
         Button volvermenu = (Button) dialog.findViewById(R.id.volverBotonDialog);
+
+        tvInfoApp.setText(Html.fromHtml(getString(R.string.infomensaje)));
+
 
         volvermenu.setOnClickListener(
                 new View.OnClickListener() {

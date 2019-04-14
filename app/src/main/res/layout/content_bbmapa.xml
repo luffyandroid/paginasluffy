@@ -5,7 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BBMapaActivity"
-    tools:showIn="@layout/content_bbmapa">
+    tools:showIn="@layout/activity_bbmapa">
+
+    <fragment
+        android:id="@+id/bbmap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BBMapaActivity"/>
 
 
 </android.support.constraint.ConstraintLayout>
