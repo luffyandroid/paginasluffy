@@ -59,7 +59,8 @@ public class BAMenuActivity extends AppCompatActivity {
     //VARIANTES DE DECLARADAS
     //GridView listBA;
     TextView tvAlimentacionocultoBA, tvAsocioacionesocultoBA, tvComprasocultoBA, tvDeporteocultoBA, tvEducacionocultoBA, tvHotelesocultoBA, tvInmobiliariaocultaBA, tvInstitucionesocultoBA,
-            tvMonumentosocultoBA, tvOcioocultoBA, tvParqueocultoBA, tvPlayaocultoBA, tvRestauracionocultoBA, tvSaludocultoBA, tvServiciosocultoBA, tvSeguridadocultoBA, tvTransporteocultoBA, tvVacioBA;
+            tvMonumentosocultoBA, tvOcioocultoBA, tvParqueocultoBA, tvPlayaocultoBA, tvRestauracionocultoBA, tvSaludocultoBA, tvServiciosocultoBA, tvSeguridadocultoBA, tvTransporteocultoBA, tvVacioBA,
+            tvidiomaba;
 
     LottieAnimationView ivAlimentacionBA, ivAsociacionesBA, ivComprasBA, ivDeporteBA, ivEducacionBA, ivHotelesBA,
                     ivInmobiliariaBA, ivInstitucionesBA, ivMonumentosBA, ivOcioBA, ivParqueBA, ivPlayaBA, ivRestauracionBA,
@@ -81,8 +82,8 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //ENLAZO VARIANTES DECLARADAS
 
-        //FLOATING BUTTON
-        menu_fabBA  = (FloatingActionsMenu) findViewById(R.id.menu_fabBA);
+        //MENU FLOATING BUTTON
+        menu_fabBA = (FloatingActionsMenu)findViewById(R.id.menu_fabBA);
 
         //TEXTVIEWS QUE BORRO FULL
         tvAlimentacionocultoBA = (TextView)findViewById(R.id.tvAlimentacionocultoBA);
@@ -102,6 +103,7 @@ public class BAMenuActivity extends AppCompatActivity {
         tvSeguridadocultoBA = (TextView)findViewById(R.id.tvSeguridadocultoBA);
         tvServiciosocultoBA = (TextView)findViewById(R.id.tvServiciosocultoBA);
         tvTransporteocultoBA = (TextView)findViewById(R.id.tvTransporteocultoBA);
+        tvidiomaba = (TextView)findViewById(R.id.tvidiomaba);
 
         //ESTILO BOTON ANIMADO ▼
 
@@ -386,6 +388,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvAlimentacionocultoBA.getText().toString();
                     mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                    mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -401,6 +404,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvAsocioacionesocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -416,6 +420,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvComprasocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -431,6 +436,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvDeporteocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -446,6 +452,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvEducacionocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -461,6 +468,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvHotelesocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -476,6 +484,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvInmobiliariaocultaBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -491,6 +500,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvInstitucionesocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -506,6 +516,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvMonumentosocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -521,6 +532,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvOcioocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -536,6 +548,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvParqueocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -551,6 +564,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvPlayaocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -566,6 +580,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvRestauracionocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -581,6 +596,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvSaludocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -596,6 +612,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvSeguridadocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -611,6 +628,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvServiciosocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -626,6 +644,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvTransporteocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -645,8 +664,9 @@ public class BAMenuActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         Toast.makeText(this, getResources().getString(R.string.spaintoast), Toast.LENGTH_SHORT).show();
 
+
             //PARA QUE SE CIERRE AL PULSAR
-            menu_fabBA.collapse();
+        menu_fabBA.collapse();
     }
 
     public void clickUkBA(View v) {
@@ -660,6 +680,11 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                BAMenuActivity.this, BAMenuActivity.class);
+        startActivity(mainIntent);
+
     }
 
     public void clickFranceBA(View v) {
@@ -677,13 +702,6 @@ public class BAMenuActivity extends AppCompatActivity {
 
     public void clickGermanBA(View v) {
 
-        Intent mainIntent = new Intent().setClass(
-                BAMenuActivity.this, BBMapaMActivity.class);
-        startActivity(mainIntent);
-        //PARA QUE SE CIERRE AL PULSAR
-        menu_fabBA.collapse();
-
-        /*
         Locale locale = new Locale("de");
         Locale.setDefault(locale);
         Configuration config = new Configuration();
@@ -693,8 +711,6 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
-
-        */
     }
 
     public void clickMapaBA(View v) {

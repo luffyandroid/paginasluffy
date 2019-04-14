@@ -39,9 +39,27 @@ public class ZAdaptadorAnuncio extends ArrayAdapter<ZAnuncio> {
         TextView tv_titulo = (TextView) convertView.findViewById(R.id.tvtitulolistCA);
         tv_titulo.setText(anuncios.get(position).getNombre());
         TextView tv_descripcion = (TextView) convertView.findViewById(R.id.tvdescripcionlistCA);
-        tv_descripcion.setText(anuncios.get(position).getDescripcioncortaes());
         TextView tv_descuento = (TextView) convertView.findViewById(R.id.tvdescuentolistCA);
-        tv_descuento.setText(anuncios.get(position).getDescuentoes());
+        TextView tvidiomaadap = (TextView) convertView.findViewById(R.id.tvidiomaadap);
+
+        //TODO hay que hacerlo CAMBIAR DE IDIOMA LO QUE BAJA DE FIREBASE
+        if (tvidiomaadap.getText().toString().equals("es")) {
+            tv_descripcion.setText(anuncios.get(position).getDescripcioncortaes());
+            tv_descuento.setText(anuncios.get(position).getDescuentoes());
+        }
+        if (tvidiomaadap.getText().toString().equals("en")) {
+            tv_descripcion.setText(anuncios.get(position).getDescripcioncortaen());
+            tv_descuento.setText(anuncios.get(position).getDescuentoen());
+        }
+        if (tvidiomaadap.getText().toString().equals("de")) {
+            tv_descripcion.setText(anuncios.get(position).getDescripcioncortade());
+            tv_descuento.setText(anuncios.get(position).getDescuentode());
+        }
+        if (tvidiomaadap.getText().toString().equals("fr")) {
+            tv_descripcion.setText(anuncios.get(position).getDescripcioncortafr());
+            tv_descuento.setText(anuncios.get(position).getDescuentofr());
+        }
+
         TextView tv_imagempresa = (TextView) convertView.findViewById(R.id.tvimagempresalistCA);
         tv_imagempresa.setText(anuncios.get(position).getSubcategoria());
 

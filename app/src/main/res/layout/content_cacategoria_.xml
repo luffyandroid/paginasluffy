@@ -19,6 +19,13 @@
             android:text=""
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/tvidiomaCA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
+
         <ListView
             android:id="@+id/listCA"
             android:layout_width="match_parent"

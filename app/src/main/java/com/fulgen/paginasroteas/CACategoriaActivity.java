@@ -1,6 +1,7 @@
 package com.fulgen.paginasroteas;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CACategoriaActivity extends AppCompatActivity {
 
@@ -33,7 +35,7 @@ public class CACategoriaActivity extends AppCompatActivity {
     private FloatingActionsMenu menu_fabCA;
     ListView listCA;
     EditText etfootbuscarCA;
-    TextView tvcabeceraCA, tvcategorialistCA, tvtitulolistCA, tvdescripcionlistCA, tvdescuentolistCA, tvimagempresalistCA;
+    TextView tvcabeceraCA, tvcategorialistCA, tvtitulolistCA, tvdescripcionlistCA, tvdescuentolistCA, tvimagempresalistCA, tvidiomaCA;
     ImageView imagempresalistCA;
 
     //ADAPTADOR
@@ -54,13 +56,16 @@ public class CACategoriaActivity extends AppCompatActivity {
         tvtitulolistCA = (TextView) findViewById(R.id.tvtitulolistCA);
         tvdescripcionlistCA = (TextView) findViewById(R.id.tvdescripcionlistCA);
         tvdescuentolistCA = (TextView) findViewById(R.id.tvdescuentolistCA);
+        tvidiomaCA = (TextView) findViewById(R.id.tvidiomaCA);
         tvimagempresalistCA = (TextView) findViewById(R.id.tvimagempresalistCA);
         imagempresalistCA = (ImageView) findViewById(R.id.imagempresalistCA);
 
 
         String catcatanuncio = getIntent().getStringExtra("EXTRA_CATEGORIA");
+        String idioma = getIntent().getStringExtra("EXTRA_IDIOMA");
 
         tvcategorialistCA.setText(catcatanuncio);
+        tvidiomaCA.setText(idioma);
 
         Toast.makeText(this, "La categoria es: "+catcatanuncio, Toast.LENGTH_SHORT).show();
 
@@ -146,11 +151,25 @@ public class CACategoriaActivity extends AppCompatActivity {
 
     public void clickSpainCA(View v) {
 
+        Locale locale = new Locale("es");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.spaintoast), Toast.LENGTH_SHORT).show();
+
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
     }
 
     public void clickUkCA(View v) {
+
+        Locale locale = new Locale("en");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.englishtoast), Toast.LENGTH_SHORT).show();
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
@@ -158,11 +177,25 @@ public class CACategoriaActivity extends AppCompatActivity {
 
     public void clickFranceCA(View v) {
 
+        Locale locale = new Locale("fr");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.frenchtoast), Toast.LENGTH_SHORT).show();
+
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
     }
 
     public void clickGermanCA(View v) {
+
+        Locale locale = new Locale("de");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        Toast.makeText(this, getResources().getString(R.string.germantoast), Toast.LENGTH_SHORT).show();
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
