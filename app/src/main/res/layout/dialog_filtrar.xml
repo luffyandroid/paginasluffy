@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/amarilloINTENSO">
+
+    <LinearLayout
+        android:background="@color/negro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/paddingcabeceradialog">
+
+        <ImageView
+            android:id="@+id/imgcabeceraDialogFiltroBA"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/menu_buscar"
+            android:tint="@color/amarilloINTENSO"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/tvcabeceraDialogFiltroBA"
+            style="@style/txtcabecera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filtrocabecera"
+            android:textSize="@dimen/txtcabecera" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraDialogFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/verdeINTENSO"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/espaciogrande"
+                    android:text="@string/filtrarporcabecera"
+                    android:textColor="@color/blanco" />
+
+                <CheckBox
+                    android:id="@+id/checkOtros"
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/espaciogrande"
+                    android:text="@string/SUBCARNICERIA" />
+
+
+                //BLOQUE 1 ALIMENTACION
+                <LinearLayout
+                    android:id="@+id/checkbloque01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/checkgusto1a03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_a_carniceria_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tvngusto1a03"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/SUBCARNICERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/checkgusto2a03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/gustos_juegos_sin" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tvngusto2a03"
+                            style="@style/txtgenericos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CINE" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/checkgusto3a03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/gustos_juegos_sin" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tvngusto3a03"
+                            style="@style/txtgenericos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="JUEGOS" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/espaciogrande" />
+
+
+
+                //Boton BUSCAR
+
+                <Button
+                    android:id="@+id/btnfooterDialogFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:background="@drawable/selector_btn_verde"
+                    android:drawableLeft="@drawable/menu_buscar"
+                    android:drawableTint="@color/blanco"
+                    android:textAlignment="textStart"
+                    android:text="     BUSCAR"
+                    android:textColor="@color/blanco"
+                    android:textSize="25dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
