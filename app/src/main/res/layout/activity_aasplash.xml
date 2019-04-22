@@ -5,18 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/z_background"
     tools:context=".AASplashActivity">
 
+    <LinearLayout
+        android:id="@+id/fondo1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/z_background_01"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationLogo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="splash_1_amanecer.json"
+            app:lottie_imageAssetsFolder="assets"
+            android:layout_gravity="center"
+            app:lottie_loop="true" />
+    </LinearLayout>
+
+    <LinearLayout
+    android:id="@+id/fondo2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/z_background_02"
+    android:visibility="gone">
+
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationLogo"
+        android:id="@+id/animationLogo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="splash.json"
+        app:lottie_fileName="splash_2_manana.json"
         app:lottie_imageAssetsFolder="assets"
         android:layout_gravity="center"
         app:lottie_loop="true" />
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fondo3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/z_background_03"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationLogo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="splash_3_atardecer.json"
+            app:lottie_imageAssetsFolder="assets"
+            android:layout_gravity="center"
+            app:lottie_loop="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fondo4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/z_background_04"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationLogo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="splash_4_noche.json"
+            app:lottie_imageAssetsFolder="assets"
+            android:layout_gravity="center"
+            app:lottie_loop="true" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvhoraAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="gone"/>
 
 </LinearLayout>
