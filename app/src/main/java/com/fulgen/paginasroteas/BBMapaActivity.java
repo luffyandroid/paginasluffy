@@ -91,6 +91,13 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         menu_fabBB.collapse();
     }
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent().setClass(this,BAMenuActivity.class);
+        startActivity(i);
+        finish();
+    }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

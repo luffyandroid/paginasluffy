@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/amarilloINTENSO">
 
@@ -14,12 +16,22 @@
         android:orientation="horizontal"
         android:paddingVertical="@dimen/paddingcabeceradialog">
 
+        <ImageView
+            android:id="@+id/imgcabeceraDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/paddinginteriorlayout"
+            android:tint="@color/amarilloTXTCABECERA"
+            app:srcCompat="@drawable/menu_circular_info"
+            tools:ignore="VectorDrawableCompat" />
+
         <TextView
             android:id="@+id/tvcabeceraDialog"
             style="@style/txtcabecera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" INFO DE LA APP"
+            android:textAlignment="center"
             android:textSize="@dimen/txtcabecera" />
 
     </LinearLayout>
@@ -27,7 +39,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:orientation="horizontal">
 
         <TextView

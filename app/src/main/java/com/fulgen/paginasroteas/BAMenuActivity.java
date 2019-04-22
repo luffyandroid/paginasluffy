@@ -1,7 +1,9 @@
 package com.fulgen.paginasroteas;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -750,6 +752,27 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+    }
+
+    public void onBackPressed() {
+        //super.onBackPressed();
+        new AlertDialog.Builder(this)
+                .setTitle("Salir de la aplicación")
+                .setMessage("¿Seguro que desea salir de la aplicación?")
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //TODO accion de salir de la app
+                        finishAffinity();
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //TODO accion de quedarse en el menu
+                    }
+                })
+                .create().show();
     }
 
 

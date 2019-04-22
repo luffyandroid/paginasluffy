@@ -217,6 +217,13 @@ public class CACategoriaActivity extends AppCompatActivity {
         menu_fabCA.collapse();
     }
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent().setClass(this,BAMenuActivity.class);
+        startActivity(i);
+        finish();
+    }
+
     //BOTONE BUSCAR
     public void clickBuscarCA(View v) {
 
