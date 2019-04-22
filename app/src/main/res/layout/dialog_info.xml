@@ -30,7 +30,7 @@
             style="@style/txtcabecera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" INFO DE LA APP"
+            android:text="@string/infocabecera"
             android:textAlignment="center"
             android:textSize="@dimen/txtcabecera" />
 
@@ -43,6 +43,7 @@
 
         <TextView
             android:id="@+id/tvInfoApp"
+            style="txtdescripcionempresa"
             android:paddingHorizontal="@dimen/paddingcabeceradialog"
             android:paddingVertical="@dimen/paddingcabeceradialog"
             android:layout_width="wrap_content"

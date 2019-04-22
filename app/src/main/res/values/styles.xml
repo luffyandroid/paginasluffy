@@ -80,6 +80,12 @@
         <item name="android:textSize">@dimen/txtTituloList</item>
     </style>
 
+    <!-- TXT CHECKBOX-->
+    <style name="txtcheckbox" parent="txtdescripcionempresa">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
 
     <!-- MENU FLOTANTE-->
     <style name="Etiquetas">

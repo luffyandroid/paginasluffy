@@ -57,13 +57,34 @@
     <string name="germantoast"> Has cambiado el idioma a Alemán </string>
 
     <!-- TEXTO INFO -->
-    <string name="infomensaje" translatable="false">
+
+    <string name="infocabecera"> INFO DE LA APP </string>
+
+    <string name="infomensaje">
         <![CDATA[
         Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste.
 <br><b>No recogemos datos de los usuarios</b>, solo empresas o particulares que deseen anunciarse que publicarán los datos necesarios.
 Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</br>
 ]]>
     </string>
+
+    <string name="infovolver"> VOLVER AL A MENU </string>
+
+
+    <!-- TEXTO FILTRO -->
+    <string name="filtrocabecera"> FILTRAR </string>
+    <string name="filtrarporcabecera"> FILTRAR POR CATEGORÍA </string>
+
+
+    <!-- SUBCATEGORIA-->
+    <string name="SUBCARNICERIA"> Carnicería </string>
+    <string name="SUBFRUTERIA"> Frutería </string>
+    <string name="SUBPANADERIA"> Panadería </string>
+
+
+
+
+
     <string name="title_activity_bbmapa_m">Map</string>
 
 
