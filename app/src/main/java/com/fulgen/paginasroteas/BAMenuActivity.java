@@ -750,6 +750,12 @@ public class BAMenuActivity extends AppCompatActivity {
     //BOTONE BUSCAR
     public void clickBuscarBA(View v) {
 
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_filtrar);
+
+        //MOSTAR DIALOGO
+        dialog.show();
+
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
     }

@@ -85,7 +85,7 @@
 
                         //IMAGEN CHECKBOX 1
                         <CheckBox
-                            android:id="@+id/checkgusto1a03"
+                            android:id="@+id/check_carniceria"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -93,7 +93,7 @@
 
                         //TEXTO CHECKBOX 1
                         <TextView
-                            android:id="@+id/tvngusto1a03"
+                            android:id="@+id/tv_carniceria"
                             style="@style/txtcheckbox"
                             android:textAlignment="center"
                             android:layout_width="match_parent"
@@ -110,19 +110,20 @@
 
                         //IMAGEN CHECKBOX 2
                         <CheckBox
-                            android:id="@+id/checkgusto2a03"
+                            android:id="@+id/check_fruteria"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:button="@drawable/gustos_juegos_sin" />
+                            android:button="@drawable/ic_sub_a_fruteria_selector" />
 
                         //TEXTO CHECKBOX 2
                         <TextView
-                            android:id="@+id/tvngusto2a03"
-                            style="@style/txtgenericos"
+                            android:id="@+id/tv_fruteria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="CINE" />
+                            android:text="@string/SUBFRUTERIA" />
                     </LinearLayout>
 
                     //SUBBLOQUE 3
@@ -134,19 +135,20 @@
 
                         //IMAGEN CHECKBOX 3
                         <CheckBox
-                            android:id="@+id/checkgusto3a03"
+                            android:id="@+id/check_panaderia"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:button="@drawable/gustos_juegos_sin" />
+                            android:button="@drawable/ic_sub_a_panaderia_selector" />
 
                         //TEXTO CHECKBOX 3
                         <TextView
-                            android:id="@+id/tvngusto3a03"
-                            style="@style/txtgenericos"
+                            android:id="@+id/tv_panaderia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="JUEGOS" />
+                            android:text="@string/SUBPANADERIA" />
                     </LinearLayout>
 
                 </LinearLayout>
