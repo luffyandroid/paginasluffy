@@ -76,9 +76,127 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
 
 
     <!-- SUBCATEGORIA-->
-    <string name="SUBCARNICERIA"> Carnicería </string>
-    <string name="SUBFRUTERIA"> Frutería </string>
-    <string name="SUBPANADERIA"> Panadería </string>
+    <string name="CARNICERIA"> Carnicería </string>
+    <string name="FRUTERIA"> Frutería </string>
+    <string name="PANADERIA"> Panadería </string>
+    <string name="PASTELERIA"> Pastelería </string>
+    <string name="PESCADERIA"> Pescadería </string>
+    <string name="SUPERMERCADO"> Supermercado </string>
+
+    <string name="BAZAR"> Bazar </string>
+    <string name="BODEGAS"> Bodegas </string>
+    <string name="CALZADO"> Calzado </string>
+    <string name="CONCESIONARIO"> Concesionario </string>
+    <string name="DROGUERIA"> Droguería </string>
+    <string name="ELECTRONICA"> Electrónica </string>
+    <string name="FERRETERIA"> Ferretería </string>
+    <string name="FLORISTERIA"> Floristería </string>
+    <string name="INFORMATICA"> Informática </string>
+    <string name="JOYERIA"> Joyería </string>
+    <string name="JUGUETERIA"> Juguetería </string>
+    <string name="KIOSKO"> Kiosko </string>
+    <string name="MASCOTAS"> Mascotas </string>
+    <string name="MERCADILLO"> Mercadillo </string>
+    <string name="MOBILARIO"> Mobiliario </string>
+    <string name="MOTOS"> Motos </string>
+    <string name="MOVILES"> Móviles </string>
+    <string name="ROPA"> Ropa </string>
+
+    <string name="ESTADIO"> Estadio </string>
+    <string name="GIMNASIO"> Gimnasio </string>
+    <string name="GOLF"> Golf </string>
+    <string name="PISCINA"> Piscina </string>
+    <string name="POLIDEPORTIVO"> Polideportivo </string>
+    <string name="SKATEPARK"> Skatepark </string>
+    <string name="TENIS"> Tenis </string>
+
+    <string name="ACADEMIA"> Academia </string>
+    <string name="AUTOESCUELA"> Autoescuela </string>
+    <string name="BIBLIOTECA"> Biblioteca </string>
+    <string name="COLEGIO"> Colegio </string>
+    <string name="GUARDERIA"> Guardería </string>
+    <string name="INSTITUTO"> Instituto </string>
+
+    <string name="HOSTAL"> Hostal </string>
+    <string name="HOTEL"> Hotel </string>
+    <string name="PENSION"> Pensión </string>
+
+    <string name="AYUNTAMIENTO"> Ayuntamiento </string>
+    <string name="CORREOS"> Correos </string>
+    <string name="JUZGADOS"> Juzgados </string>
+    <string name="OMIC"> Omic </string>
+    <string name="TURISMO"> Turismo </string>
+
+    <string name="CASTILLO"> Castillo </string>
+    <string name="ESTATUA"> Estatua </string>
+    <string name="IGLESIA"> Iglesia </string>
+    <string name="MUSEO"> Museo </string>
+    <string name="PLAZADETOROS"> Plaza de toros </string>
+    <string name="PUENTE"> Puente </string>
+    <string name="RUINAS"> Ruinas </string>
+    <string name="TORRE"> Torre </string>
+
+    <string name="CINE"> Cine </string>
+    <string name="DISCOTECA"> Discoteca </string>
+    <string name="KARAOKE"> Karaoke </string>
+    <string name="PARQUEINFANTIL"> Parque infantil </string>
+    <string name="TEATRO"> Teatro </string>
+
+    <string name="JARDINES"> Jardines </string>
+    <string name="PARQUE"> Parque </string>
+
+    <string name="ASADOR"> Asador </string>
+    <string name="BAR"> Bar </string>
+    <string name="CAFETERIA"> Cafetería </string>
+    <string name="CERVECERIA"> Cervecería </string>
+    <string name="CHIRINGUITO"> Chiringuito </string>
+    <string name="HAMBURGUESA"> Hamburguesa </string>
+    <string name="HELADERIA"> Heladería </string>
+    <string name="PIZZERIA"> Pizzería </string>
+    <string name="PUB"> Pub </string>
+    <string name="RESTAURANTE"> Restaurante </string>
+
+    <string name="AMBULATORIO"> Ambulatorio / Hospital </string>
+    <string name="DENTISTA"> Dentista </string>
+    <string name="DIETISTA"> Dietista </string>
+    <string name="FARMACIA"> Farmacia </string>
+    <string name="FISIOTERAPIA"> Fisioterapia </string>
+    <string name="OPTICA"> Óptica </string>
+    <string name="PODOLOGO"> Podólogo </string>
+    <string name="PSICOLOGIA"> Psicología </string>
+    <string name="VETERINARIO"> Veterinario </string>
+
+    <string name="AUTOLAVADOCOCHE"> Autolavado Coche </string>
+    <string name="BANCA"> Banca </string>
+    <string name="FOTOGRAFO"> Fotógrafo </string>
+    <string name="GASOLINERA"> Gasolinera </string>
+    <string name="IMPRENTA"> Imprenta </string>
+    <string name="JURIDICO"> Jurídico </string>
+    <string name="LIMPIEZA"> Limpieza </string>
+    <string name="PAPELERIA"> Papelería </string>
+    <string name="PELUQUERIA"> Peluquería </string>
+    <string name="PINTOR"> Pintor </string>
+    <string name="PLAGAS"> Plagas </string>
+    <string name="REFORMAS"> Reformas </string>
+    <string name="TALLER"> Taller </string>
+    <string name="TATUAJE"> Tatuaje </string>
+    <string name="TINTORERIA"> Tintorería </string>
+    <string name="TRANSPORTES"> Transportes </string>
+    <string name="VIAJES"> Viajes </string>
+
+    <string name="GUARDIACIVIL"> Guardia Civil </string>
+    <string name="POLICIALOCAL"> Policía Local </string>
+    <string name="POLICIANACIONAL"> Policía Nacional </string>
+    <string name="PROTECCIONCIVIL"> Protección Civil </string>
+    <string name="SEGURIDAD"> Seguridad </string>
+    <string name="AEROPUERTO"> Aeropuerto </string>
+    <string name="ESTACIONTREN"> Estación Tren </string>
+    <string name="ESTACIONBUS"> Estación Bus </string>
+    <string name="PARADABUS"> Parada Bus </string>
+    <string name="PUERTO"> Puerto </string>
+    <string name="TAXI"> Taxi </string>
+
+    <string name="OTROS"> Otros </string>
 
 
     <string name="title_activity_bbmapa_m">Map</string>

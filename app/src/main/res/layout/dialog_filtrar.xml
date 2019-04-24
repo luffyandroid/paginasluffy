@@ -59,13 +59,9 @@
                     android:text="@string/filtrarporcabecera"
                     android:textColor="@color/blanco" />
 
-                <CheckBox
-                    android:id="@+id/checkOtros"
-                    style="@style/txtdescripcionempresa"
+                <Space
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/espaciogrande"
-                    android:text="@string/SUBCARNICERIA" />
+                    android:layout_height="@dimen/espaciogrande" />
 
 
                 //BLOQUE 1 ALIMENTACION
@@ -98,7 +94,7 @@
                             android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/SUBCARNICERIA" />
+                            android:text="@string/CARNICERIA" />
                     </LinearLayout>
 
                     //SUBBLOQUE 2
@@ -123,7 +119,7 @@
                             android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/SUBFRUTERIA" />
+                            android:text="@string/FRUTERIA" />
                     </LinearLayout>
 
                     //SUBBLOQUE 3
@@ -148,7 +144,7 @@
                             android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/SUBPANADERIA" />
+                            android:text="@string/PANADERIA" />
                     </LinearLayout>
 
                 </LinearLayout>
