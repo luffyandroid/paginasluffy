@@ -646,7 +646,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvTransporteocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
-                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                //mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -669,6 +669,10 @@ public class BAMenuActivity extends AppCompatActivity {
 
             //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                BAMenuActivity.this, BAMenuActivity.class);
+        startActivity(mainIntent);
     }
 
     public void clickUkBA(View v) {
@@ -700,6 +704,10 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                BAMenuActivity.this, BAMenuActivity.class);
+        startActivity(mainIntent);
     }
 
     public void clickGermanBA(View v) {
@@ -713,6 +721,11 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                BAMenuActivity.this, BAMenuActivity.class);
+
+        startActivity(mainIntent);
     }
 
     public void clickMapaBA(View v) {

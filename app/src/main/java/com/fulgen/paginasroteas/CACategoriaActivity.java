@@ -62,12 +62,16 @@ public class CACategoriaActivity extends AppCompatActivity {
 
 
         String catcatanuncio = getIntent().getStringExtra("EXTRA_CATEGORIA");
-        String idioma = getIntent().getStringExtra("EXTRA_IDIOMA");
+
+        //String idioma = getIntent().getStringExtra("EXTRA_IDIOMA");
 
         tvcategorialistCA.setText(catcatanuncio);
-        tvidiomaCA.setText(idioma);
+        if(catcatanuncio.equals(null)){
+            tvcategorialistCA.setText(getIntent().getStringExtra("EXTRA_AUTOCATEGORIA"));
+        }
+        //tvidiomaCA.setText(idioma);
 
-        Toast.makeText(this, "La categoria es: "+catcatanuncio, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "La categoria es: "+tvcategorialistCA.getText().toString(), Toast.LENGTH_SHORT).show();
 
         /*//ADAPTADOR
         ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anuncios);
@@ -132,9 +136,12 @@ public class CACategoriaActivity extends AppCompatActivity {
                                  a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
                                  a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
 
+                         String idioma = tvidiomaCA.getText().toString();
+
                          Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
 
-                         i.putExtra(EXTRA_ANUNCIO, anuncioenviado);
+                         i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                         i.putExtra("EXTRA_IDIOMACAT", idioma);
                          startActivity(i);
 
                          /*//ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
@@ -160,6 +167,12 @@ public class CACategoriaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                CACategoriaActivity.this, CACategoriaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcategorialistCA.getText().toString());
+        startActivity(mainIntent);
+
     }
 
     public void clickUkCA(View v) {
@@ -173,6 +186,12 @@ public class CACategoriaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                CACategoriaActivity.this, CACategoriaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcategorialistCA.getText().toString());
+        startActivity(mainIntent);
+
     }
 
     public void clickFranceCA(View v) {
@@ -186,6 +205,12 @@ public class CACategoriaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                CACategoriaActivity.this, CACategoriaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcategorialistCA.getText().toString());
+        startActivity(mainIntent);
+
     }
 
     public void clickGermanCA(View v) {
@@ -199,6 +224,12 @@ public class CACategoriaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabCA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                CACategoriaActivity.this, CACategoriaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcategorialistCA.getText().toString());
+        startActivity(mainIntent);
+
     }
 
     public void clickMapaCA(View v) {

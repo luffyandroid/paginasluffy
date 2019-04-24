@@ -29,7 +29,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
     private FloatingActionsMenu menu_fabDA;
     ImageView imagempresaDA;
     TextView tvcabeceraDA, tvempresaDA, tvdescripempresaDA, tvinformacionadicionalDA, tvhorarioDA, tvdireccionDA,
-            tvimagfacebookDA, tvimagtwitterDA, tvimagtlfDA, tvimagmailDA, tvimagmapDA, tvimagextraDA;
+            tvimagfacebookDA, tvimagtwitterDA, tvimagtlfDA, tvimagmailDA, tvimagmapDA, tvimagextraDA, tvidiomaDA;
 
     
     @Override
@@ -52,6 +52,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         tvimagmailDA = (TextView) findViewById(R.id.tvimagmailDA);
         tvimagmapDA = (TextView) findViewById(R.id.tvimagmapDA);
         tvimagextraDA = (TextView) findViewById(R.id.tvimagextraDA);
+        tvidiomaDA = (TextView) findViewById(R.id.tvidiomaDA);
         imagempresaDA = (ImageView) findViewById(R.id.imagempresaDA);
 
 
@@ -60,14 +61,14 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         Bundle c = getIntent().getExtras();
 
+
         if(c!=null){
 
-            anuncio = c.getParcelable(CACategoriaActivity.EXTRA_ANUNCIO);
+            anuncio = c.getParcelable("EXTRA_ANUNCIO");
+
 
             tvempresaDA.setText(anuncio.getNombre());
-            tvdescripempresaDA.setText(anuncio.getDescripcionlargaes());
-            tvinformacionadicionalDA.setText(anuncio.getDescuentoes());
-            tvhorarioDA.setText(anuncio.getHorarioes());
+
             tvdireccionDA.setText(anuncio.getDireccion());
             tvimagfacebookDA.setText(anuncio.getFacebook());
             tvimagtwitterDA.setText(anuncio.getTwitter());
@@ -79,7 +80,30 @@ public class DAEmpresaActivity extends AppCompatActivity {
             String imagentienda = anuncio.getImagen();
             Glide.with(getApplicationContext()).load(imagentienda).into(imagempresaDA);
 
+            if (tvidiomaDA.getText().toString().equals("es")){
+                tvdescripempresaDA.setText(anuncio.getDescripcionlargaes());
+                tvinformacionadicionalDA.setText(anuncio.getDescuentoes());
+                tvhorarioDA.setText(anuncio.getHorarioes());
+            }
+            if (tvidiomaDA.getText().toString().equals("en")){
+                tvdescripempresaDA.setText(anuncio.getDescripcionlargaen());
+                tvinformacionadicionalDA.setText(anuncio.getDescuentoen());
+                tvhorarioDA.setText(anuncio.getHorarioen());
+            }
+            if (tvidiomaDA.getText().toString().equals("de")){
+                tvdescripempresaDA.setText(anuncio.getDescripcionlargade());
+                tvinformacionadicionalDA.setText(anuncio.getDescuentode());
+                tvhorarioDA.setText(anuncio.getHorariode());
+            }
+            if (tvidiomaDA.getText().toString().equals("fr")){
+                tvdescripempresaDA.setText(anuncio.getDescripcionlargafr());
+                tvinformacionadicionalDA.setText(anuncio.getDescuentofr());
+                tvhorarioDA.setText(anuncio.getHorariofr());
+            }
+
+
         }
+
 
     }//FIN ONCREATE
     
@@ -96,6 +120,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
+        startActivity(mainIntent);
+
     }
 
     public void clickUkDA(View v) {
@@ -109,6 +139,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
+        startActivity(mainIntent);
+
     }
 
     public void clickFranceDA(View v) {
@@ -122,6 +158,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
+        startActivity(mainIntent);
+
     }
 
     public void clickGermanDA(View v) {
@@ -135,6 +177,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
+
+        Intent mainIntent = new Intent().setClass(
+                DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
+        startActivity(mainIntent);
+
     }
 
     public void clickMapaDA(View v) {

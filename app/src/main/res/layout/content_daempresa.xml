@@ -52,6 +52,14 @@
                     android:text="BAR LA MERCED" />
 
                 <TextView
+                    android:id="@+id/tvidiomaDA"
+                    style="@style/txtcabeceraempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/idioma"
+                    android:visibility="visible"/>
+
+                <TextView
                     android:id="@+id/tvdescripempresaDA"
                     style="@style/txtdescripcionempresa"
                     android:layout_width="match_parent"
