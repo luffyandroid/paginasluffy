@@ -153,6 +153,91 @@ public class CACategoriaActivity extends AppCompatActivity {
                  });
     }
 
+    private void cargardatosbuscar(){
+
+        if (etfootbuscarCA.getText().toString().equals("")){
+            Toast.makeText(this, "Escribe algo antes de buscar", Toast.LENGTH_SHORT).show();
+        }else {
+
+            dbAnuncio = FirebaseDatabase.getInstance().getReference().child(tvcategorialistCA.getText().toString());
+
+            eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    lista_anuncios.clear();
+                    for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                        cargarListViewbuscar(anuncioDataSnapShot);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.e("CACategoriaActivity", "DATABASE ERROR");
+                }
+            };
+
+            dbAnuncio.addListenerForSingleValueEvent(eventListener);
+
+        }
+
+    }
+
+    private void cargarListViewbuscar(DataSnapshot dataSnapshot) {
+
+        //TOAST DE CARGA
+        Toast.makeText(CACategoriaActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+
+        if(anun.getNombre().contains(etfootbuscarCA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarCA.getText().toString()) || anun.getDireccion().contains(etfootbuscarCA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarCA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarCA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarCA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarCA.getText().toString())) {
+
+            //ENLAZAR DATOS FIREBASE
+            lista_anuncios.add(dataSnapshot.getValue(ZAnuncio.class));
+
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anuncios);
+            listCA.setAdapter(adaptador);
+
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+
+            listCA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            Toast.makeText(CACategoriaActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+
+                            String idioma = tvidiomaCA.getText().toString();
+
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+
+                         /*//ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
+                         Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+
+                         //INICIAR ACTIVITY
+                         startActivity(i);*/
+                        }
+                    });
+        }
+    }
+
     //BOTONES FLOATMENU
 
 
@@ -258,7 +343,6 @@ public class CACategoriaActivity extends AppCompatActivity {
     //BOTONE BUSCAR
     public void clickBuscarCA(View v) {
 
-        //PARA QUE SE CIERRE AL PULSAR
-        menu_fabCA.collapse();
+        cargardatosbuscar();
     }
 }

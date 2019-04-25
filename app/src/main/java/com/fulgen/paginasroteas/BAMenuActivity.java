@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.text.Html;
@@ -27,6 +28,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,6 +66,9 @@ public class BAMenuActivity extends AppCompatActivity {
             tvMonumentosocultoBA, tvOcioocultoBA, tvParqueocultoBA, tvPlayaocultoBA, tvRestauracionocultoBA, tvSaludocultoBA, tvServiciosocultoBA, tvSeguridadocultoBA, tvTransporteocultoBA, tvVacioBA,
             tvidiomaba;
 
+    ListView listBA;
+    ScrollView scrollBA;
+
     LottieAnimationView ivAlimentacionBA, ivAsociacionesBA, ivComprasBA, ivDeporteBA, ivEducacionBA, ivHotelesBA,
                     ivInmobiliariaBA, ivInstitucionesBA, ivMonumentosBA, ivOcioBA, ivParqueBA, ivPlayaBA, ivRestauracionBA,
                     ivSaludBA, ivSeguridadBA, ivServiciosBA, ivTransporteBA;
@@ -75,6 +80,9 @@ public class BAMenuActivity extends AppCompatActivity {
     private FloatingActionsMenu menu_fabBA;
     EditText etfootbuscarBA;
     final Context context = this;
+
+    //ADAPTADOR
+    ArrayList<ZAnuncio> lista_anunciosBA = new ArrayList<ZAnuncio>();
 
 
     @Override
@@ -106,6 +114,9 @@ public class BAMenuActivity extends AppCompatActivity {
         tvServiciosocultoBA = (TextView)findViewById(R.id.tvServiciosocultoBA);
         tvTransporteocultoBA = (TextView)findViewById(R.id.tvTransporteocultoBA);
         tvidiomaba = (TextView)findViewById(R.id.tvidiomaba);
+        listBA = (ListView)findViewById(R.id.listBA);
+        scrollBA = (ScrollView)findViewById(R.id.scrollBA);
+        etfootbuscarBA = (EditText)findViewById(R.id.etfootbuscarBA);
 
         //ESTILO BOTON ANIMADO ▼
 
@@ -655,6 +666,1029 @@ public class BAMenuActivity extends AppCompatActivity {
         timer.schedule(task, TIEMPO_BOTON);
     }
 
+    //BUSCADORES
+
+    private void cargardatosalimentacion(){
+            dbAnuncio = FirebaseDatabase.getInstance().getReference().child("alimentacion");
+            eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                        cargarListViewalimentacion(anuncioDataSnapShot);
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.e("CACategoriaActivity", "DATABASE ERROR");
+                }
+            };
+            dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewalimentacion(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosasociacion(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("asociacion");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewasociacion(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewasociacion(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatoscompras(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("compras");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewcompras(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewcompras(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosdeporte(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("deporte");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewdeporte(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewdeporte(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatoseducacion(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("educacion");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListVieweducacion(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListVieweducacion(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatoshoteles(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("hoteles");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewhoteles(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewhoteles(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosinmobiliaria(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("inmobiliaria");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewinmobiliaria(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewinmobiliaria(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosinstituciones(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("instituciones");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewinstituciones(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewinstituciones(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosmonumentos(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("monumentos");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewmonumentos(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewmonumentos(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosocio(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("ocio");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewocio(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewocio(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosparque(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("parque");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewparque(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewparque(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosplaya(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("playa");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewplaya(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewplaya(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosrestauracion(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("restauracion");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewrestauracion(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewrestauracion(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatossalud(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("salud");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewsalud(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewsalud(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosseguridad(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("seguridad");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewseguridad(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewseguridad(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatosservicio(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("servicio");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewservicio(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewservicio(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+    private void cargardatostransporte(){
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("transporte");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewtransporte(anuncioDataSnapShot);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
+    }
+    private void cargarListViewtransporte(DataSnapshot dataSnapshot) {
+        //TOAST DE CARGA
+        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
+        ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarBA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
+        if(anun.getCategoria().contains(etfootbuscarBA.getText().toString()) || anun.getNombre().contains(etfootbuscarBA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarBA.getText().toString()) || anun.getDireccion().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaes().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortaen().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortade().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarBA.getText().toString())
+                || anun.getDescripcioncortafr().contains(etfootbuscarBA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarBA.getText().toString())
+                || anun.getCategoria().contains(mayusBusqueda) || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
+            //ENLAZAR DATOS FIREBASE
+            lista_anunciosBA.add(dataSnapshot.getValue(ZAnuncio.class));
+            //ADAPTADOR
+            ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anunciosBA);
+            listBA.setAdapter(adaptador);
+            //CREAR EL CLICK CORTO EN LA LISTVIEW (QUE VA A IR A OTRA MAINACTIVITY)
+            listBA.setOnItemClickListener
+                    (new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
+                            //REFERENCIA A LA CLASE
+                            ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
+                            ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
+                                    a.getDescripcionlargade(), a.getDescripcionlargaen(), a.getDescripcionlargafr(), a.getDescuentoes(),
+                                    a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
+                                    a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
+                                    a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                            String idioma = tvidiomaba.getText().toString();
+                            Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
+                            i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
+                            i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            startActivity(i);
+                        }
+                    });
+        }
+    }
+
     //BOTONES FLOATMENU
 
     public void clickSpainBA(View v) {
@@ -759,20 +1793,35 @@ public class BAMenuActivity extends AppCompatActivity {
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
     }
-
     //BOTONE BUSCAR
     public void clickBuscarBA(View v) {
-
-        final Dialog dialog = new Dialog(context);
-        dialog.setContentView(R.layout.dialog_filtrar);
-
-        //MOSTAR DIALOGO
-        dialog.show();
-
-        //PARA QUE SE CIERRE AL PULSAR
-        menu_fabBA.collapse();
+        if(etfootbuscarBA.getText().toString().equals("")){
+            listBA.setVisibility(View.GONE);
+            scrollBA.setVisibility(View.VISIBLE);
+            Toast.makeText(context, "Escribe algo antes de buscar", Toast.LENGTH_SHORT).show();
+        }else{
+            scrollBA.setVisibility(View.GONE);
+            listBA.setVisibility(View.VISIBLE);
+            lista_anunciosBA.clear();
+            cargardatosalimentacion();
+            cargardatosasociacion();
+            cargardatoscompras();
+            cargardatosdeporte();
+            cargardatoseducacion();
+            cargardatoshoteles();
+            cargardatosinmobiliaria();
+            cargardatosinstituciones();
+            cargardatosmonumentos();
+            cargardatosocio();
+            cargardatosparque();
+            cargardatosplaya();
+            cargardatosrestauracion();
+            cargardatossalud();
+            cargardatosseguridad();
+            cargardatosservicio();
+            cargardatostransporte();
+        }
     }
-
     public void onBackPressed() {
         //super.onBackPressed();
         new AlertDialog.Builder(this)
@@ -793,6 +1842,4 @@ public class BAMenuActivity extends AppCompatActivity {
                 })
                 .create().show();
     }
-
-
 }
