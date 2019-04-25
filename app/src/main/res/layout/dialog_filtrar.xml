@@ -64,7 +64,7 @@
                     android:layout_height="@dimen/espaciogrande" />
 
 
-                //BLOQUE 1 ALIMENTACION
+                //BLOQUE 01 ALIMENTACION
                 <LinearLayout
                     android:id="@+id/checkbloque01"
                     android:layout_width="match_parent"
@@ -145,6 +145,3282 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/PANADERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 02 ALIMENTACION
+                <LinearLayout
+                    android:id="@+id/checkbloque02"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_pasteleria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_a_pasteleria_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_pasteleria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PASTELERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_pescaderia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_a_pescaderia_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_pescaderia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PESCADERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_supermercado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_a_supermercado_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_supermercado"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/SUPERMERCADO" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 03 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque03"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_aotros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_aotros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/AOTROS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 04 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque04"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_bazar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_bazar_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_bazar"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/BAZAR" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_bicicleta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_bicicleta_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_bicicleta"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/BICICLETA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_bodegas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_bodegas_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_bodegas"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/BODEGAS" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 05 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque05"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_calzado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_calzado_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_calzado"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CALZADO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_concesionario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_concesionario_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_concesionario"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CONCESIONARIO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_drogueria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_drogueria_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_drogueria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/DROGUERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 06 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque06"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_electronica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_electronica_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_electronica"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ELECTRONICA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_ferreteria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_ferreteria_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_ferreteria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FERRETERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_floristeria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_floristeria_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_floristeria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FLORISTERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 07 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque07"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_informatica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_informatica_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_informatica"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/INFORMATICA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_joyeria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_joyeria_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_joyeria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/JOYERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_jugueteria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_jugueteria_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_jugueteria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/JUGUETERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 08 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque08"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_kiosko"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_kiosko_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_kiosko"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/KIOSKO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_mascotas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_mascotas_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_mascotas"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/MASCOTAS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_mercadillo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_mercadillo_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_mercadillo"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/MERCADILLO" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 09 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque09"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_mobilario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_mobilario_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_mobilario"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/MOBILARIO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_motos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_motos_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_motos"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/MOTOS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_moviles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_moviles_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_moviles"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/MOVILES" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 10 COMPRAS
+                <LinearLayout
+                    android:id="@+id/checkbloque10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_ropa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_c_ropa_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_ropa"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ROPA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_cotros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_cotros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/COTROS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 11 DEPORTES
+                <LinearLayout
+                    android:id="@+id/checkbloque11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_estadio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_d_estadio_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_estadio"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ESTADIO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_gimnasio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_d_gimnasio_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_gimnasio"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/GIMNASIO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_golf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_d_golf_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_golf"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/GOLF" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 12 DEPORTES
+                <LinearLayout
+                    android:id="@+id/checkbloque12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_piscina"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_d_piscina_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_piscina"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PISCINA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_polideportivo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_d_polideportivo_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_polideportivo"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/POLIDEPORTIVO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_skatepark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_d_skatepark_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_skatepark"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/SKATEPARK" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 13 DEPORTES
+                <LinearLayout
+                    android:id="@+id/checkbloque13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_tenis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_d_tenis_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_tenis"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TENIS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_dotros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_dotros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/DOTROS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 14 EDUCACIÓN
+                <LinearLayout
+                    android:id="@+id/checkbloque14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_academia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_e_academia_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_academia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ACADEMIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_autoescuela"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_e_autoescuela_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_autoescuela"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/AUTOESCUELA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_biblioteca"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_e_biblioteca_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_biblioteca"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/BIBLIOTECA" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 15 EDUCACIÓN
+                <LinearLayout
+                    android:id="@+id/checkbloque15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_colegio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_e_colegio_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_colegio"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/COLEGIO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_guarderia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_e_guarderia_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_guarderia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/GUARDERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_instituto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_e_instituto_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_instituto"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/INSTITUTO" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 16 HOTELES
+                <LinearLayout
+                    android:id="@+id/checkbloque16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_hostal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_h_hostal_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_hostal"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/HOSTAL" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_hotel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_h_hotel_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_hotel"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/HOTEL" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_pension"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_h_pension_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_pension"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PENSION" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 17 INSTITUCIONES
+                <LinearLayout
+                    android:id="@+id/checkbloque17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_ayuntamiento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_i_ayuntamiento_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_ayuntamiento"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/AYUNTAMIENTO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_correos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_i_correos_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_correos"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CORREOS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_juzgados"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_i_juzgados_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_juzgados"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/JUZGADOS" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 18 INSTITUCIONES
+                <LinearLayout
+                    android:id="@+id/checkbloque18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_omic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_i_omic_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_omic"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/OMIC" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_turismo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_i_turismo_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_turismo"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TURISMO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_iotros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_iotros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/IOTROS" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 19 MONUMENTOS
+                <LinearLayout
+                    android:id="@+id/checkbloque19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_castillo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_castillo_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_castillo"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CASTILLO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_estatua"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_estatua_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_estatua"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ESTATUA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_iglesia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_iglesia_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_iglesia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/IGLESIA" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 20 MONUMENTOS
+                <LinearLayout
+                    android:id="@+id/checkbloque20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_museo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_museo_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_museo"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/MUSEO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_plaza_de_toros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_plaza_de_toros_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_plaza_de_toros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PLAZADETOROS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_puente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_puente_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_puente"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PUENTE" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 21 MONUMENTOS
+                <LinearLayout
+                    android:id="@+id/checkbloque21"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_ruinas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_ruinas_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_ruinas"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/RUINAS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_torre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_m_torre_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_torre"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TORRE" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_motros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_motros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/MOTROS" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 22 OCIO
+                <LinearLayout
+                    android:id="@+id/checkbloque22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_cine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_o_cine_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_cine"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CINE" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_discoteca"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_o_discoteca_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_discoteca"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/DISCOTECA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_karaoke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_o_karaoke_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_karaoke"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/KARAOKE" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 23 OCIO
+                <LinearLayout
+                    android:id="@+id/checkbloque23"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_parque_infantil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_o_parque_infantil_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_parque_infantil"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PARQUEINFANTIL" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_teatro"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_o_teatro_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_teatro"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TEATRO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_ootros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_ootros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/OOTROS" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 24 PARQUES
+                <LinearLayout
+                    android:id="@+id/checkbloque24"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_jardines"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_pa_jardines_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_jardines"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/JARDINES" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_parque"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_pa_parque_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_parque"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PARQUE" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 25 RESTAURACIÓN
+                <LinearLayout
+                    android:id="@+id/checkbloque25"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_asador"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_asador_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_asador"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ASADOR" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_bar_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_bar"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/BAR" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_cafeteria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_cafeteria_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_cerveceria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CERVECERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 26 RESTAURACIÓN
+                <LinearLayout
+                    android:id="@+id/checkbloque26"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_chiringuito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_chiringuito_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_chiringuito"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CHIRINGUITO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_hamburguesa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_hamburguesa_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_hamburguesa"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/HAMBURGUESA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_heladeria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_heladeria_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_heladeria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/HELADERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 27 RESTAURACIÓN
+                <LinearLayout
+                    android:id="@+id/checkbloque27"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_pizzeria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_pizzeria_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_pizzeria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PIZZERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_pub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_pub_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_pub"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PUB" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_restaurante"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_r_restaurante_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_restaurante"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/RESTAURANTE" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 28 RESTAURACIÓN
+                <LinearLayout
+                    android:id="@+id/checkbloque28"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_rotros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_otros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ROTROS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 29 SALUD
+                <LinearLayout
+                    android:id="@+id/checkbloque29"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_ambulatorio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_ambulatorio_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_ambulatorio"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/AMBULATORIO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_dentista"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_dentista_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_dentista"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/DENTISTA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_dietista"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_dietista_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_dietista"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/DIETISTA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 30 SALUD
+                <LinearLayout
+                    android:id="@+id/checkbloque30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_farmacia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_farmacia_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_farmacia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FARMACIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_fisioterapia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_fisioterapia_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_fisioterapia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FISIOTERAPIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_optica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_optica_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_optica"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/OPTICA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 31 SALUD
+                <LinearLayout
+                    android:id="@+id/checkbloque31"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_podologo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_podologo_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_podologo"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PODOLOGO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_psicologia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_psicologia_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_psicologia"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PSICOLOGIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_veterinario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_sa_veterinario_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_veterinario"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/VETERINARIO" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 32 SERVICIO
+                <LinearLayout
+                    android:id="@+id/checkbloque32"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_autolavado_coche"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_autolavado_coche_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_autolavado_coche"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/AUTOLAVADOCOCHE" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_banca"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_banca_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_banca"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/BANCA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_fotografo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_fotografo_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_fotografo"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FOTOGRAFO" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 33 SERVICIO
+                <LinearLayout
+                    android:id="@+id/checkbloque33"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_gasolinera"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_gasolinera_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_gasolinera"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/GASOLINERA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_imprenta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_imprenta_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_imprenta"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/IMPRENTA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_juridico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_juridico_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_juridico"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/JURIDICO" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 34 SERVICIO
+                <LinearLayout
+                    android:id="@+id/checkbloque34"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_limpieza"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_limpieza_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_limpieza"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/LIMPIEZA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_papeleria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_papeleria_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_papeleria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PAPELERIA" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_peluqueria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_peluqueria_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_peluqueria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PELUQUERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 35 SERVICIO
+                <LinearLayout
+                    android:id="@+id/checkbloque35"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_pintor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_pintor_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_pintor"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PINTOR" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_plagas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_plagas_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_plagas"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PLAGAS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_reformas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_reformas_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_reformas"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/REFORMAS" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 36 SERVICIO
+                <LinearLayout
+                    android:id="@+id/checkbloque36"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_taller"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_taller_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_taller"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TALLER" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_tatuaje"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_tatuaje_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_tatuaje"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TATUAJE" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_tintoreria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_tintoreria_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_tintoreria"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TINTORERIA" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 37 SERVICIO
+                <LinearLayout
+                    android:id="@+id/checkbloque37"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_transportes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_transportes_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_transportes"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TRANSPORTES" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_viajes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_se_viajes_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_viajes"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/VIAJES" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_seotros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_z_otros_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_seotros"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/SEOTROS" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 38 SEGURIDAD
+                <LinearLayout
+                    android:id="@+id/checkbloque38"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_guardia_civil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_seg_guardia_civil_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_guardia_civil"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/GUARDIACIVIL" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_policia_local"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_seg_policia_local_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_policia_local"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/POLICIALOCAL" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_policia_nacional"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_seg_policia_nacional_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_policia_nacional"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/POLICIANACIONAL" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 39 SEGURIDAD
+                <LinearLayout
+                    android:id="@+id/checkbloque39"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_proteccion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_seg_proteccion_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_proteccion"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PROTECCIONCIVIL" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_seguridad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_seg_seguridad_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_seguridad"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/SEGURIDAD" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 40 TRANSPORTE
+                <LinearLayout
+                    android:id="@+id/checkbloque40"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_aeropuerto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_t_aeropuerto_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_aeropuerto"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/AEROPUERTO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_estacion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_t_estacion_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_estacion"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ESTACIONBUS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_estacion_tren"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_t_estacion_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_estacion_tren"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ESTACIONTREN" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 41 TRANSPORTE
+                <LinearLayout
+                    android:id="@+id/checkbloque41"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
+                            android:id="@+id/check_parada_bus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_t_parada_bus_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_parada_bus"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PARADABUS" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_puerto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_t_puerto_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_puerto"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/PUERTO" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_taxi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_t_taxi_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_taxi"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/TAXI" />
                     </LinearLayout>
 
                 </LinearLayout>

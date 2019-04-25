@@ -1,5 +1,7 @@
 package com.fulgen.paginasroteas;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -35,6 +37,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
     //GOOGLE MAPS
     private GoogleMap mMap;
+
+    final Context context = this;
+
 
 
     @Override
@@ -126,6 +131,18 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
     }
 
     public void clickLocalizarmeBB(View v) {
+
+        //PARA QUE SE CIERRE AL PULSAR
+        menu_fabBB.collapse();
+    }
+
+    public void clickFiltrarBB(View v) {
+
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_filtrar);
+
+        //MOSTAR DIALOGO
+        dialog.show();
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBB.collapse();

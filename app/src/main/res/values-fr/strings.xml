@@ -82,8 +82,11 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="PASTELERIA"> Pastelería </string>
     <string name="PESCADERIA"> Pescadería </string>
     <string name="SUPERMERCADO"> Supermercado </string>
+    <string name="AOTROS"> Otros alimentación </string>
+
 
     <string name="BAZAR"> Bazar </string>
+    <string name="BICICLETA"> Bicicleta </string>
     <string name="BODEGAS"> Bodegas </string>
     <string name="CALZADO"> Calzado </string>
     <string name="CONCESIONARIO"> Concesionario </string>
@@ -101,6 +104,7 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="MOTOS"> Motos </string>
     <string name="MOVILES"> Móviles </string>
     <string name="ROPA"> Ropa </string>
+    <string name="COTROS"> Otros compras </string>
 
     <string name="ESTADIO"> Estadio </string>
     <string name="GIMNASIO"> Gimnasio </string>
@@ -109,6 +113,8 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="POLIDEPORTIVO"> Polideportivo </string>
     <string name="SKATEPARK"> Skatepark </string>
     <string name="TENIS"> Tenis </string>
+    <string name="DOTROS"> Otros deportes </string>
+
 
     <string name="ACADEMIA"> Academia </string>
     <string name="AUTOESCUELA"> Autoescuela </string>
@@ -126,6 +132,7 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="JUZGADOS"> Juzgados </string>
     <string name="OMIC"> Omic </string>
     <string name="TURISMO"> Turismo </string>
+    <string name="IOTROS"> Otros instituciones </string>
 
     <string name="CASTILLO"> Castillo </string>
     <string name="ESTATUA"> Estatua </string>
@@ -135,12 +142,14 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="PUENTE"> Puente </string>
     <string name="RUINAS"> Ruinas </string>
     <string name="TORRE"> Torre </string>
+    <string name="MOTROS"> Otros monumentos </string>
 
     <string name="CINE"> Cine </string>
     <string name="DISCOTECA"> Discoteca </string>
     <string name="KARAOKE"> Karaoke </string>
     <string name="PARQUEINFANTIL"> Parque infantil </string>
     <string name="TEATRO"> Teatro </string>
+    <string name="OOTROS"> Otros ocio </string>
 
     <string name="JARDINES"> Jardines </string>
     <string name="PARQUE"> Parque </string>
@@ -155,6 +164,7 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="PIZZERIA"> Pizzería </string>
     <string name="PUB"> Pub </string>
     <string name="RESTAURANTE"> Restaurante </string>
+    <string name="ROTROS"> Otros restauración </string>
 
     <string name="AMBULATORIO"> Ambulatorio / Hospital </string>
     <string name="DENTISTA"> Dentista </string>
@@ -165,6 +175,7 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="PODOLOGO"> Podólogo </string>
     <string name="PSICOLOGIA"> Psicología </string>
     <string name="VETERINARIO"> Veterinario </string>
+    <string name="SOTROS"> Otros salud </string>
 
     <string name="AUTOLAVADOCOCHE"> Autolavado Coche </string>
     <string name="BANCA"> Banca </string>
@@ -183,12 +194,14 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="TINTORERIA"> Tintorería </string>
     <string name="TRANSPORTES"> Transportes </string>
     <string name="VIAJES"> Viajes </string>
+    <string name="SEOTROS"> Otros servicios </string>
 
     <string name="GUARDIACIVIL"> Guardia Civil </string>
     <string name="POLICIALOCAL"> Policía Local </string>
     <string name="POLICIANACIONAL"> Policía Nacional </string>
     <string name="PROTECCIONCIVIL"> Protección Civil </string>
     <string name="SEGURIDAD"> Seguridad </string>
+
     <string name="AEROPUERTO"> Aeropuerto </string>
     <string name="ESTACIONTREN"> Estación Tren </string>
     <string name="ESTACIONBUS"> Estación Bus </string>
