@@ -64,7 +64,7 @@ public class BAMenuActivity extends AppCompatActivity {
     //GridView listBA;
     TextView tvAlimentacionocultoBA, tvAsocioacionesocultoBA, tvComprasocultoBA, tvDeporteocultoBA, tvEducacionocultoBA, tvHotelesocultoBA, tvInmobiliariaocultaBA, tvInstitucionesocultoBA,
             tvMonumentosocultoBA, tvOcioocultoBA, tvParqueocultoBA, tvPlayaocultoBA, tvRestauracionocultoBA, tvSaludocultoBA, tvServiciosocultoBA, tvSeguridadocultoBA, tvTransporteocultoBA, tvVacioBA,
-            tvidiomaba;
+            tvidiomaba, tvAlimentacionocultoicoBA;
 
     ListView listBA;
     ScrollView scrollBA;
@@ -114,6 +114,7 @@ public class BAMenuActivity extends AppCompatActivity {
         tvServiciosocultoBA = (TextView)findViewById(R.id.tvServiciosocultoBA);
         tvTransporteocultoBA = (TextView)findViewById(R.id.tvTransporteocultoBA);
         tvidiomaba = (TextView)findViewById(R.id.tvidiomaba);
+        tvAlimentacionocultoicoBA= (TextView)findViewById(R.id.tvAlimentacionocultoicoBA);
         listBA = (ListView)findViewById(R.id.listBA);
         scrollBA = (ScrollView)findViewById(R.id.scrollBA);
         etfootbuscarBA = (EditText)findViewById(R.id.etfootbuscarBA);
@@ -341,53 +342,6 @@ public class BAMenuActivity extends AppCompatActivity {
             }
         });
 
-        //TODO GRID VIEW COMENTADO POR POSIBLE CAMBIO
-        //CATEGORIA MENU
-        /*ArrayList<ZCategoria> menu = new ArrayList<ZCategoria>();
-
-        menu.add(new ZCategoria(getString(R.string.alimentacion), "alimentacion", R.drawable.ic_cat_a_alimentacion));
-        menu.add(new ZCategoria(getString(R.string.asociaciones), "asociaciones", R.drawable.ic_cat_asociaciones));
-        menu.add(new ZCategoria(getString(R.string.compras), "compras", R.drawable.ic_cat_c_compras));
-        menu.add(new ZCategoria(getString(R.string.deporte), "deporte", R.drawable.ic_cat_d_deporte));
-        menu.add(new ZCategoria(getString(R.string.educacion), "educacion", R.drawable.ic_cat_e_educacion));
-        menu.add(new ZCategoria(getString(R.string.hoteles), "hoteles", R.drawable.ic_cat_h_hoteles));
-        menu.add(new ZCategoria(getString(R.string.instituciones), "instituciones", R.drawable.ic_cat_i_instituciones));
-        menu.add(new ZCategoria(getString(R.string.inmobiliaria), "inmobiliarias", R.drawable.ic_cat_inmobiliaria));
-        menu.add(new ZCategoria(getString(R.string.monumentos), "monumentos", R.drawable.ic_cat_m_monumentos));
-        menu.add(new ZCategoria(getString(R.string.ocio), "ocio", R.drawable.ic_cat_o_ocio));
-        menu.add(new ZCategoria(getString(R.string.parque), "parque", R.drawable.ic_cat_pa_parque));
-        menu.add(new ZCategoria(getString(R.string.playa), "playa", R.drawable.ic_cat_pl_playa));
-        menu.add(new ZCategoria(getString(R.string.restauracion), "restauracion", R.drawable.ic_cat_r_restauracion));
-        menu.add(new ZCategoria(getString(R.string.salud), "salud", R.drawable.ic_cat_sa_salud));
-        menu.add(new ZCategoria(getString(R.string.servicios), "servicios", R.drawable.ic_cat_se_servicios));
-        menu.add(new ZCategoria(getString(R.string.seguridad), "seguridad", R.drawable.ic_cat_seg_seguridad));
-        menu.add(new ZCategoria(getString(R.string.transporte), "transporte", R.drawable.ic_cat_t_transporte));
-
-        listBA = (GridView) findViewById(R.id.listBA);
-        tvCategoria = (TextView) findViewById(R.id.tvCategoria);
-
-        listBA.setAdapter(new ZAdaptadorCategoria(this, menu));
-
-        //AL HACER CLICK
-        listBA.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                //DESCARGAR ELEMENTOS QUE NECESITO DE FIREBASE
-
-                //RECOGER NOMBRE DE LA BASE
-                ZCategoria catanuncio = ((ZCategoria) parent.getItemAtPosition(position));
-                Toast.makeText(context, "la categoria es: "+catanuncio.getNombreinterno().toString(), Toast.LENGTH_SHORT).show();
-
-                        //ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
-                        Intent i = new Intent(getApplicationContext(), CACategoriaActivity.class);
-                        i.putExtra("EXTRA_CATEGORIA", catanuncio.getNombreinterno().toString());
-
-                        //INICIAR ACTIVITY
-                        startActivity(i);
-
-            }
-        });*/
 
     }//FIN ONCREATE
 
@@ -402,6 +356,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvAlimentacionocultoBA.getText().toString();
                     mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                     mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                    mainIntent.putExtra("EXTRA_ICO",tvAlimentacionocultoicoBA.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }

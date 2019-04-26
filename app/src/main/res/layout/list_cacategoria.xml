@@ -37,7 +37,7 @@
             android:id="@+id/tvidiomaadap"
             android:text="@string/idioma"
             android:layout_weight="1"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/tvimagempresalistCA"

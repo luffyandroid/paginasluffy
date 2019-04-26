@@ -32,23 +32,43 @@
 
 
     <!-- MENU-->
-    <string name="alimentacion">grocery store</string>
-    <string name="asociaciones">associations</string>
-    <string name="compras">buying shops</string>
-    <string name="deporte">sports</string>
-    <string name="educacion">education</string>
-    <string name="hoteles">hotels</string>
-    <string name="instituciones">institutions</string>
-    <string name="inmobiliaria">real estate</string>
-    <string name="monumentos">monuments</string>
-    <string name="ocio">entertainment</string>
-    <string name="parque">park</string>
-    <string name="playa">beach</string>
-    <string name="restauracion">catering</string>
-    <string name="salud">health</string>
-    <string name="servicios">services</string>
-    <string name="seguridad">security</string>
-    <string name="transporte">transport</string>
+    <string name="alimentacion">alimentación</string>
+    <string name="asociaciones">asociaciones</string>
+    <string name="compras">compras</string>
+    <string name="deporte">deporte</string>
+    <string name="educacion">educación</string>
+    <string name="hoteles">hoteles</string>
+    <string name="instituciones">instituciones</string>
+    <string name="inmobiliaria">inmobiliaria</string>
+    <string name="monumentos">monumentos</string>
+    <string name="ocio">ocio</string>
+    <string name="parque">parque</string>
+    <string name="playa">playa</string>
+    <string name="restauracion">restauración</string>
+    <string name="salud">salud</string>
+    <string name="servicios">servicios</string>
+    <string name="seguridad">seguridad</string>
+    <string name="transporte">transporte</string>
+
+    <!-- MENU ICO-->
+    <string name="alimentacion_ico">ic_cat_a_alimentacion</string>
+    <string name="asociaciones_ico">ic_cat_asociaciones</string>
+    <string name="compras_ico">ic_cat_c_compras</string>
+    <string name="deporte_ico">ic_cat_d_deporte</string>
+    <string name="educacion_ico">ic_cat_e_educacion</string>
+    <string name="hoteles_ico">ic_cat_h_hoteles</string>
+    <string name="instituciones_ico">ic_cat_i_instituciones</string>
+    <string name="inmobiliaria_ico">ic_cat_inmobiliaria</string>
+    <string name="monumentos_ico">ic_cat_m_monumentos</string>
+    <string name="ocio_ico">ic_cat_o_ocio</string>
+    <string name="parque_ico">ic_cat_pa_parque</string>
+    <string name="playa_ico">ic_cat_pl_playa</string>
+    <string name="restauracion_ico">ic_cat_r_restauracion</string>
+    <string name="salud_ico">ic_cat_sa_salud</string>
+    <string name="servicios_ico">ic_cat_se_servicios</string>
+    <string name="seguridad_ico">ic_cat_seg_seguridad</string>
+    <string name="transporte_ico">ic_cat_t_transporte</string>
+
 
     <!-- TOAST IDIOMAS -->
     <string name="spaintoast"> Has cambiado el idioma a Español </string>

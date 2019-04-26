@@ -50,6 +50,26 @@
     <string name="seguridad">seguridad</string>
     <string name="transporte">transporte</string>
 
+    <!-- MENU ICO-->
+    <string name="alimentacion_ico">ic_cat_a_alimentacion</string>
+    <string name="asociaciones_ico">ic_cat_asociaciones</string>
+    <string name="compras_ico">ic_cat_c_compras</string>
+    <string name="deporte_ico">ic_cat_d_deporte</string>
+    <string name="educacion_ico">ic_cat_e_educacion</string>
+    <string name="hoteles_ico">ic_cat_h_hoteles</string>
+    <string name="instituciones_ico">ic_cat_i_instituciones</string>
+    <string name="inmobiliaria_ico">ic_cat_inmobiliaria</string>
+    <string name="monumentos_ico">ic_cat_m_monumentos</string>
+    <string name="ocio_ico">ic_cat_o_ocio</string>
+    <string name="parque_ico">ic_cat_pa_parque</string>
+    <string name="playa_ico">ic_cat_pl_playa</string>
+    <string name="restauracion_ico">ic_cat_r_restauracion</string>
+    <string name="salud_ico">ic_cat_sa_salud</string>
+    <string name="servicios_ico">ic_cat_se_servicios</string>
+    <string name="seguridad_ico">ic_cat_seg_seguridad</string>
+    <string name="transporte_ico">ic_cat_t_transporte</string>
+
+
     <!-- TOAST IDIOMAS -->
     <string name="spaintoast"> Has cambiado el idioma a Español </string>
     <string name="englishtoast"> Has cambiado el idioma a Ingles </string>

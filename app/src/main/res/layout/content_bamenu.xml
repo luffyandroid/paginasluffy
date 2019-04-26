@@ -101,6 +101,13 @@
                             android:layout_height="wrap_content"
                             android:visibility="gone"
                             android:text="alimentacion" />
+
+                        <TextView
+                            android:id="@+id/tvAlimentacionocultoicoBA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:text="@string/alimentacion_ico" />
                     </LinearLayout>
 
                     <LinearLayout

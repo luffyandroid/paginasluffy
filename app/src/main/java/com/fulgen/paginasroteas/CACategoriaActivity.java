@@ -35,8 +35,8 @@ public class CACategoriaActivity extends AppCompatActivity {
     private FloatingActionsMenu menu_fabCA;
     ListView listCA;
     EditText etfootbuscarCA;
-    TextView tvcabeceraCA, tvcategorialistCA, tvtitulolistCA, tvdescripcionlistCA, tvdescuentolistCA, tvimagempresalistCA, tvidiomaCA;
-    ImageView imagempresalistCA;
+    TextView tvcabeceraCA, tvcategorialistCA, tvtitulolistCA, tvdescripcionlistCA, tvdescuentolistCA, tvimagempresalistCA, tvidiomaCA, tvcategoriaicoCA;
+    ImageView imagempresalistCA, imgCabeceramenuCA;
 
     //ADAPTADOR
     ArrayList<ZAnuncio> lista_anuncios = new ArrayList<ZAnuncio>();
@@ -58,16 +58,28 @@ public class CACategoriaActivity extends AppCompatActivity {
         tvdescuentolistCA = (TextView) findViewById(R.id.tvdescuentolistCA);
         tvidiomaCA = (TextView) findViewById(R.id.tvidiomaCA);
         tvimagempresalistCA = (TextView) findViewById(R.id.tvimagempresalistCA);
+
+        tvcategoriaicoCA = (TextView) findViewById(R.id.tvcategoriaicoCA);
+
         imagempresalistCA = (ImageView) findViewById(R.id.imagempresalistCA);
+        imgCabeceramenuCA = (ImageView) findViewById(R.id.imgCabeceramenuCA);
+
 
 
         String catcatanuncio = getIntent().getStringExtra("EXTRA_CATEGORIA");
+        String catcaticoanuncio = getIntent().getStringExtra("EXTRA_ICO");
 
         //String idioma = getIntent().getStringExtra("EXTRA_IDIOMA");
 
         tvcategorialistCA.setText(catcatanuncio);
+        tvcabeceraCA.setText(catcatanuncio);
+        tvcategoriaicoCA.setText(catcaticoanuncio);
         if(catcatanuncio.equals(null)){
             tvcategorialistCA.setText(getIntent().getStringExtra("EXTRA_AUTOCATEGORIA"));
+
+            //PARA QUE CARGUE ICONO DE LA CATEGORIA
+            int idImagen = this.getResources().getIdentifier(catcaticoanuncio, "drawable",this.getPackageName());
+            imgCabeceramenuCA.setImageResource(idImagen);
         }
         //tvidiomaCA.setText(idioma);
 
@@ -125,8 +137,6 @@ public class CACategoriaActivity extends AppCompatActivity {
                      @Override
                      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                         Toast.makeText(CACategoriaActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
-
                          //REFERENCIA A LA CLASE
                          ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                          ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -136,19 +146,21 @@ public class CACategoriaActivity extends AppCompatActivity {
                                  a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
                                  a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
 
+                         //001
+
+
+
+
                          String idioma = tvidiomaCA.getText().toString();
 
                          Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
 
                          i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                          i.putExtra("EXTRA_IDIOMACAT", idioma);
+                         i.putExtra("EXTRA_CATEGORIA", tvcabeceraCA.getText().toString());
+
                          startActivity(i);
 
-                         /*//ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
-                         Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
-
-                         //INICIAR ACTIVITY
-                         startActivity(i);*/
                      }
                  });
     }
@@ -209,8 +221,6 @@ public class CACategoriaActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            Toast.makeText(CACategoriaActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
-
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -224,18 +234,18 @@ public class CACategoriaActivity extends AppCompatActivity {
 
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
 
+                            //PASAR LOS EXTRAS
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+
+                            //INCIAR ACTIVITY
                             startActivity(i);
 
-                         /*//ETIQUETA + INDICAR A QUE MAINACTIVITY VA A IR
-                         Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
-
-                         //INICIAR ACTIVITY
-                         startActivity(i);*/
                         }
                     });
         }
+
+
     }
 
     //BOTONES FLOATMENU

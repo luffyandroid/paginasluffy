@@ -49,7 +49,8 @@
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BAR LA MERCED" />
+                    android:text="BAR LA MERCED"
+                    android:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/tvidiomaDA"
@@ -57,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/idioma"
-                    android:visibility="visible"/>
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/tvdescripempresaDA"
@@ -73,7 +74,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="@dimen/espaciogrande"
-                    android:text="DESCUENTO DE UN 10% PARA SOCIOS DE O3" />
+                    android:text="DESCUENTO DE UN 10% PARA SOCIOS DE O3"
+                    android:visibility="gone"/>
 
                 <Space
                     android:layout_width="wrap_content"
@@ -109,6 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingHorizontal="@dimen/espaciogrande"
                     android:text="Lunes - Viernes: 8h - 15h / 18h - 21h
   Sábados y Domingos: 8h - 17h" />
 
@@ -146,8 +149,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingHorizontal="@dimen/espaciogrande"
                     android:text="Calle Compás del Convento nº 12
 (Mercado de la Merced)" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
 
 
             </LinearLayout>
@@ -276,6 +284,7 @@
 
 
         </LinearLayout>
+
 
     </RelativeLayout>
 

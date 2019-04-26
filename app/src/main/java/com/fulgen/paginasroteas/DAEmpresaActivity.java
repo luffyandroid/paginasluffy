@@ -27,7 +27,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
     ValueEventListener valueEventListener;
 
     private FloatingActionsMenu menu_fabDA;
-    ImageView imagempresaDA;
+    ImageView imagempresaDA, imgCabeceramenuDA;
     TextView tvcabeceraDA, tvempresaDA, tvdescripempresaDA, tvinformacionadicionalDA, tvhorarioDA, tvdireccionDA,
             tvimagfacebookDA, tvimagtwitterDA, tvimagtlfDA, tvimagmailDA, tvimagmapDA, tvimagextraDA, tvidiomaDA;
 
@@ -54,6 +54,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         tvimagextraDA = (TextView) findViewById(R.id.tvimagextraDA);
         tvidiomaDA = (TextView) findViewById(R.id.tvidiomaDA);
         imagempresaDA = (ImageView) findViewById(R.id.imagempresaDA);
+        imgCabeceramenuDA = (ImageView) findViewById(R.id.imgCabeceramenuDA);
 
 
         //001 HAY QUE ENLAZAR REDES CON SETTEXT Y CONSTRUCTOR
@@ -65,6 +66,9 @@ public class DAEmpresaActivity extends AppCompatActivity {
         if(c!=null){
 
             anuncio = c.getParcelable("EXTRA_ANUNCIO");
+            String catcatanuncio = getIntent().getStringExtra("EXTRA_CATEGORIA");
+
+
 
 
             tvempresaDA.setText(anuncio.getNombre());
@@ -77,7 +81,22 @@ public class DAEmpresaActivity extends AppCompatActivity {
             tvimagmapDA.setText(anuncio.getMaps());
             tvimagextraDA.setText(anuncio.getExtra());
 
-            String imagentienda = anuncio.getImagen();
+            tvcabeceraDA.setText(catcatanuncio);
+
+
+            //PONER ICONO CABECERA
+            String imagen = anuncio.getSubcategoria();
+            int idImagen = this.getResources().getIdentifier(imagen, "drawable",this.getPackageName());
+            imgCabeceramenuDA.setImageResource(idImagen);
+
+            //COMPROBAR SI LOS CAMPOS NO ESTAN VACIOS
+            if (!tvinformacionadicionalDA.getText().toString().equals("")) {
+
+                tvinformacionadicionalDA.setVisibility(View.VISIBLE);
+            }
+
+
+                String imagentienda = anuncio.getImagen();
             Glide.with(getApplicationContext()).load(imagentienda).into(imagempresaDA);
 
             if (tvidiomaDA.getText().toString().equals("es")){
