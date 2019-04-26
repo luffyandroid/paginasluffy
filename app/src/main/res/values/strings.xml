@@ -146,9 +146,12 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="MOTROS"> Otros monumentos </string>
 
     <string name="CINE"> Cine </string>
+    <string name="BINGO"> Bingo </string>
     <string name="DISCOTECA"> Discoteca </string>
     <string name="KARAOKE"> Karaoke </string>
     <string name="PARQUEINFANTIL"> Parque infantil </string>
+    <string name="PAINTBALL"> Paintball </string>
+    <string name="SCAPEROOM"> Scape room </string>
     <string name="TEATRO"> Teatro </string>
     <string name="OOTROS"> Otros ocio </string>
 

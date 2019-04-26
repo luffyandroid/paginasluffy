@@ -84,7 +84,6 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="SUPERMERCADO"> Supermercado </string>
     <string name="AOTROS"> Otros alimentación </string>
 
-
     <string name="BAZAR"> Bazar </string>
     <string name="BICICLETA"> Bicicleta </string>
     <string name="BODEGAS"> Bodegas </string>
@@ -115,7 +114,6 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="TENIS"> Tenis </string>
     <string name="DOTROS"> Otros deportes </string>
 
-
     <string name="ACADEMIA"> Academia </string>
     <string name="AUTOESCUELA"> Autoescuela </string>
     <string name="BIBLIOTECA"> Biblioteca </string>
@@ -145,9 +143,12 @@ Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</b
     <string name="MOTROS"> Otros monumentos </string>
 
     <string name="CINE"> Cine </string>
+    <string name="BINGO"> Bingo </string>
     <string name="DISCOTECA"> Discoteca </string>
     <string name="KARAOKE"> Karaoke </string>
     <string name="PARQUEINFANTIL"> Parque infantil </string>
+    <string name="PAINTBALL"> Paintball </string>
+    <string name="SCAPEROOM"> Scape room </string>
     <string name="TEATRO"> Teatro </string>
     <string name="OOTROS"> Otros ocio </string>
 
