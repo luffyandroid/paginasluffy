@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/amarilloINTENSO">
+
+    <ImageView
+        android:id="@+id/imagAnuncioDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:padding="@dimen/espaciogrande"
+        app:srcCompat="@drawable/anuncio"
+        android:onClick="clickanunciopost"/>
+
+    <Button
+        android:id="@+id/cerrarDialog"
+        android:background="@drawable/selector_btn_verde"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/paddingcabecera"
+        android:text="CERRAR"
+        android:textColor="@color/blanco">
+
+    </Button>
+
+</LinearLayout>
+

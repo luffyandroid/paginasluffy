@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -26,6 +28,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -33,6 +36,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.bumptech.glide.Glide;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,19 +63,22 @@ public class BAMenuActivity extends AppCompatActivity {
     private DatabaseReference dbAnuncio;
     private ValueEventListener eventListener;
 
+    private static final String TAGLOG = "BAMenuActivity";
+
 
     //VARIANTES DE DECLARADAS
     //GridView listBA;
     TextView tvAlimentacionocultoBA, tvAsocioacionesocultoBA, tvComprasocultoBA, tvDeporteocultoBA, tvEducacionocultoBA, tvHotelesocultoBA, tvInmobiliariaocultaBA, tvInstitucionesocultoBA,
             tvMonumentosocultoBA, tvOcioocultoBA, tvParqueocultoBA, tvPlayaocultoBA, tvRestauracionocultoBA, tvSaludocultoBA, tvServiciosocultoBA, tvSeguridadocultoBA, tvTransporteocultoBA, tvVacioBA,
-            tvidiomaba, tvAlimentacionocultoicoBA;
+            tvidiomaba, tvAlimentacionocultoicoBA,
+            tvWebDialogg, tvImagDialogg, tvVisibleDialogg;
 
     ListView listBA;
     ScrollView scrollBA;
 
     LottieAnimationView ivAlimentacionBA, ivAsociacionesBA, ivComprasBA, ivDeporteBA, ivEducacionBA, ivHotelesBA,
-                    ivInmobiliariaBA, ivInstitucionesBA, ivMonumentosBA, ivOcioBA, ivParqueBA, ivPlayaBA, ivRestauracionBA,
-                    ivSaludBA, ivSeguridadBA, ivServiciosBA, ivTransporteBA;
+            ivInmobiliariaBA, ivInstitucionesBA, ivMonumentosBA, ivOcioBA, ivParqueBA, ivPlayaBA, ivRestauracionBA,
+            ivSaludBA, ivSeguridadBA, ivServiciosBA, ivTransporteBA;
 
     //ADAPTADOR
     //ArrayList<ZCategoria> lista_anuncios = new ArrayList<ZCategoria>();
@@ -114,6 +121,11 @@ public class BAMenuActivity extends AppCompatActivity {
         tvServiciosocultoBA = (TextView)findViewById(R.id.tvServiciosocultoBA);
         tvTransporteocultoBA = (TextView)findViewById(R.id.tvTransporteocultoBA);
         tvidiomaba = (TextView)findViewById(R.id.tvidiomaba);
+
+        tvWebDialogg = (TextView)findViewById(R.id.tvWebDialogg);
+        tvImagDialogg = (TextView)findViewById(R.id.tvImagDialogg);
+        tvVisibleDialogg = (TextView)findViewById(R.id.tvVisibleDialogg);
+
         tvAlimentacionocultoicoBA= (TextView)findViewById(R.id.tvAlimentacionocultoicoBA);
         listBA = (ListView)findViewById(R.id.listBA);
         scrollBA = (ScrollView)findViewById(R.id.scrollBA);
@@ -342,6 +354,75 @@ public class BAMenuActivity extends AppCompatActivity {
             }
         });
 
+        //CARGA DE ANUNCIOPOST (SI HAY)
+
+        //ACCEDE AL ARBOL
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("aanuncio");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                //REVISA LAS VARIABLES
+                tvVisibleDialogg.setText(dataSnapshot.child("visible").getValue().toString());
+                tvWebDialogg.setText(dataSnapshot.child("url").getValue().toString());
+                tvImagDialogg.setText(dataSnapshot.child("imagen").getValue().toString());
+
+
+
+                    //SI SE PONE ANUNCIOPOST
+                    if (tvVisibleDialogg.getText().toString().equals("si")){
+
+                        //ABRE EL DIALOGO ANUNCIO
+                        final Dialog dialog = new Dialog(context);
+                        dialog.setContentView(R.layout.dialog_anuncio);
+
+                        //VARIABLES DEL DIALOGO
+                        ImageView imagAnuncioDialog = (ImageView) dialog.findViewById(R.id.imagAnuncioDialog);
+                        Button cerrarDialog = (Button) dialog.findViewById(R.id.cerrarDialog);
+
+                        final String url = tvWebDialogg.getText().toString();
+
+                        //CARGA DE LA IMAGEN DEL ANUNCIO
+                        String anunciopostimag = tvImagDialogg.getText().toString();
+                        Glide.with(getApplicationContext()).load(anunciopostimag).into(imagAnuncioDialog);
+
+                        //CLICK PARA IR A LA URL
+                        imagAnuncioDialog.setOnClickListener(
+                                new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        Uri uri = Uri.parse(url);
+                                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                        startActivity(intent);
+
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                        //CERRAR DIALOGO
+                        cerrarDialog.setOnClickListener(
+                                new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        dialog.show();
+
+                    }
+
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(TAGLOG, "Error!", databaseError.toException());
+            }
+        };
+
+        dbAnuncio.addValueEventListener(eventListener);
+
+
 
     }//FIN ONCREATE
 
@@ -354,9 +435,9 @@ public class BAMenuActivity extends AppCompatActivity {
                 Intent mainIntent = new Intent().setClass(
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvAlimentacionocultoBA.getText().toString();
-                    mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
-                    mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
-                    mainIntent.putExtra("EXTRA_ICO",tvAlimentacionocultoicoBA.getText().toString());
+                mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO",tvAlimentacionocultoicoBA.getText().toString());
                 startActivity(mainIntent);
                 finish();
             }
@@ -624,20 +705,20 @@ public class BAMenuActivity extends AppCompatActivity {
     //BUSCADORES
 
     private void cargardatosalimentacion(){
-            dbAnuncio = FirebaseDatabase.getInstance().getReference().child("alimentacion");
-            eventListener = new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
-                        cargarListViewalimentacion(anuncioDataSnapShot);
-                    }
+        dbAnuncio = FirebaseDatabase.getInstance().getReference().child("alimentacion");
+        eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot anuncioDataSnapShot : dataSnapshot.getChildren()) {
+                    cargarListViewalimentacion(anuncioDataSnapShot);
                 }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Log.e("CACategoriaActivity", "DATABASE ERROR");
-                }
-            };
-            dbAnuncio.addListenerForSingleValueEvent(eventListener);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("CACategoriaActivity", "DATABASE ERROR");
+            }
+        };
+        dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewalimentacion(DataSnapshot dataSnapshot) {
         //TOAST DE CARGA
@@ -1656,7 +1737,7 @@ public class BAMenuActivity extends AppCompatActivity {
         Toast.makeText(this, getResources().getString(R.string.spaintoast), Toast.LENGTH_SHORT).show();
 
 
-            //PARA QUE SE CIERRE AL PULSAR
+        //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
 
         Intent mainIntent = new Intent().setClass(
