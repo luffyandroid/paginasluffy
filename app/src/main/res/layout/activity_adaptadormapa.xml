@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+
+        android:id="@+id/LinearLayoutProfesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/paddingcabeceradialog">
+
+        <TextView
+            android:id="@+id/tvinfowindows_titulobb"
+            style="@style/txtcabecera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANUNCIO"
+            android:textSize="@dimen/txtcabecera" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/paddinginteriorlayout"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:paddingHorizontal="@dimen/paddinginteriorlayout"
+                android:id="@+id/LayoutDetalless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/imaginfowindows_detalles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/menu_circular_spain"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+                <TextView
+                    android:id="@+id/tvinfowindows_detalles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="DETALLES"
+                    android:textSize="@dimen/txtcabecera" />
+
+                <TextView
+                    android:id="@+id/tvinfowindows_idioma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="@string/idioma"
+                    android:textSize="@dimen/txtcabecera" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LayoutSalarios"
+                android:paddingHorizontal="@dimen/paddinginteriorlayout"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imaginfowindows_salario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/menu_circular_uk"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+                <TextView
+                    android:id="@+id/tvinfowindows_salario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="SALARIO"
+                    android:textSize="@dimen/txtcabecera" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/LayoutDireccion"
+                android:paddingHorizontal="@dimen/paddinginteriorlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clickdireccionBA">
+
+                <ImageView
+                    android:id="@+id/imaginfowindows_direccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/menu_circular_german"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+                <TextView
+                    android:id="@+id/tvinfowindows_direccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="DIRECCIÓN"
+                    android:textSize="@dimen/txtcabecera" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingHorizontal="@dimen/paddinginteriorlayout"
+                android:id="@+id/LayoutTelefonos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clicktelefonoBA"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imaginfowindows_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/menu_circular_france"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/tvinfowindows_telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TELEFONO"
+                    android:textSize="@dimen/txtcabecera" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LayoutCorreos"
+                android:paddingHorizontal="@dimen/paddinginteriorlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clickMailBA"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/imaginfowindows_correo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/menu_circular_spain"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0" />
+
+                <TextView
+                    android:id="@+id/tvinfowindows_correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="CORREO"
+                    android:textSize="@dimen/txtcabecera" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_weight="0" />
+            <!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clickMailBB">
+
+                <Button
+                    android:id="@+id/btninfowindows_compartirBB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_btn_compartir"
+                    android:drawableLeft="@drawable/ico_compartir"
+                    android:drawableTint="@color/blanco"
+                    android:padding="@dimen/paddingcabecera"
+                    android:onClick="clickcompartirBB"
+                    android:text="     COMPARTIR"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/blanco"
+                    android:textSize="@dimen/txtcabecera" />
+
+            </LinearLayout>
+            -->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
