@@ -93,6 +93,7 @@
         <item name="android:textColor">@color/blanco</item>
     </style>
 
+    <!-- comentario chorra-->
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
