@@ -144,7 +144,7 @@ public class CACategoriaActivity extends AppCompatActivity {
                                  a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                  a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                  a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                 a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                 a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
 
                          //001
 
@@ -228,7 +228,7 @@ public class CACategoriaActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
 
                             String idioma = tvidiomaCA.getText().toString();
 

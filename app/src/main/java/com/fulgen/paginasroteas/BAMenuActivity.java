@@ -761,7 +761,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -821,7 +821,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -881,7 +881,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -941,7 +941,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1001,7 +1001,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1061,7 +1061,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1121,7 +1121,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1181,7 +1181,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1241,7 +1241,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1301,7 +1301,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1361,7 +1361,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1421,7 +1421,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1481,7 +1481,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1541,7 +1541,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1601,7 +1601,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1661,7 +1661,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
@@ -1721,7 +1721,7 @@ public class BAMenuActivity extends AppCompatActivity {
                                     a.getDescuentode(), a.getDescuentoen(), a.getDescuentofr(), a.getFacebook(), a.getTwitter(),
                                     a.getTelefono(), a.getMail(), a.getMaps(), a.getExtra(), a.getDescripcioncortaes(), a.getDescripcioncortade(),
                                     a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
-                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria());
+                                    a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
                             String idioma = tvidiomaba.getText().toString();
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);

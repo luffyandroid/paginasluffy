@@ -33,6 +33,8 @@ public class ZAnuncio implements Parcelable {
     String direccion;
     String categoria;
     String subcategoria;
+    Double latitud;
+    Double longitud;
 
 
     public static final Parcelable.Creator<ZAnuncio> CREATOR = new
@@ -52,7 +54,7 @@ public class ZAnuncio implements Parcelable {
     //CONTRUCTOR PONIENDO A LAS VARIANTES (ALT + INS)
 
 
-    public ZAnuncio(String imagen, String nombre, String descripcionlargaes, String descripcionlargade, String descripcionlargaen, String descripcionlargafr, String descuentoes, String descuentode, String descuentoen, String descuentofr, String facebook, String twitter, String telefono, String mail, String maps, String extra, String descripcioncortaes, String descripcioncortade, String descripcioncortaen, String descripcioncortafr, String horarioes, String horariode, String horarioen, String horariofr, String direccion, String categoria, String subcategoria) {
+    public ZAnuncio(String imagen, String nombre, String descripcionlargaes, String descripcionlargade, String descripcionlargaen, String descripcionlargafr, String descuentoes, String descuentode, String descuentoen, String descuentofr, String facebook, String twitter, String telefono, String mail, String maps, String extra, String descripcioncortaes, String descripcioncortade, String descripcioncortaen, String descripcioncortafr, String horarioes, String horariode, String horarioen, String horariofr, String direccion, String categoria, String subcategoria, Double latitud, Double longitud) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.descripcionlargaes = descripcionlargaes;
@@ -80,6 +82,8 @@ public class ZAnuncio implements Parcelable {
         this.direccion = direccion;
         this.categoria = categoria;
         this.subcategoria = subcategoria;
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
     public ZAnuncio (Parcel p){
@@ -312,6 +316,22 @@ public class ZAnuncio implements Parcelable {
         this.subcategoria = subcategoria;
     }
 
+    public Double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
+    }
+
+    public Double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(Double longitud) {
+        this.longitud = longitud;
+    }
+
     @Override
     public int describeContents(){
         return 0;
@@ -346,6 +366,8 @@ public class ZAnuncio implements Parcelable {
         parcel.writeString(this.direccion);
         parcel.writeString(this.categoria);
         parcel.writeString(this.subcategoria);
+        parcel.writeDouble(this.latitud);
+        parcel.writeDouble(this.longitud);
     }
 
     private void readFromParcel (Parcel p){
@@ -376,6 +398,8 @@ public class ZAnuncio implements Parcelable {
         this.direccion = p.readString();
         this.categoria = p.readString();
         this.subcategoria = p.readString();
+        this.latitud = p.readDouble();
+        this.longitud = p.readDouble();
     }
     
     
