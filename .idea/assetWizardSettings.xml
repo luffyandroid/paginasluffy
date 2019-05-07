@@ -15,11 +15,11 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="autoMirrored" value="true" />
-                            <entry key="height" value="512" />
-                            <entry key="outputName" value="ic_sub_seg_policia_nacional__" />
+                            <entry key="height" value="50" />
+                            <entry key="outputName" value="ic_marcador_playa" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="F:\SUB SEG POLICIA NACIONAL__.svg" />
-                            <entry key="width" value="512" />
+                            <entry key="sourceFile" value="F:\marcador_PLAYA.svg" />
+                            <entry key="width" value="34" />
                           </map>
                         </option>
                       </PersistentState>

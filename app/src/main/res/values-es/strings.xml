@@ -22,9 +22,11 @@
     <string name="info"> +INFO </string>
     <string name="volver"> VOLVER </string>
     <string name="localizarme"> LOCALIZARME </string>
+    <string name="compartir"> COMPARTIR </string>
+
 
     <!-- MENU-->
-    <string name="buscar"> buscar </string>
+    <string name="buscar"> BUSCAR </string>
 
     <!-- DESCRIPCION-->
     <string name="horario"> HORARIO </string>
@@ -81,9 +83,9 @@
 
     <string name="infomensaje">
         <![CDATA[
-        Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste.
+        Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste de la provincia de Cádiz.
 <br><b>No recogemos datos de los usuarios</b>, solo empresas o particulares que deseen anunciarse que publicarán los datos necesarios.
-Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</br>
+Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna otra razón, nos puedes enviar un email a esta cuenta:</br>
 ]]>
     </string>
 

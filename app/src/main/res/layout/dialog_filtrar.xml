@@ -3412,7 +3412,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:button="@drawable/ic_sub_t_estacion_selector" />
+                            android:button="@drawable/ic_sub_t_estacion_tren_selector" />
 
                         //TEXTO CHECKBOX 3
                         <TextView
@@ -3525,13 +3525,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="true"
                     android:background="@drawable/selector_btn_verde"
                     android:drawableLeft="@drawable/menu_buscar"
                     android:drawableTint="@color/blanco"
-                    android:textAlignment="textStart"
-                    android:text="     BUSCAR"
+                    android:text="@string/buscar"
+                    android:paddingHorizontal="@dimen/espacio"
                     android:textColor="@color/blanco"
                     android:textSize="25dp"/>
 

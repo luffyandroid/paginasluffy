@@ -16,6 +16,7 @@
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/idForSaveView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="@dimen/paddingFooter"
@@ -23,20 +24,16 @@
                 android:paddingTop="@dimen/espacio"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/blanco"
-                    android:orientation="horizontal">
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/espaciogrande" />
+
 
                     <ImageView
                         android:id="@+id/imagempresaDA"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="@dimen/paddinginteriorlayout"
                         app:srcCompat="@drawable/col_merced" />
-                </LinearLayout>
 
                 <Space
                     android:layout_width="wrap_content"
@@ -69,6 +66,15 @@
                     android:text="Catering Indicado para grupos Ideal para niños Terraza Acepta reservas Para llevar Servicio de camareros No se requiere reserva" />
 
                 <TextView
+                    android:id="@+id/tvdescripempresacortaDA"
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/paddingHorizontalfooter"
+                    android:text="Descripcion corta"
+                    android:visibility="gone"/>
+
+                <TextView
                     android:id="@+id/tvinformacionadicionalDA"
                     style="@style/txtdescripcionempresa"
                     android:layout_width="match_parent"
@@ -77,9 +83,7 @@
                     android:text="DESCUENTO DE UN 10% PARA SOCIOS DE O3"
                     android:visibility="gone"/>
 
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/espaciogrande" />
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"

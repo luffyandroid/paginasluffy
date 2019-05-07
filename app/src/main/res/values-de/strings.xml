@@ -9,46 +9,52 @@
 
     <!-- MENU-->
 
-    <!-- SECCION IDIOMAS ESPAÑOL-->
+    <!-- SECCION IDIOMAS ALEMAN-->
     <string name="idioma">de</string>
-    <string name="spain"> ESPAÑOL </string>
-    <string name="english"> INGLÉS </string>
-    <string name="french"> FRANCÉS </string>
-    <string name="german"> ALEMÁN </string>
+    <string name="spain"> SPANISCH </string>
+    <string name="english"> ENGLISCH </string>
+    <string name="french"> FRANZÖSISCH </string>
+    <string name="german"> DEUTSCH </string>
 
     <!-- SECCION VISTAS-->
-    <string name="mapa"> MAPA </string>
+    <string name="mapa"> STRAßENKARTE </string>
     <string name="menu"> MENÚ DE</string>
-    <string name="info"> +INFO </string>
-    <string name="volver"> VOLVER </string>
-    <string name="localizarme"> LOCALIZARME </string>
+    <string name="info"> +INFORMATION </string>
+    <string name="volver"> WENDEN </string>
+    <string name="localizarme"> STELLE </string>
+
+    //0011
+    <string name="compartir"> COMPARTIR </string>
+
 
     <!-- MENU-->
-    <string name="buscar"> buscar </string>
+    <string name="buscar"> SUCHEN </string>
 
     <!-- DESCRIPCION-->
-    <string name="horario"> HORARIO </string>
+    <string name="horario"> ÖFFNUNGSZEITEN </string>
+
+    //0011 NO HAS TRADUCIDO (Plaza Andalucía, S/N, 11550 Chipiona, Cádiz)
     <string name="direccion"> DIRECCIÓN </string>
 
 
     <!-- MENU-->
-    <string name="alimentacion">alimentación</string>
-    <string name="asociaciones">asociaciones</string>
-    <string name="compras">compras</string>
-    <string name="deporte">deporte</string>
-    <string name="educacion">educación</string>
-    <string name="hoteles">hoteles</string>
-    <string name="instituciones">instituciones</string>
-    <string name="inmobiliaria">inmobiliaria</string>
-    <string name="monumentos">monumentos</string>
-    <string name="ocio">ocio</string>
-    <string name="parque">parque</string>
-    <string name="playa">playa</string>
-    <string name="restauracion">restauración</string>
-    <string name="salud">salud</string>
+    <string name="alimentacion">Lebensmittelgeschäft</string>
+    <string name="asociaciones">Verein</string>
+    <string name="compras">Einkäufe</string>
+    <string name="deporte">Sport</string>
+    <string name="educacion">Ausbildung</string>
+    <string name="hoteles">Hotel</string>
+    <string name="instituciones">Einrichtung</string>
+    <string name="inmobiliaria">Immobilienfirma</string>
+    <string name="monumentos">Denkmal</string>
+    <string name="ocio">Muße</string>
+    <string name="parque">Laufstall</string>
+    <string name="playa">Strand</string>
+    <string name="restauracion">Hotellerie</string>
+    <string name="salud">Gesundheit</string>
     <string name="servicios">servicios</string>
-    <string name="seguridad">seguridad</string>
-    <string name="transporte">transporte</string>
+    <string name="seguridad">Sicherheit</string>
+    <string name="transporte">Transport</string>
 
     <!-- MENU ICO-->
     <string name="alimentacion_ico">ic_cat_a_alimentacion</string>
@@ -71,30 +77,33 @@
 
 
     <!-- TOAST IDIOMAS -->
-    <string name="spaintoast"> Has cambiado el idioma a Español </string>
-    <string name="englishtoast"> Has cambiado el idioma a Inglés </string>
-    <string name="frenchtoast"> Has cambiado el idioma a Francés </string>
-    <string name="germantoast"> Has cambiado el idioma a Alemán </string>
+    <string name="spaintoast"> Du hast die Sprache auf Spanisch geändert </string>
+    <string name="englishtoast"> Du hast die Sprache auf Englisch geändert </string>
+    <string name="frenchtoast"> Du hast die Sprache auf Französisch geändert </string>
+    <string name="germantoast"> Du hast die Sprache auf Deutsch geändert </string>
 
     <!-- TEXTO INFO -->
-    <string name="infocabecera"> INFO DE LA APP </string>
+    <string name="infocabecera"> App-Informationen </string>
 
+
+    //0011 NO HAS TRADUCIDO (Respeta los caractares HTML)
     <string name="infomensaje">
         <![CDATA[
-        Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste.
+        Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste de la provincia de Cádiz.
 <br><b>No recogemos datos de los usuarios</b>, solo empresas o particulares que deseen anunciarse que publicarán los datos necesarios.
-Si necesitas contactar con nosotros nos puedes enviar un email a esta cuenta:</br>
+Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna otra razón, nos puedes enviar un email a esta cuenta:</br>
 ]]>
     </string>
 
+    //0011 NO HAS TRADUCIDO
     <string name="infovolver"> VOLVER AL A MENU </string>
 
-
+    //0011 NO HAS TRADUCIDO
     <!-- TEXTO FILTRO -->
     <string name="filtrocabecera"> FILTRAR </string>
     <string name="filtrarporcabecera"> FILTRAR POR CATEGORÍA </string>
 
-
+    //0011 NO HAS TRADUCIDO
     <!-- SUBCATEGORIA-->
     <string name="CARNICERIA"> Carnicería </string>
     <string name="FRUTERIA"> Frutería </string>

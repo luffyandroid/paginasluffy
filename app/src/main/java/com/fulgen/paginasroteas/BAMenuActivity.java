@@ -397,6 +397,9 @@ public class BAMenuActivity extends AppCompatActivity {
                                         startActivity(intent);
 
                                         dialog.dismiss();
+                                        onStop();
+                                        //onPause();
+                                        //onDestroy();
                                     }
                                 });
 
@@ -406,6 +409,10 @@ public class BAMenuActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(View v) {
                                         dialog.dismiss();
+                                        onStop();
+                                        // onPause();
+                                        //onDestroy();
+
                                     }
                                 });
                         dialog.show();
@@ -1810,18 +1817,45 @@ public class BAMenuActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_info);
 
+        //ELEMENTOS DECLARADOS DE DIALOG
         TextView tvInfoApp = (TextView) dialog.findViewById(R.id.tvInfoApp);
-        //TextView volvermenu = (TextView) dialog.findViewById(R.id.tvFooterDialogBA);
+        TextView tvDialogCorreo = (TextView) dialog.findViewById(R.id.tvDialogCorreo);
         Button volvermenu = (Button) dialog.findViewById(R.id.volverBotonDialog);
 
+        //TEXTVIEW PARA QUE FUNCIONE EN HTML
         tvInfoApp.setText(Html.fromHtml(getString(R.string.infomensaje)));
 
-
+        //BOTON PARA CERRRAR
         volvermenu.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();
+                    }
+                });
+
+        //BOTON PARA ENVIAR EMAIL
+        tvDialogCorreo.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        String[] TO = {"fulgenll@hotmail.com"};
+                        String[] CC = {""};
+                        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                        emailIntent.setData(Uri.parse("mailto:"));
+                        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+                        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
+                        emailIntent.putExtra(Intent.EXTRA_TEXT, "");
+
+                        try {
+                            startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
+                            //finish();
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            Toast.makeText(BAMenuActivity.this,
+                                    "No tienes clientes de email instalados.", Toast.LENGTH_LONG).show();
+                        }
                     }
                 });
         dialog.show();
