@@ -143,6 +143,9 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="GUARDERIA"> Guardería </string>
     <string name="INSTITUTO"> Instituto </string>
 
+    <string name="ALBERGUE"> Albergue </string>
+    <string name="APARTAHOTEL"> Apartahotel </string>
+    <string name="CAMPING"> Camping </string>
     <string name="HOSTAL"> Hostal </string>
     <string name="HOTEL"> Hotel </string>
     <string name="PENSION"> Pensión </string>

@@ -1292,6 +1292,92 @@
 
                         //IMAGEN CHECKBOX 1
                         <CheckBox
+                            android:id="@+id/check_albergue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_h_albergue_selector" />
+
+                        //TEXTO CHECKBOX 1
+                        <TextView
+                            android:id="@+id/tv_albergue"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ALBERGUE" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 2
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 2
+                        <CheckBox
+                            android:id="@+id/check_apartahotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_h_apartahotel_selector" />
+
+                        //TEXTO CHECKBOX 2
+                        <TextView
+                            android:id="@+id/tv_apartahotal"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/APARTAHOTEL" />
+                    </LinearLayout>
+
+                    //SUBBLOQUE 3
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 3
+                        <CheckBox
+                            android:id="@+id/check_camping"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:button="@drawable/ic_sub_h_camping_selector" />
+
+                        //TEXTO CHECKBOX 3
+                        <TextView
+                            android:id="@+id/tv_camping"
+                            style="@style/txtcheckbox"
+                            android:textAlignment="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CAMPING" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //BLOQUE 16B HOTELES
+                <LinearLayout
+                    android:id="@+id/checkbloque16B"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/paddinginteriorlayout"
+                    android:orientation="horizontal">
+
+                    //SUBBLOQUE 1
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        //IMAGEN CHECKBOX 1
+                        <CheckBox
                             android:id="@+id/check_hostal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
