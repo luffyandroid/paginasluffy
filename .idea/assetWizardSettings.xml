@@ -15,11 +15,11 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="autoMirrored" value="true" />
-                            <entry key="height" value="512" />
-                            <entry key="outputName" value="ic_sub_h_camping_" />
+                            <entry key="height" value="105" />
+                            <entry key="outputName" value="redesc_twitter" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="F:\SUB H CAMPING_.svg" />
-                            <entry key="width" value="512" />
+                            <entry key="sourceFile" value="F:\redesc_twitter.svg" />
+                            <entry key="width" value="105" />
                           </map>
                         </option>
                       </PersistentState>

@@ -30,10 +30,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -228,7 +230,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                 }
                             });
 
-                     MarkerOptions markeroptions = new MarkerOptions();
+                    MarkerOptions markeroptions = new MarkerOptions();
                     if (anun.getSubcategoria().equals("ic_sub_a_carniceria")) {
                         markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_carniceria));
                     }
@@ -250,9 +252,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                     if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
                         markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_zotros));
                     }
-                     markeroptions.title("alimentacion/"+anun.getNombre());
-                     markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                     tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                    markeroptions.title("alimentacion/"+anun.getNombre());
+                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
 
                 }
 
@@ -1134,15 +1136,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             Log.e("BBMapaActivity", "Can't find style. Error: ", e);
         }
 
-        /*// Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(36.6269284, -6.3531886);
-        mMap.addMarker(new MarkerOptions()
-                .position(sydney)
-                //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marcador_001))
-                .icon(getBitmapDescriptor(R.drawable.ic_marcador_a_carniceria))
-                .title("Prueba"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
-
     }
 
 
@@ -1159,34 +1152,201 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-
+                //VINCULAR ELEMENTOS CON DIALOG
                 anuncio = dataSnapshot.getValue(ZAnuncio.class);
-                final TextView nombre = (TextView) dialog.findViewById(R.id.tvinfowindows_titulobb);
-                final TextView detalles = (TextView) dialog.findViewById(R.id.tvinfowindows_detalles);
-                final TextView salario = (TextView) dialog.findViewById(R.id.tvinfowindows_salario);
-                final TextView direccion = (TextView) dialog.findViewById(R.id.tvinfowindows_direccion);
-                final TextView telefono = (TextView) dialog.findViewById(R.id.tvinfowindows_telefono);
-                final TextView correo = (TextView) dialog.findViewById(R.id.tvinfowindows_correo);
-                final TextView idioma = (TextView) dialog.findViewById(R.id.tvinfowindows_idioma);
-                final LinearLayout llprofesional = (LinearLayout) dialog.findViewById(R.id.LinearLayoutProfesion);
+                final TextView nombre = (TextView) dialog.findViewById(R.id.tvempresaADAPTADOR);
+                final TextView descripcionlarga = (TextView) dialog.findViewById(R.id.tvdescripempresaADAPTADOR);
+                final TextView descuento = (TextView) dialog.findViewById(R.id.tvinformacionadicionalADAPTADOR);
+                final TextView direccion = (TextView) dialog.findViewById(R.id.tvdireccionADAPTADOR);
+                final TextView extra = (TextView) dialog.findViewById(R.id.tvimagextraADAPTADOR);
+                final TextView facebook = (TextView) dialog.findViewById(R.id.tvimagfacebookADAPTADOR);
+                final TextView horario = (TextView) dialog.findViewById(R.id.tvhorarioADAPTADOR);
+                final TextView mail = (TextView) dialog.findViewById(R.id.tvimagmailADAPTADOR);
+                final TextView maps = (TextView) dialog.findViewById(R.id.tvimagmapADAPTADOR);
+                final TextView telefono = (TextView) dialog.findViewById(R.id.tvimagtlfADAPTADOR);
+                final TextView twitter = (TextView) dialog.findViewById(R.id.tvimagtwitterADAPTADOR);
+                final TextView idioma = (TextView) dialog.findViewById(R.id.tvidiomaADAPTADOR);
+
+                final ImageView imagenADAPTADOR = (ImageView) dialog.findViewById(R.id.imagempresaADAPTADOR);
+                final ImageView btnimagfacebookADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagfacebookADAPTADOR);
+                final ImageView btnimagtwitterADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagtwitterADAPTADOR);
+                final ImageView btnimagtlfADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagtlfADAPTADOR);
+                final ImageView btnimagmailADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagmailADAPTADOR);
+                final ImageView btnimagmapADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagmapADAPTADOR);
+                final ImageView btnimagextraADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagextraADAPTADOR);
 
                 nombre.setText(anuncio.getNombre());
-                detalles.setText(anuncio.getDescuentoes());
-                salario.setText(anuncio.getExtra());
+                descripcionlarga.setText(anuncio.getDescripcionlargaes());
+                descuento.setText(anuncio.getDescuentoes());
                 direccion.setText(anuncio.getDireccion());
+                extra.setText(anuncio.getExtra());
+                facebook.setText(anuncio.getFacebook());
                 telefono.setText(anuncio.getTelefono());
-                correo.setText(anuncio.getMail());
+                horario.setText(anuncio.getHorarioes());
+                mail.setText(anuncio.getMail());
+                maps.setText(anuncio.getMaps());
+                telefono.setText(anuncio.getTelefono());
+                twitter.setText(anuncio.getTwitter());
+
+                //BOTONES REDES
+                //FACEBOOK
+                btnimagfacebookADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String Facebook = facebook.getText().toString();
+                                String Nombre = nombre.getText().toString();
+                                if (Facebook.equals("no")) {
+                                    Toast.makeText(getApplicationContext(),
+                                            Nombre + " no tiene perfil en Facebook",
+                                            Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    Uri uri = Uri.parse(Facebook);
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+
+                //TWITTER
+                btnimagtwitterADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String Twitter = twitter.getText().toString();
+                                String Nombre = nombre.getText().toString();
+                                if (Twitter.equals("no")) {
+                                    Toast.makeText(getApplicationContext(),
+                                            Nombre + " no tiene perfil en Facebook",
+                                            Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    Uri uri = Uri.parse(Twitter);
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+
+                //TELÉFONO
+                btnimagtlfADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String Telefono = telefono.getText().toString();
+                                String Nombre = nombre.getText().toString();
+                                if (Telefono.equals("no")) {
+                                    Toast.makeText(getApplicationContext(),
+                                            Nombre + " no tiene perfil en Facebook",
+                                            Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    try {
+                                        Uri number = Uri.parse("tel:" + Telefono);
+                                        Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+                                        startActivity(callIntent);
+                                    } catch (android.content.ActivityNotFoundException ex) {
+                                        Toast.makeText(BBMapaActivity.this,
+                                                "No hay apliación para llamar", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            }
+                        });
+
+                //MAIL
+                btnimagmailADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String Mail = mail.getText().toString();
+                                String Nombre = nombre.getText().toString();
+                                if (Mail.equals("no")) {
+                                    Toast.makeText(getApplicationContext(),
+                                            Nombre + " no tiene perfil en Facebook",
+                                            Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    String[] TO = {Mail};
+                                    String[] CC = {""};
+                                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                                    emailIntent.setData(Uri.parse("mailto:"));
+                                    emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+                                    emailIntent.putExtra(Intent.EXTRA_CC, CC);
+                                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
+                                    emailIntent.putExtra(Intent.EXTRA_TEXT, "");
+
+                                    try {
+                                        startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
+                                    } catch (android.content.ActivityNotFoundException ex) {
+                                        Toast.makeText(BBMapaActivity.this,
+                                                "No tienes clientes de email instalados.", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            }
+                        });
+
+                //MAPS
+                btnimagmapADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String Maps = maps.getText().toString();
+                                String Nombre = nombre.getText().toString();
+                                if (Maps.equals("no")) {
+                                    Toast.makeText(getApplicationContext(),
+                                            Nombre + " no tiene perfil en Facebook",
+                                            Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    Uri uri = Uri.parse(Maps);
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+
+                //EXTRA
+                btnimagextraADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String Extra = extra.getText().toString();
+                                String Nombre = nombre.getText().toString();
+                                if (Extra.equals("no")) {
+                                    Toast.makeText(getApplicationContext(),
+                                            Nombre + " no tiene perfil en Facebook",
+                                            Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    Uri uri = Uri.parse(Extra);
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+
+                //VINCULAR GLIDE CON IMAGEN
+                String imagentienda = anuncio.getImagen();
+                Glide.with(getApplicationContext()).load(imagentienda).into(imagenADAPTADOR);
+
                 if(idioma.equals("es")){
-                    detalles.setText(anuncio.getDescuentoes());
+                    descuento.setText(anuncio.getDescuentoes());
                 }
                 if(idioma.equals("en")){
-                    detalles.setText(anuncio.getDescuentoen());
+                    descuento.setText(anuncio.getDescuentoen());
                 }
                 if(idioma.equals("de")){
-                    detalles.setText(anuncio.getDescuentode());
+                    descuento.setText(anuncio.getDescuentode());
                 }
                 if(idioma.equals("fr")){
-                    detalles.setText(anuncio.getDescuentofr());
+                    descuento.setText(anuncio.getDescuentofr());
                 }
 
 
@@ -1268,62 +1428,8 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
 
-                final LinearLayout LayoutDetalles = (LinearLayout) dialog.findViewById(R.id.LayoutDetalless);
-                final LinearLayout LayoutSalario = (LinearLayout) dialog.findViewById(R.id.LayoutSalarios);
-                final LinearLayout LayoutDireccion = (LinearLayout) dialog.findViewById(R.id.LayoutDireccion);
-                final LinearLayout LayoutTelefono = (LinearLayout) dialog.findViewById(R.id.LayoutTelefonos);
-                final LinearLayout LayoutCorreo = (LinearLayout) dialog.findViewById(R.id.LayoutCorreos);
-
-                LayoutDireccion.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        try {
-                            Uri location = Uri.parse("https://www.google.es/maps/@"+anuncio.getLatitud()+","+anuncio.getLongitud()+",20z");
-                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
-                            startActivity(mapIntent);
-                        }catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(BBMapaActivity.this, "No hay aplicación para ver la dirección", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-                LayoutTelefono.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        try {
-
-                            Uri number = Uri.parse("tel:"+ telefono.getText().toString());
-                            Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
-                            startActivity(callIntent);
-                        } catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(BBMapaActivity.this,
-                                    "No hay apliación para llamar", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-                LayoutCorreo.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String[] TO = {correo.getText().toString()}; //001 AQUI DEBERÍA IR CORREO
-                        String[] CC = {""};
-                        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-                        emailIntent.setData(Uri.parse("mailto:"));
-                        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                        emailIntent.putExtra(Intent.EXTRA_CC, CC);
-                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
-                        emailIntent.putExtra(Intent.EXTRA_TEXT, "");
-
-                        try {
-                            startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
-                            //finish();
-                        } catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(BBMapaActivity.this,
-                                    "No tienes clientes de email instalados.", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-
-
-
+                //002
+                /*
                 if (detalles.equals("") ){
                     LayoutDetalles.setVisibility(View.GONE);
                 }
@@ -1339,6 +1445,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 if (correo.equals("") ){
                     LayoutCorreo.setVisibility(View.GONE);
                 }
+                */
 
 
 
@@ -1473,9 +1580,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                         loc.getLatitude(), loc.getLongitude(), 1);
 
                 if (!list.isEmpty()) {
-                        CameraUpdate locactual =
-                                CameraUpdateFactory.newLatLngZoom(new LatLng(loc.getLatitude(), loc.getLongitude()), 17);
-                        mMap.animateCamera(locactual);
+                    CameraUpdate locactual =
+                            CameraUpdateFactory.newLatLngZoom(new LatLng(loc.getLatitude(), loc.getLongitude()), 17);
+                    mMap.animateCamera(locactual);
 
 
 

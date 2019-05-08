@@ -251,20 +251,10 @@ public class DAEmpresaActivity extends AppCompatActivity {
         menu_fabDA.collapse();
     }
 
-    public void clickAtrasDA(View v) {
+    public void onBackPressed() {
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, CACategoriaActivity.class);
         startActivity(mainIntent);
-        //PARA QUE SE CIERRE AL PULSAR
-        menu_fabDA.collapse();
-    }
-
-    public void onBackPressed(View v) {
-        Intent mainIntent = new Intent().setClass(
-                DAEmpresaActivity.this, CACategoriaActivity.class);
-        startActivity(mainIntent);
-        //PARA QUE SE CIERRE AL PULSAR
-        menu_fabDA.collapse();
     }
 
     //BOTONES REDES

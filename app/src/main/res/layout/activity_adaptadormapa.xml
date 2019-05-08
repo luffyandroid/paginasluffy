@@ -1,222 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@drawable/z_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-
-        android:id="@+id/LinearLayoutProfesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingVertical="@dimen/paddingcabeceradialog">
-
-        <TextView
-            android:id="@+id/tvinfowindows_titulobb"
-            style="@style/txtcabecera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ANUNCIO"
-            android:textSize="@dimen/txtcabecera" />
-
-    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/idForSaveView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="@dimen/paddinginteriorlayout"
             android:orientation="vertical">
 
-            <LinearLayout
-
-                android:paddingHorizontal="@dimen/paddinginteriorlayout"
-                android:id="@+id/LayoutDetalless"
+            <ImageView
+                android:id="@+id/imagempresaADAPTADOR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible">
+                app:srcCompat="@drawable/col_merced" />
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/espaciogrande" />
 
-                <ImageView
-                    android:id="@+id/imaginfowindows_detalles"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/menu_circular_spain"
-                    tools:ignore="VectorDrawableCompat" />
-
-
-                <TextView
-                    android:id="@+id/tvinfowindows_detalles"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="DETALLES"
-                    android:textSize="@dimen/txtcabecera" />
-
-                <TextView
-                    android:id="@+id/tvinfowindows_idioma"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:visibility="gone"
-                    android:text="@string/idioma"
-                    android:textSize="@dimen/txtcabecera" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutSalarios"
-                android:paddingHorizontal="@dimen/paddinginteriorlayout"
-
+            <TextView
+                android:id="@+id/tvempresaADAPTADOR"
+                style="@style/txtcabeceraempresa"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible">
+                android:text="BAR LA MERCED"
+                android:visibility="visible"/>
 
-                <ImageView
-                    android:id="@+id/imaginfowindows_salario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/menu_circular_uk"
-                    tools:ignore="VectorDrawableCompat" />
-
-
-                <TextView
-                    android:id="@+id/tvinfowindows_salario"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="SALARIO"
-                    android:textSize="@dimen/txtcabecera" />
-
-            </LinearLayout>
-
-            <LinearLayout
-
-                android:id="@+id/LayoutDireccion"
-                android:paddingHorizontal="@dimen/paddinginteriorlayout"
+            <TextView
+                android:id="@+id/tvidiomaADAPTADOR"
+                style="@style/txtcabeceraempresa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="clickdireccionBA">
+                android:text="@string/idioma"
+                android:visibility="gone"/>
 
-                <ImageView
-                    android:id="@+id/imaginfowindows_direccion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/menu_circular_german"
-                    tools:ignore="VectorDrawableCompat" />
-
-
-                <TextView
-                    android:id="@+id/tvinfowindows_direccion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="DIRECCIÓN"
-                    android:textSize="@dimen/txtcabecera" />
-
-            </LinearLayout>
-
-            <LinearLayout
-
-                android:paddingHorizontal="@dimen/paddinginteriorlayout"
-                android:id="@+id/LayoutTelefonos"
+            <TextView
+                android:id="@+id/tvdescripempresaADAPTADOR"
+                style="@style/txtdescripcionempresa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="clicktelefonoBA"
-                android:visibility="visible">
+                android:padding="@dimen/paddingHorizontalfooter"
+                android:text="Catering Indicado para grupos Ideal para niños Terraza Acepta reservas Para llevar Servicio de camareros No se requiere reserva" />
 
-                <ImageView
-                    android:id="@+id/imaginfowindows_telefono"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/menu_circular_france"
-                    tools:ignore="VectorDrawableCompat" />
-
-                <TextView
-                    android:id="@+id/tvinfowindows_telefono"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="TELEFONO"
-                    android:textSize="@dimen/txtcabecera" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutCorreos"
-                android:paddingHorizontal="@dimen/paddinginteriorlayout"
+            <TextView
+                android:id="@+id/tvdescripempresacortaADAPTADOR"
+                style="@style/txtdescripcionempresa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="clickMailBA"
-                android:visibility="visible">
+                android:padding="@dimen/paddingHorizontalfooter"
+                android:text="Descripcion corta"
+                android:visibility="gone"/>
 
+            <TextView
+                android:id="@+id/tvinformacionadicionalADAPTADOR"
+                style="@style/txtdescripcionempresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/espaciogrande"
+                android:text="DESCUENTO DE UN 10% PARA SOCIOS DE O3"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/tamanoFooter"
+                android:paddingVertical="@dimen/paddinginteriorlayout"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imaginfowindows_correo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/menu_circular_spain"
-                    tools:ignore="VectorDrawableCompat" />
-
-
-                <Space
-                    android:layout_width="15dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0" />
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    app:srcCompat="@drawable/ic_menu_horario" />
 
                 <TextView
-                    android:id="@+id/tvinfowindows_correo"
+                    style="@style/txtdescripcionempresa"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="CORREO"
-                    android:textSize="@dimen/txtcabecera" />
-
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/paddingHorizontalfooter"
+                    android:text="@string/horario" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvhorarioADAPTADOR"
+                style="@style/txtdescripcionempresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/espaciogrande"
+                android:text="Lunes - Viernes: 8h - 15h / 18h - 21h
+  Sábados y Domingos: 8h - 17h" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/espaciogrande" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/tamanoFooter"
+                android:paddingVertical="@dimen/paddinginteriorlayout"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    app:srcCompat="@drawable/ic_menu_mapa" />
+
+                <TextView
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/paddingHorizontalfooter"
+                    android:text="@string/direccion" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvdireccionADAPTADOR"
+                style="@style/txtdescripcionempresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/espaciogrande"
+                android:text="Calle Compás del Convento nº 12
+(Mercado de la Merced)" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:layout_weight="0" />
-            <!--
+                android:layout_height="@dimen/espaciogrande" />
+
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="clickMailBB">
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btninfowindows_compartirBB"
+                <ImageView
+                    android:id="@+id/btnimagfacebookADAPTADOR"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/selector_btn_compartir"
-                    android:drawableLeft="@drawable/ico_compartir"
-                    android:drawableTint="@color/blanco"
-                    android:padding="@dimen/paddingcabecera"
-                    android:onClick="clickcompartirBB"
-                    android:text="     COMPARTIR"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/blanco"
-                    android:textSize="@dimen/txtcabecera" />
+                    android:padding="@dimen/paddingbotones"
+                    android:visibility="visible"
+                    android:background="#4267B2"
+                    app:srcCompat="@drawable/redesc_facebook_selector" />
+
+                <TextView
+                    android:id="@+id/tvimagfacebookADAPTADOR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/btnimagtwitterADAPTADOR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/paddingbotones"
+                    app:srcCompat="@drawable/redesc_twitter_selector"
+                    android:background="#1DA1F2"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvimagtwitterADAPTADOR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/btnimagtlfADAPTADOR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/paddingbotones"
+                    app:srcCompat="@drawable/redesc_telefono_selector"
+                    android:background="#334ABC"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvimagtlfADAPTADOR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+
+                <ImageView
+                    android:id="@+id/btnimagmailADAPTADOR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/paddingbotones"
+                    app:srcCompat="@drawable/redesc_correo_selector"
+                    android:background="#DE5145"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvimagmailADAPTADOR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/btnimagmapADAPTADOR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/paddingbotones"
+                    app:srcCompat="@drawable/redesc_localizacion_selector"
+                    android:background="#1C9957"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvimagmapADAPTADOR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/btnimagextraADAPTADOR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/paddingbotones"
+                    app:srcCompat="@drawable/redesc_extra_selector"
+                    android:background="#999999"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvimagextraADAPTADOR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/btnimagcompartirADAPTADOR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/paddingbotones"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/redesc_compartir_selector"
+                    android:background="#CEBD1D"
+                    android:visibility="visible"/>
+
 
             </LinearLayout>
-            -->
+
 
         </LinearLayout>
+
+
 
     </ScrollView>
 

@@ -166,11 +166,8 @@
         </ScrollView>
 
         <LinearLayout
-            android:background="@color/negro"
-            android:paddingVertical="@dimen/paddingVerticalfooter"
-            android:paddingHorizontal="@dimen/paddingHorizontalfooter"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/tamanoFooter"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal">
 
@@ -178,9 +175,10 @@
                 android:id="@+id/btnimagfacebookDA"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/paddingbotones"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/redes_facebook"
+                android:padding="@dimen/paddingbotones"
+                android:background="#4267B2"
+                app:srcCompat="@drawable/redesc_facebook_selector"
                 android:onClick="clickEmpresaFaceboookDA"
                 android:visibility="visible"/>
 
@@ -194,9 +192,10 @@
                 android:id="@+id/btnimagtwitterDA"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/paddingbotones"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/redes_twitter"
+                android:padding="@dimen/paddingbotones"
+                app:srcCompat="@drawable/redesc_twitter_selector"
+                android:background="#1DA1F2"
                 android:onClick="clickEmpresaTwitterDA"
                 android:visibility="visible"/>
 
@@ -210,9 +209,10 @@
                 android:id="@+id/btnimagtlfDA"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/paddingbotones"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/redes_telefono"
+                android:padding="@dimen/paddingbotones"
+                app:srcCompat="@drawable/redesc_telefono_selector"
+                android:background="#334ABC"
                 android:onClick="clickEmpresaTelefonoDA"
                 android:visibility="visible"/>
 
@@ -227,9 +227,10 @@
                 android:id="@+id/btnimagmailDA"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/paddingbotones"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/redes_correo"
+                android:padding="@dimen/paddingbotones"
+                app:srcCompat="@drawable/redesc_correo_selector"
+                android:background="#DE5145"
                 android:onClick="clickEmpresaMailDA"
                 android:visibility="visible"/>
 
@@ -243,9 +244,10 @@
                 android:id="@+id/btnimagmapDA"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/paddingbotones"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/redes_localizacion"
+                android:padding="@dimen/paddingbotones"
+                app:srcCompat="@drawable/redesc_localizacion_selector"
+                android:background="#1C9957"
                 android:onClick="clickEmpresaMapsDA"
                 android:visibility="visible"/>
 
@@ -259,9 +261,10 @@
                 android:id="@+id/btnimagextraDA"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/paddingbotones"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/redes_extra"
+                android:padding="@dimen/paddingbotones"
+                app:srcCompat="@drawable/redesc_extra_selector"
+                android:background="#999999"
                 android:onClick="clickEmpresaExtraDA"
                 android:visibility="visible"/>
 
@@ -277,14 +280,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/redes_extra"
-                android:visibility="invisible"/>
+                android:visibility="gone"/>
             <ImageView
                 android:id="@+id/btnimaginvisible2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/redes_extra"
-                android:visibility="invisible"/>
+                android:visibility="gone"/>
 
 
         </LinearLayout>

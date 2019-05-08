@@ -331,16 +331,6 @@ public class CACategoriaActivity extends AppCompatActivity {
         Intent mainIntent = new Intent().setClass(
                 CACategoriaActivity.this, BBMapaActivity.class);
         startActivity(mainIntent);
-        //PARA QUE SE CIERRE AL PULSAR
-        menu_fabCA.collapse();
-    }
-
-    public void clickAtrasCA(View v) {
-        Intent mainIntent = new Intent().setClass(
-                CACategoriaActivity.this, BAMenuActivity.class);
-        startActivity(mainIntent);
-        //PARA QUE SE CIERRE AL PULSAR
-        menu_fabCA.collapse();
     }
 
     public void onBackPressed() {

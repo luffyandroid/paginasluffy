@@ -135,16 +135,6 @@
             android:onClick="clickCompartirDA"
             fab:fab_title="@string/compartir" />
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/verdeTXTFOOTER"
-            app:fab_colorPressed="@color/verdeINTENSO"
-            fab:fab_icon="@drawable/menu_circular_atras"
-            fab:fab_size="mini"
-            android:onClick="clickAtrasDA"
-            fab:fab_title="@string/volver" />
-
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 </android.support.design.widget.CoordinatorLayout>
