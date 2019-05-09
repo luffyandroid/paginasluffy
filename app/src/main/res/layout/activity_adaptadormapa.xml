@@ -17,6 +17,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/btnlinearlayoutcerrarADAPTADOR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/imagempresaADAPTADOR"
                 android:layout_width="match_parent"
@@ -147,6 +153,8 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/espaciogrande" />
+
+        </LinearLayout>
 
 
             <LinearLayout

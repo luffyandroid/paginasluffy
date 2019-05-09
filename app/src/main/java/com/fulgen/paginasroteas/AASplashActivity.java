@@ -21,6 +21,9 @@ public class AASplashActivity extends AppCompatActivity {
     //TIEMPO DE SPLASH
     private static final long SPLASH_SCREEN_DELAY = 3000;
 
+    //002
+    static final String EXTRA_ANUNCIOSPLASH = "ANUNCIOSPLASH";
+
     //ELEMENTOS DECLARADOS ▼
 
     TextView tvhoraAA;
@@ -97,8 +100,16 @@ public class AASplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
+                //002
+                //PARA CONVERTIR NO EL ANUNCIO
+                String anunciosplash = "si";
+
+                //PARA CONVERTIR NO EL ANUNCIO
                 Intent mainIntent = new Intent().setClass(
                         AASplashActivity.this, com.fulgen.paginasroteas.BAMenuActivity.class);
+
+                mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+
                 startActivity(mainIntent);
 
                 finish();

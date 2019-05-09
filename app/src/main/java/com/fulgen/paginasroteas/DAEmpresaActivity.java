@@ -42,6 +42,9 @@ import java.util.Locale;
 
 public class DAEmpresaActivity extends AppCompatActivity {
 
+    //002
+    static final String EXTRA_ANUNCIOSPLASH = "ANUNCIOSPLASH";
+
     //VARIANTES DE DECLARADAS
     ZAnuncio anuncio = null;
     DatabaseReference dbRef;
@@ -244,17 +247,35 @@ public class DAEmpresaActivity extends AppCompatActivity {
     }
 
     public void clickMenuDA(View v) {
+
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
+
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, BAMenuActivity.class);
+
+        //PARA CONVERTIR NO EL ANUNCIO
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
+        //ANIMACIÓN
+        overridePendingTransition(R.anim.arrastrar_izquierda_in, R.anim.arrastrar_izquierda_out);
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();
     }
 
     public void onBackPressed() {
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
+
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, CACategoriaActivity.class);
+
+        //PARA CONVERTIR NO EL ANUNCIO
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
+        //ANIMACIÓN
+        overridePendingTransition(R.anim.arrastrar_izquierda_in, R.anim.arrastrar_izquierda_out);
+        finish();
     }
 
     //BOTONES REDES

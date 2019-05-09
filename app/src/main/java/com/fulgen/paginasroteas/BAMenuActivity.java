@@ -359,6 +359,9 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //ACCEDE AL ARBOL
         dbAnuncio = FirebaseDatabase.getInstance().getReference().child("aanuncio");
+
+        //ESTO ES PARA QUE QUEDE ARCHIVOS FIREBASE EN LOCAL
+        dbAnuncio.keepSynced(true);
         eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -369,15 +372,14 @@ public class BAMenuActivity extends AppCompatActivity {
                 tvImagDialogg.setText(dataSnapshot.child("imagen").getValue().toString());
 
 
-
-                    //SI SE PONE ANUNCIOPOST
+                //SI SE PONE ANUNCIOPOST
 
                 //002
                 String comprobacionanunciosplash = getIntent().getStringExtra("EXTRA_ANUNCIOSPLASH");
-                comprobacionanunciosplash.equals("no");
+                if (comprobacionanunciosplash.equals("si")) {
 
 
-                    if (tvVisibleDialogg.getText().toString().equals("si")){
+                    if (tvVisibleDialogg.getText().toString().equals("si")) {
 
                         //ABRE EL DIALOGO ANUNCIO
                         final Dialog dialog = new Dialog(context);
@@ -391,7 +393,10 @@ public class BAMenuActivity extends AppCompatActivity {
 
                         //CARGA DE LA IMAGEN DEL ANUNCIO
                         String anunciopostimag = tvImagDialogg.getText().toString();
-                        Glide.with(getApplicationContext()).load(anunciopostimag).into(imagAnuncioDialog);
+                        Glide
+                                .with(getApplicationContext())
+                                .load(anunciopostimag)
+                                .into(imagAnuncioDialog);
 
                         //CLICK PARA IR A LA URL
                         imagAnuncioDialog.setOnClickListener(
@@ -426,7 +431,7 @@ public class BAMenuActivity extends AppCompatActivity {
 
                     }
 
-
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -453,6 +458,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 mainIntent.putExtra("EXTRA_ICO",tvAlimentacionocultoicoBA.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -469,6 +476,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -485,6 +494,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -501,6 +512,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -517,6 +530,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -533,6 +548,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -549,6 +566,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -565,6 +584,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -581,6 +602,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -597,6 +620,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -613,6 +638,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -629,6 +656,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -645,6 +674,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -661,6 +692,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -677,6 +710,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -693,6 +728,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -709,6 +746,8 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 //mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                 finish();
             }
         };
@@ -1816,6 +1855,8 @@ public class BAMenuActivity extends AppCompatActivity {
         Intent mainIntent = new Intent().setClass(
                 BAMenuActivity.this, BBMapaActivity.class);
         startActivity(mainIntent);
+        //TRANSICIÓN LATERAL PARA ADELANTE
+        overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
     }

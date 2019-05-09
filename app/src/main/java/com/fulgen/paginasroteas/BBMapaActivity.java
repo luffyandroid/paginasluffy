@@ -100,6 +100,11 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         tvidmarcadorBB = (TextView)findViewById(R.id.tvidmarcadorBB);
         dbRef = FirebaseDatabase.getInstance().getReference();
 
+        //ESTO ES PARA QUE QUEDE ARCHIVOS FIREBASE EN LOCAL
+        dbRef.keepSynced(true);
+
+
+
     }//FIN ONCREATE
 
 
@@ -204,6 +209,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 //PARA CONVERTIR NO EL ANUNCIO
                 mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
+
+        //ANIMACIÓN
+        overridePendingTransition(R.anim.arrastrar_izquierda_in, R.anim.arrastrar_izquierda_out);
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBB.collapse();
     }
@@ -220,6 +228,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         //PARA CONVERTIR NO EL ANUNCIO
         i.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(i);
+
+        //ANIMACIÓN
+        overridePendingTransition(R.anim.arrastrar_izquierda_in, R.anim.arrastrar_izquierda_out);
         finish();
     }
 
@@ -233,6 +244,8 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 CameraUpdateFactory.newLatLngZoom(new LatLng(36.6418169,-6.1849189),10);
         mMap.moveCamera(inicioSatelite);
         //MARCADORES ALIMENTACION
+
+
         dbRef.child("alimentacion").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -1217,6 +1230,8 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 final ImageView btnimagmapADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagmapADAPTADOR);
                 final ImageView btnimagextraADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagextraADAPTADOR);
 
+                final LinearLayout btnlinearlayoutcerrarADAPTADOR = (LinearLayout) dialog.findViewById(R.id.btnlinearlayoutcerrarADAPTADOR);
+
                 nombre.setText(anuncio.getNombre());
                 descripcionlarga.setText(anuncio.getDescripcionlargaes());
                 descuento.setText(anuncio.getDescuentoes());
@@ -1398,6 +1413,14 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 //VINCULAR GLIDE CON IMAGEN
                 String imagentienda = anuncio.getImagen();
                 Glide.with(getApplicationContext()).load(imagentienda).into(imagenADAPTADOR);
+
+                btnlinearlayoutcerrarADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
 
             }
 

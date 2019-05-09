@@ -244,6 +244,12 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
 
     <string name="OTROS"> Otros </string>
 
+    <!-- SALIR DE LA APP-->
+    <string name="SALIRDELAAPP"> Salir de la aplicación </string>
+    <string name="SALIRTXT"> ¿Seguro que desea salir de la aplicación? </string>
+    <string name="SALIRSI"> SI </string>
+    <string name="SALIRCANCELAR"> CANCELAR </string>
+
 
     <string name="title_activity_bbmapa_m">Map</string>
 

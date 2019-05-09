@@ -30,6 +30,7 @@ public class CACategoriaActivity extends AppCompatActivity {
     private DatabaseReference dbAnuncio;
     private ValueEventListener eventListener;
     static final String EXTRA_ANUNCIO="ANUNCIO";
+    static final String EXTRA_ANUNCIOSPLASH = "ANUNCIOSPLASH";
 
     //VARIANTES DE DECLARADAS
     private FloatingActionsMenu menu_fabCA;
@@ -100,6 +101,10 @@ public class CACategoriaActivity extends AppCompatActivity {
 
         dbAnuncio = FirebaseDatabase.getInstance().getReference().child(tvcategorialistCA.getText().toString());
 
+        //ESTO ES PARA QUE QUEDE ARCHIVOS FIREBASE EN LOCAL
+        dbAnuncio.keepSynced(true);
+
+
         eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -158,7 +163,8 @@ public class CACategoriaActivity extends AppCompatActivity {
                          i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                          i.putExtra("EXTRA_IDIOMACAT", idioma);
                          i.putExtra("EXTRA_CATEGORIA", tvcabeceraCA.getText().toString());
-
+                        //TRANSICIÓN LATERAL PARA ADELANTE
+                         overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                          startActivity(i);
 
                      }
@@ -238,6 +244,8 @@ public class CACategoriaActivity extends AppCompatActivity {
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
 
+                            //TRANSICIÓN LATERAL PARA ADELANTE
+                            overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
                             //INCIAR ACTIVITY
                             startActivity(i);
 
@@ -330,13 +338,24 @@ public class CACategoriaActivity extends AppCompatActivity {
     public void clickMapaCA(View v) {
         Intent mainIntent = new Intent().setClass(
                 CACategoriaActivity.this, BBMapaActivity.class);
+        //TRANSICIÓN LATERAL PARA ADELANTE
+        overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
         startActivity(mainIntent);
     }
 
     public void onBackPressed() {
         super.onBackPressed();
+
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
+
         Intent i = new Intent().setClass(this,BAMenuActivity.class);
+
+        //PARA CONVERTIR NO EL ANUNCIO
+        i.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(i);
+        //ANIMACIÓN
+        overridePendingTransition(R.anim.arrastrar_izquierda_in, R.anim.arrastrar_izquierda_out);
         finish();
     }
 
