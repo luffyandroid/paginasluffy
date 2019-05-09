@@ -50,6 +50,7 @@
                 style="@style/txtdescripcionempresa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:padding="@dimen/paddingHorizontalfooter"
                 android:text="Catering Indicado para grupos Ideal para niños Terraza Acepta reservas Para llevar Servicio de camareros No se requiere reserva" />
 

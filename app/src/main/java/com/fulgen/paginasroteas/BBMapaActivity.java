@@ -272,7 +272,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
-
+                    //COSA PARA HACER INVISIBLE EL TITLE
                     mMap.setInfoWindowAdapter
                             (new ZTitleInvisible(BBMapaActivity.this) {
                                 @Override
@@ -284,7 +284,31 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                     MarkerOptions markeroptions = new MarkerOptions();
                     markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_asociaciones));
 
+                    /*try {
+                        String direccionnegocioCA = anun.getDireccion();
+
+                        List<Address> addressList = geocoder.getFromLocationName(
+                                direccionnegocioCA, 5);
+                        if (addressList != null && addressList.size() > 0) {
+                            Double lat = (Double) (addressList.get(0).getLatitude() );
+                            Double lng = (Double) (addressList.get(0).getLongitude() );
+                            String latitudint = Double.toString(lat);
+                            tvlatitudocultaBB.setText(latitudint);
+                            String longitudint = Double.toString(lng);
+                            tvlongitudocultaBB.setText(longitudint);
+                            Toast.makeText(context, "Latitud: "+tvlatitudocultaBB.getText().toString()+" y longitud: "+tvlongitudocultaBB.getText().toString(), Toast.LENGTH_LONG).show();
+                        }
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                    }*/
+
+
+
                     markeroptions.title("asociaciones/"+anun.getNombre());
+                    /*String latfin = tvlatitudocultaBB.getText().toString();
+                    String lngfin = tvlongitudocultaBB.getText().toString();
+                    Double latdob = Double.parseDouble(latfin);
+                    Double lngdob = Double.parseDouble(lngfin);*/
                     markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
                     tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
 
@@ -1116,7 +1140,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 pasarinfo();
 
 
-                //Toast.makeText(BAMapaFinalActivity.this, idmarcador, Toast.LENGTH_LONG).show();
                 return false;
             }
         });
@@ -1135,6 +1158,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         } catch (Resources.NotFoundException e) {
             Log.e("BBMapaActivity", "Can't find style. Error: ", e);
         }
+
 
     }
 
@@ -1187,6 +1211,27 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 maps.setText(anuncio.getMaps());
                 telefono.setText(anuncio.getTelefono());
                 twitter.setText(anuncio.getTwitter());
+
+                if(idioma.getText().toString().equals("es")){
+                    descuento.setText(anuncio.getDescuentoes());
+                    descripcionlarga.setText(anuncio.getDescripcionlargaes());
+                    horario.setText(anuncio.getHorarioes());
+                }
+                if(idioma.getText().toString().equals("en")){
+                    descuento.setText(anuncio.getDescuentoen());
+                    descripcionlarga.setText(anuncio.getDescripcionlargaen());
+                    horario.setText(anuncio.getHorarioen());
+                }
+                if(idioma.getText().toString().equals("de")){
+                    descuento.setText(anuncio.getDescuentode());
+                    descripcionlarga.setText(anuncio.getDescripcionlargade());
+                    horario.setText(anuncio.getHorariode());
+                }
+                if(idioma.getText().toString().equals("fr")){
+                    descuento.setText(anuncio.getDescuentofr());
+                    descripcionlarga.setText(anuncio.getDescripcionlargafr());
+                    horario.setText(anuncio.getHorariofr());
+                }
 
                 //BOTONES REDES
                 //FACEBOOK
@@ -1336,180 +1381,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 String imagentienda = anuncio.getImagen();
                 Glide.with(getApplicationContext()).load(imagentienda).into(imagenADAPTADOR);
 
-                if(idioma.equals("es")){
-                    descuento.setText(anuncio.getDescuentoes());
-                }
-                if(idioma.equals("en")){
-                    descuento.setText(anuncio.getDescuentoen());
-                }
-                if(idioma.equals("de")){
-                    descuento.setText(anuncio.getDescuentode());
-                }
-                if(idioma.equals("fr")){
-                    descuento.setText(anuncio.getDescuentofr());
-                }
-
-
-                //CAMBIAR DE COLOR EL BORDE SUPERIOR
-
-                    /*if (anuncio.getTipopuesto().equals("Otros")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#E84E1B"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Administración")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#009EE2"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Agricultura")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#DDDB00"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Animación")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#FF394C"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Asistentes sociales")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#009540"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Atención al cliente")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#F29100"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Comercial")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#312782"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Construcción")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#E84E1B"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Cuidador de animales")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#683B11"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Diseño y Artes gráficas")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#E61B72"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Educación")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#39A935"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Hostelería")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#120F51"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Informática")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#7FA50C"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Ingeniería y técnico")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#634E42"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Legal")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#7E4E24"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Limpieza")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#0685B7"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Logística y almacén")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#B17F49"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Marketing y comunicaciones")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#E20613"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Música")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#941B80"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Profesiones y oficios")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#868686"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Sanidad")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#BD1622"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Transportes")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#6F6F6E"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Turismo")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#E5332A"));
-                    }
-                    if (anuncio.getTipopuesto().equals("Venta")) {
-                        llprofesional.setBackgroundColor(Color.parseColor("#A2195B"));
-                    }*/
-
-
-
-
-                //002
-                /*
-                if (detalles.equals("") ){
-                    LayoutDetalles.setVisibility(View.GONE);
-                }
-
-                if (salario.equals("") ){
-                    LayoutSalario.setVisibility(View.GONE);
-                }
-
-                if (telefono.equals("") ){
-                    LayoutTelefono.setVisibility(View.GONE);
-                }
-
-                if (correo.equals("") ){
-                    LayoutCorreo.setVisibility(View.GONE);
-                }
-                */
-
-
-
-                /*Button compartir = (Button) dialog.findViewById(R.id.btninfowindows_compartirBB);
-                compartir.setOnClickListener(
-                        new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                                final String detalles_f, salario_f, telefono_f, correo_f;
-
-
-                                Intent compartir = new Intent(android.content.Intent.ACTION_SEND);
-                                compartir.setType("text/plain");
-                                //compartir.setType("text/plain");
-                                String detalles_ = detalles.getText().toString();
-                                String salario_ = salario.getText().toString();
-                                String direccion_ = direccion.getText().toString();
-                                String telefono_ = telefono.getText().toString();
-                                String correo_ = correo.getText().toString();
-                                String nombre_ = nombre.getText().toString();
-
-                                //EN CASO DE QUE NO HAYA DATOS NO MANDE DATOS VACÍOS
-
-                                if (detalles_.equals("") ){
-                                    detalles_f = detalles_;}
-                                else { detalles_f = "\uD83D\uDD38" + " " + detalles_ + "\n";
-                                }
-
-                                if (salario_.equals("")){
-                                    salario_f = salario_;}
-                                else { salario_f = "\uD83D\uDCB6" + " " + "salario: " + salario_ + "\n";
-                                }
-
-                                if (telefono_.equals("") ){
-                                    telefono_f = telefono_;}
-                                else { telefono_f = "\uD83D\uDCDE" + " " + telefono_ + "\n";
-                                }
-
-                                if (correo_.equals("") ){
-                                    correo_f = correo_;}
-                                else { correo_f = "\uD83D\uDCE7" + " " + correo_ + "\n";
-                                }
-
-                                String en = "Enviado desde GeoWork";
-
-                                //TEXTO CON ESTILO
-
-                                compartir.putExtra(android.content.Intent.EXTRA_SUBJECT, "Compartir oferta de" + nombre_);
-                                compartir.putExtra(android.content.Intent.EXTRA_TEXT, ("Empleo de " + nombre_ + "\n"
-                                        + detalles_f
-                                        + salario_f
-                                        + "\uD83D\uDCCD" + " " + direccion_ + "\n"
-                                        + telefono_f
-                                        + correo_f
-                                        + en));
-                                //compartir.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtm"Oferta de " + nombre_ );
-                                startActivity(Intent.createChooser(compartir, "Compartir vía"));
-
-                            }
-
-
-
-                        });*/
             }
 
             @Override
