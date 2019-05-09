@@ -61,6 +61,10 @@ import java.util.Locale;
 
 public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+    //ETIQUETA EXTRA PARA PASAR INFO A TODOS LOS ACTIVITYS
+    //002
+    static final String EXTRA_ANUNCIOSPLASH = "ANUNCIOSPLASH";
+
     //VARIANTES DE DECLARADAS
     private FloatingActionsMenu menu_fabBB;
     TextView tvlatitudocultaBB, tvlongitudocultaBB, tvidmarcadorBB;
@@ -95,7 +99,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         tvlongitudocultaBB = (TextView)findViewById(R.id.tvlongitudocultaBB);
         tvidmarcadorBB = (TextView)findViewById(R.id.tvidmarcadorBB);
         dbRef = FirebaseDatabase.getInstance().getReference();
-
 
     }//FIN ONCREATE
 
@@ -191,8 +194,15 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
     }
 
     public void clickMenuBB(View v) {
+
+        //002
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
         Intent mainIntent = new Intent().setClass(
                 BBMapaActivity.this, BAMenuActivity.class);
+
+                //PARA CONVERTIR NO EL ANUNCIO
+                mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBB.collapse();
@@ -200,7 +210,15 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
     public void onBackPressed() {
         super.onBackPressed();
+
+        //002
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
+
         Intent i = new Intent().setClass(this,BAMenuActivity.class);
+
+        //PARA CONVERTIR NO EL ANUNCIO
+        i.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(i);
         finish();
     }

@@ -137,6 +137,16 @@
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/verdeINTENSO"
+            app:fab_colorPressed="@color/verdeTXTFOOTER"
+            fab:fab_icon="@drawable/menu_circular_filtrar"
+            fab:fab_size="mini"
+            android:onClick="clickFiltrarBA"
+            fab:fab_title="@string/filtrocabecera" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/verdeTXTFOOTER"
             app:fab_colorPressed="@color/verdeINTENSO"
             fab:fab_icon="@drawable/menu_circular_info"

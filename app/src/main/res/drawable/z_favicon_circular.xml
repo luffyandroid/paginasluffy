@@ -2,7 +2,6 @@
     android:viewportHeight="1080" android:viewportWidth="1080"
     android:width="1080dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#FFEC39" android:pathData="M70.6,272.9L542,537.7l1.6,-0.5l514.2,-151C991.6,162.9 784.8,0 540,0C338.9,0 163.5,109.9 70.6,272.9z"/>
-    <path android:fillColor="#FFF800" android:pathData="M0,540v156.9l21.3,-6.3C7.4,642.8 0,592.3 0,540z"/>
     <path android:fillColor="#FFF800" android:pathData="M541.6,537.8l0.4,-0.1L70.6,272.9C25.7,351.7 0,442.8 0,540c0,52.3 7.4,102.8 21.3,150.7L541.6,537.8z"/>
     <path android:fillColor="#C7E500" android:pathData="M543.6,537.2l-1.6,0.5l-0.4,0.1L21.3,690.7C54.8,806 125.6,905.4 219.9,974.9l572.3,42.7C963.3,927.1 1080,747.2 1080,540c0,-53.4 -7.8,-105 -22.2,-153.8L543.6,537.2z"/>
     <path android:fillColor="#3D9A00" android:pathData="M219.9,974.9C309.5,1041 420.2,1080 540,1080c91.1,0 176.9,-22.5 252.1,-62.4L219.9,974.9z"/>

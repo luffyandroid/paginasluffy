@@ -26,6 +26,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -370,6 +371,12 @@ public class BAMenuActivity extends AppCompatActivity {
 
 
                     //SI SE PONE ANUNCIOPOST
+
+                //002
+                String comprobacionanunciosplash = getIntent().getStringExtra("EXTRA_ANUNCIOSPLASH");
+                comprobacionanunciosplash.equals("no");
+
+
                     if (tvVisibleDialogg.getText().toString().equals("si")){
 
                         //ABRE EL DIALOGO ANUNCIO
@@ -1863,6 +1870,30 @@ public class BAMenuActivity extends AppCompatActivity {
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
     }
+
+    public void clickFiltrarBA(View v) {
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_filtrar_ciudad);
+
+        Button filtrar = (Button) dialog.findViewById(R.id.btnfooterDialogFiltroBA);
+
+        //CHECKBOX DECLARADOS
+        CheckBox checkCHIPIONA = (CheckBox) dialog.findViewById(R.id.checkCHIPIONA);
+        CheckBox checkCADIZ = (CheckBox) dialog.findViewById(R.id.checkCADIZ);
+        CheckBox checkELPUERTODESTAMARIA = (CheckBox) dialog.findViewById(R.id.checkELPUERTODESTAMARIA);
+        CheckBox checkJEREZ = (CheckBox) dialog.findViewById(R.id.checkJEREZ);
+        CheckBox checkPUERTOREAL = (CheckBox) dialog.findViewById(R.id.checkPUERTOREAL);
+        CheckBox checkROTA = (CheckBox) dialog.findViewById(R.id.checkROTA);
+        CheckBox checkSANFERNANDO = (CheckBox) dialog.findViewById(R.id.checkSANFERNANDO);
+        CheckBox checkSANLUCAR = (CheckBox) dialog.findViewById(R.id.checkSANLUCAR);
+
+
+        dialog.show();
+
+        //PARA QUE SE CIERRE AL PULSAR
+        menu_fabBA.collapse();
+    }
+
     //BOTONE BUSCAR
     public void clickBuscarBA(View v) {
         if(etfootbuscarBA.getText().toString().equals("")){
