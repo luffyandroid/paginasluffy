@@ -1966,6 +1966,41 @@ public class BAMenuActivity extends AppCompatActivity {
     }
     public void onBackPressed() {
         //super.onBackPressed();
+
+
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_salirapp);
+
+        //ELEMENTOS DECLARADOS DE DIALOG
+        Button cancelarBotonDialogSALIR = (Button) dialog.findViewById(R.id.cancelarBotonDialogSALIR);
+        Button siBotonDialogSALIR = (Button) dialog.findViewById(R.id.siBotonDialogSALIR);
+
+
+        //BOTON PARA CERRRAR
+        cancelarBotonDialogSALIR.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+        //BOTON PARA CERRRAR
+        siBotonDialogSALIR.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //PARA QUE CIERRE LA APP
+                        finishAffinity();
+                    }
+                });
+
+        dialog.show();
+
+
+        ///////////////////////////////////////////////////////////////////////
+
+        /*
         new AlertDialog.Builder(this)
                 .setTitle("Salir de la aplicación")
                 .setMessage("¿Seguro que desea salir de la aplicación?")
@@ -1983,5 +2018,9 @@ public class BAMenuActivity extends AppCompatActivity {
                     }
                 })
                 .create().show();
+
+                */
+
     }
+
 }

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/amarilloINTENSO">
+
+    <LinearLayout
+        android:background="@color/negro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/paddingcabeceradialog">
+
+        <TextView
+            android:id="@+id/tvcabeceraDialogSALIR"
+            style="@style/txtcabecera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SALIRDELAAPP"
+            android:textAlignment="center"
+            android:textSize="@dimen/txtcabecera" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvInfoAppSALIR"
+            style="txtdescripcionempresa"
+            android:paddingHorizontal="@dimen/paddingcabeceradialog"
+            android:paddingVertical="@dimen/paddingcabeceradialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="@color/negro"
+            android:textStyle="bold"
+            android:textSize="@dimen/txtgridsize"
+            android:text="@string/SALIRTXT" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/paddingcabeceradialog" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelarBotonDialogSALIR"
+            android:background="@drawable/selector_btn_verdec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/paddingcabecera"
+            android:text="@string/SALIRCANCELAR"
+            android:textStyle="bold"
+            android:textColor="@color/blanco"
+            android:layout_weight="1"
+            android:onClick="clickAtrasDialog">
+
+        </Button>
+
+        <Button
+            android:id="@+id/siBotonDialogSALIR"
+            android:background="@drawable/selector_btn_verde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/paddingcabecera"
+            android:text="@string/SALIRSI"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:onClick="clickAtrasDialog">
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>
+
