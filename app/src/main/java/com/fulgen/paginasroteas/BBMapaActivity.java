@@ -1309,7 +1309,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                 String Nombre = nombre.getText().toString();
                                 if (Facebook.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + " no tiene perfil en Facebook",
+                                            Nombre + R.string.NoTieneFacebook,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -1330,7 +1330,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                 String Nombre = nombre.getText().toString();
                                 if (Twitter.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + " no tiene perfil en Facebook",
+                                            Nombre + R.string.NoTieneTwitter,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -1351,7 +1351,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                 String Nombre = nombre.getText().toString();
                                 if (Telefono.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + " no tiene perfil en Facebook",
+                                            Nombre + R.string.NoTieneContacto,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -1361,7 +1361,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                         startActivity(callIntent);
                                     } catch (android.content.ActivityNotFoundException ex) {
                                         Toast.makeText(BBMapaActivity.this,
-                                                "No hay apliación para llamar", Toast.LENGTH_LONG).show();
+                                                R.string.NoEncuentraLlamar, Toast.LENGTH_LONG).show();
                                     }
                                 }
                             }
@@ -1377,7 +1377,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                 String Nombre = nombre.getText().toString();
                                 if (Mail.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + " no tiene perfil en Facebook",
+                                            Nombre + R.string.NoTieneMail,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -1394,7 +1394,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                         startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
                                     } catch (android.content.ActivityNotFoundException ex) {
                                         Toast.makeText(BBMapaActivity.this,
-                                                "No tienes clientes de email instalados.", Toast.LENGTH_LONG).show();
+                                                R.string.NoEncuentraEmail, Toast.LENGTH_LONG).show();
                                     }
                                 }
                             }
@@ -1410,7 +1410,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                 String Nombre = nombre.getText().toString();
                                 if (Maps.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + " no tiene perfil en Facebook",
+                                            Nombre + R.string.NoHayMapas,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -1431,7 +1431,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                 String Nombre = nombre.getText().toString();
                                 if (Extra.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + " no tiene perfil en Facebook",
+                                            Nombre + R.string.NoTieneInformacion,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
