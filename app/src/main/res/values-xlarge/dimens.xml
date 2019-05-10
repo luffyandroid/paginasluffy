@@ -1,46 +1,46 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">26dp</dimen>
+    <dimen name="activity_vertical_margin">26dp</dimen>
+    <dimen name="nav_header_vertical_spacing">18dp</dimen>
+    <dimen name="nav_header_height">186dp</dimen>
+    <dimen name="fab_margin">26dp</dimen>
 
     <!-- CABECERA -->
-    <dimen name="paddingcabecera">7dp</dimen>
-    <dimen name="paddingcabeceradialog">11dp</dimen>
-    <dimen name="txtcabecera">30dp</dimen>
-    <dimen name="txtfooter">15dp</dimen>
-    <dimen name="txtcabeceradialogomarker">21dp</dimen>
+    <dimen name="paddingcabecera">17dp</dimen>
+    <dimen name="paddingcabeceradialog">21dp</dimen>
+    <dimen name="txtcabecera">40dp</dimen>
+    <dimen name="txtfooter">25dp</dimen>
+    <dimen name="txtcabeceradialogomarker">31dp</dimen>
 
 
     <!-- GRID LAYOUT -->
-    <dimen name="paddinginteriorlayout">10dp</dimen>
-    <dimen name="txtgridsize">17dp</dimen>
-    <dimen name="padingverticalobligatiorio">60dp</dimen>
-    <dimen name="padinghorizontal">10dp</dimen>
+    <dimen name="paddinginteriorlayout">20dp</dimen>
+    <dimen name="txtgridsize">27dp</dimen>
+    <dimen name="padingverticalobligatiorio">70dp</dimen>
+    <dimen name="padinghorizontal">20dp</dimen>
 
     <!-- FOOTER -->
-    <dimen name="txtMarginFooter">11dp</dimen>
-    <dimen name="txtFooter">21dp</dimen>
-    <dimen name="paddingHorizontalfooter">15dp</dimen>
+    <dimen name="txtMarginFooter">21dp</dimen>
+    <dimen name="txtFooter">31dp</dimen>
+    <dimen name="paddingHorizontalfooter">25dp</dimen>
     <dimen name="paddingVerticalfooter">7dp</dimen>
-    <dimen name="espacio">50dp</dimen>
-    <dimen name="paddingbotones">3dp</dimen>
+    <dimen name="espacio">60dp</dimen>
+    <dimen name="paddingbotones">13dp</dimen>
 
     <!-- LISTVIEW -->
-    <dimen name="marginImagenes">7dp</dimen>
-    <dimen name="txtTituloList">24dp</dimen>
-    <dimen name="txtDescripcionList">18dp</dimen>
+    <dimen name="marginImagenes">17dp</dimen>
+    <dimen name="txtTituloList">34dp</dimen>
+    <dimen name="txtDescripcionList">28dp</dimen>
 
     <!-- EMPRESA IMAGEN -->
-    <dimen name="paddingFooter">40dp</dimen>
-    <dimen name="marginFooter">30dp</dimen>
-    <dimen name="tamanoFooter">55dp</dimen>
-    <dimen name="espaciogrande">14dp</dimen>
+    <dimen name="paddingFooter">50dp</dimen>
+    <dimen name="marginFooter">40dp</dimen>
+    <dimen name="tamanoFooter">45dp</dimen>
+    <dimen name="espaciogrande">24dp</dimen>
 
     <!-- MENU LOTTIE -->
-    <dimen name="paddinmenucat">15dp</dimen>
+    <dimen name="paddinmenucat">25dp</dimen>
 
 
 

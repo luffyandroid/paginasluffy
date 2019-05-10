@@ -123,8 +123,16 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBB.collapse();
 
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
         Intent mainIntent = new Intent().setClass(
                 BBMapaActivity.this, BBMapaActivity.class);
+        //PARA CONVERTIR NO EL ANUNCIO
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        startActivity(mainIntent);
+
+        //ANIMACIÓN
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         startActivity(mainIntent);
     }
 
@@ -140,8 +148,16 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBB.collapse();
 
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
         Intent mainIntent = new Intent().setClass(
                 BBMapaActivity.this, BBMapaActivity.class);
+        //PARA CONVERTIR NO EL ANUNCIO
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        startActivity(mainIntent);
+
+        //ANIMACIÓN
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         startActivity(mainIntent);
     }
 
@@ -157,8 +173,16 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBB.collapse();
 
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
         Intent mainIntent = new Intent().setClass(
                 BBMapaActivity.this, BBMapaActivity.class);
+        //PARA CONVERTIR NO EL ANUNCIO
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        startActivity(mainIntent);
+
+        //ANIMACIÓN
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         startActivity(mainIntent);
     }
 
@@ -174,8 +198,16 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBB.collapse();
 
+        //PARA CONVERTIR NO EL ANUNCIO
+        String anunciosplash = "no";
         Intent mainIntent = new Intent().setClass(
                 BBMapaActivity.this, BBMapaActivity.class);
+        //PARA CONVERTIR NO EL ANUNCIO
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        startActivity(mainIntent);
+
+        //ANIMACIÓN
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         startActivity(mainIntent);
     }
 

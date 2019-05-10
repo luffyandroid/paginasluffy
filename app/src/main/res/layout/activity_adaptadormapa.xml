@@ -80,7 +80,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/tamanoFooter"
@@ -88,8 +88,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:cropToPadding="true"
                     app:srcCompat="@drawable/ic_menu_horario" />
@@ -106,7 +106,7 @@
                 android:id="@+id/tvhorarioADAPTADOR"
                 style="@style/txtdescripcionempresa"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/espaciogrande"
                 android:text="Lunes - Viernes: 8h - 15h / 18h - 21h
@@ -118,7 +118,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/tamanoFooter"
@@ -126,8 +126,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:cropToPadding="true"
                     app:srcCompat="@drawable/ic_menu_mapa" />
@@ -144,7 +144,7 @@
                 android:id="@+id/tvdireccionADAPTADOR"
                 style="@style/txtdescripcionempresa"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/espaciogrande"
                 android:text="Calle Compás del Convento nº 12

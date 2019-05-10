@@ -749,7 +749,8 @@
                             style="@style/imagengrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_aa_vacio" />
+                            app:srcCompat="@drawable/ic_cat_aa_vacio"
+                            tools:ignore="VectorDrawableCompat" />
 
                         <TextView
                             android:id="@+id/tvVacioBA"
@@ -780,7 +781,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="left"
                 android:layout_weight="0"
-                                android:onClick="clickBuscarBA"
+                android:onClick="clickBuscarBA"
                 app:srcCompat="@drawable/selector_btn_buscar"
                 tools:ignore="VectorDrawableCompat" />
 

@@ -16,7 +16,7 @@
 
     <!-- TEXTO CABECERA -->
     <style name="txtcabecera">
-        <item name="android:textColor">@color/STYLE</item>
+        <item name="android:textColor">@color/STYLELARGE</item>
         <item name="android:gravity">left</item>
         <item name="android:textStyle">bold</item>
     </style>
