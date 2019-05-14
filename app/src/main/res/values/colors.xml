@@ -16,6 +16,12 @@
 
     <color name="blanco">#ffffff</color>
 
+    <color name="STYLE">#9C27B0</color>
+    <color name="STYLESMALL">#E91E63</color>
+    <color name="STYLENORMAL">#00BCD4</color>
+    <color name="STYLELARGE">#FF9800</color>
+    <color name="STYLEXLARGE">#DD1A0B</color>
+
 
 
 

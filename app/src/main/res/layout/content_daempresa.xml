@@ -88,7 +88,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/tamanoFooter"
@@ -97,7 +97,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:cropToPadding="true"
                    app:srcCompat="@drawable/ic_menu_horario" />
@@ -126,7 +126,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/tamanoFooter"
@@ -135,7 +135,7 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:adjustViewBounds="true"
                         android:cropToPadding="true"
                         app:srcCompat="@drawable/ic_menu_mapa" />

@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -97,6 +99,11 @@ public class BAMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bamenu);
+
+        //TOAST SI HAY INTERNET
+        if (!compruebaConexion(this)) {
+            Toast.makeText(getBaseContext(),"yo te voy avisando, pero NO TIENES conexión a INTERNET y puede que no se te cargue todo ⛔", Toast.LENGTH_LONG).show();
+        }
 
         //ENLAZO VARIANTES DECLARADAS
 
@@ -774,8 +781,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewalimentacion(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -799,7 +804,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -834,8 +838,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewasociacion(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -859,7 +861,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -894,8 +895,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewcompras(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -919,7 +918,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -954,8 +952,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewdeporte(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -979,7 +975,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1014,8 +1009,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListVieweducacion(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1039,7 +1032,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1074,8 +1066,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewhoteles(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1099,7 +1089,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1134,8 +1123,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewinmobiliaria(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1159,7 +1146,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1194,8 +1180,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewinstituciones(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1219,7 +1203,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1254,8 +1237,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewmonumentos(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1279,7 +1260,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1314,8 +1294,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewocio(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1339,7 +1317,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1374,8 +1351,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewparque(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1399,7 +1374,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1434,8 +1408,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewplaya(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1459,7 +1431,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1494,8 +1465,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewrestauracion(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1519,7 +1488,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1554,8 +1522,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewsalud(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1579,7 +1545,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1614,8 +1579,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewseguridad(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1639,7 +1602,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1674,8 +1636,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewservicio(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1699,7 +1659,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1734,8 +1693,6 @@ public class BAMenuActivity extends AppCompatActivity {
         dbAnuncio.addListenerForSingleValueEvent(eventListener);
     }
     private void cargarListViewtransporte(DataSnapshot dataSnapshot) {
-        //TOAST DE CARGA
-        Toast.makeText(BAMenuActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
         String busqueda=etfootbuscarBA.getText().toString();
         String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
@@ -1759,7 +1716,6 @@ public class BAMenuActivity extends AppCompatActivity {
                     (new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Toast.makeText(BAMenuActivity.this, "ole ole los caracole", Toast.LENGTH_SHORT).show();
                             //REFERENCIA A LA CLASE
                             ZAnuncio a = ((ZAnuncio) parent.getItemAtPosition(position));
                             ZAnuncio anuncioenviado = new ZAnuncio(a.getImagen(), a.getNombre(), a.getDescripcionlargaes(),
@@ -1904,7 +1860,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             //finish();
                         } catch (android.content.ActivityNotFoundException ex) {
                             Toast.makeText(BAMenuActivity.this,
-                                    "No tienes clientes de email instalados.", Toast.LENGTH_LONG).show();
+                                    R.string.NoEncuentraEmail, Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -1942,7 +1898,7 @@ public class BAMenuActivity extends AppCompatActivity {
         if(etfootbuscarBA.getText().toString().equals("")){
             listBA.setVisibility(View.GONE);
             scrollBA.setVisibility(View.VISIBLE);
-            Toast.makeText(context, "Escribe algo antes de buscar", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, R.string.EscribeBuscar, Toast.LENGTH_SHORT).show();
         }else{
             scrollBA.setVisibility(View.GONE);
             listBA.setVisibility(View.VISIBLE);
@@ -2023,6 +1979,23 @@ public class BAMenuActivity extends AppCompatActivity {
 
                 */
 
+    }
+
+
+    //COMPRUEBA QUE HAY INTERNET
+    public static boolean compruebaConexion(Context context) {
+
+        boolean connected = false;
+        ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        // Recupera todas las redes (tanto móviles como wifi)
+        NetworkInfo[] redes = connec.getAllNetworkInfo();
+        for (int i = 0; i < redes.length; i++) {
+            // Si alguna red tiene conexión, se devuelve true
+            if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
+                connected = true;
+            }
+        }
+        return connected;
     }
 
 }

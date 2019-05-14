@@ -286,7 +286,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         String Nombre = tvempresaDA.getText().toString();
         if (Facebook.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + " no tiene perfil en Facebook",
+                    Nombre + R.string.NoTieneFacebook,
                     Toast.LENGTH_LONG).show();
 
         } else {
@@ -302,7 +302,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         String Nombre = tvempresaDA.getText().toString();
         if (Twitter.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + " no tiene perfil en Twitter",
+                    Nombre + R.string.NoTieneTwitter,
                     Toast.LENGTH_LONG).show();
 
         } else {
@@ -318,7 +318,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         String Nombre = tvempresaDA.getText().toString();
         if (Telefono.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + " no tiene teléfono de contacto",
+                    Nombre + R.string.NoTieneContacto,
                     Toast.LENGTH_LONG).show();
         } else {
             try {
@@ -327,7 +327,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
                 startActivity(callIntent);
             } catch (android.content.ActivityNotFoundException ex) {
                 Toast.makeText(DAEmpresaActivity.this,
-                        "No hay apliación para llamar", Toast.LENGTH_LONG).show();
+                        R.string.NoEncuentraLlamar, Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -338,7 +338,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         String Nombre = tvempresaDA.getText().toString();
         if (Mail.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + " no correo electrónico",
+                    Nombre + R.string.NoTieneContacto,
                     Toast.LENGTH_LONG).show();
         } else {
             String[] TO = {Mail};
@@ -354,7 +354,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
             } catch (android.content.ActivityNotFoundException ex) {
                 Toast.makeText(DAEmpresaActivity.this,
-                        "No tienes clientes de email instalados.", Toast.LENGTH_LONG).show();
+                        R.string.NoEncuentraEmail, Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -365,7 +365,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         String Nombre = tvempresaDA.getText().toString();
         if (Mapa.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + " no tiene localización",
+                    Nombre + R.string.NoEncuentraLocalizacion,
                     Toast.LENGTH_LONG).show();
         } else {
             try {
@@ -374,7 +374,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
                 startActivity(mapIntent);
             } catch (android.content.ActivityNotFoundException ex) {
                 Toast.makeText(DAEmpresaActivity.this,
-                        "No hay servidor de mapas", Toast.LENGTH_LONG).show();
+                        R.string.NoHayMapas, Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -385,7 +385,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         String Nombre = tvempresaDA.getText().toString();
         if (Web.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + " no tiene página Web",
+                    Nombre + R.string.NoTieneInformacion,
                     Toast.LENGTH_LONG).show();
 
         } else {

@@ -256,6 +256,22 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="SALIRSI"> SI </string>
     <string name="SALIRCANCELAR"> CANCELAR </string>
 
+    <!-- TOAST -->
+    <string name="EscribeBuscar"> Escribe algo antes de buscar </string>
+
+    <string name="NoTieneFacebook"> no tiene perfil en Facebook </string>
+    <string name="NoTieneTwitter"> no tiene perfil en Twitter </string>
+    <string name="NoTieneMail"> no tiene email </string>
+    <string name="NoTieneContacto"> no tiene teléfono de contacto </string>
+    <string name="NoTieneInformacion"> no tiene más información </string>
+
+    <string name="NoEncuentraLlamar"> No se encuentra app para llamar </string>
+    <string name="NoEncuentraEmail"> No se encuentra app para enviar email </string>
+    <string name="NoEncuentraLocalizacion"> No se encuentra localización </string>
+    <string name="NoHayMapas"> No hay servidor de mapas </string>
+
+    <string name="EnviarEmail"> Enviar email... </string>
+
 
     <string name="title_activity_bbmapa_m">Map</string>
 

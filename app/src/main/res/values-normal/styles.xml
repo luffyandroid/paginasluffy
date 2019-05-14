@@ -1,0 +1,102 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/negro</item>
+        <item name="colorPrimaryDark">@color/negro</item>
+        <item name="colorAccent">@color/amarilloINTENSO</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <!-- TEXTO CABECERA -->
+    <style name="txtcabecera">
+        <item name="android:textColor">@color/amarilloTXTCABECERA</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <!-- MENU -->
+
+    <!-- IMAGEN GRIDLAYOUT -->
+    <style name="imagengrid">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:cropToPadding">true</item>
+        <item name="android:layout_weight">0.4</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!-- TXT GRIDLAYOUT -->
+    <style name="txtgrid">
+        <item name="android:textSize">@dimen/txtgridsize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/negro</item>
+    </style>
+
+    <!-- LAYOUT GRIDLAYOUT -->
+    <style name="layoutgrid">
+        <item name="android:padding">@dimen/paddinginteriorlayout</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!-- TXT FOOTER-->
+    <style name="txtfooter" parent="txtcabecera">
+        <item name="android:textColor">@color/verdeINTENSO</item>
+        <item name="android:textColorHint">@color/verdeINTENSO</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_marginRight">@dimen/txtMarginFooter</item>
+        <item name="android:textSize">@dimen/txtFooter</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <!-- TXT DESCRIPCIÓN-->
+    <style name="txtdescripcionempresa">
+        <item name="android:textSize">@dimen/txtDescripcionList</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/negro</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <!-- TXT DESCRIPCIÓN-->
+    <style name="txtcabeceraempresa" parent="txtdescripcionempresa">
+        <item name="android:textSize">@dimen/txtTituloList</item>
+    </style>
+
+    <!-- TXT CHECKBOX-->
+    <style name="txtcheckbox" parent="txtdescripcionempresa">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+
+    <!-- MENU FLOTANTE-->
+    <style name="Etiquetas">
+        <item name="android:background">@color/negro</item>
+        <item name="android:textColor">@color/blanco</item>
+    </style>
+
+    <!-- comentario chorra-->
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

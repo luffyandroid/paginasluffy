@@ -84,7 +84,7 @@ public class CACategoriaActivity extends AppCompatActivity {
         }
         //tvidiomaCA.setText(idioma);
 
-        Toast.makeText(this, "La categoria es: "+tvcategorialistCA.getText().toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "La categoria es: "+tvcategorialistCA.getText().toString(), Toast.LENGTH_SHORT).show();
 
         /*//ADAPTADOR
         ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anuncios);
@@ -124,9 +124,6 @@ public class CACategoriaActivity extends AppCompatActivity {
     }
 
     private void cargarListView(DataSnapshot dataSnapshot) {
-
-        //TOAST DE CARGA
-        Toast.makeText(CACategoriaActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
 
         //ENLAZAR DATOS FIREBASE
         lista_anuncios.add(dataSnapshot.getValue(ZAnuncio.class));
@@ -174,7 +171,7 @@ public class CACategoriaActivity extends AppCompatActivity {
     private void cargardatosbuscar(){
 
         if (etfootbuscarCA.getText().toString().equals("")){
-            Toast.makeText(this, "Escribe algo antes de buscar", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.EscribeBuscar, Toast.LENGTH_SHORT).show();
         }else {
 
             dbAnuncio = FirebaseDatabase.getInstance().getReference().child(tvcategorialistCA.getText().toString());
@@ -201,9 +198,6 @@ public class CACategoriaActivity extends AppCompatActivity {
     }
 
     private void cargarListViewbuscar(DataSnapshot dataSnapshot) {
-
-        //TOAST DE CARGA
-        Toast.makeText(CACategoriaActivity.this, "• Cargando \uD83C\uDFC3\u200D •", Toast.LENGTH_SHORT).show();
 
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
 
