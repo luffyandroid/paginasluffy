@@ -1854,6 +1854,8 @@ public class BAMenuActivity extends AppCompatActivity {
     public void clickMapaBA(View v) {
         Intent mainIntent = new Intent().setClass(
                 BAMenuActivity.this, BBMapaActivity.class);
+        mainIntent.putExtra("EXTRA_PERMANENTE","todo");
+        mainIntent.putExtra("EXTRA_FILTRO","todo");
         startActivity(mainIntent);
         //TRANSICIÓN LATERAL PARA ADELANTE
         overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);

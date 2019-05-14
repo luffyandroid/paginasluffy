@@ -113,6 +113,8 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="SUPERMERCADO"> Supermercado </string>
     <string name="AOTROS"> Otros alimentación </string>
 
+    <string name="ASOCIACIONES">Asociaciones</string>
+
     <string name="BAZAR"> Bazar </string>
     <string name="BICICLETA"> Bicicleta </string>
     <string name="BODEGAS"> Bodegas </string>
@@ -157,6 +159,8 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="HOTEL"> Hotel </string>
     <string name="PENSION"> Pensión </string>
 
+    <string name="INMOBILIARIA"> Inmobiliaria </string>
+
     <string name="AYUNTAMIENTO"> Ayuntamiento </string>
     <string name="CORREOS"> Correos </string>
     <string name="JUZGADOS"> Juzgados </string>
@@ -186,6 +190,8 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
 
     <string name="JARDINES"> Jardines </string>
     <string name="PARQUE"> Parque </string>
+
+    <string name="PLAYA"> Playa </string>
 
     <string name="ASADOR"> Asador </string>
     <string name="BAR"> Bar </string>

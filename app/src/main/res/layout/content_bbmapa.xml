@@ -33,6 +33,18 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:text="TextView" />
+    <TextView
+        android:id="@+id/tvpermanenteocultaBB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="TextView" />
+    <TextView
+        android:id="@+id/tvfiltroocultaBB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="TextView" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -29,6 +29,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -67,7 +68,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
     //VARIANTES DE DECLARADAS
     private FloatingActionsMenu menu_fabBB;
-    TextView tvlatitudocultaBB, tvlongitudocultaBB, tvidmarcadorBB;
+    TextView tvlatitudocultaBB, tvlongitudocultaBB, tvidmarcadorBB, tvpermanenteocultaBB, tvfiltroocultaBB;
 
     ZAnuncio anuncio;
 
@@ -98,7 +99,14 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         tvlatitudocultaBB = (TextView)findViewById(R.id.tvlatitudocultaBB);
         tvlongitudocultaBB = (TextView)findViewById(R.id.tvlongitudocultaBB);
         tvidmarcadorBB = (TextView)findViewById(R.id.tvidmarcadorBB);
+        tvpermanenteocultaBB = (TextView)findViewById(R.id.tvpermanenteocultaBB);
+        tvfiltroocultaBB = (TextView)findViewById(R.id.tvfiltroocultaBB);
         dbRef = FirebaseDatabase.getInstance().getReference();
+
+        String permanente = getIntent().getStringExtra("EXTRA_PERMANENTE");
+        String filtrado = getIntent().getStringExtra("EXTRA_FILTRO");
+        tvpermanenteocultaBB.setText(permanente);
+        tvfiltroocultaBB.setText(filtrado);
 
         //ESTO ES PARA QUE QUEDE ARCHIVOS FIREBASE EN LOCAL
         dbRef.keepSynced(true);
@@ -191,6 +199,706 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_filtrar);
 
+        LinearLayout bloquealimentacion01 = (LinearLayout)dialog.findViewById(R.id.checkbloque01);
+        LinearLayout bloquealimentacion02 = (LinearLayout)dialog.findViewById(R.id.checkbloque02);
+        LinearLayout bloquealimentacion03 = (LinearLayout)dialog.findViewById(R.id.checkbloque03);
+        if(tvpermanenteocultaBB.getText().toString().equals("alimentacion")){
+
+            bloquealimentacion01.setVisibility(View.VISIBLE);
+            bloquealimentacion02.setVisibility(View.VISIBLE);
+            bloquealimentacion03.setVisibility(View.VISIBLE);
+
+        }
+        final CheckBox check_carniceria = (CheckBox)dialog.findViewById(R.id.check_carniceria);
+        final CheckBox check_fruteria = (CheckBox)dialog.findViewById(R.id.check_fruteria);
+        final CheckBox check_panaderia = (CheckBox)dialog.findViewById(R.id.check_panaderia);
+        final CheckBox check_pasteleria = (CheckBox)dialog.findViewById(R.id.check_pasteleria);
+        final CheckBox check_pescaderia = (CheckBox)dialog.findViewById(R.id.check_pescaderia);
+        final CheckBox check_supermercado = (CheckBox)dialog.findViewById(R.id.check_supermercado);
+        final CheckBox check_aotros = (CheckBox)dialog.findViewById(R.id.check_aotros);
+        LinearLayout bloqueasociaciones01 = (LinearLayout)dialog.findViewById(R.id.checkbloque03B);
+        if(tvpermanenteocultaBB.getText().toString().equals("asociaciones")){
+            bloqueasociaciones01.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_asociaciones = (CheckBox) dialog.findViewById(R.id.check_asociaciones);
+        LinearLayout bloquecompras01 = (LinearLayout)dialog.findViewById(R.id.checkbloque04);
+        LinearLayout bloquecompras02 = (LinearLayout)dialog.findViewById(R.id.checkbloque05);
+        LinearLayout bloquecompras03 = (LinearLayout)dialog.findViewById(R.id.checkbloque06);
+        LinearLayout bloquecompras04 = (LinearLayout)dialog.findViewById(R.id.checkbloque07);
+        LinearLayout bloquecompras05 = (LinearLayout)dialog.findViewById(R.id.checkbloque08);
+        LinearLayout bloquecompras06 = (LinearLayout)dialog.findViewById(R.id.checkbloque09);
+        LinearLayout bloquecompras07 = (LinearLayout)dialog.findViewById(R.id.checkbloque10);
+        if(tvpermanenteocultaBB.getText().toString().equals("compras")){
+
+            bloquecompras01.setVisibility(View.VISIBLE);
+            bloquecompras02.setVisibility(View.VISIBLE);
+            bloquecompras03.setVisibility(View.VISIBLE);
+            bloquecompras04.setVisibility(View.VISIBLE);
+            bloquecompras05.setVisibility(View.VISIBLE);
+            bloquecompras06.setVisibility(View.VISIBLE);
+            bloquecompras07.setVisibility(View.VISIBLE);
+
+        }
+        final CheckBox check_bazar = (CheckBox)dialog.findViewById(R.id.check_bazar);
+        final CheckBox check_bicicleta = (CheckBox)dialog.findViewById(R.id.check_bicicleta);
+        final CheckBox check_bodegas = (CheckBox)dialog.findViewById(R.id.check_bodegas);
+        final CheckBox check_calzado = (CheckBox)dialog.findViewById(R.id.check_calzado);
+        final CheckBox check_concesionario = (CheckBox)dialog.findViewById(R.id.check_concesionario);
+        final CheckBox check_drogueria = (CheckBox)dialog.findViewById(R.id.check_drogueria);
+        final CheckBox check_electronica = (CheckBox)dialog.findViewById(R.id.check_electronica);
+        final CheckBox check_ferreteria = (CheckBox)dialog.findViewById(R.id.check_ferreteria);
+        final CheckBox check_floristeria = (CheckBox)dialog.findViewById(R.id.check_floristeria);
+        final CheckBox check_informatica = (CheckBox)dialog.findViewById(R.id.check_informatica);
+        final CheckBox check_joyeria = (CheckBox)dialog.findViewById(R.id.check_joyeria);
+        final CheckBox check_jugueteria = (CheckBox)dialog.findViewById(R.id.check_jugueteria);
+        final CheckBox check_kiosko = (CheckBox)dialog.findViewById(R.id.check_kiosko);
+        final CheckBox check_mascotas = (CheckBox)dialog.findViewById(R.id.check_mascotas);
+        final CheckBox check_mercadillo = (CheckBox)dialog.findViewById(R.id.check_mercadillo);
+        final CheckBox check_mobiliario = (CheckBox)dialog.findViewById(R.id.check_mobilario);
+        final CheckBox check_motos = (CheckBox)dialog.findViewById(R.id.check_motos);
+        final CheckBox check_moviles = (CheckBox)dialog.findViewById(R.id.check_moviles);
+        final CheckBox check_ropa = (CheckBox)dialog.findViewById(R.id.check_ropa);
+        final CheckBox check_cotros = (CheckBox)dialog.findViewById(R.id.check_cotros);
+        LinearLayout bloquedeporte01 = (LinearLayout)dialog.findViewById(R.id.checkbloque11);
+        LinearLayout bloquedeporte02 = (LinearLayout)dialog.findViewById(R.id.checkbloque12);
+        LinearLayout bloquedeporte03 = (LinearLayout)dialog.findViewById(R.id.checkbloque13);
+        if(tvpermanenteocultaBB.getText().toString().equals("deporte")){
+            bloquedeporte01.setVisibility(View.VISIBLE);
+            bloquedeporte02.setVisibility(View.VISIBLE);
+            bloquedeporte03.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_estadio = (CheckBox)dialog.findViewById(R.id.check_estadio);
+        final CheckBox check_gimnasio = (CheckBox)dialog.findViewById(R.id.check_gimnasio);
+        final CheckBox check_golf = (CheckBox)dialog.findViewById(R.id.check_golf);
+        final CheckBox check_piscina = (CheckBox)dialog.findViewById(R.id.check_piscina);
+        final CheckBox check_polideportivo = (CheckBox)dialog.findViewById(R.id.check_polideportivo);
+        final CheckBox check_skatepark = (CheckBox)dialog.findViewById(R.id.check_skatepark);
+        final CheckBox check_tenis = (CheckBox)dialog.findViewById(R.id.check_tenis);
+        final CheckBox check_dotros = (CheckBox)dialog.findViewById(R.id.check_dotros);
+        LinearLayout bloqueeducacion01 = (LinearLayout) dialog.findViewById(R.id.checkbloque14);
+        LinearLayout bloqueeducacion02 = (LinearLayout) dialog.findViewById(R.id.checkbloque15);
+        if(tvpermanenteocultaBB.getText().toString().equals("educacion")){
+            bloqueeducacion01.setVisibility(View.VISIBLE);
+            bloqueeducacion02.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_academia = (CheckBox)dialog.findViewById(R.id.check_academia);
+        final CheckBox check_autoescuela = (CheckBox)dialog.findViewById(R.id.check_autoescuela);
+        final CheckBox check_biblioteca = (CheckBox)dialog.findViewById(R.id.check_biblioteca);
+        final CheckBox check_colegio = (CheckBox)dialog.findViewById(R.id.check_colegio);
+        final CheckBox check_guarderia = (CheckBox)dialog.findViewById(R.id.check_guarderia);
+        final CheckBox check_instituto = (CheckBox)dialog.findViewById(R.id.check_instituto);
+        LinearLayout bloquehoteles01 = (LinearLayout)dialog.findViewById(R.id.checkbloque16);
+        LinearLayout bloquehoteles02 = (LinearLayout)dialog.findViewById(R.id.checkbloque16B);
+        if(tvpermanenteocultaBB.getText().toString().equals("hoteles")){
+            bloquehoteles01.setVisibility(View.VISIBLE);
+            bloquehoteles02.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_albergue = (CheckBox)dialog.findViewById(R.id.check_albergue);
+        final CheckBox check_apartahotel = (CheckBox)dialog.findViewById(R.id.check_apartahotal);
+        final CheckBox check_camping = (CheckBox)dialog.findViewById(R.id.check_camping);
+        final CheckBox check_hostal = (CheckBox)dialog.findViewById(R.id.check_hostal);
+        final CheckBox check_hotel = (CheckBox)dialog.findViewById(R.id.check_hotel);
+        final CheckBox check_pension = (CheckBox)dialog.findViewById(R.id.check_pension);
+        LinearLayout bloqueinmobiliaria01 = (LinearLayout)dialog.findViewById(R.id.checkbloque16C);
+        if(tvpermanenteocultaBB.getText().toString().equals("inmobiliaria")){
+            bloqueinmobiliaria01.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_inmobiliaria = (CheckBox) dialog.findViewById(R.id.check_inmobiliaria);
+        LinearLayout bloqueinstituciones01 = (LinearLayout)dialog.findViewById(R.id.checkbloque17);
+        LinearLayout bloqueinstituciones02 = (LinearLayout)dialog.findViewById(R.id.checkbloque18);
+        if(tvpermanenteocultaBB.getText().toString().equals("instituciones")){
+            bloqueinstituciones01.setVisibility(View.VISIBLE);
+            bloqueinstituciones02.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_ayuntamiento = (CheckBox)dialog.findViewById(R.id.check_ayuntamiento);
+        final CheckBox check_correos = (CheckBox)dialog.findViewById(R.id.check_correos);
+        final CheckBox check_juzgados = (CheckBox)dialog.findViewById(R.id.check_juzgados);
+        final CheckBox check_omic = (CheckBox)dialog.findViewById(R.id.check_omic);
+        final CheckBox check_turismo = (CheckBox)dialog.findViewById(R.id.check_turismo);
+        final CheckBox check_iotros = (CheckBox)dialog.findViewById(R.id.check_iotros);
+        LinearLayout bloquemonumentos01 = (LinearLayout)dialog.findViewById(R.id.checkbloque19);
+        LinearLayout bloquemonumentos02 = (LinearLayout)dialog.findViewById(R.id.checkbloque20);
+        LinearLayout bloquemonumentos03 = (LinearLayout)dialog.findViewById(R.id.checkbloque21);
+        if(tvpermanenteocultaBB.getText().toString().equals("monumentos")){
+            bloquemonumentos01.setVisibility(View.VISIBLE);
+            bloquemonumentos02.setVisibility(View.VISIBLE);
+            bloquemonumentos03.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_castillo = (CheckBox)dialog.findViewById(R.id.check_castillo);
+        final CheckBox check_estatua = (CheckBox)dialog.findViewById(R.id.check_estatua);
+        final CheckBox check_iglesia = (CheckBox)dialog.findViewById(R.id.check_iglesia);
+        final CheckBox check_museo = (CheckBox)dialog.findViewById(R.id.check_museo);
+        final CheckBox check_plaza_de_toros = (CheckBox)dialog.findViewById(R.id.check_plaza_de_toros);
+        final CheckBox check_puente = (CheckBox)dialog.findViewById(R.id.check_puente);
+        final CheckBox check_ruinas = (CheckBox)dialog.findViewById(R.id.check_ruinas);
+        final CheckBox check_torre = (CheckBox)dialog.findViewById(R.id.check_torre);
+        final CheckBox check_motros = (CheckBox)dialog.findViewById(R.id.check_motros);
+        LinearLayout bloqueocio01 = (LinearLayout)dialog.findViewById(R.id.checkbloque22);
+        LinearLayout bloqueocio02 = (LinearLayout)dialog.findViewById(R.id.checkbloque22b);
+        LinearLayout bloqueocio03 = (LinearLayout)dialog.findViewById(R.id.checkbloque23);
+        if(tvpermanenteocultaBB.getText().toString().equals("ocio")){
+            bloqueocio01.setVisibility(View.VISIBLE);
+            bloqueocio02.setVisibility(View.VISIBLE);
+            bloqueocio03.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_bingo = (CheckBox)dialog.findViewById(R.id.check_bingo);
+        final CheckBox check_cine = (CheckBox)dialog.findViewById(R.id.check_cine);
+        final CheckBox check_discoteca = (CheckBox)dialog.findViewById(R.id.check_discoteca);
+        final CheckBox check_karaoke = (CheckBox)dialog.findViewById(R.id.check_karaoke);
+        final CheckBox check_paintball = (CheckBox)dialog.findViewById(R.id.check_paintball);
+        final CheckBox check_scaperoom = (CheckBox)dialog.findViewById(R.id.check_scaperoom);
+        final CheckBox check_parque_infantil = (CheckBox)dialog.findViewById(R.id.check_parque_infantil);
+        final CheckBox check_teatro = (CheckBox)dialog.findViewById(R.id.check_teatro);
+        final CheckBox check_ootros = (CheckBox)dialog.findViewById(R.id.check_ootros);
+        LinearLayout bloqueparque01 = (LinearLayout)dialog.findViewById(R.id.checkbloque24);
+        if(tvpermanenteocultaBB.getText().toString().equals("parque")){
+            bloqueparque01.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_jardines = (CheckBox)dialog.findViewById(R.id.check_jardines);
+        final CheckBox check_parque = (CheckBox)dialog.findViewById(R.id.check_parque);
+        LinearLayout bloqueplaya01 = (LinearLayout)dialog.findViewById(R.id.checkbloque24B);
+        if(tvpermanenteocultaBB.getText().toString().equals("playa")){
+            bloqueplaya01.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_playa = (CheckBox) dialog.findViewById(R.id.check_playa);
+        LinearLayout bloquerestauracion01 = (LinearLayout)dialog.findViewById(R.id.checkbloque25);
+        LinearLayout bloquerestauracion02 = (LinearLayout)dialog.findViewById(R.id.checkbloque26);
+        LinearLayout bloquerestauracion03 = (LinearLayout)dialog.findViewById(R.id.checkbloque27);
+        LinearLayout bloquerestauracion04 = (LinearLayout)dialog.findViewById(R.id.checkbloque28);
+        if(tvpermanenteocultaBB.getText().toString().equals("restauracion")){
+            bloquerestauracion01.setVisibility(View.VISIBLE);
+            bloquerestauracion02.setVisibility(View.VISIBLE);
+            bloquerestauracion03.setVisibility(View.VISIBLE);
+            bloquerestauracion04.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_asador = (CheckBox)dialog.findViewById(R.id.check_asador);
+        final CheckBox check_bar = (CheckBox)dialog.findViewById(R.id.check_bar);
+        final CheckBox check_cafeteria = (CheckBox)dialog.findViewById(R.id.check_cafeteria);
+        final CheckBox check_cerveceria = (CheckBox)dialog.findViewById(R.id.check_cerveceria);
+        final CheckBox check_chiringuito = (CheckBox)dialog.findViewById(R.id.check_chiringuito);
+        final CheckBox check_hamburguesa = (CheckBox)dialog.findViewById(R.id.check_hamburguesa);
+        final CheckBox check_heladeria = (CheckBox)dialog.findViewById(R.id.check_heladeria);
+        final CheckBox check_pizzeria = (CheckBox)dialog.findViewById(R.id.check_pizzeria);
+        final CheckBox check_pub = (CheckBox)dialog.findViewById(R.id.check_pub);
+        final CheckBox check_restaurante = (CheckBox)dialog.findViewById(R.id.check_restaurante);
+        final CheckBox check_rotros = (CheckBox)dialog.findViewById(R.id.check_rotros);
+        LinearLayout bloquesalud01 = (LinearLayout)dialog.findViewById(R.id.checkbloque29);
+        LinearLayout bloquesalud02 = (LinearLayout)dialog.findViewById(R.id.checkbloque30);
+        LinearLayout bloquesalud03 = (LinearLayout)dialog.findViewById(R.id.checkbloque31);
+        if(tvpermanenteocultaBB.getText().toString().equals("salud")){
+            bloquesalud01.setVisibility(View.VISIBLE);
+            bloquesalud02.setVisibility(View.VISIBLE);
+            bloquesalud03.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_ambulatorio = (CheckBox)dialog.findViewById(R.id.check_ambulatorio);
+        final CheckBox check_dentista = (CheckBox)dialog.findViewById(R.id.check_dentista);
+        final CheckBox check_dietista = (CheckBox)dialog.findViewById(R.id.check_dietista);
+        final CheckBox check_farmacia = (CheckBox)dialog.findViewById(R.id.check_farmacia);
+        final CheckBox check_fisioterapia = (CheckBox)dialog.findViewById(R.id.check_fisioterapia);
+        final CheckBox check_optica = (CheckBox)dialog.findViewById(R.id.check_optica);
+        final CheckBox check_podologo = (CheckBox)dialog.findViewById(R.id.check_podologo);
+        final CheckBox check_psicologia = (CheckBox)dialog.findViewById(R.id.check_psicologia);
+        final CheckBox check_veterinario = (CheckBox)dialog.findViewById(R.id.check_veterinario);
+        LinearLayout bloqueservicios01 = (LinearLayout)dialog.findViewById(R.id.checkbloque32);
+        LinearLayout bloqueservicios02 = (LinearLayout)dialog.findViewById(R.id.checkbloque33);
+        LinearLayout bloqueservicios03 = (LinearLayout)dialog.findViewById(R.id.checkbloque34);
+        LinearLayout bloqueservicios04 = (LinearLayout)dialog.findViewById(R.id.checkbloque35);
+        LinearLayout bloqueservicios05 = (LinearLayout)dialog.findViewById(R.id.checkbloque36);
+        LinearLayout bloqueservicios06 = (LinearLayout)dialog.findViewById(R.id.checkbloque37);
+        if(tvpermanenteocultaBB.getText().toString().equals("servicios")){
+            bloqueservicios01.setVisibility(View.VISIBLE);
+            bloqueservicios02.setVisibility(View.VISIBLE);
+            bloqueservicios03.setVisibility(View.VISIBLE);
+            bloqueservicios04.setVisibility(View.VISIBLE);
+            bloqueservicios05.setVisibility(View.VISIBLE);
+            bloqueservicios06.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_autolavado_coche = (CheckBox)dialog.findViewById(R.id.check_autolavado_coche);
+        final CheckBox check_banca = (CheckBox)dialog.findViewById(R.id.check_banca);
+        final CheckBox check_fotografo = (CheckBox)dialog.findViewById(R.id.check_fotografo);
+        final CheckBox check_gasolinera = (CheckBox)dialog.findViewById(R.id.check_gasolinera);
+        final CheckBox check_imprenta = (CheckBox)dialog.findViewById(R.id.check_imprenta);
+        final CheckBox check_juridico = (CheckBox)dialog.findViewById(R.id.check_juridico);
+        final CheckBox check_limpieza = (CheckBox)dialog.findViewById(R.id.check_limpieza);
+        final CheckBox check_papeleria = (CheckBox)dialog.findViewById(R.id.check_papeleria);
+        final CheckBox check_peluqueria = (CheckBox)dialog.findViewById(R.id.check_peluqueria);
+        final CheckBox check_pintor = (CheckBox)dialog.findViewById(R.id.check_pintor);
+        final CheckBox check_plagas = (CheckBox)dialog.findViewById(R.id.check_plagas);
+        final CheckBox check_reformas = (CheckBox)dialog.findViewById(R.id.check_reformas);
+        final CheckBox check_taller = (CheckBox)dialog.findViewById(R.id.check_taller);
+        final CheckBox check_tatuaje = (CheckBox)dialog.findViewById(R.id.check_tatuaje);
+        final CheckBox check_tintoreria = (CheckBox)dialog.findViewById(R.id.check_tintoreria);
+        final CheckBox check_transportes = (CheckBox)dialog.findViewById(R.id.check_transportes);
+        final CheckBox check_viajes = (CheckBox)dialog.findViewById(R.id.check_viajes);
+        final CheckBox check_seotros = (CheckBox)dialog.findViewById(R.id.check_seotros);
+        LinearLayout bloqueseguridad01 = (LinearLayout)dialog.findViewById(R.id.checkbloque38);
+        LinearLayout bloqueseguridad02 = (LinearLayout)dialog.findViewById(R.id.checkbloque39);
+        if(tvpermanenteocultaBB.getText().toString().equals("seguridad")){
+            bloqueseguridad01.setVisibility(View.VISIBLE);
+            bloqueseguridad02.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_guardia_civil = (CheckBox)dialog.findViewById(R.id.check_guardia_civil);
+        final CheckBox check_policia_local = (CheckBox)dialog.findViewById(R.id.check_policia_local);
+        final CheckBox check_policia_nacional = (CheckBox)dialog.findViewById(R.id.check_policia_nacional);
+        final CheckBox check_proteccion_civil = (CheckBox)dialog.findViewById(R.id.check_proteccion);
+        final CheckBox check_seguridad = (CheckBox)dialog.findViewById(R.id.check_seguridad);
+        LinearLayout bloquetransporte01 = (LinearLayout)dialog.findViewById(R.id.checkbloque40);
+        LinearLayout bloquetransporte02 = (LinearLayout)dialog.findViewById(R.id.checkbloque41);
+        if(tvpermanenteocultaBB.getText().toString().equals("transporte")){
+            bloquetransporte01.setVisibility(View.VISIBLE);
+            bloquetransporte02.setVisibility(View.VISIBLE);
+        }
+        final CheckBox check_aeropuerto = (CheckBox)dialog.findViewById(R.id.check_aeropuerto);
+        final CheckBox check_estacion_bus = (CheckBox)dialog.findViewById(R.id.check_estacion);
+        final CheckBox check_estacion_tren = (CheckBox)dialog.findViewById(R.id.check_estacion_tren);
+        final CheckBox check_parada_bus = (CheckBox)dialog.findViewById(R.id.check_parada_bus);
+        final CheckBox check_puerto = (CheckBox)dialog.findViewById(R.id.check_puerto);
+        final CheckBox check_taxi = (CheckBox)dialog.findViewById(R.id.check_taxi);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")){
+            bloquealimentacion01.setVisibility(View.VISIBLE);
+            bloquealimentacion02.setVisibility(View.VISIBLE);
+            bloquealimentacion03.setVisibility(View.VISIBLE);
+            bloquecompras01.setVisibility(View.VISIBLE);
+            bloquecompras02.setVisibility(View.VISIBLE);
+            bloquecompras03.setVisibility(View.VISIBLE);
+            bloquecompras04.setVisibility(View.VISIBLE);
+            bloquecompras05.setVisibility(View.VISIBLE);
+            bloquecompras06.setVisibility(View.VISIBLE);
+            bloquecompras07.setVisibility(View.VISIBLE);
+            bloquedeporte01.setVisibility(View.VISIBLE);
+            bloquedeporte02.setVisibility(View.VISIBLE);
+            bloquedeporte03.setVisibility(View.VISIBLE);
+            bloqueeducacion01.setVisibility(View.VISIBLE);
+            bloqueeducacion02.setVisibility(View.VISIBLE);
+            bloquehoteles01.setVisibility(View.VISIBLE);
+            bloquehoteles02.setVisibility(View.VISIBLE);
+            bloqueinstituciones01.setVisibility(View.VISIBLE);
+            bloqueinstituciones02.setVisibility(View.VISIBLE);
+            bloquemonumentos01.setVisibility(View.VISIBLE);
+            bloquemonumentos02.setVisibility(View.VISIBLE);
+            bloquemonumentos03.setVisibility(View.VISIBLE);
+            bloqueocio01.setVisibility(View.VISIBLE);
+            bloqueocio02.setVisibility(View.VISIBLE);
+            bloqueocio03.setVisibility(View.VISIBLE);
+            bloqueparque01.setVisibility(View.VISIBLE);
+            bloquerestauracion01.setVisibility(View.VISIBLE);
+            bloquerestauracion02.setVisibility(View.VISIBLE);
+            bloquerestauracion03.setVisibility(View.VISIBLE);
+            bloquerestauracion04.setVisibility(View.VISIBLE);
+            bloquesalud01.setVisibility(View.VISIBLE);
+            bloquesalud02.setVisibility(View.VISIBLE);
+            bloquesalud03.setVisibility(View.VISIBLE);
+            bloqueservicios01.setVisibility(View.VISIBLE);
+            bloqueservicios02.setVisibility(View.VISIBLE);
+            bloqueservicios03.setVisibility(View.VISIBLE);
+            bloqueservicios04.setVisibility(View.VISIBLE);
+            bloqueservicios05.setVisibility(View.VISIBLE);
+            bloqueservicios06.setVisibility(View.VISIBLE);
+            bloqueseguridad01.setVisibility(View.VISIBLE);
+            bloqueseguridad02.setVisibility(View.VISIBLE);
+            bloquetransporte01.setVisibility(View.VISIBLE);
+            bloquetransporte02.setVisibility(View.VISIBLE);
+
+        }
+
+
+
+
+
+        Button btnfooterDialogFiltroBA = (Button)dialog.findViewById(R.id.btnfooterDialogFiltroBA);
+
+        btnfooterDialogFiltroBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvfiltroocultaBB.setText("");
+                if(check_carniceria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_a_carniceria");
+                }
+                if(check_fruteria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_a_fruteria");
+                }
+                if(check_panaderia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_a_panaderia");
+                }
+                if(check_pasteleria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_a_pasteleria");
+                }
+                if(check_pescaderia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_a_pescaderia");
+                }
+                if(check_supermercado.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_a_supermercado");
+                }
+                if(check_aotros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_a_aotros");
+                }
+                if(check_asociaciones.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_cat_asociaciones");
+                }
+                if(check_bazar.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_bazar");
+                }
+                if(check_bicicleta.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_bicicleta");
+                }
+                if(check_bodegas.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_bodega");
+                }
+                if(check_calzado.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_calzado");
+                }
+                if(check_concesionario.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_concesionario");
+                }
+                if(check_drogueria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_drogueria");
+                }
+                if(check_electronica.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_electronica");
+                }
+                if(check_ferreteria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_ferreteria");
+                }
+                if(check_floristeria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_floristeria");
+                }
+                if(check_informatica.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_informatica");
+                }
+                if(check_joyeria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_joyeria");
+                }
+                if(check_jugueteria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_jugueteria");
+                }
+                if(check_kiosko.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_kiosko");
+                }
+                if(check_mascotas.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_mascotas");
+                }
+                if(check_mercadillo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_mercadillo");
+                }
+                if(check_mobiliario.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_mobiliario");
+                }
+                if(check_motos.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_motos");
+                }
+                if(check_moviles.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_moviles");
+                }
+                if(check_ropa.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_ropa");
+                }
+                if(check_cotros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_cotros");
+                }
+                if(check_estadio.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_estadio");
+                }
+                if(check_gimnasio.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_gimnasio");
+                }
+                if(check_golf.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_golf");
+                }
+                if(check_piscina.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_piscina");
+                }
+                if(check_polideportivo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_polideportivo");
+                }
+                if(check_skatepark.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_skatepark");
+                }
+                if(check_tenis.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_tenis");
+                }
+                if(check_dotros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_d_dotros");
+                }
+                if(check_academia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_academia");
+                }
+                if(check_autoescuela.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_autoescuela");
+                }
+                if(check_biblioteca.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_biblioteca");
+                }
+                if(check_colegio.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_colegio");
+                }
+                if(check_guarderia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_guarderia");
+                }
+                if(check_instituto.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_instituto");
+                }
+                if(check_albergue.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_h_albergue");
+                }
+                if(check_apartahotel.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_h_apartahotel");
+                }
+                if(check_camping.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_h_camping");
+                }
+                if(check_hostal.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_h_hostal");
+                }
+                if(check_hotel.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_h_hotel");
+                }
+                if(check_pension.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_h_pension");
+                }
+                if(check_inmobiliaria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_cat_inmobiliaria");
+                }
+                if(check_ayuntamiento.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_i_ayuntamiento");
+                }
+                if(check_correos.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_i_correos");
+                }
+                if(check_juzgados.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_i_juzgados");
+                }
+                if(check_omic.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_i_omic");
+                }
+                if(check_turismo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_i_turismo");
+                }
+                if(check_iotros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_i_iotros");
+                }
+                if(check_castillo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_castillo");
+                }
+                if(check_estatua.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_estatua");
+                }
+                if(check_iglesia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_iglesia");
+                }
+                if(check_museo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_museo");
+                }
+                if(check_plaza_de_toros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_plaza_de_toros");
+                }
+                if(check_puente.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_puente");
+                }
+                if(check_ruinas.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_ruinas");
+                }
+                if(check_torre.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_torre");
+                }
+                if(check_motros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_m_motros");
+                }
+                if(check_bingo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_bingo");
+                }
+                if(check_cine.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_cine");
+                }
+                if(check_discoteca.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_discoteca");
+                }
+                if(check_karaoke.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_karaoke");
+                }
+                if(check_paintball.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_paintball");
+                }
+                if(check_scaperoom.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_scaperoom");
+                }
+                if(check_parque_infantil.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_parque_infantil");
+                }
+                if(check_teatro.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_teatro");
+                }
+                if(check_ootros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_ootros");
+                }
+                if(check_jardines.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_pa_jardines");
+                }
+                if(check_parque.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_pa_parque");
+                }
+                if(check_playa.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_cat_pl_playa");
+                }
+                if(check_asador.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_asador");
+                }
+                if(check_bar.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_bar");
+                }
+                if(check_cafeteria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_cafeteria");
+                }
+                if(check_cerveceria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_cerveceria");
+                }
+                if(check_chiringuito.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_chiringuito");
+                }
+                if(check_hamburguesa.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_hamburguesa");
+                }
+                if(check_heladeria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_heladeria");
+                }
+                if(check_pizzeria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_pizzeria");
+                }
+                if(check_pub.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_pub");
+                }
+                if(check_restaurante.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_restaurante");
+                }
+                if(check_rotros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_r_rotros");
+                }
+                if(check_ambulatorio.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_ambulatorio");
+                }
+                if(check_dentista.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_dentista");
+                }
+                if(check_dietista.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_dietista");
+                }
+                if(check_farmacia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_farmacia");
+                }
+                if(check_fisioterapia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_fisioterapia");
+                }
+                if(check_optica.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_optica");
+                }
+                if(check_podologo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_podologo");
+                }
+                if(check_psicologia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_psicologia");
+                }
+                if(check_veterinario.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_sa_veterinario");
+                }
+                if(check_autolavado_coche.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_autolavado_coche");
+                }
+                if(check_banca.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_banca");
+                }
+                if(check_fotografo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_fotografo");
+                }
+                if(check_gasolinera.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_gasolinera");
+                }
+                if(check_imprenta.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_imprenta");
+                }
+                if(check_juridico.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_juridico");
+                }
+                if(check_limpieza.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_limpieza");
+                }
+                if(check_papeleria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_papeleria");
+                }
+                if(check_peluqueria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_peluqueria");
+                }
+                if(check_pintor.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_pintor");
+                }
+                if(check_plagas.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_plagas");
+                }
+                if(check_reformas.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_reformas");
+                }
+                if(check_taller.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_taller");
+                }
+                if(check_tatuaje.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_tatuaje");
+                }
+                if(check_tintoreria.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_tintoreria");
+                }
+                if(check_transportes.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_transportes");
+                }
+                if(check_viajes.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_viajes");
+                }
+                if(check_seotros.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_se_seotros");
+                }
+                if(check_guardia_civil.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_seg_guardia_civil");
+                }
+                if(check_policia_local.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_seg_policia_local");
+                }
+                if(check_policia_nacional.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_seg_policia_nacional");
+                }
+                if(check_proteccion_civil.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_seg_proteccion");
+                }
+                if(check_seguridad.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_seg_seguridad");
+                }
+                if(check_aeropuerto.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_t_aeropuerto");
+                }
+                if(check_estacion_bus.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_t_estacion");
+                }
+                if(check_estacion_tren.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_t_estacion_tren");
+                }
+                if(check_parada_bus.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_t_parada_bus");
+                }
+                if(check_puerto.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_t_puerto");
+                }
+                if(check_taxi.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_t_taxi");
+                }
+
+                Intent mainIntent = new Intent().setClass(
+                        BBMapaActivity.this, BBMapaActivity.class);
+                mainIntent.putExtra("EXTRA_PERMANENTE",tvpermanenteocultaBB.getText().toString());
+                mainIntent.putExtra("EXTRA_FILTRO",tvfiltroocultaBB.getText().toString());
+                startActivity(mainIntent);
+
+            }
+        });
+
+
+
+
         //MOSTAR DIALOGO
         dialog.show();
 
@@ -245,923 +953,1058 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap.moveCamera(inicioSatelite);
         //MARCADORES ALIMENTACION
 
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("alimentacion"))) {
 
-        dbRef.child("alimentacion").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("alimentacion").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_a_carniceria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_carniceria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_a_fruteria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_fruteria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_a_panaderia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_panaderia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_a_pasteleria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_pasteleria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_a_pescaderia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_pescaderia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_a_supermercado")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_supermercado));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_zotros));
-                    }
-                    markeroptions.title("alimentacion/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                }
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
 
-            }
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_a_carniceria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_carniceria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_a_fruteria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_fruteria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_a_panaderia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_panaderia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_a_pasteleria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_pasteleria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_a_pescaderia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_pescaderia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_a_supermercado")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_supermercado));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_a_zotros));
+                            }
+                            markeroptions.title("alimentacion/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
 
-            }
-        });
-        //MARCADORES ASOCIACIONES
-        dbRef.child("asociaciones").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
-                    //COSA PARA HACER INVISIBLE EL TITLE
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
-
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_asociaciones));
-
-                    /*try {
-                        String direccionnegocioCA = anun.getDireccion();
-
-                        List<Address> addressList = geocoder.getFromLocationName(
-                                direccionnegocioCA, 5);
-                        if (addressList != null && addressList.size() > 0) {
-                            Double lat = (Double) (addressList.get(0).getLatitude() );
-                            Double lng = (Double) (addressList.get(0).getLongitude() );
-                            String latitudint = Double.toString(lat);
-                            tvlatitudocultaBB.setText(latitudint);
-                            String longitudint = Double.toString(lng);
-                            tvlongitudocultaBB.setText(longitudint);
-                            Toast.makeText(context, "Latitud: "+tvlatitudocultaBB.getText().toString()+" y longitud: "+tvlongitudocultaBB.getText().toString(), Toast.LENGTH_LONG).show();
                         }
-                    }catch (Exception e) {
-                        e.printStackTrace();
-                    }*/
 
-
-
-                    markeroptions.title("asociaciones/"+anun.getNombre());
-                    /*String latfin = tvlatitudocultaBB.getText().toString();
-                    String lngfin = tvlongitudocultaBB.getText().toString();
-                    Double latdob = Double.parseDouble(latfin);
-                    Double lngdob = Double.parseDouble(lngfin);*/
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+        }
+        //MARCADORES ASOCIACIONES
 
-            }
-        });
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("asociaciones"))) {
+
+
+            dbRef.child("asociaciones").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+                            //COSA PARA HACER INVISIBLE EL TITLE
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_asociaciones));
+
+                            markeroptions.title("asociaciones/" + anun.getNombre());
+
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+        }
         //MARCADORES COMPRAS
-        dbRef.child("compras").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("compras"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("compras").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_c_bazar")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_bazar));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_bicicleta")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_bicicleta));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_bodegas")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_bodegas));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_calzado")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_calzado));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_concesionario")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_concesionario));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_drogueria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_drogueria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_electronica")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_electronica));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_ferreteria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_ferreteria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_floristeria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_floristeria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_informatica")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_informatica));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_joyeria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_joyeria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_jugueteria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_jugueteria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_kiosko")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_kiosko));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_mascotas")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_mascotas));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_mercadillo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_mercadillo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_mobiliario")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_mobilario));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_motos")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_motos));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_moviles")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_moviles));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_c_ropa")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_ropa));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("compras/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_c_bazar")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_bazar));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_bicicleta")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_bicicleta));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_bodegas")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_bodegas));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_calzado")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_calzado));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_concesionario")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_concesionario));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_drogueria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_drogueria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_electronica")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_electronica));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_ferreteria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_ferreteria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_floristeria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_floristeria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_informatica")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_informatica));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_joyeria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_joyeria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_jugueteria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_jugueteria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_kiosko")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_kiosko));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_mascotas")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_mascotas));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_mercadillo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_mercadillo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_mobiliario")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_mobilario));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_motos")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_motos));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_moviles")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_moviles));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_c_ropa")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_ropa));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_zotros));
+                            }
+
+                            markeroptions.title("compras/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
+
         //MARCADORES DEPORTES
-        dbRef.child("deportes").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("deportes"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("deportes").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_d_estadio")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_estadio));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_d_gimnasio")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_gimnasio));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_d_golf")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_golf));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_d_piscina")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_piscina));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_d_polideportivo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_polideportivo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_d_skatepark")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_skatepark));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_d_tenis")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_tenis));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("deportes/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_d_estadio")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_estadio));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_d_gimnasio")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_gimnasio));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_d_golf")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_golf));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_d_piscina")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_piscina));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_d_polideportivo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_polideportivo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_d_skatepark")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_skatepark));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_d_tenis")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_tenis));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_d_zotros));
+                            }
+
+                            markeroptions.title("deportes/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES EDUCACION
-        dbRef.child("educacion").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("educacion"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("educacion").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_e_academia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_academia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_e_autoescuela")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_autoescuela));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_e_biblioteca")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_biblioteca));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_e_colegio")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_colegio));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_e_guarderia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_guarderia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_e_instituto")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_instituto));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_e_academia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_academia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_e_autoescuela")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_autoescuela));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_e_biblioteca")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_biblioteca));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_e_colegio")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_colegio));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_e_guarderia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_guarderia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_e_instituto")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_instituto));
+                            }
 
 
-                    markeroptions.title("educacion/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                            markeroptions.title("educacion/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES HOTELES
-        dbRef.child("hoteles").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("hoteles"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("hoteles").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_h_hostal")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_hostal));
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_h_hostal")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_hostal));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_h_hotel")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_hotel));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_h_pension")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_pension));
+                            }
+
+                            markeroptions.title("hoteles/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
                     }
-                    if (anun.getSubcategoria().equals("ic_sub_h_hotel")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_hotel));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_h_pension")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_pension));
-                    }
-
-                    markeroptions.title("hoteles/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES INMOBILIARIA
-        dbRef.child("inmobiliaria").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("inmobiliaria"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("inmobiliaria").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_inmobiliaria));
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("inmobiliaria/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_inmobiliaria));
+
+                            markeroptions.title("inmobiliaria/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES INSTITUCIONES
-        dbRef.child("instituciones").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("instituciones"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("instituciones").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_i_ayuntamiento")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_ayuntamiento));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_i_correos")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_correos));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_i_juzgados")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_juzgados));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_i_omic")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_omic));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_i_turismo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_turismo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("instituciones/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_i_ayuntamiento")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_ayuntamiento));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_i_correos")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_correos));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_i_juzgados")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_juzgados));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_i_omic")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_omic));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_i_turismo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_turismo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_i_zotros));
+                            }
+
+                            markeroptions.title("instituciones/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES MONUMENTOS
-        dbRef.child("monumentos").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("monumentos"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("monumentos").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_m_castillo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_castillo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_m_estatua")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_estatua));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_m_iglesia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_iglesia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_m_museo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_museo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_m_plaza_de_toros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_plaza_de_toros));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_m_puente")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_puente));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_m_ruinas")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_ruinas));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_m_torre")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_torre));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("monumentos/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_m_castillo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_castillo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_m_estatua")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_estatua));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_m_iglesia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_iglesia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_m_museo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_museo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_m_plaza_de_toros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_plaza_de_toros));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_m_puente")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_puente));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_m_ruinas")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_ruinas));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_m_torre")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_torre));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_m_zotros));
+                            }
+
+                            markeroptions.title("monumentos/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES OCIO
-        dbRef.child("ocio").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("ocio"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("ocio").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_o_bingo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_bingo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_o_cine")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_cine));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_o_discoteca")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_discoteca));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_o_karaoke")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_karaoke));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_o_paintball")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_paintball));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_o_parque_infantil")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_parque_infantil));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_o_scaperoom")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_scaperoom));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_o_teatro")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_teatro));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("ocio/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_o_bingo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_bingo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_cine")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_cine));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_discoteca")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_discoteca));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_karaoke")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_karaoke));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_paintball")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_paintball));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_parque_infantil")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_parque_infantil));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_scaperoom")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_scaperoom));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_teatro")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_teatro));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_zotros));
+                            }
+
+                            markeroptions.title("ocio/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES PARQUE
-        dbRef.child("parque").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("parque"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("parque").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_pa_jardines")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_jardines));
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_pa_jardines")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_jardines));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_pa_parque")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_parque));
+                            }
+
+
+                            markeroptions.title("parque/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
                     }
-                    if (anun.getSubcategoria().equals("ic_sub_pa_parque")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_parque));
-                    }
-
-
-                    markeroptions.title("parque/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES PLAYA
-        dbRef.child("playa").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("playa"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("playa").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_playa));
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("playa/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_playa));
+
+                            markeroptions.title("playa/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES RESTAURACION
-        dbRef.child("restauracion").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("restauracion"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("restauracion").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_r_asador")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_asador));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_bar")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_bar));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_cafeteria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_cafeteria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_cerveceria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_cerveceria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_chiringuito")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_chiringuito));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_hamburguesa")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_hamburguesa));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_heladeria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_heladeria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_pizzeria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_pizzeria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_pub")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_pub));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_r_restaurante")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_restaurante));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("restauracion/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_r_asador")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_asador));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_bar")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_bar));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_cafeteria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_cafeteria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_cerveceria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_cerveceria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_chiringuito")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_chiringuito));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_hamburguesa")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_hamburguesa));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_heladeria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_heladeria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_pizzeria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_pizzeria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_pub")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_pub));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_r_restaurante")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_restaurante));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_r_zotros));
+                            }
+
+                            markeroptions.title("restauracion/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES SALUD
-        dbRef.child("salud").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("salud"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("salud").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_sa_ambulatorio")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_ambulatorio));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_dentista")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_dentista));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_dietista")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_dietista));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_farmacia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_farmacia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_fisioterapia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_fisioterapia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_optica")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_optica));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_podologo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_podologo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_psicologia")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_psicologia));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_sa_veterinario")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_veterinario));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("salud/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_sa_ambulatorio")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_ambulatorio));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_dentista")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_dentista));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_dietista")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_dietista));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_farmacia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_farmacia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_fisioterapia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_fisioterapia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_optica")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_optica));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_podologo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_podologo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_psicologia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_psicologia));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_sa_veterinario")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_veterinario));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_sa_zotros));
+                            }
+
+                            markeroptions.title("salud/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES SEGURIDAD
-        dbRef.child("seguridad").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("seguridad"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("seguridad").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_seg_guardia_civil")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_guardia_civil));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_seg_policia_local")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_policia_local));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_seg_policia_nacional")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_policia_nacional));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_seg_proteccion")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_proteccion));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_seg_seguridad")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_seguridad));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_seg_guardia_civil")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_guardia_civil));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_seg_policia_local")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_policia_local));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_seg_policia_nacional")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_policia_nacional));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_seg_proteccion")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_proteccion));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_seg_seguridad")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_seguridad));
+                            }
 
 
-                    markeroptions.title("seguridad/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                            markeroptions.title("seguridad/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES SERVICIOS
-        dbRef.child("servicios").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("servicios"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("servicios").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_se_autolavado_coche")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_autolavado_coche));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_banca")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_banca));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_fotografo")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_fotografo));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_gasolinera")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_gasolinera));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_imprenta")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_imprenta));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_juridico")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_juridico));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_limpieza")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_limpieza));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_papeleria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_papeleria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_peluqueria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_peluqueria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_pintor")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_pintor));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_plagas")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_plagas));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_reformas")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_reformas));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_taller")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_taller));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_tatuaje")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_tatuaje));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_tintoreria")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_tintoreria));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_transportes")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_transportes));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_se_viajes")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_viajes));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_zotros));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
 
-                    markeroptions.title("servicios/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_se_autolavado_coche")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_autolavado_coche));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_banca")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_banca));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_fotografo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_fotografo));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_gasolinera")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_gasolinera));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_imprenta")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_imprenta));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_juridico")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_juridico));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_limpieza")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_limpieza));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_papeleria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_papeleria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_peluqueria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_peluqueria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_pintor")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_pintor));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_plagas")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_plagas));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_reformas")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_reformas));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_taller")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_taller));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_tatuaje")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_tatuaje));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_tintoreria")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_tintoreria));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_transportes")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_transportes));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_se_viajes")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_viajes));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_se_zotros));
+                            }
+
+                            markeroptions.title("servicios/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
         //MARCADORES TRANSPORTE
-        dbRef.child("transporte").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+        if(tvpermanenteocultaBB.getText().toString().equals("todo")||(tvpermanenteocultaBB.getText().toString().equals("transporte"))) {
 
-                    mMap.setInfoWindowAdapter
-                            (new ZTitleInvisible(BBMapaActivity.this) {
-                                @Override
-                                public boolean onTouch(View view, MotionEvent motionEvent) {
-                                    return false;
-                                }
-                            });
+            dbRef.child("transporte").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    MarkerOptions markeroptions = new MarkerOptions();
-                    if (anun.getSubcategoria().equals("ic_sub_t_aeropuerto")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_aeropuerto));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_t_estacion")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_estacion));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_t_estacion_tren")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_estacion_tren));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_t_parada_bus")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_parada_bus));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_t_puerto")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_puerto));
-                    }
-                    if (anun.getSubcategoria().equals("ic_sub_t_taxi")) {
-                        markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_taxi));
-                    }
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ZAnuncio anun = snapshot.getValue(ZAnuncio.class);
+
+                        if(tvfiltroocultaBB.getText().toString().contains(anun.getSubcategoria()) || tvfiltroocultaBB.getText().toString().equals("todo")) {
+
+                            mMap.setInfoWindowAdapter
+                                    (new ZTitleInvisible(BBMapaActivity.this) {
+                                        @Override
+                                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                                            return false;
+                                        }
+                                    });
+
+                            MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_t_aeropuerto")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_aeropuerto));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_t_estacion")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_estacion));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_t_estacion_tren")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_estacion_tren));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_t_parada_bus")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_parada_bus));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_t_puerto")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_puerto));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_t_taxi")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_t_taxi));
+                            }
 
 
-                    markeroptions.title("transporte/"+anun.getNombre());
-                    markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
-                    tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+                            markeroptions.title("transporte/" + anun.getNombre());
+                            markeroptions.position(new LatLng(anun.getLatitud(), anun.getLongitud()));
+                            tmpRealTimeMarkers.add(mMap.addMarker(markeroptions));
+
+                        }
+
+                    }
 
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
 
-            }
-        });
+        }
+
+
+
+
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
@@ -1582,6 +2425,10 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             e.printStackTrace();
         }
      */
+    /*String latfin = tvlatitudocultaBB.getText().toString();
+                    String lngfin = tvlongitudocultaBB.getText().toString();
+                    Double latdob = Double.parseDouble(latfin);
+                    Double lngdob = Double.parseDouble(lngfin);*/
 
 
 }

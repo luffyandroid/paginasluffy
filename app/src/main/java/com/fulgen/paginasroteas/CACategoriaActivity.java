@@ -338,6 +338,8 @@ public class CACategoriaActivity extends AppCompatActivity {
     public void clickMapaCA(View v) {
         Intent mainIntent = new Intent().setClass(
                 CACategoriaActivity.this, BBMapaActivity.class);
+        mainIntent.putExtra("EXTRA_PERMANENTE",tvcabeceraCA.getText().toString());
+        mainIntent.putExtra("EXTRA_FILTRO","todo");
         //TRANSICIÓN LATERAL PARA ADELANTE
         overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
         startActivity(mainIntent);
