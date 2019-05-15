@@ -42,6 +42,10 @@
     <!-- MENU LOTTIE -->
     <dimen name="paddinmenucat">15dp</dimen>
 
+    <!-- DIALOG MAP -->
+    <dimen name="dialogAncho">650dp</dimen>
+    <dimen name="dialogAlto">1250dp</dimen>
+
 
 
 

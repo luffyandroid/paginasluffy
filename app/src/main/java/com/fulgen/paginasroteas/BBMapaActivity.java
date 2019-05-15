@@ -2076,6 +2076,11 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.activity_adaptadormapa);
 
+        //CAMBIAR TAMAÑO DEL DIALOGO
+        dialog.getWindow().setLayout(650, 1250);
+        //dialog.getWindow().setLayout(R.dimen.dialogAncho, R.dimen.dialogAlto);
+
+
         dbRef = FirebaseDatabase.getInstance().getReference().child(tvidmarcadorBB.getText().toString());
 
         valueEventListener = new ValueEventListener() {

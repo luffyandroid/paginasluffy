@@ -310,7 +310,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:button="@drawable/ic_sub_z_otros_selector" />
+                            android:button="@drawable/ic_cat_asociaciones_selector" />
 
                         //TEXTO CHECKBOX 1
                         <TextView
@@ -1538,7 +1538,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:button="@drawable/ic_sub_z_otros_selector" />
+                            android:button="@drawable/ic_cat_inmobiliaria_selector" />
 
                         //TEXTO CHECKBOX 1
                         <TextView
@@ -2355,7 +2355,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:button="@drawable/ic_sub_z_otros_selector" />
+                            android:button="@drawable/ic_cat_pl_playa_selector" />
 
                         //TEXTO CHECKBOX 1
                         <TextView
