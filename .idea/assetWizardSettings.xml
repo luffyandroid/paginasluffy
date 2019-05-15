@@ -15,11 +15,11 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="autoMirrored" value="true" />
-                            <entry key="height" value="512" />
-                            <entry key="outputName" value="ic_cat_pl_playa_" />
+                            <entry key="height" value="105" />
+                            <entry key="outputName" value="ic_redesc_twitter_disable" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="F:\CAT PL PLAYA_-01.svg" />
-                            <entry key="width" value="512" />
+                            <entry key="sourceFile" value="F:\redesc_twitter_disable.svg" />
+                            <entry key="width" value="105" />
                           </map>
                         </option>
                       </PersistentState>
