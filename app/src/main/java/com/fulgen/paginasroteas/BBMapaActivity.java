@@ -490,6 +490,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             bloquealimentacion01.setVisibility(View.VISIBLE);
             bloquealimentacion02.setVisibility(View.VISIBLE);
             bloquealimentacion03.setVisibility(View.VISIBLE);
+            bloqueasociaciones01.setVisibility(View.VISIBLE);
             bloquecompras01.setVisibility(View.VISIBLE);
             bloquecompras02.setVisibility(View.VISIBLE);
             bloquecompras03.setVisibility(View.VISIBLE);
@@ -504,6 +505,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             bloqueeducacion02.setVisibility(View.VISIBLE);
             bloquehoteles01.setVisibility(View.VISIBLE);
             bloquehoteles02.setVisibility(View.VISIBLE);
+            bloqueinmobiliaria01.setVisibility(View.VISIBLE);
             bloqueinstituciones01.setVisibility(View.VISIBLE);
             bloqueinstituciones02.setVisibility(View.VISIBLE);
             bloquemonumentos01.setVisibility(View.VISIBLE);
@@ -513,6 +515,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             bloqueocio02.setVisibility(View.VISIBLE);
             bloqueocio03.setVisibility(View.VISIBLE);
             bloqueparque01.setVisibility(View.VISIBLE);
+            bloqueplaya01.setVisibility(View.VISIBLE);
             bloquerestauracion01.setVisibility(View.VISIBLE);
             bloquerestauracion02.setVisibility(View.VISIBLE);
             bloquerestauracion03.setVisibility(View.VISIBLE);
@@ -2146,7 +2149,45 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                     horario.setText(anuncio.getHorariofr());
                 }
 
+                if(descuento.getText().toString().equals("no")){
+
+                    descuento.setVisibility(View.GONE);
+
+                }
                 //BOTONES REDES
+                //COLORES DESHABILITADOS
+
+                if(anuncio.getFacebook().equals("no")){
+
+                    btnimagfacebookADAPTADOR.setBackgroundColor(666666);
+                    btnimagfacebookADAPTADOR.setImageResource(R.drawable.redesc_facebook_disable);
+
+                }
+                if(anuncio.getTwitter().equals("no")){
+
+                    btnimagtwitterADAPTADOR.setBackgroundColor(666666);
+                    btnimagtwitterADAPTADOR.setImageResource(R.drawable.ic_redesc_twitter_disable);
+
+                }
+                if(anuncio.getTelefono().equals("no")){
+
+                    btnimagtlfADAPTADOR.setBackgroundColor(666666);
+                    btnimagtlfADAPTADOR.setImageResource(R.drawable.redesc_telefono_disable);
+
+                }
+                if(anuncio.getMail().equals("no")){
+
+                    btnimagmailADAPTADOR.setBackgroundColor(666666);
+                    btnimagmailADAPTADOR.setImageResource(R.drawable.redesc_correo_disable);
+
+                }
+                if(anuncio.getExtra().equals("no")){
+
+                    btnimagextraADAPTADOR.setBackgroundColor(666666);
+                    btnimagextraADAPTADOR.setImageResource(R.drawable.redesc_extra_disable);
+
+                }
+
                 //FACEBOOK
                 btnimagfacebookADAPTADOR.setOnClickListener(
                         new View.OnClickListener() {

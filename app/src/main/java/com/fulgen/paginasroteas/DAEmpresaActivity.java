@@ -53,8 +53,8 @@ public class DAEmpresaActivity extends AppCompatActivity {
     final Context context = this;
 
     private FloatingActionsMenu menu_fabDA;
-    ImageView imagempresaDA, imgCabeceramenuDA;
-    TextView tvcabeceraDA, tvempresaDA, tvdescripempresaDA, tvinformacionadicionalDA, tvhorarioDA, tvdireccionDA,
+    ImageView imagempresaDA, imgCabeceramenuDA, btnimagfacebookDA, btnimagtwitterDA, btnimagtlfDA, btnimagmailDA, btnimagmapDA, btnimagextraDA;
+    TextView tvcabeceraDA, tvcabeceraocultaDA, tvempresaDA, tvdescripempresaDA, tvinformacionadicionalDA, tvhorarioDA, tvdireccionDA,
             tvimagfacebookDA, tvimagtwitterDA, tvimagtlfDA, tvimagmailDA, tvimagmapDA, tvimagextraDA, tvidiomaDA, tvdescripempresacortaDA;
 
     //005
@@ -70,6 +70,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         menu_fabDA = (FloatingActionsMenu) findViewById(R.id.menu_fabDA);
 
         tvcabeceraDA = (TextView) findViewById(R.id.tvcabeceraDA);
+        tvcabeceraocultaDA = (TextView) findViewById(R.id.tvcabeceraocultaDA);
         tvempresaDA = (TextView) findViewById(R.id.tvempresaDA);
         tvdescripempresaDA = (TextView) findViewById(R.id.tvdescripempresaDA);
         tvinformacionadicionalDA = (TextView) findViewById(R.id.tvinformacionadicionalDA);
@@ -85,6 +86,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
         tvdescripempresacortaDA = (TextView) findViewById(R.id.tvdescripempresacortaDA);
         imagempresaDA = (ImageView) findViewById(R.id.imagempresaDA);
         imgCabeceramenuDA = (ImageView) findViewById(R.id.imgCabeceramenuDA);
+        btnimagfacebookDA = (ImageView)findViewById(R.id.btnimagfacebookDA);
+        btnimagtwitterDA = (ImageView)findViewById(R.id.btnimagtwitterDA);
+        btnimagtlfDA = (ImageView)findViewById(R.id.btnimagtlfDA);
+        btnimagmailDA = (ImageView)findViewById(R.id.btnimagmailDA);
+        btnimagmapDA = (ImageView)findViewById(R.id.btnimagmapDA);
+        btnimagextraDA = (ImageView)findViewById(R.id.btnimagextraDA);
 
         //005
         //idForSaveView=(LinearLayout)findViewById(R.id.idForSaveView);
@@ -111,7 +118,124 @@ public class DAEmpresaActivity extends AppCompatActivity {
             tvimagmapDA.setText(anuncio.getMaps());
             tvimagextraDA.setText(anuncio.getExtra());
 
-            tvcabeceraDA.setText(catcatanuncio);
+            if (tvimagfacebookDA.getText().toString().equals("no")){
+
+                btnimagfacebookDA.setBackgroundColor(666666);
+                btnimagfacebookDA.setImageResource(R.drawable.redesc_facebook_disable);
+
+            }
+            if (tvimagtwitterDA.getText().toString().equals("no")){
+
+                btnimagtwitterDA.setBackgroundColor(666666);
+                btnimagtwitterDA.setImageResource(R.drawable.ic_redesc_twitter_disable);
+
+            }
+            if (tvimagtlfDA.getText().toString().equals("no")){
+
+                btnimagtlfDA.setBackgroundColor(666666);
+                btnimagtlfDA.setImageResource(R.drawable.redesc_telefono_disable);
+
+            }
+            if (tvimagmailDA.getText().toString().equals("no")){
+
+                btnimagmailDA.setBackgroundColor(666666);
+                btnimagmailDA.setImageResource(R.drawable.redesc_correo_disable);
+
+            }
+            if (tvimagextraDA.getText().toString().equals("no")){
+
+                btnimagextraDA.setBackgroundColor(666666);
+                btnimagextraDA.setImageResource(R.drawable.redesc_extra_disable);
+
+            }
+
+            tvcabeceraocultaDA.setText(catcatanuncio);
+
+            if(catcatanuncio.equals("alimentacion")){
+
+                tvcabeceraDA.setText(R.string.alimentacion);
+
+            }
+            if(catcatanuncio.equals("asociaciones")){
+
+                tvcabeceraDA.setText(R.string.asociaciones);
+
+            }
+            if(catcatanuncio.equals("compras")){
+
+                tvcabeceraDA.setText(R.string.compras);
+
+            }
+            if(catcatanuncio.equals("deporte")){
+
+                tvcabeceraDA.setText(R.string.deporte);
+
+            }
+            if(catcatanuncio.equals("educacion")){
+
+                tvcabeceraDA.setText(R.string.educacion);
+
+            }
+            if(catcatanuncio.equals("hoteles")){
+
+                tvcabeceraDA.setText(R.string.hoteles);
+
+            }
+            if(catcatanuncio.equals("inmobiliaria")){
+
+                tvcabeceraDA.setText(R.string.inmobiliaria);
+
+            }
+            if(catcatanuncio.equals("instituciones")){
+
+                tvcabeceraDA.setText(R.string.instituciones);
+
+            }
+            if(catcatanuncio.equals("monumentos")){
+
+                tvcabeceraDA.setText(R.string.monumentos);
+
+            }
+            if(catcatanuncio.equals("ocio")){
+
+                tvcabeceraDA.setText(R.string.ocio);
+
+            }
+            if(catcatanuncio.equals("parque")){
+
+                tvcabeceraDA.setText(R.string.parque);
+
+            }
+            if(catcatanuncio.equals("playa")){
+
+                tvcabeceraDA.setText(R.string.playa);
+
+            }
+            if(catcatanuncio.equals("restauracion")){
+
+                tvcabeceraDA.setText(R.string.restauracion);
+
+            }
+            if(catcatanuncio.equals("salud")){
+
+                tvcabeceraDA.setText(R.string.salud);
+
+            }
+            if(catcatanuncio.equals("seguridad")){
+
+                tvcabeceraDA.setText(R.string.seguridad);
+
+            }
+            if(catcatanuncio.equals("servicios")){
+
+                tvcabeceraDA.setText(R.string.servicios);
+
+            }
+            if(catcatanuncio.equals("transporte")){
+
+                tvcabeceraDA.setText(R.string.transporte);
+
+            }
 
 
             //PONER ICONO CABECERA
@@ -120,7 +244,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
             imgCabeceramenuDA.setImageResource(idImagen);
 
             //COMPROBAR SI LOS CAMPOS NO ESTAN VACIOS
-            if (!tvinformacionadicionalDA.getText().toString().equals("")) {
+            if (!tvinformacionadicionalDA.getText().toString().equals("no")) {
 
                 tvinformacionadicionalDA.setVisibility(View.VISIBLE);
             }
@@ -176,6 +300,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcabeceraocultaDA.getText().toString());
         mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
         startActivity(mainIntent);
 
@@ -195,6 +320,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcabeceraocultaDA.getText().toString());
         mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
         startActivity(mainIntent);
 
@@ -214,6 +340,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcabeceraocultaDA.getText().toString());
         mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
         startActivity(mainIntent);
 
@@ -233,6 +360,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         Intent mainIntent = new Intent().setClass(
                 DAEmpresaActivity.this, DAEmpresaActivity.class);
+        mainIntent.putExtra("EXTRA_CATEGORIA", tvcabeceraocultaDA.getText().toString());
         mainIntent.putExtra("EXTRA_ANUNCIO", anuncio);
         startActivity(mainIntent);
 
@@ -271,11 +399,15 @@ public class DAEmpresaActivity extends AppCompatActivity {
                 DAEmpresaActivity.this, CACategoriaActivity.class);
 
         //PARA CONVERTIR NO EL ANUNCIO
+        String categoria = tvcabeceraocultaDA.getText().toString();
+        mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
         mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
         //ANIMACIÓN
         overridePendingTransition(R.anim.arrastrar_izquierda_in, R.anim.arrastrar_izquierda_out);
         finish();
+
+
     }
 
     //BOTONES REDES

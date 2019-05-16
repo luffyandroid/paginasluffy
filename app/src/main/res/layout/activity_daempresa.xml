@@ -45,6 +45,15 @@
                     android:text=""
                     android:textSize="@dimen/txtcabecera" />
 
+                <TextView
+                    android:id="@+id/tvcabeceraocultaDA"
+                    android:visibility="gone"
+                    style="@style/txtcabecera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/txtcabecera" />
+
             </LinearLayout>
 
         </android.support.v7.widget.Toolbar>

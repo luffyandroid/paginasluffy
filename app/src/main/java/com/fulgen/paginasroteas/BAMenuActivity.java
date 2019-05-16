@@ -1748,9 +1748,11 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+        String anunciosplash = "no";
 
         Intent mainIntent = new Intent().setClass(
                 BAMenuActivity.this, BAMenuActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
     }
 
@@ -1766,8 +1768,11 @@ public class BAMenuActivity extends AppCompatActivity {
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
 
+        String anunciosplash = "no";
+
         Intent mainIntent = new Intent().setClass(
                 BAMenuActivity.this, BAMenuActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
 
     }
@@ -1783,9 +1788,11 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+        String anunciosplash = "no";
 
         Intent mainIntent = new Intent().setClass(
                 BAMenuActivity.this, BAMenuActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
         startActivity(mainIntent);
     }
 
@@ -1800,9 +1807,11 @@ public class BAMenuActivity extends AppCompatActivity {
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabBA.collapse();
+        String anunciosplash = "no";
 
         Intent mainIntent = new Intent().setClass(
                 BAMenuActivity.this, BAMenuActivity.class);
+        mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
 
         startActivity(mainIntent);
     }
