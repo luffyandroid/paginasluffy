@@ -2159,31 +2159,31 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
                 if(anuncio.getFacebook().equals("no")){
 
-                    btnimagfacebookADAPTADOR.setBackgroundColor(666666);
+                    btnimagfacebookADAPTADOR.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                     btnimagfacebookADAPTADOR.setImageResource(R.drawable.redesc_facebook_disable);
 
                 }
                 if(anuncio.getTwitter().equals("no")){
 
-                    btnimagtwitterADAPTADOR.setBackgroundColor(666666);
-                    btnimagtwitterADAPTADOR.setImageResource(R.drawable.ic_redesc_twitter_disable);
+                    btnimagtwitterADAPTADOR.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
+                    btnimagtwitterADAPTADOR.setImageResource(R.drawable.redesc_twitter_disable);
 
                 }
                 if(anuncio.getTelefono().equals("no")){
 
-                    btnimagtlfADAPTADOR.setBackgroundColor(666666);
+                    btnimagtlfADAPTADOR.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                     btnimagtlfADAPTADOR.setImageResource(R.drawable.redesc_telefono_disable);
 
                 }
                 if(anuncio.getMail().equals("no")){
 
-                    btnimagmailADAPTADOR.setBackgroundColor(666666);
+                    btnimagmailADAPTADOR.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                     btnimagmailADAPTADOR.setImageResource(R.drawable.redesc_correo_disable);
 
                 }
                 if(anuncio.getExtra().equals("no")){
 
-                    btnimagextraADAPTADOR.setBackgroundColor(666666);
+                    btnimagextraADAPTADOR.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                     btnimagextraADAPTADOR.setImageResource(R.drawable.redesc_extra_disable);
 
                 }

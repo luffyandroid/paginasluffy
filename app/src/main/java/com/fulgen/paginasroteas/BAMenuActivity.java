@@ -17,6 +17,7 @@ import android.support.design.widget.Snackbar;
 import android.text.Html;
 import android.text.Layout;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -138,6 +139,18 @@ public class BAMenuActivity extends AppCompatActivity {
         listBA = (ListView)findViewById(R.id.listBA);
         scrollBA = (ScrollView)findViewById(R.id.scrollBA);
         etfootbuscarBA = (EditText)findViewById(R.id.etfootbuscarBA);
+        //COSA DE PULSAR EL ENTER EN EL TECLADO
+        etfootbuscarBA.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    //aqui iria tu codigo al presionar el boton enter
+                    buscartodo();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         //ESTILO BOTON ANIMADO ▼
 
@@ -1903,7 +1916,7 @@ public class BAMenuActivity extends AppCompatActivity {
     }
 
     //BOTONE BUSCAR
-    public void clickBuscarBA(View v) {
+    private void buscartodo(){
         if(etfootbuscarBA.getText().toString().equals("")){
             listBA.setVisibility(View.GONE);
             scrollBA.setVisibility(View.VISIBLE);
@@ -1930,6 +1943,9 @@ public class BAMenuActivity extends AppCompatActivity {
             cargardatosservicio();
             cargardatostransporte();
         }
+    }
+    public void clickBuscarBA(View v) {
+        buscartodo();
     }
     public void onBackPressed() {
         //super.onBackPressed();

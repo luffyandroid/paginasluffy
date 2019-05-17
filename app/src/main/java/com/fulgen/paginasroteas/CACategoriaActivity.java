@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -82,13 +83,18 @@ public class CACategoriaActivity extends AppCompatActivity {
             int idImagen = this.getResources().getIdentifier(catcaticoanuncio, "drawable",this.getPackageName());
             imgCabeceramenuCA.setImageResource(idImagen);
         }
-        //tvidiomaCA.setText(idioma);
-
-        //Toast.makeText(this, "La categoria es: "+tvcategorialistCA.getText().toString(), Toast.LENGTH_SHORT).show();
-
-        /*//ADAPTADOR
-        ZAdaptadorAnuncio adaptador = new ZAdaptadorAnuncio(this, lista_anuncios);
-        listCA.setAdapter(adaptador);*/
+        //COSA DE PULSAR EL ENTER EN EL TECLADO
+        etfootbuscarCA.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    //aqui iria tu codigo al presionar el boton enter
+                    cargardatosbuscar();
+                    return true;
+                }
+                return false;
+            }
+        });
 
 
 

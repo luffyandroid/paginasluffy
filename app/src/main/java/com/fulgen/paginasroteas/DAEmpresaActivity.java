@@ -120,31 +120,31 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
             if (tvimagfacebookDA.getText().toString().equals("no")){
 
-                btnimagfacebookDA.setBackgroundColor(666666);
+                btnimagfacebookDA.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                 btnimagfacebookDA.setImageResource(R.drawable.redesc_facebook_disable);
 
             }
             if (tvimagtwitterDA.getText().toString().equals("no")){
 
-                btnimagtwitterDA.setBackgroundColor(666666);
-                btnimagtwitterDA.setImageResource(R.drawable.ic_redesc_twitter_disable);
+                btnimagtwitterDA.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
+                btnimagtwitterDA.setImageResource(R.drawable.redesc_twitter_disable);
 
             }
             if (tvimagtlfDA.getText().toString().equals("no")){
 
-                btnimagtlfDA.setBackgroundColor(666666);
+                btnimagtlfDA.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                 btnimagtlfDA.setImageResource(R.drawable.redesc_telefono_disable);
 
             }
             if (tvimagmailDA.getText().toString().equals("no")){
 
-                btnimagmailDA.setBackgroundColor(666666);
+                btnimagmailDA.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                 btnimagmailDA.setImageResource(R.drawable.redesc_correo_disable);
 
             }
             if (tvimagextraDA.getText().toString().equals("no")){
 
-                btnimagextraDA.setBackgroundColor(666666);
+                btnimagextraDA.setBackgroundColor(getResources().getColor(R.color.deshabilitado));
                 btnimagextraDA.setImageResource(R.drawable.redesc_extra_disable);
 
             }
