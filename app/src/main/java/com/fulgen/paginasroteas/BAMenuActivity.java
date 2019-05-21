@@ -764,7 +764,7 @@ public class BAMenuActivity extends AppCompatActivity {
                         BAMenuActivity.this, CACategoriaActivity.class);
                 String categoria = tvTransporteocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
-                //mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -829,6 +829,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -886,6 +887,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -943,6 +945,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1000,6 +1003,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1057,6 +1061,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1114,6 +1119,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1171,6 +1177,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1228,6 +1235,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1285,6 +1293,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1342,6 +1351,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1399,6 +1409,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1456,6 +1467,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1513,6 +1525,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1570,6 +1583,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1627,6 +1641,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1684,6 +1699,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });
@@ -1741,6 +1757,7 @@ public class BAMenuActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), DAEmpresaActivity.class);
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", a.getCategoria());
                             startActivity(i);
                         }
                     });

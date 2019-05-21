@@ -151,87 +151,139 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
             tvcabeceraocultaDA.setText(catcatanuncio);
 
-            if(catcatanuncio.equals("alimentacion")){
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_a_alimentacion")){
+                tvcabeceraocultaDA.setText("alimentacion");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_asociaciones")){
+                tvcabeceraocultaDA.setText("asociaciones");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_c_compras")){
+                tvcabeceraocultaDA.setText("compras");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_d_deporte")){
+                tvcabeceraocultaDA.setText("deporte");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_e_educacion")){
+                tvcabeceraocultaDA.setText("educacion");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_h_hoteles")){
+                tvcabeceraocultaDA.setText("hoteles");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_i_instituciones")){
+                tvcabeceraocultaDA.setText("instituciones");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_inmobiliaria")){
+                tvcabeceraocultaDA.setText("inmobiliaria");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_m_monumentos")){
+                tvcabeceraocultaDA.setText("monumentos");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_o_ocio")){
+                tvcabeceraocultaDA.setText("ocio");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_pa_parque")){
+                tvcabeceraocultaDA.setText("parque");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_pl_playa")){
+                tvcabeceraocultaDA.setText("playa");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_r_restauracion")){
+                tvcabeceraocultaDA.setText("restauracion");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_sa_salud")){
+                tvcabeceraocultaDA.setText("salud");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_se_servicios")){
+                tvcabeceraocultaDA.setText("seguridad");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_seg_seguridad")){
+                tvcabeceraocultaDA.setText("seguridad");
+            }
+            if(tvcabeceraocultaDA.getText().toString().equals("ic_cat_t_transporte")){
+                tvcabeceraocultaDA.setText("transporte");
+            }
+
+            if(tvcabeceraocultaDA.getText().toString().equals("alimentacion")){
 
                 tvcabeceraDA.setText(R.string.alimentacion);
 
             }
-            if(catcatanuncio.equals("asociaciones")){
+            if(tvcabeceraocultaDA.getText().toString().equals("asociaciones")){
 
                 tvcabeceraDA.setText(R.string.asociaciones);
 
             }
-            if(catcatanuncio.equals("compras")){
+            if(tvcabeceraocultaDA.getText().toString().equals("compras")){
 
                 tvcabeceraDA.setText(R.string.compras);
 
             }
-            if(catcatanuncio.equals("deporte")){
+            if(tvcabeceraocultaDA.getText().toString().equals("deporte")){
 
                 tvcabeceraDA.setText(R.string.deporte);
 
             }
-            if(catcatanuncio.equals("educacion")){
+            if(tvcabeceraocultaDA.getText().toString().equals("educacion")){
 
                 tvcabeceraDA.setText(R.string.educacion);
 
             }
-            if(catcatanuncio.equals("hoteles")){
+            if(tvcabeceraocultaDA.getText().toString().equals("hoteles")){
 
                 tvcabeceraDA.setText(R.string.hoteles);
 
             }
-            if(catcatanuncio.equals("inmobiliaria")){
+            if(tvcabeceraocultaDA.getText().toString().equals("inmobiliaria")){
 
                 tvcabeceraDA.setText(R.string.inmobiliaria);
 
             }
-            if(catcatanuncio.equals("instituciones")){
+            if(tvcabeceraocultaDA.getText().toString().equals("instituciones")){
 
                 tvcabeceraDA.setText(R.string.instituciones);
 
             }
-            if(catcatanuncio.equals("monumentos")){
+            if(tvcabeceraocultaDA.getText().toString().equals("monumentos")){
 
                 tvcabeceraDA.setText(R.string.monumentos);
 
             }
-            if(catcatanuncio.equals("ocio")){
+            if(tvcabeceraocultaDA.getText().toString().equals("ocio")){
 
                 tvcabeceraDA.setText(R.string.ocio);
 
             }
-            if(catcatanuncio.equals("parque")){
+            if(tvcabeceraocultaDA.getText().toString().equals("parque")){
 
                 tvcabeceraDA.setText(R.string.parque);
 
             }
-            if(catcatanuncio.equals("playa")){
+            if(tvcabeceraocultaDA.getText().toString().equals("playa")){
 
                 tvcabeceraDA.setText(R.string.playa);
 
             }
-            if(catcatanuncio.equals("restauracion")){
+            if(tvcabeceraocultaDA.getText().toString().equals("restauracion")){
 
                 tvcabeceraDA.setText(R.string.restauracion);
 
             }
-            if(catcatanuncio.equals("salud")){
+            if(tvcabeceraocultaDA.getText().toString().equals("salud")){
 
                 tvcabeceraDA.setText(R.string.salud);
 
             }
-            if(catcatanuncio.equals("seguridad")){
+            if(tvcabeceraocultaDA.getText().toString().equals("seguridad")){
 
                 tvcabeceraDA.setText(R.string.seguridad);
 
             }
-            if(catcatanuncio.equals("servicios")){
+            if(tvcabeceraocultaDA.getText().toString().equals("servicios")){
 
                 tvcabeceraDA.setText(R.string.servicios);
 
             }
-            if(catcatanuncio.equals("transporte")){
+            if(tvcabeceraocultaDA.getText().toString().equals("transporte")){
 
                 tvcabeceraDA.setText(R.string.transporte);
 
@@ -243,11 +295,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
             int idImagen = this.getResources().getIdentifier(imagen, "drawable", this.getPackageName());
             imgCabeceramenuDA.setImageResource(idImagen);
 
-            //COMPROBAR SI LOS CAMPOS NO ESTAN VACIOS
-            if (!tvinformacionadicionalDA.getText().toString().equals("no")) {
 
-                tvinformacionadicionalDA.setVisibility(View.VISIBLE);
-            }
 
             //CARGAR IMAGEN
             String imagentienda = anuncio.getImagen();
@@ -276,6 +324,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
                 tvinformacionadicionalDA.setText(anuncio.getDescuentofr());
                 tvdescripempresacortaDA.setText(anuncio.getDescripcioncortafr());
                 tvhorarioDA.setText(anuncio.getHorariofr());
+            }
+
+            //COMPROBAR SI LOS CAMPOS NO ESTAN VACIOS
+            if (!tvinformacionadicionalDA.getText().toString().equals("no")) {
+
+                tvinformacionadicionalDA.setVisibility(View.VISIBLE);
             }
 
 

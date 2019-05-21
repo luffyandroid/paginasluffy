@@ -243,6 +243,7 @@ public class CACategoriaActivity extends AppCompatActivity {
                             //PASAR LOS EXTRAS
                             i.putExtra("EXTRA_ANUNCIO", anuncioenviado);
                             i.putExtra("EXTRA_IDIOMACAT", idioma);
+                            i.putExtra("EXTRA_CATEGORIA", tvcabeceraCA.getText().toString());
 
                             //TRANSICIÓN LATERAL PARA ADELANTE
                             overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);

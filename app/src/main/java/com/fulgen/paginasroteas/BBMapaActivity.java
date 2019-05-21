@@ -2148,7 +2148,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                     descripcionlarga.setText(anuncio.getDescripcionlargafr());
                     horario.setText(anuncio.getHorariofr());
                 }
-
+                //DESCUENTO GONE SI ES NO
                 if(descuento.getText().toString().equals("no")){
 
                     descuento.setVisibility(View.GONE);

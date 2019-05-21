@@ -59,6 +59,9 @@ public class ZAdaptadorAnuncio extends ArrayAdapter<ZAnuncio> {
             tv_descripcion.setText(anuncios.get(position).getDescripcioncortafr());
             tv_descuento.setText(anuncios.get(position).getDescuentofr());
         }
+        if (tv_descuento.getText().toString().equals("no")){
+            tv_descuento.setVisibility(View.GONE);
+        }
 
         TextView tv_imagempresa = (TextView) convertView.findViewById(R.id.tvimagempresalistCA);
         tv_imagempresa.setText(anuncios.get(position).getSubcategoria());
