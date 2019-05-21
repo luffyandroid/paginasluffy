@@ -468,11 +468,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     //FACEBOOK
     public void clickEmpresaFaceboookDA(View v) {
+        String AFACE = getString(R.string.NoTieneFacebook);
         String Facebook = tvimagfacebookDA.getText().toString();
         String Nombre = tvempresaDA.getText().toString();
         if (Facebook.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + R.string.NoTieneFacebook,
+                    Nombre + AFACE,
                     Toast.LENGTH_LONG).show();
 
         } else {
@@ -484,11 +485,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     //TWITTER
     public void clickEmpresaTwitterDA(View v) {
+        String ATW = getString(R.string.NoTieneTwitter);
         String Twitter = tvimagtwitterDA.getText().toString();
         String Nombre = tvempresaDA.getText().toString();
         if (Twitter.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + R.string.NoTieneTwitter,
+                    Nombre + ATW,
                     Toast.LENGTH_LONG).show();
 
         } else {
@@ -500,11 +502,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     //TELEFONO
     public void clickEmpresaTelefonoDA(View v) {
+        String ATELF = getString(R.string.NoTieneContacto);
         String Telefono = tvimagtlfDA.getText().toString();
         String Nombre = tvempresaDA.getText().toString();
         if (Telefono.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + R.string.NoTieneContacto,
+                    Nombre + ATELF,
                     Toast.LENGTH_LONG).show();
         } else {
             try {
@@ -520,11 +523,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     //MAIL
     public void clickEmpresaMailDA(View v) {
+        String AMAIL = getString(R.string.NoTieneMail);
         String Mail = tvimagmailDA.getText().toString();
         String Nombre = tvempresaDA.getText().toString();
         if (Mail.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + R.string.NoTieneContacto,
+                    Nombre + AMAIL,
                     Toast.LENGTH_LONG).show();
         } else {
             String[] TO = {Mail};
@@ -547,11 +551,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     //MAPA
     public void clickEmpresaMapsDA(View v) {
+        String AMAPA = getString(R.string.NoEncuentraLocalizacion);
         String Mapa = tvimagmapDA.getText().toString();
         String Nombre = tvempresaDA.getText().toString();
         if (Mapa.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + R.string.NoEncuentraLocalizacion,
+                    Nombre + AMAPA,
                     Toast.LENGTH_LONG).show();
         } else {
             try {
@@ -567,11 +572,12 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     //EXTRA
     public void clickEmpresaExtraDA(View v) {
+        String AEXTRA = getString(R.string.NoTieneInformacion);
         String Web = tvimagextraDA.getText().toString();
         String Nombre = tvempresaDA.getText().toString();
         if (Web.equals("no")) {
             Toast.makeText(getApplicationContext(),
-                    Nombre + R.string.NoTieneInformacion,
+                    Nombre + AEXTRA,
                     Toast.LENGTH_LONG).show();
 
         } else {

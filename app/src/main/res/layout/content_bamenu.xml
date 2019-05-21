@@ -738,30 +738,46 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/lyVacioBA"
+                        android:id="@+id/lyMapaBA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="clicktransporte"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/ivVacioBA"
-                            style="@style/imagengrid"
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/ivMapaBA"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cat_aa_vacio"
-                            tools:ignore="VectorDrawableCompat" />
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="false"
+                            app:lottie_fileName="cat_z_mapa.json"
+                            app:lottie_imageAssetsFolder="assets"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/paddinmenucat"
+                            app:lottie_loop="false" />
 
                         <TextView
-                            android:id="@+id/tvVacioBA"
+                            android:id="@+id/tvMapaBA"
                             style="@style/txtgrid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:text="@string/mapa" />
+
+                        <TextView
+                            android:id="@+id/tvMapaocultoBA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:visibility="gone"
-                            android:text="" />
+                            android:text="mapa" />
+
                     </LinearLayout>
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/espaciogrande" />
 
             </LinearLayout>
         </ScrollView>

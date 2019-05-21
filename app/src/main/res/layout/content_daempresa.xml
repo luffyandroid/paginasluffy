@@ -30,11 +30,13 @@
                     android:layout_height="@dimen/espaciogrande" />
 
 
-                    <ImageView
-                        android:id="@+id/imagempresaDA"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/col_merced" />
+                <ImageView
+                    android:id="@+id/imagempresaDA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/col_merced" />
 
                 <Space
                     android:layout_width="wrap_content"

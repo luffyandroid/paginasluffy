@@ -82,7 +82,7 @@ public class BAMenuActivity extends AppCompatActivity {
 
     LottieAnimationView ivAlimentacionBA, ivAsociacionesBA, ivComprasBA, ivDeporteBA, ivEducacionBA, ivHotelesBA,
             ivInmobiliariaBA, ivInstitucionesBA, ivMonumentosBA, ivOcioBA, ivParqueBA, ivPlayaBA, ivRestauracionBA,
-            ivSaludBA, ivSeguridadBA, ivServiciosBA, ivTransporteBA;
+            ivSaludBA, ivSeguridadBA, ivServiciosBA, ivTransporteBA, ivMapaBA;
 
     //ADAPTADOR
     //ArrayList<ZCategoria> lista_anuncios = new ArrayList<ZCategoria>();
@@ -372,6 +372,19 @@ public class BAMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 clicktransporte(view);
                 ivTransporteBA.playAnimation();
+            }
+        });
+
+        //MAPA
+        ivMapaBA = (LottieAnimationView) findViewById(R.id.ivMapaBA);
+        ivMapaBA.setAnimation("cat_z_mapa.json");
+        ivMapaBA.loop(false);
+        ivMapaBA.pauseAnimation();
+        ivMapaBA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickmapamenu(view);
+                ivMapaBA.playAnimation();
             }
         });
 
@@ -774,6 +787,24 @@ public class BAMenuActivity extends AppCompatActivity {
         Timer timer = new Timer();
         timer.schedule(task, TIEMPO_BOTON);
     }
+    public  void clickmapamenu(View v){
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                Intent mainIntent = new Intent().setClass(
+                        BAMenuActivity.this, BBMapaActivity.class);
+                mainIntent.putExtra("EXTRA_PERMANENTE","todo");
+                mainIntent.putExtra("EXTRA_FILTRO","todo");
+                startActivity(mainIntent);
+                //TRANSICIÓN LATERAL PARA ADELANTE
+                overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(task, TIEMPO_BOTON);
+    }
+
+
 
     //BUSCADORES
 
@@ -1854,7 +1885,9 @@ public class BAMenuActivity extends AppCompatActivity {
         startActivity(mainIntent);
         //TRANSICIÓN LATERAL PARA ADELANTE
         overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
+
         //PARA QUE SE CIERRE AL PULSAR
+
         menu_fabBA.collapse();
     }
 

@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -2080,7 +2081,14 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         dialog.setContentView(R.layout.activity_adaptadormapa);
 
         //CAMBIAR TAMAÑO DEL DIALOGO
-        dialog.getWindow().setLayout(650, 1250);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+
+        //dialog.getWindow().setLayout(650, 1250);
         //dialog.getWindow().setLayout(R.dimen.dialogAncho, R.dimen.dialogAlto);
 
 

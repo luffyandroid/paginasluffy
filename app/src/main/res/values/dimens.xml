@@ -32,6 +32,7 @@
     <dimen name="marginImagenes">7dp</dimen>
     <dimen name="txtTituloList">24dp</dimen>
     <dimen name="txtDescripcionList">18dp</dimen>
+    <dimen name="txtDescripcionCheckbox">15dp</dimen>
 
     <!-- EMPRESA IMAGEN -->
     <dimen name="paddingFooter">40dp</dimen>

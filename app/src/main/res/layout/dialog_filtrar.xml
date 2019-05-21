@@ -63,6 +63,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/espaciogrande" />
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraAlimentacionFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/alimentacion"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 01 ALIMENTACION
                 <LinearLayout
@@ -79,6 +91,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
+
 
                         //IMAGEN CHECKBOX 1
                         <CheckBox
@@ -288,6 +302,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraAsociacionesFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/asociaciones"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 03 ASOCIACIONES
                 <LinearLayout
                     android:id="@+id/checkbloque03B"
@@ -339,6 +367,20 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraComprasFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/compras"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 04 COMPRAS
                 <LinearLayout
@@ -926,6 +968,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraDeporteFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/deporte"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 11 DEPORTES
                 <LinearLayout
                     android:id="@+id/checkbloque11"
@@ -1168,6 +1224,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraEducacionFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/educacion"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 14 EDUCACIÓN
                 <LinearLayout
                     android:id="@+id/checkbloque14"
@@ -1341,6 +1411,20 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraHotelesFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/hoteles"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 16 HOTELES
                 <LinearLayout
@@ -1516,6 +1600,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraInmobilariaFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/inmobiliaria"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 16C INMOBILIARIA
                 <LinearLayout
                     android:id="@+id/checkbloque16C"
@@ -1567,6 +1665,20 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraInstitucionesFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/instituciones"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 17 INSTITUCIONES
                 <LinearLayout
@@ -1741,6 +1853,20 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraMonumentosFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/monumentos"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 19 MONUMENTOS
                 <LinearLayout
@@ -2003,6 +2129,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraOcioFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/ocio"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 22 OCIO
                 <LinearLayout
                     android:id="@+id/checkbloque22"
@@ -2264,6 +2404,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraParquesFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/parque"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 24 PARQUES
                 <LinearLayout
                     android:id="@+id/checkbloque24"
@@ -2333,6 +2487,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraPlayaFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/playa"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 24B PLAYA
                 <LinearLayout
                     android:id="@+id/checkbloque24B"
@@ -2384,6 +2552,20 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraRestauracionFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/restauracion"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 25 RESTAURACIÓN
                 <LinearLayout
@@ -2716,6 +2898,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraSaludFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/salud"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 29 SALUD
                 <LinearLayout
                     android:id="@+id/checkbloque29"
@@ -2973,6 +3169,20 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraServiciosFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/servicios"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 32 SERVICIO
                 <LinearLayout
@@ -3490,6 +3700,20 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tvsubbcabeceraSeguridadFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/seguridad"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
+
                 //BLOQUE 38 SEGURIDAD
                 <LinearLayout
                     android:id="@+id/checkbloque38"
@@ -3644,6 +3868,20 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvsubbcabeceraTransporteFiltroBA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/negro"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="@dimen/marginFooter"
+                    android:paddingVertical="@dimen/marginImagenes"
+                    android:text="@string/transporte"
+                    android:layout_marginTop="@dimen/txtDescripcionCheckbox"
+                    android:layout_marginBottom="@dimen/txtDescripcionCheckbox"
+                    android:textColor="@color/amarilloTXTCABECERA"
+                    android:visibility="gone"/>
 
                 //BLOQUE 40 TRANSPORTE
                 <LinearLayout
