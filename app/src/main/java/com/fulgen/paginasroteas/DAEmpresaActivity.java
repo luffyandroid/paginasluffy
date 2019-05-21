@@ -456,6 +456,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
         String categoria = tvcabeceraocultaDA.getText().toString();
         mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
         mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        mainIntent.putExtra("EXTRA_ICO", anuncio.getCategoria());
         startActivity(mainIntent);
         //ANIMACIÓN
         overridePendingTransition(R.anim.arrastrar_izquierda_in, R.anim.arrastrar_izquierda_out);

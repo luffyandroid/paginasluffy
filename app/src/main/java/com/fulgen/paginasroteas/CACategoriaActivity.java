@@ -80,9 +80,13 @@ public class CACategoriaActivity extends AppCompatActivity {
             tvcategorialistCA.setText(getIntent().getStringExtra("EXTRA_AUTOCATEGORIA"));
 
             //PARA QUE CARGUE ICONO DE LA CATEGORIA
-            int idImagen = this.getResources().getIdentifier(catcaticoanuncio, "drawable",this.getPackageName());
+            int idImagen = this.getResources().getIdentifier(catcatanuncio, "drawable",this.getPackageName());
             imgCabeceramenuCA.setImageResource(idImagen);
         }
+        //PONER ICONO DE LA CATEGORIA EN LA CABECERA
+        int iconocabecera = this.getResources().getIdentifier(tvcategoriaicoCA.getText().toString(), "drawable",this.getPackageName());
+        imgCabeceramenuCA.setImageResource(iconocabecera);
+
         //COSA DE PULSAR EL ENTER EN EL TECLADO
         etfootbuscarCA.setOnKeyListener(new View.OnKeyListener() {
             @Override

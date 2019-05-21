@@ -490,6 +490,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
                 mainIntent.putExtra("EXTRA_ICO",tvAlimentacionocultoicoBA.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_a_alimentacion");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -508,6 +509,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvAsocioacionesocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_asociaciones");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -526,6 +528,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvComprasocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_c_compras");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -544,6 +547,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvDeporteocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_d_deporte");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -562,6 +566,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvEducacionocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_e_educacion");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -580,6 +585,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvHotelesocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_h_hoteles");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -598,6 +604,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvInmobiliariaocultaBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_inmoviliaria");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -616,6 +623,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvInstitucionesocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_i_instituciones");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -634,6 +642,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvMonumentosocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_m_monumentos");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -652,6 +661,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvOcioocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_o_ocio");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -670,6 +680,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvParqueocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_pa_parque");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -688,6 +699,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvPlayaocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_pl_playa");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -706,6 +718,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvRestauracionocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_r_restauracion");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -724,6 +737,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvSaludocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_sa_salud");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -742,6 +756,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvSeguridadocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_seg_seguridad");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -760,6 +775,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvServiciosocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_se_servicios");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);
@@ -778,6 +794,7 @@ public class BAMenuActivity extends AppCompatActivity {
                 String categoria = tvTransporteocultoBA.getText().toString();
                 mainIntent.putExtra("EXTRA_CATEGORIA", categoria);
                 mainIntent.putExtra("EXTRA_IDIOMA", tvidiomaba.getText().toString());
+                mainIntent.putExtra("EXTRA_ICO", "ic_cat_t_transporte");
                 startActivity(mainIntent);
                 //TRANSICIÓN LATERAL PARA ADELANTE
                 overridePendingTransition(R.anim.arrastrar_derecha_in, R.anim.arrastrar_derecha_out);

@@ -231,12 +231,13 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_filtrar);
-
+        TextView tvalimentacionfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraAlimentacionFiltroBA);
         LinearLayout bloquealimentacion01 = (LinearLayout)dialog.findViewById(R.id.checkbloque01);
         LinearLayout bloquealimentacion02 = (LinearLayout)dialog.findViewById(R.id.checkbloque02);
         LinearLayout bloquealimentacion03 = (LinearLayout)dialog.findViewById(R.id.checkbloque03);
         if(tvpermanenteocultaBB.getText().toString().equals("alimentacion")){
 
+            tvalimentacionfiltroBA.setVisibility(View.VISIBLE);
             bloquealimentacion01.setVisibility(View.VISIBLE);
             bloquealimentacion02.setVisibility(View.VISIBLE);
             bloquealimentacion03.setVisibility(View.VISIBLE);
@@ -249,11 +250,14 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_pescaderia = (CheckBox)dialog.findViewById(R.id.check_pescaderia);
         final CheckBox check_supermercado = (CheckBox)dialog.findViewById(R.id.check_supermercado);
         final CheckBox check_aotros = (CheckBox)dialog.findViewById(R.id.check_aotros);
+        TextView tvasociacionesfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraAsociacionesFiltroBA);
         LinearLayout bloqueasociaciones01 = (LinearLayout)dialog.findViewById(R.id.checkbloque03B);
         if(tvpermanenteocultaBB.getText().toString().equals("asociaciones")){
+            tvasociacionesfiltroBA.setVisibility(View.VISIBLE);
             bloqueasociaciones01.setVisibility(View.VISIBLE);
         }
         final CheckBox check_asociaciones = (CheckBox) dialog.findViewById(R.id.check_asociaciones);
+        TextView tvcomprasfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraComprasFiltroBA);
         LinearLayout bloquecompras01 = (LinearLayout)dialog.findViewById(R.id.checkbloque04);
         LinearLayout bloquecompras02 = (LinearLayout)dialog.findViewById(R.id.checkbloque05);
         LinearLayout bloquecompras03 = (LinearLayout)dialog.findViewById(R.id.checkbloque06);
@@ -262,7 +266,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         LinearLayout bloquecompras06 = (LinearLayout)dialog.findViewById(R.id.checkbloque09);
         LinearLayout bloquecompras07 = (LinearLayout)dialog.findViewById(R.id.checkbloque10);
         if(tvpermanenteocultaBB.getText().toString().equals("compras")){
-
+            tvcomprasfiltroBA.setVisibility(View.VISIBLE);
             bloquecompras01.setVisibility(View.VISIBLE);
             bloquecompras02.setVisibility(View.VISIBLE);
             bloquecompras03.setVisibility(View.VISIBLE);
@@ -292,10 +296,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_moviles = (CheckBox)dialog.findViewById(R.id.check_moviles);
         final CheckBox check_ropa = (CheckBox)dialog.findViewById(R.id.check_ropa);
         final CheckBox check_cotros = (CheckBox)dialog.findViewById(R.id.check_cotros);
+        TextView tvdeportefiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraDeporteFiltroBA);
         LinearLayout bloquedeporte01 = (LinearLayout)dialog.findViewById(R.id.checkbloque11);
         LinearLayout bloquedeporte02 = (LinearLayout)dialog.findViewById(R.id.checkbloque12);
         LinearLayout bloquedeporte03 = (LinearLayout)dialog.findViewById(R.id.checkbloque13);
         if(tvpermanenteocultaBB.getText().toString().equals("deporte")){
+            tvdeportefiltroBA.setVisibility(View.VISIBLE);
             bloquedeporte01.setVisibility(View.VISIBLE);
             bloquedeporte02.setVisibility(View.VISIBLE);
             bloquedeporte03.setVisibility(View.VISIBLE);
@@ -308,9 +314,11 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_skatepark = (CheckBox)dialog.findViewById(R.id.check_skatepark);
         final CheckBox check_tenis = (CheckBox)dialog.findViewById(R.id.check_tenis);
         final CheckBox check_dotros = (CheckBox)dialog.findViewById(R.id.check_dotros);
+        TextView tveducacionfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraEducacionFiltroBA);
         LinearLayout bloqueeducacion01 = (LinearLayout) dialog.findViewById(R.id.checkbloque14);
         LinearLayout bloqueeducacion02 = (LinearLayout) dialog.findViewById(R.id.checkbloque15);
         if(tvpermanenteocultaBB.getText().toString().equals("educacion")){
+            tveducacionfiltroBA.setVisibility(View.VISIBLE);
             bloqueeducacion01.setVisibility(View.VISIBLE);
             bloqueeducacion02.setVisibility(View.VISIBLE);
         }
@@ -320,9 +328,11 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_colegio = (CheckBox)dialog.findViewById(R.id.check_colegio);
         final CheckBox check_guarderia = (CheckBox)dialog.findViewById(R.id.check_guarderia);
         final CheckBox check_instituto = (CheckBox)dialog.findViewById(R.id.check_instituto);
+        TextView tvhotelesfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraHotelesFiltroBA);
         LinearLayout bloquehoteles01 = (LinearLayout)dialog.findViewById(R.id.checkbloque16);
         LinearLayout bloquehoteles02 = (LinearLayout)dialog.findViewById(R.id.checkbloque16B);
         if(tvpermanenteocultaBB.getText().toString().equals("hoteles")){
+            tvhotelesfiltroBA.setVisibility(View.VISIBLE);
             bloquehoteles01.setVisibility(View.VISIBLE);
             bloquehoteles02.setVisibility(View.VISIBLE);
         }
@@ -332,14 +342,18 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_hostal = (CheckBox)dialog.findViewById(R.id.check_hostal);
         final CheckBox check_hotel = (CheckBox)dialog.findViewById(R.id.check_hotel);
         final CheckBox check_pension = (CheckBox)dialog.findViewById(R.id.check_pension);
+        TextView tvinmobiliariafiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraInmobilariaFiltroBA);
         LinearLayout bloqueinmobiliaria01 = (LinearLayout)dialog.findViewById(R.id.checkbloque16C);
         if(tvpermanenteocultaBB.getText().toString().equals("inmobiliaria")){
+            tvinmobiliariafiltroBA.setVisibility(View.VISIBLE);
             bloqueinmobiliaria01.setVisibility(View.VISIBLE);
         }
         final CheckBox check_inmobiliaria = (CheckBox) dialog.findViewById(R.id.check_inmobiliaria);
+        TextView tvinstitucionesfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraInstitucionesFiltroBA);
         LinearLayout bloqueinstituciones01 = (LinearLayout)dialog.findViewById(R.id.checkbloque17);
         LinearLayout bloqueinstituciones02 = (LinearLayout)dialog.findViewById(R.id.checkbloque18);
         if(tvpermanenteocultaBB.getText().toString().equals("instituciones")){
+            tvinstitucionesfiltroBA.setVisibility(View.VISIBLE);
             bloqueinstituciones01.setVisibility(View.VISIBLE);
             bloqueinstituciones02.setVisibility(View.VISIBLE);
         }
@@ -349,10 +363,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_omic = (CheckBox)dialog.findViewById(R.id.check_omic);
         final CheckBox check_turismo = (CheckBox)dialog.findViewById(R.id.check_turismo);
         final CheckBox check_iotros = (CheckBox)dialog.findViewById(R.id.check_iotros);
+        TextView tvmonumentosfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraMonumentosFiltroBA);
         LinearLayout bloquemonumentos01 = (LinearLayout)dialog.findViewById(R.id.checkbloque19);
         LinearLayout bloquemonumentos02 = (LinearLayout)dialog.findViewById(R.id.checkbloque20);
         LinearLayout bloquemonumentos03 = (LinearLayout)dialog.findViewById(R.id.checkbloque21);
         if(tvpermanenteocultaBB.getText().toString().equals("monumentos")){
+            tvmonumentosfiltroBA.setVisibility(View.VISIBLE);
             bloquemonumentos01.setVisibility(View.VISIBLE);
             bloquemonumentos02.setVisibility(View.VISIBLE);
             bloquemonumentos03.setVisibility(View.VISIBLE);
@@ -366,10 +382,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_ruinas = (CheckBox)dialog.findViewById(R.id.check_ruinas);
         final CheckBox check_torre = (CheckBox)dialog.findViewById(R.id.check_torre);
         final CheckBox check_motros = (CheckBox)dialog.findViewById(R.id.check_motros);
+        TextView tvociofiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraOcioFiltroBA);
         LinearLayout bloqueocio01 = (LinearLayout)dialog.findViewById(R.id.checkbloque22);
         LinearLayout bloqueocio02 = (LinearLayout)dialog.findViewById(R.id.checkbloque22b);
         LinearLayout bloqueocio03 = (LinearLayout)dialog.findViewById(R.id.checkbloque23);
         if(tvpermanenteocultaBB.getText().toString().equals("ocio")){
+            tvociofiltroBA.setVisibility(View.VISIBLE);
             bloqueocio01.setVisibility(View.VISIBLE);
             bloqueocio02.setVisibility(View.VISIBLE);
             bloqueocio03.setVisibility(View.VISIBLE);
@@ -383,22 +401,28 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_parque_infantil = (CheckBox)dialog.findViewById(R.id.check_parque_infantil);
         final CheckBox check_teatro = (CheckBox)dialog.findViewById(R.id.check_teatro);
         final CheckBox check_ootros = (CheckBox)dialog.findViewById(R.id.check_ootros);
+        TextView tvparquefiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraParquesFiltroBA);
         LinearLayout bloqueparque01 = (LinearLayout)dialog.findViewById(R.id.checkbloque24);
         if(tvpermanenteocultaBB.getText().toString().equals("parque")){
+            tvparquefiltroBA.setVisibility(View.VISIBLE);
             bloqueparque01.setVisibility(View.VISIBLE);
         }
         final CheckBox check_jardines = (CheckBox)dialog.findViewById(R.id.check_jardines);
         final CheckBox check_parque = (CheckBox)dialog.findViewById(R.id.check_parque);
+        TextView tvplayafiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraPlayaFiltroBA);
         LinearLayout bloqueplaya01 = (LinearLayout)dialog.findViewById(R.id.checkbloque24B);
         if(tvpermanenteocultaBB.getText().toString().equals("playa")){
+            tvplayafiltroBA.setVisibility(View.VISIBLE);
             bloqueplaya01.setVisibility(View.VISIBLE);
         }
         final CheckBox check_playa = (CheckBox) dialog.findViewById(R.id.check_playa);
+        TextView tvrestauracionfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraRestauracionFiltroBA);
         LinearLayout bloquerestauracion01 = (LinearLayout)dialog.findViewById(R.id.checkbloque25);
         LinearLayout bloquerestauracion02 = (LinearLayout)dialog.findViewById(R.id.checkbloque26);
         LinearLayout bloquerestauracion03 = (LinearLayout)dialog.findViewById(R.id.checkbloque27);
         LinearLayout bloquerestauracion04 = (LinearLayout)dialog.findViewById(R.id.checkbloque28);
         if(tvpermanenteocultaBB.getText().toString().equals("restauracion")){
+            tvrestauracionfiltroBA.setVisibility(View.VISIBLE);
             bloquerestauracion01.setVisibility(View.VISIBLE);
             bloquerestauracion02.setVisibility(View.VISIBLE);
             bloquerestauracion03.setVisibility(View.VISIBLE);
@@ -415,10 +439,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_pub = (CheckBox)dialog.findViewById(R.id.check_pub);
         final CheckBox check_restaurante = (CheckBox)dialog.findViewById(R.id.check_restaurante);
         final CheckBox check_rotros = (CheckBox)dialog.findViewById(R.id.check_rotros);
+        TextView tvsaludfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraSaludFiltroBA);
         LinearLayout bloquesalud01 = (LinearLayout)dialog.findViewById(R.id.checkbloque29);
         LinearLayout bloquesalud02 = (LinearLayout)dialog.findViewById(R.id.checkbloque30);
         LinearLayout bloquesalud03 = (LinearLayout)dialog.findViewById(R.id.checkbloque31);
         if(tvpermanenteocultaBB.getText().toString().equals("salud")){
+            tvsaludfiltroBA.setVisibility(View.VISIBLE);
             bloquesalud01.setVisibility(View.VISIBLE);
             bloquesalud02.setVisibility(View.VISIBLE);
             bloquesalud03.setVisibility(View.VISIBLE);
@@ -432,6 +458,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_podologo = (CheckBox)dialog.findViewById(R.id.check_podologo);
         final CheckBox check_psicologia = (CheckBox)dialog.findViewById(R.id.check_psicologia);
         final CheckBox check_veterinario = (CheckBox)dialog.findViewById(R.id.check_veterinario);
+        TextView tvserviciosfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraServiciosFiltroBA);
         LinearLayout bloqueservicios01 = (LinearLayout)dialog.findViewById(R.id.checkbloque32);
         LinearLayout bloqueservicios02 = (LinearLayout)dialog.findViewById(R.id.checkbloque33);
         LinearLayout bloqueservicios03 = (LinearLayout)dialog.findViewById(R.id.checkbloque34);
@@ -439,6 +466,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         LinearLayout bloqueservicios05 = (LinearLayout)dialog.findViewById(R.id.checkbloque36);
         LinearLayout bloqueservicios06 = (LinearLayout)dialog.findViewById(R.id.checkbloque37);
         if(tvpermanenteocultaBB.getText().toString().equals("servicios")){
+            tvserviciosfiltroBA.setVisibility(View.VISIBLE);
             bloqueservicios01.setVisibility(View.VISIBLE);
             bloqueservicios02.setVisibility(View.VISIBLE);
             bloqueservicios03.setVisibility(View.VISIBLE);
@@ -464,9 +492,11 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_transportes = (CheckBox)dialog.findViewById(R.id.check_transportes);
         final CheckBox check_viajes = (CheckBox)dialog.findViewById(R.id.check_viajes);
         final CheckBox check_seotros = (CheckBox)dialog.findViewById(R.id.check_seotros);
+        TextView tvseguridadfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraSeguridadFiltroBA);
         LinearLayout bloqueseguridad01 = (LinearLayout)dialog.findViewById(R.id.checkbloque38);
         LinearLayout bloqueseguridad02 = (LinearLayout)dialog.findViewById(R.id.checkbloque39);
         if(tvpermanenteocultaBB.getText().toString().equals("seguridad")){
+            tvseguridadfiltroBA.setVisibility(View.VISIBLE);
             bloqueseguridad01.setVisibility(View.VISIBLE);
             bloqueseguridad02.setVisibility(View.VISIBLE);
         }
@@ -475,9 +505,11 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_policia_nacional = (CheckBox)dialog.findViewById(R.id.check_policia_nacional);
         final CheckBox check_proteccion_civil = (CheckBox)dialog.findViewById(R.id.check_proteccion);
         final CheckBox check_seguridad = (CheckBox)dialog.findViewById(R.id.check_seguridad);
+        TextView tvtransportefiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraTransporteFiltroBA);
         LinearLayout bloquetransporte01 = (LinearLayout)dialog.findViewById(R.id.checkbloque40);
         LinearLayout bloquetransporte02 = (LinearLayout)dialog.findViewById(R.id.checkbloque41);
         if(tvpermanenteocultaBB.getText().toString().equals("transporte")){
+            tvtransportefiltroBA.setVisibility(View.VISIBLE);
             bloquetransporte01.setVisibility(View.VISIBLE);
             bloquetransporte02.setVisibility(View.VISIBLE);
         }
@@ -488,10 +520,13 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_puerto = (CheckBox)dialog.findViewById(R.id.check_puerto);
         final CheckBox check_taxi = (CheckBox)dialog.findViewById(R.id.check_taxi);
         if(tvpermanenteocultaBB.getText().toString().equals("todo")){
+            tvalimentacionfiltroBA.setVisibility(View.VISIBLE);
             bloquealimentacion01.setVisibility(View.VISIBLE);
             bloquealimentacion02.setVisibility(View.VISIBLE);
             bloquealimentacion03.setVisibility(View.VISIBLE);
+            tvasociacionesfiltroBA.setVisibility(View.VISIBLE);
             bloqueasociaciones01.setVisibility(View.VISIBLE);
+            tvcomprasfiltroBA.setVisibility(View.VISIBLE);
             bloquecompras01.setVisibility(View.VISIBLE);
             bloquecompras02.setVisibility(View.VISIBLE);
             bloquecompras03.setVisibility(View.VISIBLE);
@@ -499,39 +534,53 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             bloquecompras05.setVisibility(View.VISIBLE);
             bloquecompras06.setVisibility(View.VISIBLE);
             bloquecompras07.setVisibility(View.VISIBLE);
+            tvdeportefiltroBA.setVisibility(View.VISIBLE);
             bloquedeporte01.setVisibility(View.VISIBLE);
             bloquedeporte02.setVisibility(View.VISIBLE);
             bloquedeporte03.setVisibility(View.VISIBLE);
+            tveducacionfiltroBA.setVisibility(View.VISIBLE);
             bloqueeducacion01.setVisibility(View.VISIBLE);
             bloqueeducacion02.setVisibility(View.VISIBLE);
+            tvhotelesfiltroBA.setVisibility(View.VISIBLE);
             bloquehoteles01.setVisibility(View.VISIBLE);
             bloquehoteles02.setVisibility(View.VISIBLE);
+            tvinmobiliariafiltroBA.setVisibility(View.VISIBLE);
             bloqueinmobiliaria01.setVisibility(View.VISIBLE);
+            tvinstitucionesfiltroBA.setVisibility(View.VISIBLE);
             bloqueinstituciones01.setVisibility(View.VISIBLE);
             bloqueinstituciones02.setVisibility(View.VISIBLE);
+            tvmonumentosfiltroBA.setVisibility(View.VISIBLE);
             bloquemonumentos01.setVisibility(View.VISIBLE);
             bloquemonumentos02.setVisibility(View.VISIBLE);
             bloquemonumentos03.setVisibility(View.VISIBLE);
+            tvociofiltroBA.setVisibility(View.VISIBLE);
             bloqueocio01.setVisibility(View.VISIBLE);
             bloqueocio02.setVisibility(View.VISIBLE);
             bloqueocio03.setVisibility(View.VISIBLE);
+            tvparquefiltroBA.setVisibility(View.VISIBLE);
             bloqueparque01.setVisibility(View.VISIBLE);
+            tvplayafiltroBA.setVisibility(View.VISIBLE);
             bloqueplaya01.setVisibility(View.VISIBLE);
+            tvrestauracionfiltroBA.setVisibility(View.VISIBLE);
             bloquerestauracion01.setVisibility(View.VISIBLE);
             bloquerestauracion02.setVisibility(View.VISIBLE);
             bloquerestauracion03.setVisibility(View.VISIBLE);
             bloquerestauracion04.setVisibility(View.VISIBLE);
+            tvsaludfiltroBA.setVisibility(View.VISIBLE);
             bloquesalud01.setVisibility(View.VISIBLE);
             bloquesalud02.setVisibility(View.VISIBLE);
             bloquesalud03.setVisibility(View.VISIBLE);
+            tvserviciosfiltroBA.setVisibility(View.VISIBLE);
             bloqueservicios01.setVisibility(View.VISIBLE);
             bloqueservicios02.setVisibility(View.VISIBLE);
             bloqueservicios03.setVisibility(View.VISIBLE);
             bloqueservicios04.setVisibility(View.VISIBLE);
             bloqueservicios05.setVisibility(View.VISIBLE);
             bloqueservicios06.setVisibility(View.VISIBLE);
+            tvseguridadfiltroBA.setVisibility(View.VISIBLE);
             bloqueseguridad01.setVisibility(View.VISIBLE);
             bloqueseguridad02.setVisibility(View.VISIBLE);
+            tvtransportefiltroBA.setVisibility(View.VISIBLE);
             bloquetransporte01.setVisibility(View.VISIBLE);
             bloquetransporte02.setVisibility(View.VISIBLE);
 
