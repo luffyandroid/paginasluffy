@@ -591,6 +591,102 @@ public class DAEmpresaActivity extends AppCompatActivity {
     //COMPARTIR
     public void clickCompartirDA(View v) {
 
+        // Creamos un bitmap con el tamaño de la vista
+        Bitmap bitmap = Bitmap.createBitmap(imagempresaDA.getWidth(),
+                imagempresaDA.getHeight(), Bitmap.Config.ARGB_8888);
+        // Creamos el canvas para pintar en el bitmap
+        Canvas canvas = new Canvas(bitmap);
+        // Pintamos el contenido de la vista en el canvas y así en el bitmap
+        imagempresaDA.draw(canvas);
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+
+        Uri uriF = null;
+        try {
+            File f = File.createTempFile("sharedImage", ".jpg",
+                    getExternalCacheDir());
+            f.deleteOnExit();
+            FileOutputStream fo = new FileOutputStream(f);
+            fo.write(stream.toByteArray());
+            fo.close();
+
+            uriF = Uri.fromFile(f);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("image/jpeg");
+
+        sharingIntent.putExtra(Intent.EXTRA_STREAM, uriF);
+        startActivity(sharingIntent);
+
+        /*
+        Entre las líneas 3 y 8, creamos un Bitmap con el tamaño adecuado a la vista. Creamos el Canvas necesario para pintar en el Bitmap y renderizamos el contenido
+        de la vista en el canvas.
+        Con esto ya tenemos la imagen deseada en el objeto Bitmap.
+
+        Ahora tenemos que salvar ese objeto como un fichero jpeg, eso es la parte más sencilla y es lo que hacemos entre las líneas 15 y 20.
+
+        Como ya tenemos salvada la imagen en un archivo, nos creamos un objeto Uri a través de Uri.fromFile, este será el objeto que compartiremos con la otra aplicación.
+        Y ya solo nos queda crear el Itent para enviar la información pasándole nuestros datos, líneas 27 – 31.
+         */
+
+
+        /*
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setType("image/*");
+        share.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(root.getAbsolutePath() + "/DCIM/Camera/image.jpg"));
+        startActivity(Intent.createChooser(share,"Share via"));
+        */
+        /*
+
+        Intent compartir = new Intent(android.content.Intent.ACTION_SEND);
+        compartir.setType("text/plain");
+        //compartir.setType("text/plain");
+        String nombre_ = tvempresaDA.getText().toString();
+        String descripcioncorta_ = tvdescripempresacortaDA.getText().toString();
+        String horario_ = tvhorarioDA.getText().toString();
+        String telefono_ = tvimagtlfDA.getText().toString();
+        String direccion_ = tvdireccionDA.getText().toString();
+        String urldireccion_ = tvimagmapDA.getText().toString();
+
+
+        //ESTILO DE FUENTE
+
+        SpannableString en = new SpannableString("Enviado desde Guiadir");
+        //en.setSpan(new StyleSpan(Typeface.BOLD), 0, 4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        en.setSpan(new StyleSpan(Typeface.ITALIC), 0, 21, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+        StyleSpan boldSpan = new StyleSpan(Typeface.BOLD);
+        StyleSpan italicSpan = new StyleSpan(Typeface.ITALIC);
+        StyleSpan bolditalicSpan = new StyleSpan(Typeface.BOLD_ITALIC);
+
+        //ESTILO EJECUTADO
+        // en.setSpan(bolditalicSpan, 0, 21, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        //TEXTO CON ESTILO
+
+        Intent clipboardIntent = new Intent(context, DAEmpresaActivity.class);
+        clipboardIntent.setData(Uri.parse(urldireccion_));
+
+
+        compartir.putExtra(android.content.Intent.EXTRA_SUBJECT, "Compartir" + nombre_);
+        compartir.putExtra(android.content.Intent.EXTRA_TEXT, (nombre_ + "\n"
+                + "\uD83D\uDD38" + " " + descripcioncorta_ + "\n"
+                + "\uD83D\uDD52" + " " + horario_ + "\n"
+                + "\uD83D\uDCCD" + " " + direccion_ + "\n"
+                + "\uD83D\uDCDE" + " " + telefono_ + "\n"
+                + en));
+        //compartir.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtm"Oferta de " + nombre_ );
+        startActivity(Intent.createChooser(compartir, "Compartir vía"));
+*/
+
+
+        //TODO LO DE ABAJO ES DE FULL, LO DE ARRIBA DE LUFFY
+
         /*
 
 
