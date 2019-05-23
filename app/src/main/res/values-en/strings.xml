@@ -34,23 +34,23 @@
 
 
     <!-- MENU-->
-    <string name="alimentacion">alimentación</string>
-    <string name="asociaciones">asociaciones</string>
-    <string name="compras">compras</string>
-    <string name="deporte">deporte</string>
-    <string name="educacion">educación</string>
-    <string name="hoteles">hoteles</string>
-    <string name="instituciones">instituciones</string>
-    <string name="inmobiliaria">inmobiliaria</string>
+    <string name="alimentacion">grocery</string>
+    <string name="asociaciones">asociations</string>
+    <string name="compras">shopping stores</string>
+    <string name="deporte">sport</string>
+    <string name="educacion">education</string>
+    <string name="hoteles">hotels</string>
+    <string name="instituciones">institutions</string>
+    <string name="inmobiliaria">real estate</string>
     <string name="monumentos">monumentos</string>
-    <string name="ocio">ocio</string>
-    <string name="parque">parque</string>
-    <string name="playa">playa</string>
-    <string name="restauracion">restauración</string>
-    <string name="salud">salud</string>
-    <string name="servicios">servicios</string>
-    <string name="seguridad">seguridad</string>
-    <string name="transporte">transporte</string>
+    <string name="ocio">leisure</string>
+    <string name="parque">park</string>
+    <string name="playa">beach</string>
+    <string name="restauracion">restaurants</string>
+    <string name="salud">health and wellness</string>
+    <string name="servicios">services</string>
+    <string name="seguridad">security</string>
+    <string name="transporte">transport</string>
 
     <!-- MENU ICO-->
     <string name="alimentacion_ico">ic_cat_a_alimentacion</string>
@@ -73,198 +73,198 @@
 
 
     <!-- TOAST IDIOMAS -->
-    <string name="spaintoast"> Has cambiado el idioma a Español </string>
+    <string name="spaintoast"> You´ve change the language to Spanish </string>
     <string name="englishtoast"> You´ve change the language to English </string>
     <string name="frenchtoast"> You´ve change the language to French </string>
     <string name="germantoast"> You´ve change the language to German </string>
 
     <!-- TEXTO INFO -->
-    <string name="infocabecera"> INFO DE LA APP </string>
+    <string name="infocabecera"> APP INFO </string>
 
     <string name="infomensaje">
         <![CDATA[
-        Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste de la provincia de Cádiz.
-<br><b>No recogemos datos de los usuarios</b>, solo empresas o particulares que deseen anunciarse que publicarán los datos necesarios.
-Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna otra razón, nos puedes enviar un email a esta cuenta:</br>
+        This App let you find the business or another location that you need from Cadiz province´s northwest coast.
+<br><b>We don´t collect user data</b>, only companies or individuals who wish to advertise and they only publish the necessary data.
+If you´re interested in advertising or need to contact us for any reason you can send an email to this account:</br>
 ]]>
     </string>
 
-    <string name="infovolver"> VOLVER AL A MENU </string>
+    <string name="infovolver"> BACK TO MENU </string>
 
 
     <!-- TEXTO FILTRO -->
-    <string name="filtrocabecera"> FILTRAR </string>
-    <string name="filtrarporcabecera"> FILTRAR POR CATEGORÍA </string>
+    <string name="filtrocabecera"> FILTERING </string>
+    <string name="filtrarporcabecera"> FILTER BY CATEGORY </string>
 
 
     <!-- SUBCATEGORIA-->
-    <string name="CARNICERIA"> Carnicería </string>
-    <string name="FRUTERIA"> Frutería </string>
-    <string name="PANADERIA"> Panadería </string>
-    <string name="PASTELERIA"> Pastelería </string>
-    <string name="PESCADERIA"> Pescadería </string>
-    <string name="SUPERMERCADO"> Supermercado </string>
-    <string name="AOTROS"> Otros alimentación </string>
+    <string name="CARNICERIA"> Butcher shop </string>
+    <string name="FRUTERIA"> Fruit shop </string>
+    <string name="PANADERIA"> Bakery (bread) </string>
+    <string name="PASTELERIA"> Bakery (cake) </string>
+    <string name="PESCADERIA"> Fish shop </string>
+    <string name="SUPERMERCADO"> Supermarket </string>
+    <string name="AOTROS"> Other groceries </string>
 
-    <string name="ASOCIACIONES">Asociaciones</string>
+    <string name="ASOCIACIONES">Asociations</string>
 
-    <string name="BAZAR"> Bazar </string>
-    <string name="BICICLETA"> Bicicleta </string>
-    <string name="BODEGAS"> Bodegas </string>
-    <string name="CALZADO"> Calzado </string>
-    <string name="CONCESIONARIO"> Concesionario </string>
-    <string name="DROGUERIA"> Droguería </string>
-    <string name="ELECTRONICA"> Electrónica </string>
-    <string name="FERRETERIA"> Ferretería </string>
-    <string name="FLORISTERIA"> Floristería </string>
-    <string name="INFORMATICA"> Informática </string>
-    <string name="JOYERIA"> Joyería </string>
-    <string name="JUGUETERIA"> Juguetería </string>
-    <string name="KIOSKO"> Kiosko </string>
-    <string name="MASCOTAS"> Mascotas </string>
-    <string name="MERCADILLO"> Mercadillo </string>
-    <string name="MOBILARIO"> Mobiliario </string>
-    <string name="MOTOS"> Motos </string>
-    <string name="MOVILES"> Móviles </string>
-    <string name="ROPA"> Ropa </string>
-    <string name="COTROS"> Otros compras </string>
+    <string name="BAZAR"> Bazaar </string>
+    <string name="BICICLETA"> Bicycle shop </string>
+    <string name="BODEGAS"> Wine cellar </string>
+    <string name="CALZADO"> Shoe store </string>
+    <string name="CONCESIONARIO"> Dealership </string>
+    <string name="DROGUERIA"> Drugstore </string>
+    <string name="ELECTRONICA"> Electronics </string>
+    <string name="FERRETERIA"> Hardware store </string>
+    <string name="FLORISTERIA"> Florist </string>
+    <string name="INFORMATICA"> Computing </string>
+    <string name="JOYERIA"> Jewelry </string>
+    <string name="JUGUETERIA"> Toy store </string>
+    <string name="KIOSKO"> Sweet shop </string>
+    <string name="MASCOTAS"> Pet shop </string>
+    <string name="MERCADILLO"> Jumble sale </string>
+    <string name="MOBILARIO"> Furniture </string>
+    <string name="MOTOS"> Motorcycles shop </string>
+    <string name="MOVILES"> Movil shop </string>
+    <string name="ROPA"> Clothing store </string>
+    <string name="COTROS"> Other stores </string>
 
-    <string name="ESTADIO"> Estadio </string>
-    <string name="GIMNASIO"> Gimnasio </string>
+    <string name="ESTADIO"> Stadium </string>
+    <string name="GIMNASIO"> Gym </string>
     <string name="GOLF"> Golf </string>
-    <string name="PISCINA"> Piscina </string>
-    <string name="POLIDEPORTIVO"> Polideportivo </string>
+    <string name="PISCINA"> Swimming pool </string>
+    <string name="POLIDEPORTIVO"> Sports centre </string>
     <string name="SKATEPARK"> Skatepark </string>
-    <string name="TENIS"> Tenis </string>
-    <string name="DOTROS"> Otros deportes </string>
+    <string name="TENIS"> Tennis </string>
+    <string name="DOTROS"> Other sports </string>
 
 
-    <string name="ACADEMIA"> Academia </string>
-    <string name="AUTOESCUELA"> Autoescuela </string>
-    <string name="BIBLIOTECA"> Biblioteca </string>
-    <string name="COLEGIO"> Colegio </string>
-    <string name="GUARDERIA"> Guardería </string>
-    <string name="INSTITUTO"> Instituto </string>
+    <string name="ACADEMIA"> Academy </string>
+    <string name="AUTOESCUELA"> Driving school </string>
+    <string name="BIBLIOTECA"> Library </string>
+    <string name="COLEGIO"> School </string>
+    <string name="GUARDERIA"> Kindergarten </string>
+    <string name="INSTITUTO"> High school </string>
 
-    <string name="ALBERGUE"> Albergue </string>
-    <string name="APARTAHOTEL"> Apartahotel </string>
+    <string name="ALBERGUE"> Hostel </string>
+    <string name="APARTAHOTEL"> Aparthotel </string>
     <string name="CAMPING"> Camping </string>
     <string name="HOSTAL"> Hostal </string>
     <string name="HOTEL"> Hotel </string>
-    <string name="PENSION"> Pensión </string>
+    <string name="PENSION"> Guesthouse </string>
 
-    <string name="INMOBILIARIA"> Inmobiliaria </string>
+    <string name="INMOBILIARIA"> Real estate </string>
 
-    <string name="AYUNTAMIENTO"> Ayuntamiento </string>
-    <string name="CORREOS"> Correos </string>
-    <string name="JUZGADOS"> Juzgados </string>
+    <string name="AYUNTAMIENTO"> Town hall </string>
+    <string name="CORREOS"> Post office </string>
+    <string name="JUZGADOS"> Courts </string>
     <string name="OMIC"> Omic </string>
-    <string name="TURISMO"> Turismo </string>
-    <string name="IOTROS"> Otros instituciones </string>
+    <string name="TURISMO"> Toutirt Office </string>
+    <string name="IOTROS"> Other institutions </string>
 
-    <string name="CASTILLO"> Castillo </string>
-    <string name="ESTATUA"> Estatua </string>
-    <string name="IGLESIA"> Iglesia </string>
-    <string name="MUSEO"> Museo </string>
-    <string name="PLAZADETOROS"> Plaza de toros </string>
-    <string name="PUENTE"> Puente </string>
-    <string name="RUINAS"> Ruinas </string>
-    <string name="TORRE"> Torre </string>
-    <string name="MOTROS"> Otros monumentos </string>
+    <string name="CASTILLO"> Castle </string>
+    <string name="ESTATUA"> Statue </string>
+    <string name="IGLESIA"> Church </string>
+    <string name="MUSEO"> Museum </string>
+    <string name="PLAZADETOROS"> Bullring </string>
+    <string name="PUENTE"> Bridge </string>
+    <string name="RUINAS"> Ruins </string>
+    <string name="TORRE"> Tower </string>
+    <string name="MOTROS"> Other monuments </string>
 
-    <string name="CINE"> Cine </string>
+    <string name="CINE"> Cinema </string>
     <string name="BINGO"> Bingo </string>
-    <string name="DISCOTECA"> Discoteca </string>
+    <string name="DISCOTECA"> Disco </string>
     <string name="KARAOKE"> Karaoke </string>
-    <string name="PARQUEINFANTIL"> Parque infantil </string>
+    <string name="PARQUEINFANTIL"> Children´s playground </string>
     <string name="PAINTBALL"> Paintball </string>
     <string name="SCAPEROOM"> Scape room </string>
-    <string name="TEATRO"> Teatro </string>
-    <string name="OOTROS"> Otros ocio </string>
+    <string name="TEATRO"> Theater </string>
+    <string name="OOTROS"> Other leisure </string>
 
-    <string name="JARDINES"> Jardines </string>
-    <string name="PARQUE"> Parque </string>
+    <string name="JARDINES"> Gardens </string>
+    <string name="PARQUE"> Parks </string>
 
-    <string name="PLAYA"> Playa </string>
+    <string name="PLAYA"> Beach </string>
 
-    <string name="ASADOR"> Asador </string>
+    <string name="ASADOR"> Grill </string>
     <string name="BAR"> Bar </string>
-    <string name="CAFETERIA"> Cafetería </string>
-    <string name="CERVECERIA"> Cervecería </string>
-    <string name="CHIRINGUITO"> Chiringuito </string>
-    <string name="HAMBURGUESA"> Hamburguesa </string>
-    <string name="HELADERIA"> Heladería </string>
-    <string name="PIZZERIA"> Pizzería </string>
+    <string name="CAFETERIA"> Cafeteria </string>
+    <string name="CERVECERIA"> Brewery </string>
+    <string name="CHIRINGUITO"> Beach bar </string>
+    <string name="HAMBURGUESA"> Hamburguer shop </string>
+    <string name="HELADERIA"> Ice cream shop </string>
+    <string name="PIZZERIA"> Pizzeria </string>
     <string name="PUB"> Pub </string>
-    <string name="RESTAURANTE"> Restaurante </string>
-    <string name="ROTROS"> Otros restauración </string>
+    <string name="RESTAURANTE"> Restaurant </string>
+    <string name="ROTROS"> Other restaurants </string>
 
-    <string name="AMBULATORIO"> Ambulatorio / Hospital </string>
-    <string name="DENTISTA"> Dentista </string>
-    <string name="DIETISTA"> Dietista </string>
-    <string name="FARMACIA"> Farmacia </string>
-    <string name="FISIOTERAPIA"> Fisioterapia </string>
-    <string name="OPTICA"> Óptica </string>
-    <string name="PODOLOGO"> Podólogo </string>
+    <string name="AMBULATORIO"> Hospital </string>
+    <string name="DENTISTA"> Dentist </string>
+    <string name="DIETISTA"> Dietitian </string>
+    <string name="FARMACIA"> Pharmacy </string>
+    <string name="FISIOTERAPIA"> Phisiotherapy </string>
+    <string name="OPTICA"> Optics </string>
+    <string name="PODOLOGO"> Podiatrist </string>
     <string name="PSICOLOGIA"> Psicología </string>
-    <string name="VETERINARIO"> Veterinario </string>
-    <string name="SOTROS"> Otros salud </string>
+    <string name="VETERINARIO"> Veterinary </string>
+    <string name="SOTROS"> Other health and wellness </string>
 
-    <string name="AUTOLAVADOCOCHE"> Autolavado Coche </string>
-    <string name="BANCA"> Banca </string>
-    <string name="FOTOGRAFO"> Fotógrafo </string>
-    <string name="GASOLINERA"> Gasolinera </string>
-    <string name="IMPRENTA"> Imprenta </string>
-    <string name="JURIDICO"> Jurídico </string>
-    <string name="LIMPIEZA"> Limpieza </string>
-    <string name="PAPELERIA"> Papelería </string>
-    <string name="PELUQUERIA"> Peluquería </string>
-    <string name="PINTOR"> Pintor </string>
-    <string name="PLAGAS"> Plagas </string>
-    <string name="REFORMAS"> Reformas </string>
-    <string name="TALLER"> Taller </string>
-    <string name="TATUAJE"> Tatuaje </string>
-    <string name="TINTORERIA"> Tintorería </string>
-    <string name="TRANSPORTES"> Transportes </string>
-    <string name="VIAJES"> Viajes </string>
-    <string name="SEOTROS"> Otros servicios </string>
+    <string name="AUTOLAVADOCOCHE"> Car wash </string>
+    <string name="BANCA"> Bank </string>
+    <string name="FOTOGRAFO"> Photographer </string>
+    <string name="GASOLINERA"> Gas station </string>
+    <string name="IMPRENTA"> Printing shop </string>
+    <string name="JURIDICO"> Juridical </string>
+    <string name="LIMPIEZA"> Cleanliness </string>
+    <string name="PAPELERIA"> Stationery </string>
+    <string name="PELUQUERIA"> Hairdressing </string>
+    <string name="PINTOR"> Painter </string>
+    <string name="PLAGAS"> Pests </string>
+    <string name="REFORMAS"> Reforms </string>
+    <string name="TALLER"> Workshop </string>
+    <string name="TATUAJE"> Tattoo </string>
+    <string name="TINTORERIA"> Dry Cleaning </string>
+    <string name="TRANSPORTES"> Transports </string>
+    <string name="VIAJES"> Travel </string>
+    <string name="SEOTROS"> Other services </string>
 
     <string name="GUARDIACIVIL"> Guardia Civil </string>
-    <string name="POLICIALOCAL"> Policía Local </string>
-    <string name="POLICIANACIONAL"> Policía Nacional </string>
+    <string name="POLICIALOCAL"> Local police </string>
+    <string name="POLICIANACIONAL"> National police </string>
     <string name="PROTECCIONCIVIL"> Protección Civil </string>
-    <string name="SEGURIDAD"> Seguridad </string>
+    <string name="SEGURIDAD"> Security </string>
 
-    <string name="AEROPUERTO"> Aeropuerto </string>
-    <string name="ESTACIONTREN"> Estación Tren </string>
-    <string name="ESTACIONBUS"> Estación Bus </string>
-    <string name="PARADABUS"> Parada Bus </string>
-    <string name="PUERTO"> Puerto </string>
+    <string name="AEROPUERTO"> Airport </string>
+    <string name="ESTACIONTREN"> Train station </string>
+    <string name="ESTACIONBUS"> Bus station </string>
+    <string name="PARADABUS"> Bus stop </string>
+    <string name="PUERTO"> Port </string>
     <string name="TAXI"> Taxi </string>
 
-    <string name="OTROS"> Otros </string>
+    <string name="OTROS"> Other </string>
 
     <!-- SALIR DE LA APP-->
-    <string name="SALIRDELAAPP"> Salir de la aplicación </string>
-    <string name="SALIRTXT"> ¿Seguro que desea salir de la aplicación? </string>
-    <string name="SALIRSI"> SI </string>
-    <string name="SALIRCANCELAR"> CANCELAR </string>
+    <string name="SALIRDELAAPP"> Close App </string>
+    <string name="SALIRTXT"> Are you sure you want to close the app? </string>
+    <string name="SALIRSI"> YES </string>
+    <string name="SALIRCANCELAR"> CANCEL </string>
 
     <!-- TOAST -->
-    <string name="EscribeBuscar"> Escribe algo antes de buscar </string>
+    <string name="EscribeBuscar"> Write something before search </string>
 
-    <string name="NoTieneFacebook"> no tiene perfil en Facebook </string>
-    <string name="NoTieneTwitter"> no tiene perfil en Twitter </string>
-    <string name="NoTieneMail"> no tiene email </string>
-    <string name="NoTieneContacto"> no tiene teléfono de contacto </string>
-    <string name="NoTieneInformacion"> no tiene más información </string>
+    <string name="NoTieneFacebook"> It han´t Facebook profile </string>
+    <string name="NoTieneTwitter"> It hasn´t Twitter profile </string>
+    <string name="NoTieneMail"> It hasn´t email </string>
+    <string name="NoTieneContacto"> It hasn´t contact phone </string>
+    <string name="NoTieneInformacion"> It hasn´t more information </string>
 
-    <string name="NoEncuentraLlamar"> No se encuentra app para llamar </string>
-    <string name="NoEncuentraEmail"> No se encuentra app para enviar email </string>
-    <string name="NoEncuentraLocalizacion"> No se encuentra localización </string>
-    <string name="NoHayMapas"> No hay servidor de mapas </string>
+    <string name="NoEncuentraLlamar"> Calling app not found </string>
+    <string name="NoEncuentraEmail"> Email app not found </string>
+    <string name="NoEncuentraLocalizacion"> Location not found </string>
+    <string name="NoHayMapas"> Ain´t map server </string>
 
-    <string name="EnviarEmail"> Enviar email... </string>
+    <string name="EnviarEmail"> Send email... </string>
 
 
 

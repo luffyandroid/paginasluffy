@@ -588,9 +588,9 @@ public class DAEmpresaActivity extends AppCompatActivity {
         }
     }
 
-    //COMPARTIR
     public void clickCompartirDA(View v) {
-
+        //TODO ULTIMA COSA HECHA LUFFY INICIO
+/*
         // Creamos un bitmap con el tamaño de la vista
         Bitmap bitmap = Bitmap.createBitmap(imagempresaDA.getWidth(),
                 imagempresaDA.getHeight(), Bitmap.Config.ARGB_8888);
@@ -620,7 +620,9 @@ public class DAEmpresaActivity extends AppCompatActivity {
         sharingIntent.setType("image/jpeg");
 
         sharingIntent.putExtra(Intent.EXTRA_STREAM, uriF);
-        startActivity(sharingIntent);
+        startActivity(Intent.createChooser(sharingIntent, "Elige una aplicacion"));
+        */
+        //TODO ultima cosa hecha luffy fin
 
         /*
         Entre las líneas 3 y 8, creamos un Bitmap con el tamaño adecuado a la vista. Creamos el Canvas necesario para pintar en el Bitmap y renderizamos el contenido
