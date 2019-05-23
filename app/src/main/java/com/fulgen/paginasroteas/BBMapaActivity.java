@@ -2251,11 +2251,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             @Override
                             public void onClick(View v) {
 
+                                String AFACE = getString(R.string.NoTieneFacebook);
                                 String Facebook = facebook.getText().toString();
                                 String Nombre = nombre.getText().toString();
                                 if (Facebook.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + R.string.NoTieneFacebook,
+                                            Nombre + AFACE,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -2272,11 +2273,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             @Override
                             public void onClick(View v) {
 
+                                String ATW = getString(R.string.NoTieneTwitter);
                                 String Twitter = twitter.getText().toString();
                                 String Nombre = nombre.getText().toString();
                                 if (Twitter.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + R.string.NoTieneTwitter,
+                                            Nombre + ATW,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -2293,11 +2295,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             @Override
                             public void onClick(View v) {
 
+                                String ATELF = getString(R.string.NoTieneContacto);
                                 String Telefono = telefono.getText().toString();
                                 String Nombre = nombre.getText().toString();
                                 if (Telefono.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + R.string.NoTieneContacto,
+                                            Nombre + ATELF,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -2319,11 +2322,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             @Override
                             public void onClick(View v) {
 
+                                String AMAIL = getString(R.string.NoTieneMail);
                                 String Mail = mail.getText().toString();
                                 String Nombre = nombre.getText().toString();
                                 if (Mail.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + R.string.NoTieneMail,
+                                            Nombre + AMAIL,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -2351,12 +2355,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                String AMAPA = getString(R.string.NoEncuentraLocalizacion);
                                 String Maps = maps.getText().toString();
                                 String Nombre = nombre.getText().toString();
                                 if (Maps.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + R.string.NoHayMapas,
+                                            Nombre + AMAPA,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
@@ -2373,11 +2377,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             @Override
                             public void onClick(View v) {
 
+                                String AEXTRA = getString(R.string.NoTieneInformacion);
                                 String Extra = extra.getText().toString();
                                 String Nombre = nombre.getText().toString();
                                 if (Extra.equals("no")) {
                                     Toast.makeText(getApplicationContext(),
-                                            Nombre + R.string.NoTieneInformacion,
+                                            Nombre + AEXTRA,
                                             Toast.LENGTH_LONG).show();
 
                                 } else {
