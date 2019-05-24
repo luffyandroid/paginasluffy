@@ -253,11 +253,11 @@ If you´re interested in advertising or need to contact us for any reason you ca
     <!-- TOAST -->
     <string name="EscribeBuscar"> Write something before search </string>
 
-    <string name="NoTieneFacebook"> It han´t Facebook profile </string>
-    <string name="NoTieneTwitter"> It hasn´t Twitter profile </string>
-    <string name="NoTieneMail"> It hasn´t email </string>
-    <string name="NoTieneContacto"> It hasn´t contact phone </string>
-    <string name="NoTieneInformacion"> It hasn´t more information </string>
+    <string name="NoTieneFacebook"> hasn´t Facebook profile </string>
+    <string name="NoTieneTwitter"> hasn´t Twitter profile </string>
+    <string name="NoTieneMail"> hasn´t email </string>
+    <string name="NoTieneContacto"> hasn´t contact phone </string>
+    <string name="NoTieneInformacion"> hasn´t more information </string>
 
     <string name="NoEncuentraLlamar"> Calling app not found </string>
     <string name="NoEncuentraEmail"> Email app not found </string>

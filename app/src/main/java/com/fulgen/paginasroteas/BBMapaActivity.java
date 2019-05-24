@@ -138,6 +138,10 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 BBMapaActivity.this, BBMapaActivity.class);
         //PARA CONVERTIR NO EL ANUNCIO
         mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        String pasarpermanente = tvpermanenteocultaBB.getText().toString();
+        String pasarfiltro = tvfiltroocultaBB.getText().toString();
+        mainIntent.putExtra("EXTRA_PERMANENTE", pasarpermanente);
+        mainIntent.putExtra("EXTRA_FILTRO", pasarfiltro);
         startActivity(mainIntent);
 
         //ANIMACIÓN
@@ -163,6 +167,10 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 BBMapaActivity.this, BBMapaActivity.class);
         //PARA CONVERTIR NO EL ANUNCIO
         mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        String pasarpermanente = tvpermanenteocultaBB.getText().toString();
+        String pasarfiltro = tvfiltroocultaBB.getText().toString();
+        mainIntent.putExtra("EXTRA_PERMANENTE", pasarpermanente);
+        mainIntent.putExtra("EXTRA_FILTRO", pasarfiltro);
         startActivity(mainIntent);
 
         //ANIMACIÓN
@@ -188,6 +196,10 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 BBMapaActivity.this, BBMapaActivity.class);
         //PARA CONVERTIR NO EL ANUNCIO
         mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        String pasarpermanente = tvpermanenteocultaBB.getText().toString();
+        String pasarfiltro = tvfiltroocultaBB.getText().toString();
+        mainIntent.putExtra("EXTRA_PERMANENTE", pasarpermanente);
+        mainIntent.putExtra("EXTRA_FILTRO", pasarfiltro);
         startActivity(mainIntent);
 
         //ANIMACIÓN
@@ -213,6 +225,10 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 BBMapaActivity.this, BBMapaActivity.class);
         //PARA CONVERTIR NO EL ANUNCIO
         mainIntent.putExtra("EXTRA_ANUNCIOSPLASH", anunciosplash);
+        String pasarpermanente = tvpermanenteocultaBB.getText().toString();
+        String pasarfiltro = tvfiltroocultaBB.getText().toString();
+        mainIntent.putExtra("EXTRA_PERMANENTE", pasarpermanente);
+        mainIntent.putExtra("EXTRA_FILTRO", pasarfiltro);
         startActivity(mainIntent);
 
         //ANIMACIÓN
