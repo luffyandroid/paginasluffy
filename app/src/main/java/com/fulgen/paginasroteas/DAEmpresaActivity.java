@@ -588,9 +588,42 @@ public class DAEmpresaActivity extends AppCompatActivity {
         }
     }
 
+    //COMPARTIR
     public void clickCompartirDA(View v) {
-        //TODO ULTIMA COSA HECHA LUFFY INICIO
-/*
+
+
+
+
+
+
+
+
+        //String whatsAppMessage = "http://maps.google.com/maps?saddr=" + 36.469174 + "," + -6.196879;
+        //String whatsAppMessage = "https://maps.google.com/maps?q=" + 36.6226921 + "%2C" + -6.3596034;
+        String whatsAppMessage = 36.6226921 + "%2C" + -6.3596034;
+
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, whatsAppMessage);
+        sendIntent.setType("text/plain");
+        sendIntent.setPackage("com.whatsapp");
+        startActivity(sendIntent);
+
+
+
+
+
+
+
+
+
+
+
+
+        ////////////
+        /*
+
+
         // Creamos un bitmap con el tamaño de la vista
         Bitmap bitmap = Bitmap.createBitmap(imagempresaDA.getWidth(),
                 imagempresaDA.getHeight(), Bitmap.Config.ARGB_8888);
@@ -620,9 +653,11 @@ public class DAEmpresaActivity extends AppCompatActivity {
         sharingIntent.setType("image/jpeg");
 
         sharingIntent.putExtra(Intent.EXTRA_STREAM, uriF);
-        startActivity(Intent.createChooser(sharingIntent, "Elige una aplicacion"));
+        startActivity(sharingIntent);
+
+
         */
-        //TODO ultima cosa hecha luffy fin
+        //////
 
         /*
         Entre las líneas 3 y 8, creamos un Bitmap con el tamaño adecuado a la vista. Creamos el Canvas necesario para pintar en el Bitmap y renderizamos el contenido
