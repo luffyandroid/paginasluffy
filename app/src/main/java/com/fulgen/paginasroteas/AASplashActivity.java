@@ -21,7 +21,6 @@ public class AASplashActivity extends AppCompatActivity {
     //TIEMPO DE SPLASH
     private static final long SPLASH_SCREEN_DELAY = 3000;
 
-    //002
     static final String EXTRA_ANUNCIOSPLASH = "ANUNCIOSPLASH";
 
     //ELEMENTOS DECLARADOS ▼
@@ -89,18 +88,11 @@ public class AASplashActivity extends AppCompatActivity {
 
         //PROTOCOLO CAMBIAR FONDO SEGÚN HORA ▲
 
-        /*
-        //PROPIEDADES PANTALLA
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        */
-
 
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
 
-                //002
                 //PARA CONVERTIR NO EL ANUNCIO
                 String anunciosplash = "si";
 

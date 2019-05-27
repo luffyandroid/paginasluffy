@@ -158,7 +158,7 @@ public class CACategoriaActivity extends AppCompatActivity {
                                  a.getDescripcioncortaen(), a.getDescripcioncortafr(), a.getHorarioes(), a.getHorariode(), a.getHorarioen(),
                                  a.getHorariofr(), a.getDireccion(), a.getCategoria(), a.getSubcategoria(), a.getLatitud(), a.getLongitud());
 
-                         //001
+
 
 
 

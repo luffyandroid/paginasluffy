@@ -23,7 +23,6 @@
     <string name="volver"> WENDEN </string>
     <string name="localizarme"> STELLE </string>
 
-    //0011
     <string name="compartir"> COMPARTIR </string>
 
 
@@ -33,7 +32,6 @@
     <!-- DESCRIPCION-->
     <string name="horario"> ÖFFNUNGSZEITEN </string>
 
-    //0011 NO HAS TRADUCIDO (Plaza Andalucía, S/N, 11550 Chipiona, Cádiz)
     <string name="direccion"> DIRECCIÓN </string>
 
 
@@ -86,7 +84,6 @@
     <string name="infocabecera"> App-Informationen </string>
 
 
-    //0011 NO HAS TRADUCIDO (Respeta los caractares HTML)
     <string name="infomensaje">
         <![CDATA[
         Esta App permite encontrar el negocio u otra localizacion que necesitas de la zona Costa Noroeste de la provincia de Cádiz.
@@ -95,15 +92,13 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
 ]]>
     </string>
 
-    //0011 NO HAS TRADUCIDO
     <string name="infovolver"> VOLVER AL A MENU </string>
 
-    //0011 NO HAS TRADUCIDO
+
     <!-- TEXTO FILTRO -->
     <string name="filtrocabecera"> FILTRAR </string>
     <string name="filtrarporcabecera"> FILTRAR POR CATEGORÍA </string>
 
-    //0011 NO HAS TRADUCIDO
     <!-- SUBCATEGORIA-->
     <string name="CARNICERIA"> Carnicería </string>
     <string name="FRUTERIA"> Frutería </string>

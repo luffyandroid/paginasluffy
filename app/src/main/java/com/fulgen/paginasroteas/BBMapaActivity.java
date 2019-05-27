@@ -64,7 +64,6 @@ import java.util.Locale;
 public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     //ETIQUETA EXTRA PARA PASAR INFO A TODOS LOS ACTIVITYS
-    //002
     static final String EXTRA_ANUNCIOSPLASH = "ANUNCIOSPLASH";
 
     //VARIANTES DE DECLARADAS
@@ -603,9 +602,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         }
 
 
-
-
-
         Button btnfooterDialogFiltroBA = (Button)dialog.findViewById(R.id.btnfooterDialogFiltroBA);
 
         btnfooterDialogFiltroBA.setOnClickListener(new View.OnClickListener() {
@@ -1009,7 +1005,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
     public void clickMenuBB(View v) {
 
-        //002
         //PARA CONVERTIR NO EL ANUNCIO
         String anunciosplash = "no";
         Intent mainIntent = new Intent().setClass(
@@ -1028,7 +1023,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
     public void onBackPressed() {
         super.onBackPressed();
 
-        //002
         //PARA CONVERTIR NO EL ANUNCIO
         String anunciosplash = "no";
 
@@ -2153,10 +2147,6 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         dialog.show();
         dialog.getWindow().setAttributes(lp);
 
-        //dialog.getWindow().setLayout(650, 1250);
-        //dialog.getWindow().setLayout(R.dimen.dialogAncho, R.dimen.dialogAlto);
-
-
         dbRef = FirebaseDatabase.getInstance().getReference().child(tvidmarcadorBB.getText().toString());
 
         valueEventListener = new ValueEventListener() {
@@ -2176,6 +2166,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 final TextView maps = (TextView) dialog.findViewById(R.id.tvimagmapADAPTADOR);
                 final TextView telefono = (TextView) dialog.findViewById(R.id.tvimagtlfADAPTADOR);
                 final TextView twitter = (TextView) dialog.findViewById(R.id.tvimagtwitterADAPTADOR);
+                final TextView descripcioncorta = (TextView) dialog.findViewById(R.id.tvdescripempresacortaADAPTADOR);
+                final TextView latitud = (TextView) dialog.findViewById(R.id.tvlatitudoADAPTADOR);
+                final TextView longitud = (TextView) dialog.findViewById(R.id.tvlongitudADAPTADOR);
                 final TextView idioma = (TextView) dialog.findViewById(R.id.tvidiomaADAPTADOR);
 
                 final ImageView imagenADAPTADOR = (ImageView) dialog.findViewById(R.id.imagempresaADAPTADOR);
@@ -2185,11 +2178,13 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 final ImageView btnimagmailADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagmailADAPTADOR);
                 final ImageView btnimagmapADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagmapADAPTADOR);
                 final ImageView btnimagextraADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagextraADAPTADOR);
+                final ImageView btnimagcompartirADAPTADOR = (ImageView) dialog.findViewById(R.id.btnimagcompartirADAPTADOR);
 
                 final LinearLayout btnlinearlayoutcerrarADAPTADOR = (LinearLayout) dialog.findViewById(R.id.btnlinearlayoutcerrarADAPTADOR);
 
                 nombre.setText(anuncio.getNombre());
                 descripcionlarga.setText(anuncio.getDescripcionlargaes());
+                descripcioncorta.setText(anuncio.getDescripcioncortaes());
                 descuento.setText(anuncio.getDescuentoes());
                 direccion.setText(anuncio.getDireccion());
                 extra.setText(anuncio.getExtra());
@@ -2201,24 +2196,36 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 telefono.setText(anuncio.getTelefono());
                 twitter.setText(anuncio.getTwitter());
 
+                Double latextra = anuncio.getLatitud();
+                String latstring = String.valueOf(latextra);
+                latitud.setText(latstring);
+
+                Double longextra = anuncio.getLongitud();
+                String longstring = String.valueOf(longextra);
+                longitud.setText(longstring);
+
                 if(idioma.getText().toString().equals("es")){
                     descuento.setText(anuncio.getDescuentoes());
                     descripcionlarga.setText(anuncio.getDescripcionlargaes());
+                    descripcioncorta.setText(anuncio.getDescripcioncortaes());
                     horario.setText(anuncio.getHorarioes());
                 }
                 if(idioma.getText().toString().equals("en")){
                     descuento.setText(anuncio.getDescuentoen());
                     descripcionlarga.setText(anuncio.getDescripcionlargaen());
+                    descripcioncorta.setText(anuncio.getDescripcioncortaen());
                     horario.setText(anuncio.getHorarioen());
                 }
                 if(idioma.getText().toString().equals("de")){
                     descuento.setText(anuncio.getDescuentode());
                     descripcionlarga.setText(anuncio.getDescripcionlargade());
+                    descripcioncorta.setText(anuncio.getDescripcioncortade());
                     horario.setText(anuncio.getHorariode());
                 }
                 if(idioma.getText().toString().equals("fr")){
                     descuento.setText(anuncio.getDescuentofr());
                     descripcionlarga.setText(anuncio.getDescripcionlargafr());
+                    descripcioncorta.setText(anuncio.getDescripcioncortafr());
                     horario.setText(anuncio.getHorariofr());
                 }
                 //DESCUENTO GONE SI ES NO
@@ -2406,6 +2413,57 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                     startActivity(intent);
                                 }
+                            }
+                        });
+
+                //COMPARTIR
+                btnimagcompartirADAPTADOR.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+
+
+                                Intent compartir = new Intent(android.content.Intent.ACTION_SEND);
+                                compartir.setType("text/plain");
+                                String nombre_ = nombre.getText().toString();
+                                String descripcioncorta_ = descripcioncorta.getText().toString();
+                                String horario_ = horario.getText().toString();
+                                String telefono_ = telefono.getText().toString();
+                                String direccion_ = direccion.getText().toString();
+                                String urldireccion_ = extra.getText().toString();
+                                String latstring_ = latitud.getText().toString();
+                                String longextra_ = longitud.getText().toString();
+
+                                //DAR LATITUD LONGITUD PARA REDES
+                                String latlong = "https://maps.google.com/maps?q=" + latstring_ + "%2C" + longextra_;
+
+                                //ESTILO DE FUENTE
+
+                                String enviado = "Enviado desde la app Guiadir";
+
+
+
+                                Intent clipboardIntent = new Intent(context, DAEmpresaActivity.class);
+                                clipboardIntent.setData(Uri.parse(urldireccion_));
+
+                                compartir.putExtra(android.content.Intent.EXTRA_SUBJECT, nombre_);
+                                compartir.putExtra(android.content.Intent.EXTRA_TEXT, ("\uD83D\uDCD7" + nombre_ + "\n"
+                                        + "\uD83D\uDD38" + " " + descripcioncorta_ + "\n"
+                                        + "\uD83D\uDD52" + " " + horario_ + "\n"
+                                        + "\uD83D\uDCDE" + " " + telefono_ + "\n"
+                                        + "\uD83D\uDCCD" + " " + direccion_ + "\n"
+                                        + latlong + "\n"
+                                        + enviado));
+                                //compartir.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtm"Oferta de " + nombre_ );
+                                startActivity(Intent.createChooser(compartir, "Compartir vía"));
+
+
+
+
+
+
+
                             }
                         });
 

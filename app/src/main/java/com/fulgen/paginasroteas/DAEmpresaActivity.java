@@ -12,15 +12,18 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StyleSpan;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,7 +45,7 @@ import java.util.Locale;
 
 public class DAEmpresaActivity extends AppCompatActivity {
 
-    //002
+
     static final String EXTRA_ANUNCIOSPLASH = "ANUNCIOSPLASH";
 
     //VARIANTES DE DECLARADAS
@@ -55,10 +58,10 @@ public class DAEmpresaActivity extends AppCompatActivity {
     private FloatingActionsMenu menu_fabDA;
     ImageView imagempresaDA, imgCabeceramenuDA, btnimagfacebookDA, btnimagtwitterDA, btnimagtlfDA, btnimagmailDA, btnimagmapDA, btnimagextraDA;
     TextView tvcabeceraDA, tvcabeceraocultaDA, tvempresaDA, tvdescripempresaDA, tvinformacionadicionalDA, tvhorarioDA, tvdireccionDA,
-            tvimagfacebookDA, tvimagtwitterDA, tvimagtlfDA, tvimagmailDA, tvimagmapDA, tvimagextraDA, tvidiomaDA, tvdescripempresacortaDA;
+            tvimagfacebookDA, tvimagtwitterDA, tvimagtlfDA, tvimagmailDA, tvimagmapDA, tvimagextraDA, tvidiomaDA, tvdescripempresacortaDA,
+            tvlatitudocultaDA, tvlongitudocultaDA;
 
-    //005
-    //LinearLayout idForSaveView;
+    ConstraintLayout ConstrainLayoutDA;
 
 
     @Override
@@ -68,6 +71,8 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         //ENLAZO VARIANTES DECLARADAS
         menu_fabDA = (FloatingActionsMenu) findViewById(R.id.menu_fabDA);
+
+        ConstrainLayoutDA = (ConstraintLayout) findViewById(R.id.ConstrainLayoutDA);
 
         tvcabeceraDA = (TextView) findViewById(R.id.tvcabeceraDA);
         tvcabeceraocultaDA = (TextView) findViewById(R.id.tvcabeceraocultaDA);
@@ -84,6 +89,10 @@ public class DAEmpresaActivity extends AppCompatActivity {
         tvimagextraDA = (TextView) findViewById(R.id.tvimagextraDA);
         tvidiomaDA = (TextView) findViewById(R.id.tvidiomaDA);
         tvdescripempresacortaDA = (TextView) findViewById(R.id.tvdescripempresacortaDA);
+        tvlatitudocultaDA = (TextView) findViewById(R.id.tvlatitudocultaDA);
+        tvlongitudocultaDA = (TextView) findViewById(R.id.tvlongitudocultaDA);
+
+
         imagempresaDA = (ImageView) findViewById(R.id.imagempresaDA);
         imgCabeceramenuDA = (ImageView) findViewById(R.id.imgCabeceramenuDA);
         btnimagfacebookDA = (ImageView)findViewById(R.id.btnimagfacebookDA);
@@ -92,11 +101,6 @@ public class DAEmpresaActivity extends AppCompatActivity {
         btnimagmailDA = (ImageView)findViewById(R.id.btnimagmailDA);
         btnimagmapDA = (ImageView)findViewById(R.id.btnimagmapDA);
         btnimagextraDA = (ImageView)findViewById(R.id.btnimagextraDA);
-
-        //005
-        //idForSaveView=(LinearLayout)findViewById(R.id.idForSaveView);
-
-        //001 HAY QUE ENLAZAR REDES CON SETTEXT Y CONSTRUCTOR
 
 
         Bundle c = getIntent().getExtras();
@@ -117,6 +121,14 @@ public class DAEmpresaActivity extends AppCompatActivity {
             tvimagmailDA.setText(anuncio.getMail());
             tvimagmapDA.setText(anuncio.getMaps());
             tvimagextraDA.setText(anuncio.getExtra());
+
+            Double latextra = anuncio.getLatitud();
+            String latstring = String.valueOf(latextra);
+            tvlatitudocultaDA.setText(latstring);
+
+            Double longextra = anuncio.getLongitud();
+            String longstring = String.valueOf(longextra);
+            tvlongitudocultaDA.setText(longstring);
 
             if (tvimagfacebookDA.getText().toString().equals("no")){
 
@@ -335,10 +347,24 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         }
 
+        //001
+        //PARA QUE EL CIERRE EL LAYOUT AL ESTAR ABIERTO FLOAT
+        ConstrainLayoutDA.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(menu_fabDA.isExpanded())
+                    menu_fabDA.collapse();
+                return true;
+            }
+        });
+
 
     }//FIN ONCREATE
 
 //BOTONES FLOATMENU
+
+
+
 
     public void clickSpainDA(View v) {
 
@@ -596,6 +622,8 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
 
 
+/*
+
 
 
         //String whatsAppMessage = "http://maps.google.com/maps?saddr=" + 36.469174 + "," + -6.196879;
@@ -608,6 +636,10 @@ public class DAEmpresaActivity extends AppCompatActivity {
         sendIntent.setType("text/plain");
         sendIntent.setPackage("com.whatsapp");
         startActivity(sendIntent);
+
+
+
+        */
 
 
 
@@ -1033,52 +1065,45 @@ public class DAEmpresaActivity extends AppCompatActivity {
     */
 
 
-
-    /*
             Intent compartir = new Intent(android.content.Intent.ACTION_SEND);
         compartir.setType("text/plain");
-        //compartir.setType("text/plain");
         String nombre_ = tvempresaDA.getText().toString();
         String descripcioncorta_ = tvdescripempresacortaDA.getText().toString();
         String horario_ = tvhorarioDA.getText().toString();
         String telefono_ = tvimagtlfDA.getText().toString();
         String direccion_ = tvdireccionDA.getText().toString();
         String urldireccion_ = tvimagmapDA.getText().toString();
+        String latstring_ = tvlatitudocultaDA.getText().toString();
+        String longextra_ = tvlongitudocultaDA.getText().toString();
+
+        //DAR LATITUD LONGITUD PARA REDES
+        String latlong = "https://maps.google.com/maps?q=" + latstring_ + "%2C" + longextra_;
 
 
         //ESTILO DE FUENTE
 
-        SpannableString en = new SpannableString("Enviado desde Guiadir");
-        //en.setSpan(new StyleSpan(Typeface.BOLD), 0, 4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        en.setSpan(new StyleSpan(Typeface.ITALIC), 0, 21, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-
-        StyleSpan boldSpan = new StyleSpan(Typeface.BOLD);
-        StyleSpan italicSpan = new StyleSpan(Typeface.ITALIC);
-        StyleSpan bolditalicSpan = new StyleSpan(Typeface.BOLD_ITALIC);
-
-        //ESTILO EJECUTADO
-       // en.setSpan(bolditalicSpan, 0, 21, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        String enviado = "Enviado desde la app Guiadir";
 
         //TEXTO CON ESTILO
 
         Intent clipboardIntent = new Intent(context, DAEmpresaActivity.class);
         clipboardIntent.setData(Uri.parse(urldireccion_));
 
-
-        compartir.putExtra(android.content.Intent.EXTRA_SUBJECT, "Compartir" + nombre_);
-        compartir.putExtra(android.content.Intent.EXTRA_TEXT, (nombre_ + "\n"
+        compartir.putExtra(android.content.Intent.EXTRA_SUBJECT, nombre_);
+        compartir.putExtra(android.content.Intent.EXTRA_TEXT, ("\uD83D\uDCD7" + nombre_ + "\n"
                 + "\uD83D\uDD38" + " " + descripcioncorta_ + "\n"
                 + "\uD83D\uDD52" + " " + horario_ + "\n"
-                + "\uD83D\uDCCD" + " " + direccion_ + "\n"
                 + "\uD83D\uDCDE" + " " + telefono_ + "\n"
-                + en));
+                + "\uD83D\uDCCD" + " " + direccion_ + "\n"
+                + latlong + "\n"
+                + enviado));
         //compartir.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtm"Oferta de " + nombre_ );
         startActivity(Intent.createChooser(compartir, "Compartir vía"));
 
+        //PARA QUE SE CIERRE AL PULSAR
+        menu_fabDA.collapse();
+
     }
-     */
 
 
-    }
 }

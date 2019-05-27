@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
+    android:id="@+id/ConstrainLayoutDA"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DAEmpresaActivity"
+    android:descendantFocusability="blocksDescendants"
     tools:showIn="@layout/content_daempresa">
 
     <RelativeLayout
@@ -61,6 +63,15 @@
                     android:visibility="gone"/>
 
                 <TextView
+                    android:id="@+id/tvdescripempresacortaDA"
+                    style="@style/txtdescripcionempresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Descripcion corta" />
+
+                <TextView
                     android:id="@+id/tvdescripempresaDA"
                     style="@style/txtdescripcionempresa"
                     android:layout_width="match_parent"
@@ -68,15 +79,6 @@
                     android:gravity="center"
                     android:padding="@dimen/paddingHorizontalfooter"
                     android:text="Catering Indicado para grupos Ideal para niños Terraza Acepta reservas Para llevar Servicio de camareros No se requiere reserva" />
-
-                <TextView
-                    android:id="@+id/tvdescripempresacortaDA"
-                    style="@style/txtdescripcionempresa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/paddingHorizontalfooter"
-                    android:text="Descripcion corta"
-                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/tvinformacionadicionalDA"
@@ -87,7 +89,17 @@
                     android:text="DESCUENTO DE UN 10% PARA SOCIOS DE O3"
                     android:visibility="gone"/>
 
+                <TextView
+                    android:id="@+id/tvlatitudocultaDA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
 
+                <TextView
+                    android:id="@+id/tvlongitudocultaDA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -103,7 +115,8 @@
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:cropToPadding="true"
-                   app:srcCompat="@drawable/ic_menu_horario" />
+                    app:srcCompat="@drawable/ic_menu_horario"
+                    tools:ignore="VectorDrawableCompat" />
 
                 <TextView
                     style="@style/txtdescripcionempresa"
@@ -141,7 +154,8 @@
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
                         android:cropToPadding="true"
-                        app:srcCompat="@drawable/ic_menu_mapa" />
+                        app:srcCompat="@drawable/ic_menu_mapa"
+                        tools:ignore="VectorDrawableCompat" />
 
                     <TextView
                         style="@style/txtdescripcionempresa"
@@ -284,14 +298,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/redes_extra"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                tools:ignore="VectorDrawableCompat" />
             <ImageView
                 android:id="@+id/btnimaginvisible2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/redes_extra"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                tools:ignore="VectorDrawableCompat" />
 
 
         </LinearLayout>

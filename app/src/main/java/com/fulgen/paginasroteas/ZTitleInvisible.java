@@ -30,9 +30,6 @@ public abstract class ZTitleInvisible implements View.OnTouchListener, GoogleMap
     ZAnuncio anuncio = null;
     TextView nombre, telefono, ultimo;
 
-
-    //001
-    Button btninfowindow_compartir;
     private OnInfoWindowElemTouchListener infoButtonListener;
 
     public ZTitleInvisible(Context ctx){
@@ -50,7 +47,7 @@ public abstract class ZTitleInvisible implements View.OnTouchListener, GoogleMap
         correo = view.findViewById(R.id.tvnfowindow_correo);
 
 
-        //001
+
 
         btninfowindow_compartir = view.findViewById(R.id.btninfowindow_compartir);
 
