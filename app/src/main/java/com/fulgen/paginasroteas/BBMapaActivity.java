@@ -2440,7 +2440,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
 
                                 //ESTILO DE FUENTE
 
-                                String enviado = "Enviado desde la app Guiadir";
+                                String enviado = getString(R.string.EnviadoDesde);
 
 
 
@@ -2456,7 +2456,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                         + latlong + "\n"
                                         + enviado));
                                 //compartir.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtm"Oferta de " + nombre_ );
-                                startActivity(Intent.createChooser(compartir, "Compartir vía"));
+                                startActivity(Intent.createChooser(compartir, getString(R.string.Compartirvia)));
 
 
 

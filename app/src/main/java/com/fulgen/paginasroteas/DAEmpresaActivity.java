@@ -63,6 +63,8 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     ConstraintLayout ConstrainLayoutDA;
 
+    LinearLayout LinearLayoutDirección;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +103,8 @@ public class DAEmpresaActivity extends AppCompatActivity {
         btnimagmailDA = (ImageView)findViewById(R.id.btnimagmailDA);
         btnimagmapDA = (ImageView)findViewById(R.id.btnimagmapDA);
         btnimagextraDA = (ImageView)findViewById(R.id.btnimagextraDA);
+
+        LinearLayoutDirección = (LinearLayout) findViewById(R.id.LinearLayoutDirección);
 
 
         Bundle c = getIntent().getExtras();
@@ -597,6 +601,27 @@ public class DAEmpresaActivity extends AppCompatActivity {
         }
     }
 
+    //MAPA (DIRECCIÓN)
+    public void clickMapaDireccionDA(View v) {
+        String AMAPA = getString(R.string.NoEncuentraLocalizacion);
+        String Mapa = tvimagmapDA.getText().toString();
+        String Nombre = tvempresaDA.getText().toString();
+        if (Mapa.equals("no")) {
+            Toast.makeText(getApplicationContext(),
+                    Nombre + AMAPA,
+                    Toast.LENGTH_LONG).show();
+        } else {
+            try {
+                Uri location = Uri.parse(Mapa);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+                startActivity(mapIntent);
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(DAEmpresaActivity.this,
+                        R.string.NoHayMapas, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
     //EXTRA
     public void clickEmpresaExtraDA(View v) {
         String AEXTRA = getString(R.string.NoTieneInformacion);
@@ -616,8 +641,6 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
     //COMPARTIR
     public void clickCompartirDA(View v) {
-
-
 
 
 
@@ -1082,7 +1105,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
 
         //ESTILO DE FUENTE
 
-        String enviado = "Enviado desde la app Guiadir";
+        String enviado = getString(R.string.EnviadoDesde);
 
         //TEXTO CON ESTILO
 
@@ -1098,7 +1121,7 @@ public class DAEmpresaActivity extends AppCompatActivity {
                 + latlong + "\n"
                 + enviado));
         //compartir.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtm"Oferta de " + nombre_ );
-        startActivity(Intent.createChooser(compartir, "Compartir vía"));
+        startActivity(Intent.createChooser(compartir, getString(R.string.Compartirvia)));
 
         //PARA QUE SE CIERRE AL PULSAR
         menu_fabDA.collapse();

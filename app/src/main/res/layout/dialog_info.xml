@@ -67,8 +67,9 @@
 
     <TextView
         android:id="@+id/tvDialogCorreo"
-        android:paddingHorizontal="@dimen/paddingcabeceradialog"
         android:paddingVertical="@dimen/paddingcabeceradialog"
+        android:drawableLeft="@drawable/menu_circular_email"
+        android:paddingHorizontal="@dimen/tamanoFooter"
         android:background="@drawable/selector_btn_verde"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,13 +87,15 @@
     <Button
         android:id="@+id/volverBotonDialog"
         android:background="@drawable/selector_btn_verde"
+        android:drawableLeft="@drawable/menu_circular_atras"
+        android:paddingHorizontal="@dimen/tamanoFooter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingVertical="@dimen/paddingcabecera"
-        android:text="VOLVER AL A MENU"
+        android:text="@string/infovolver"
         android:textColor="@color/blanco"
         android:onClick="clickAtrasDialog">
 

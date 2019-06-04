@@ -270,6 +270,13 @@ If you´re interested in advertising or need to contact us for any reason you ca
 
     <string name="title_activity_bbmapa_m">Map</string>
 
+    <!-- EDITTEXT BUSCAR -->
+    <string name="BuscarEditText"> Search by city, name...  </string>
+
+    <!-- COMPARTIR FOOT -->
+    <string name="EnviadoDesde"> Sent from the Guiadir app  </string>
+    <string name="Compartirvia"> Share  </string>
+
 
 
 </resources>

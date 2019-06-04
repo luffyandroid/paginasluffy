@@ -269,5 +269,12 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
 
     <string name="title_activity_bbmapa_m">Map</string>
 
+    <!-- EDITTEXT BUSCAR -->
+    <string name="BuscarEditText"> Buscar por ciudad, nombre...  </string>
+
+    <!-- COMPARTIR FOOT -->
+    <string name="EnviadoDesde"> Enviado desde la app Guiadir  </string>
+    <string name="Compartirvia"> Compartir vía  </string>
+
 
 </resources>

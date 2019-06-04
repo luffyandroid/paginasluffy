@@ -141,12 +141,14 @@
                     android:layout_height="@dimen/espaciogrande" />
 
                 <LinearLayout
+                    android:id="@+id/LinearLayoutDirección"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/tamanoFooter"
                     android:paddingVertical="@dimen/paddinginteriorlayout"
+                    android:onClick="clickMapaDireccionDA"
                     android:orientation="horizontal">
 
                     <ImageView
