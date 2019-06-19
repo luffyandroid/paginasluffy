@@ -113,6 +113,7 @@ If you´re interested in advertising or need to contact us for any reason you ca
     <string name="BODEGAS"> Wine cellar </string>
     <string name="CALZADO"> Shoe store </string>
     <string name="CONCESIONARIO"> Dealership </string>
+    <string name="DEPORTES"> Sports </string>
     <string name="DROGUERIA"> Drugstore </string>
     <string name="ELECTRONICA"> Electronics </string>
     <string name="FERRETERIA"> Hardware store </string>
@@ -145,6 +146,7 @@ If you´re interested in advertising or need to contact us for any reason you ca
     <string name="COLEGIO"> School </string>
     <string name="GUARDERIA"> Kindergarten </string>
     <string name="INSTITUTO"> High school </string>
+    <string name="UNIVERSIDAD"> University </string>
 
     <string name="ALBERGUE"> Hostel </string>
     <string name="APARTAHOTEL"> Aparthotel </string>
@@ -179,10 +181,14 @@ If you´re interested in advertising or need to contact us for any reason you ca
     <string name="PARQUEINFANTIL"> Children´s playground </string>
     <string name="PAINTBALL"> Paintball </string>
     <string name="SCAPEROOM"> Scape room </string>
+    <string name="SPA"> Spa </string>
     <string name="TEATRO"> Theater </string>
+    <string name="ZOO"> Zoo </string>
     <string name="OOTROS"> Other leisure </string>
 
+    <string name="BOSQUE"> Forest </string>
     <string name="JARDINES"> Gardens </string>
+    <string name="MARISMAS"> Marsh </string>
     <string name="PARQUE"> Parks </string>
 
     <string name="PLAYA"> Beach </string>
@@ -234,6 +240,7 @@ If you´re interested in advertising or need to contact us for any reason you ca
     <string name="POLICIANACIONAL"> National police </string>
     <string name="PROTECCIONCIVIL"> Protección Civil </string>
     <string name="SEGURIDAD"> Security </string>
+    <string name="VIGILANCIA"> Surveillance </string>
 
     <string name="AEROPUERTO"> Airport </string>
     <string name="ESTACIONTREN"> Train station </string>

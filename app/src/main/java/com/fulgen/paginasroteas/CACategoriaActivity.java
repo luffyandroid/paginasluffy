@@ -210,12 +210,19 @@ public class CACategoriaActivity extends AppCompatActivity {
     private void cargarListViewbuscar(DataSnapshot dataSnapshot) {
 
         ZAnuncio anun =dataSnapshot.getValue(ZAnuncio.class);
+        String busqueda=etfootbuscarCA.getText().toString();
+        String mayusBusqueda = busqueda.substring(0,1).toUpperCase()+busqueda.substring(1);
 
         if(anun.getNombre().contains(etfootbuscarCA.getText().toString()) || anun.getSubcategoria().contains(etfootbuscarCA.getText().toString()) || anun.getDireccion().contains(etfootbuscarCA.getText().toString())
                 || anun.getDescripcioncortaes().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargaes().contains(etfootbuscarCA.getText().toString())
                 || anun.getDescripcioncortaen().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargaen().contains(etfootbuscarCA.getText().toString())
                 || anun.getDescripcioncortade().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargade().contains(etfootbuscarCA.getText().toString())
-                || anun.getDescripcioncortafr().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarCA.getText().toString())) {
+                || anun.getDescripcioncortafr().contains(etfootbuscarCA.getText().toString()) || anun.getDescripcionlargafr().contains(etfootbuscarCA.getText().toString())
+                || anun.getNombre().contains(mayusBusqueda) || anun.getSubcategoria().contains(mayusBusqueda) || anun.getDireccion().contains(mayusBusqueda)
+                || anun.getDescripcioncortaes().contains(mayusBusqueda) || anun.getDescripcionlargaes().contains(mayusBusqueda)
+                || anun.getDescripcioncortaen().contains(mayusBusqueda) || anun.getDescripcionlargaen().contains(mayusBusqueda)
+                || anun.getDescripcioncortade().contains(mayusBusqueda) || anun.getDescripcionlargade().contains(mayusBusqueda)
+                || anun.getDescripcioncortafr().contains(mayusBusqueda) || anun.getDescripcionlargafr().contains(mayusBusqueda)) {
 
             //ENLAZAR DATOS FIREBASE
             lista_anuncios.add(dataSnapshot.getValue(ZAnuncio.class));

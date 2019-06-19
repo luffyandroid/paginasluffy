@@ -113,6 +113,7 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="BODEGAS"> Bodegas </string>
     <string name="CALZADO"> Calzado </string>
     <string name="CONCESIONARIO"> Concesionario </string>
+    <string name="DEPORTES"> Deportes </string>
     <string name="DROGUERIA"> Droguería </string>
     <string name="ELECTRONICA"> Electrónica </string>
     <string name="FERRETERIA"> Ferretería </string>
@@ -144,6 +145,7 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="COLEGIO"> Colegio </string>
     <string name="GUARDERIA"> Guardería </string>
     <string name="INSTITUTO"> Instituto </string>
+    <string name="UNIVERSIDAD"> Universidad </string>
 
     <string name="ALBERGUE"> Albergue </string>
     <string name="APARTAHOTEL"> Apartahotel </string>
@@ -178,10 +180,14 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="PARQUEINFANTIL"> Parque infantil </string>
     <string name="PAINTBALL"> Paintball </string>
     <string name="SCAPEROOM"> Scape room </string>
+    <string name="SPA"> Spa </string>
     <string name="TEATRO"> Teatro </string>
+    <string name="ZOO"> Zoo </string>
     <string name="OOTROS"> Otros ocio </string>
 
+    <string name="BOSQUE"> Bosque </string>
     <string name="JARDINES"> Jardines </string>
+    <string name="MARISMAS"> Marismas </string>
     <string name="PARQUE"> Parque </string>
 
     <string name="PLAYA"> Playa </string>
@@ -233,6 +239,7 @@ Si estás interesado en anunciarte o necesitas contactar con nosotros por alguna
     <string name="POLICIANACIONAL"> Policía Nacional </string>
     <string name="PROTECCIONCIVIL"> Protección Civil </string>
     <string name="SEGURIDAD"> Seguridad </string>
+    <string name="VIGILANCIA"> Vigilancia </string>
 
     <string name="AEROPUERTO"> Aeropuerto </string>
     <string name="ESTACIONTREN"> Estación Tren </string>

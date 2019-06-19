@@ -296,6 +296,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_bodegas = (CheckBox)dialog.findViewById(R.id.check_bodegas);
         final CheckBox check_calzado = (CheckBox)dialog.findViewById(R.id.check_calzado);
         final CheckBox check_concesionario = (CheckBox)dialog.findViewById(R.id.check_concesionario);
+        final CheckBox check_deportes = (CheckBox)dialog.findViewById(R.id.check_deportes);
         final CheckBox check_drogueria = (CheckBox)dialog.findViewById(R.id.check_drogueria);
         final CheckBox check_electronica = (CheckBox)dialog.findViewById(R.id.check_electronica);
         final CheckBox check_ferreteria = (CheckBox)dialog.findViewById(R.id.check_ferreteria);
@@ -332,10 +333,12 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         TextView tveducacionfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraEducacionFiltroBA);
         LinearLayout bloqueeducacion01 = (LinearLayout) dialog.findViewById(R.id.checkbloque14);
         LinearLayout bloqueeducacion02 = (LinearLayout) dialog.findViewById(R.id.checkbloque15);
+        LinearLayout bloqueeducacion03 = (LinearLayout) dialog.findViewById(R.id.checkbloque15B);
         if(tvpermanenteocultaBB.getText().toString().equals("educacion")){
             tveducacionfiltroBA.setVisibility(View.VISIBLE);
             bloqueeducacion01.setVisibility(View.VISIBLE);
             bloqueeducacion02.setVisibility(View.VISIBLE);
+            bloqueeducacion03.setVisibility(View.VISIBLE);
         }
         final CheckBox check_academia = (CheckBox)dialog.findViewById(R.id.check_academia);
         final CheckBox check_autoescuela = (CheckBox)dialog.findViewById(R.id.check_autoescuela);
@@ -343,6 +346,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_colegio = (CheckBox)dialog.findViewById(R.id.check_colegio);
         final CheckBox check_guarderia = (CheckBox)dialog.findViewById(R.id.check_guarderia);
         final CheckBox check_instituto = (CheckBox)dialog.findViewById(R.id.check_instituto);
+        final CheckBox check_universidad = (CheckBox)dialog.findViewById(R.id.check_universidad);
         TextView tvhotelesfiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraHotelesFiltroBA);
         LinearLayout bloquehoteles01 = (LinearLayout)dialog.findViewById(R.id.checkbloque16);
         LinearLayout bloquehoteles02 = (LinearLayout)dialog.findViewById(R.id.checkbloque16B);
@@ -401,11 +405,13 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         LinearLayout bloqueocio01 = (LinearLayout)dialog.findViewById(R.id.checkbloque22);
         LinearLayout bloqueocio02 = (LinearLayout)dialog.findViewById(R.id.checkbloque22b);
         LinearLayout bloqueocio03 = (LinearLayout)dialog.findViewById(R.id.checkbloque23);
+        LinearLayout bloqueocio04 = (LinearLayout)dialog.findViewById(R.id.checkbloque23b);
         if(tvpermanenteocultaBB.getText().toString().equals("ocio")){
             tvociofiltroBA.setVisibility(View.VISIBLE);
             bloqueocio01.setVisibility(View.VISIBLE);
             bloqueocio02.setVisibility(View.VISIBLE);
             bloqueocio03.setVisibility(View.VISIBLE);
+            bloqueocio04.setVisibility(View.VISIBLE);
         }
         final CheckBox check_bingo = (CheckBox)dialog.findViewById(R.id.check_bingo);
         final CheckBox check_cine = (CheckBox)dialog.findViewById(R.id.check_cine);
@@ -413,19 +419,25 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_karaoke = (CheckBox)dialog.findViewById(R.id.check_karaoke);
         final CheckBox check_paintball = (CheckBox)dialog.findViewById(R.id.check_paintball);
         final CheckBox check_scaperoom = (CheckBox)dialog.findViewById(R.id.check_scaperoom);
+        final CheckBox check_spa = (CheckBox)dialog.findViewById(R.id.check_spa);
         final CheckBox check_parque_infantil = (CheckBox)dialog.findViewById(R.id.check_parque_infantil);
         final CheckBox check_teatro = (CheckBox)dialog.findViewById(R.id.check_teatro);
+        final CheckBox check_zoo = (CheckBox)dialog.findViewById(R.id.check_zoo);
         final CheckBox check_ootros = (CheckBox)dialog.findViewById(R.id.check_ootros);
         TextView tvparquefiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraParquesFiltroBA);
         LinearLayout bloqueparque01 = (LinearLayout)dialog.findViewById(R.id.checkbloque24);
+        LinearLayout bloqueparque02 = (LinearLayout)dialog.findViewById(R.id.checkbloque24B);
         if(tvpermanenteocultaBB.getText().toString().equals("parque")){
             tvparquefiltroBA.setVisibility(View.VISIBLE);
             bloqueparque01.setVisibility(View.VISIBLE);
+            bloqueparque02.setVisibility(View.VISIBLE);
         }
+        final CheckBox check_bosque = (CheckBox)dialog.findViewById(R.id.check_bosque);
         final CheckBox check_jardines = (CheckBox)dialog.findViewById(R.id.check_jardines);
+        final CheckBox check_marismas = (CheckBox)dialog.findViewById(R.id.check_marismas);
         final CheckBox check_parque = (CheckBox)dialog.findViewById(R.id.check_parque);
         TextView tvplayafiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraPlayaFiltroBA);
-        LinearLayout bloqueplaya01 = (LinearLayout)dialog.findViewById(R.id.checkbloque24B);
+        LinearLayout bloqueplaya01 = (LinearLayout)dialog.findViewById(R.id.checkbloque24C);
         if(tvpermanenteocultaBB.getText().toString().equals("playa")){
             tvplayafiltroBA.setVisibility(View.VISIBLE);
             bloqueplaya01.setVisibility(View.VISIBLE);
@@ -520,6 +532,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
         final CheckBox check_policia_nacional = (CheckBox)dialog.findViewById(R.id.check_policia_nacional);
         final CheckBox check_proteccion_civil = (CheckBox)dialog.findViewById(R.id.check_proteccion);
         final CheckBox check_seguridad = (CheckBox)dialog.findViewById(R.id.check_seguridad);
+        final CheckBox check_vigilancia = (CheckBox)dialog.findViewById(R.id.check_vigilancia);
         TextView tvtransportefiltroBA = (TextView)dialog.findViewById(R.id.tvsubbcabeceraTransporteFiltroBA);
         LinearLayout bloquetransporte01 = (LinearLayout)dialog.findViewById(R.id.checkbloque40);
         LinearLayout bloquetransporte02 = (LinearLayout)dialog.findViewById(R.id.checkbloque41);
@@ -556,6 +569,7 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             tveducacionfiltroBA.setVisibility(View.VISIBLE);
             bloqueeducacion01.setVisibility(View.VISIBLE);
             bloqueeducacion02.setVisibility(View.VISIBLE);
+            bloqueeducacion03.setVisibility(View.VISIBLE);
             tvhotelesfiltroBA.setVisibility(View.VISIBLE);
             bloquehoteles01.setVisibility(View.VISIBLE);
             bloquehoteles02.setVisibility(View.VISIBLE);
@@ -572,8 +586,10 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
             bloqueocio01.setVisibility(View.VISIBLE);
             bloqueocio02.setVisibility(View.VISIBLE);
             bloqueocio03.setVisibility(View.VISIBLE);
+            bloqueocio04.setVisibility(View.VISIBLE);
             tvparquefiltroBA.setVisibility(View.VISIBLE);
             bloqueparque01.setVisibility(View.VISIBLE);
+            bloqueparque02.setVisibility(View.VISIBLE);
             tvplayafiltroBA.setVisibility(View.VISIBLE);
             bloqueplaya01.setVisibility(View.VISIBLE);
             tvrestauracionfiltroBA.setVisibility(View.VISIBLE);
@@ -646,6 +662,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 }
                 if(check_concesionario.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_concesionario");
+                }
+                if(check_deportes.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_deportes");
                 }
                 if(check_drogueria.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_c_drogueria");
@@ -734,6 +753,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 if(check_instituto.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_instituto");
                 }
+                if(check_universidad.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_e_universidad");
+                }
                 if(check_albergue.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_h_albergue");
                 }
@@ -818,17 +840,29 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 if(check_scaperoom.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_scaperoom");
                 }
+                if(check_spa.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_spa");
+                }
                 if(check_parque_infantil.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_parque_infantil");
                 }
                 if(check_teatro.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_teatro");
                 }
+                if(check_zoo.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_zoo");
+                }
                 if(check_ootros.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_o_ootros");
                 }
+                if(check_bosque.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_pa_bosque");
+                }
                 if(check_jardines.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_pa_jardines");
+                }
+                if(check_marismas.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_pa_marismas");
                 }
                 if(check_parque.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_pa_parque");
@@ -964,6 +998,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                 }
                 if(check_seguridad.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_seg_seguridad");
+                }
+                if(check_vigilancia.isChecked()){
+                    tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_seg_vigilancia");
                 }
                 if(check_aeropuerto.isChecked()){
                     tvfiltroocultaBB.setText(tvfiltroocultaBB.getText().toString()+"ic_sub_t_aeropuerto");
@@ -1187,6 +1224,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             if (anun.getSubcategoria().equals("ic_sub_c_concesionario")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_concesionario));
                             }
+                            if (anun.getSubcategoria().equals("ic_sub_c_deportes")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_deportes));
+                            }
                             if (anun.getSubcategoria().equals("ic_sub_c_drogueria")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_c_drogueria));
                             }
@@ -1355,6 +1395,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             if (anun.getSubcategoria().equals("ic_sub_e_instituto")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_instituto));
                             }
+                            if (anun.getSubcategoria().equals("ic_sub_e_universidad")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_e_universidad));
+                            }
 
 
                             markeroptions.title("educacion/" + anun.getNombre());
@@ -1396,6 +1439,15 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                     });
 
                             MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_h_albergue")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_albergue));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_h_apartahotel")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_apartahotel));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_h_camping")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_camping));
+                            }
                             if (anun.getSubcategoria().equals("ic_sub_h_hostal")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_h_hostal));
                             }
@@ -1632,8 +1684,14 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             if (anun.getSubcategoria().equals("ic_sub_o_scaperoom")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_scaperoom));
                             }
+                            if (anun.getSubcategoria().equals("ic_sub_o_spa")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_spa));
+                            }
                             if (anun.getSubcategoria().equals("ic_sub_o_teatro")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_teatro));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_o_zoo")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_zoo));
                             }
                             if (anun.getSubcategoria().equals("ic_sub_z_otros")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_o_zotros));
@@ -1678,8 +1736,14 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                                     });
 
                             MarkerOptions markeroptions = new MarkerOptions();
+                            if (anun.getSubcategoria().equals("ic_sub_pa_bosque")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_bosque));
+                            }
                             if (anun.getSubcategoria().equals("ic_sub_pa_jardines")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_jardines));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_pa_marismas")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_marismas));
                             }
                             if (anun.getSubcategoria().equals("ic_sub_pa_parque")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_pa_parque));
@@ -1923,6 +1987,9 @@ public class BBMapaActivity extends AppCompatActivity implements OnMapReadyCallb
                             }
                             if (anun.getSubcategoria().equals("ic_sub_seg_seguridad")) {
                                 markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_seguridad));
+                            }
+                            if (anun.getSubcategoria().equals("ic_sub_seg_vigilancia")) {
+                                markeroptions.icon(getBitmapDescriptor(R.drawable.ic_marcador_seg_vigilancia));
                             }
 
 
